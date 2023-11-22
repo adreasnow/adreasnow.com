@@ -10813,35 +10813,47 @@
 <p>This paper reads like a love letter to the E-ZTFC approach and should be treated with a bit of bias.</p>
 </div>
 <ul>
-<li>Solvents can effect absorption very strongly due to polarisation and direct solute-solvent interactions</li>
+<li>Solvents can effect absorption very strongly due to polarisation and direct solute-solvent interactions<ul>
 <li>Continuum models only account for the polarisation aspect, but lack the solvent-solute microstate configurations that will really effect the excited state properties. They also can&rsquo;t model the high energy tail of absorbance which are properties of vibronic transitions.<ul>
 <li>Surprise, Mick Gordon <a href="https://pubs.acs.org/doi/10.1021/jz200947j">thinks the answer is EFP</a> and Dimitri Federov <a href="https://pubs.acs.org/doi/10.1021/cr200093j">thinks the answer is FMO</a>&hellip;</li>
 </ul>
 </li>
 <li>Explicit QM solvation is the best, as it accounts for mutual polarisation and charge transfer, which can differ from state to state. 1-2 shells are needed for decent convergence, implying that these effects are relatively long-range</li>
-<li>Issues of optimising solvent-solute systems include: lots of shallow minima, non-unique solvent arrangement, lack of temperature effects.</li>
+</ul>
+</li>
+<li>Issues of optimising solvent-solute systems include: lots of shallow minima, non-unique solvent arrangement, lack of temperature effects.<ul>
 <li>MD can help this, with excitations being carried out on a number of configurations.<ul>
 <li>Can handle emission spectra by parameterising the solute for the excited state.</li>
-<li>If using nuclear quantum effects, the energies will include ZPVE and the spectra will be red-shifted</li>
+<li>If using nuclear quantum effects, the energies will include ZPVE and the spectra will be red-shifted<ul>
 <li>Also result in more broad spectra due to an inhomogenous solvent environment and bond lengthening effects</li>
-<li>MD will not lead to Gaussian shaped spectra due to solvent inhomogeneity.</li>
+</ul>
+</li>
+<li>MD will not lead to Gaussian shaped spectra due to solvent inhomogeneity.<ul>
 <li>The gaussian distribution would imply no solute-solvent interaction beyond polarisation</li>
+</ul>
+</li>
 <li>~500 snapshots needed to converge a UV-Vis spectra from MD (no ref given)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>The electronic rearrangement of the solvent can happen on the same timescales as the absorbance itself, but the nuclear rearrangement of the solvent happens much more slowly, on the timescale of picoseconds</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Figure for the above claim</p>
-<p><img alt="!qua25719-fig-0002-m" class="center" src="../qua25719-fig-0002-m.webp" style="width: 80%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="qua25719-fig-0002-m" href="../qua25719-fig-0002-m.webp"><img alt="qua25719-fig-0002-m" class="center" src="../qua25719-fig-0002-m.webp" style="width: 80%; " /></a></div></p>
 <p>To sample an ensemble of solute–solvent configurations for simulation of an absorption spectrum, structures obtained from snapshots of a molecular dynamics trajectory are used for the computation of vertical excitation energies. Spectra are constructed by averaging over the vertical excitations calculated for different solute–solvent snapshots. In the ensemble approach, the <span class="arithmatex">\(\sigma\)</span>-functions corresponding to individual vertical excitations are convoluted with a Gaussian function <span class="arithmatex">\(\mathcal{N}\)</span> of width σ centered at <span class="arithmatex">\(\omega^{vert}\)</span>. The figure on the left shows the vertical excitation energies <span class="arithmatex">\(\omega^{vert}\)</span> and corresponding oscillator strengths as a stick spectrum for <span class="arithmatex">\(N = 10\)</span> snapshots, with each stick dressed with a Gaussian function. The sum of the Gaussian functions creates an absorption spectrum within the ensemble approach. The figure on the right shows the convergence of the ensemble spectrum computed for the GFP chromophore anion in water with respect to the number of snapshots sampled</p>
 </div>
 <h3 id="continuum-solvation">Continuum Solvation<a class="headerlink" href="#continuum-solvation" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Multiple dielectric constants are used, with <span class="arithmatex">\(\varepsilon_0\)</span> (static) being used for ground state and <span class="arithmatex">\(\varepsilon_\infty\)</span> (optical) being used for excited states  </li>
+<li>Multiple dielectric constants are used, with <span class="arithmatex">\(\varepsilon_0\)</span> (static) being used for ground state and <span class="arithmatex">\(\varepsilon_\infty\)</span> (optical) being used for excited states  <ul>
 <li><span class="arithmatex">\(\varepsilon_0\)</span> varties wuite a lot with the polarity of the solvent, but <span class="arithmatex">\(\varepsilon_\infty\)</span> is a maeasure of the polarisability of the solvent and can be similar for both polar and non-polar solvents</li>
-<li>Linear Response (LR) methods use the transition density of the solute to model the solvation properties of excitations</li>
+</ul>
+</li>
+<li>Linear Response (LR) methods use the transition density of the solute to model the solvation properties of excitations<ul>
 <li>Seem to not be great for excitations with large changes in density, such as charge-transfer transitions</li>
+</ul>
+</li>
 <li>State-specific (SS) methods use the difference density, between the ground and excited states,  requiring extra density to be calculated</li>
 <li>These methods only account for a statistical average solvent-solute interaction, and do not take into account configuration interactions of the solvent.</li>
 </ul>
@@ -10849,24 +10861,26 @@
 <ul>
 <li>
 <p>To account for polarisation and certain solute-solvent effects, we can embed MM charges in the QM calculations using QM/MM, and average over the configurations</p>
-</li>
-<li>
-<p>This is not mutual polarisation though, as the solvent itself cannot be polarised without using pMD. Charge smearing and scaling methods tend to damage long range polarisation</p>
-</li>
+<ul>
+<li>This is not mutual polarisation though, as the solvent itself cannot be polarised without using pMD. Charge smearing and scaling methods tend to damage long range polarisation</li>
 <li>EFP is being suggested as a viable option here as well, since they account for electrostatics, polarisation, dispersion, exchange-repulsion and charge-transfer</li>
 <li>They could also be embedded with the use of an embedding potential</li>
+</ul>
+</li>
 </ul>
 <h3 id="explicit-qm-solvation-with-classic-solvent-models">Explicit QM Solvation with Classic Solvent Models<a class="headerlink" href="#explicit-qm-solvation-with-classic-solvent-models" title="Permanent link">&para;</a></h3>
 <ul>
 <li>QM treatment of the solvent can be important though where the electronic interaction between the solvent and solute play a large role in changing the transition energies. Charge transfer, dispersion, self consistent polarisation, etc. </li>
 <li>Looking at how much solvent to include in the QM calc is more complex and is system dependent</li>
 <li>Reducing cost can be accomplished by using smaller basis sets for outer solvation shells</li>
-<li>If the goal is to model the excited state of the cluster in solution rather than the excited state of the solute-solvent cluster, then a lower level of theory can be used for the first shell</li>
+<li>If the goal is to model the excited state of the cluster in solution rather than the excited state of the solute-solvent cluster, then a lower level of theory can be used for the first shell<ul>
 <li>This can actually reduce the computational time compared to other embedding methods, as fewer SCF iterations may be needed.</li>
 <li>Using some form of electrostatic embedding may be needed if extracting solvent clusters from MD, to stabilise the outer extents of the solvent cluster.</li>
 <li>The outer edges of the extracted cluster can also be relaxed a bit to help this along.</li>
 </ul>
-<p><img alt="!qua25719-fig-0003-m" class="center" src="../qua25719-fig-0003-m.jpg" style="width: 50%; " /></p>
+</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="qua25719-fig-0003-m" href="../qua25719-fig-0003-m.jpg"><img alt="qua25719-fig-0003-m" class="center" src="../qua25719-fig-0003-m.jpg" style="width: 50%; " /></a></div></p>
 <ul>
 <li>Using MM charges around a QM solvent cluster can also reduce the size of the cluster needed to obtain good results.</li>
 <li>If using a PCM approach, be sure to use a SAS cavity rather than a vdW one, or if vdW is the only available cavity, try to scale the radii, as the PCM charges could appear between sparse outer solvent molecules.</li>
@@ -10876,9 +10890,11 @@
 <ul>
 <li>EOM-CCSD seems to be the current gold standard at 0.01 eV with DFT modelled solvent, but is prohibitively expensive for explicit solvent. TDHF and CIS are some alternatives, but MCSCF with full solvent could get a bit messy to manage the active space.</li>
 <li>Explicitly treated TDDFT solvent needs to be approached with caution as some of the DFT approximations can lead to very low charge-transfer transitions. Non-local functionals are of note as better options here.</li>
-<li>DFT tends to predict very small transitions for the solvent molecules, so the more solvent molecules are added, the more low energy transitions will pop up in the calculation, skewing the results of the solute.</li>
+<li>DFT tends to predict very small transitions for the solvent molecules, so the more solvent molecules are added, the more low energy transitions will pop up in the calculation, skewing the results of the solute.<ul>
 <li>This seems to happen for all local and semi-local DFT functionals, so it&rsquo;s important to use range-separated functionals that use full exact (HF) exchange at long range and a decent amount of exact exchange at short range. </li>
 <li>Exact exchange provides the correct Coulombic stabilisation of the electron-hole interaction, which because it&rsquo;s then scaled by the amount of exact exchange, predicts lower charge transfer transitions to be too low in energy. </li>
+</ul>
+</li>
 </ul>
 <h3 id="computing-lineshapes-in-solution">Computing Lineshapes In Solution<a class="headerlink" href="#computing-lineshapes-in-solution" title="Permanent link">&para;</a></h3>
 <ul>
@@ -10886,30 +10902,38 @@
 <li>Even when <span class="arithmatex">\(\lambda_{max}\)</span> is the desired property, it&rsquo;s not going to be a product of the most stable ground state configuration alone, as it neglects temperature, solvent, lifetime broadening, etc. Often times there are also coupled vibronic fine structure considerations that go into the <span class="arithmatex">\(\lambda_{max}\)</span></li>
 <li>The most basic method computes a convolution of excitations based on PCM solvation and a single transtion</li>
 <li>The ensemble method is what&rsquo;s described in the box up the top, taking excitations from MD geometries to build a lineshape, however these can miss vibronic features or anything that&rsquo;s not quite modelled by the forcefield correctly.</li>
-<li>The Finite Temperature Franck-Condon (FTFC) method works by looking at the overlap of the ground and excited state wavefunctions and ascribing a relative probability and energy to that excitation based on the energy gap and Boltzmann distribution of that transition. These can then be combined into a spectrum with gaussian functions (the SD of the function is given by the reorganisation energy from the PCM) to give a better prediction of what the lineshape would be. The solvent is typically considered implicitly, and the PES is assumed to be harmonic around the minima. This accounts for vibronic considerations, but not solvent configurations, which can be important when strong solute-solvent interactions are at play</li>
+<li>The Finite Temperature Franck-Condon (FTFC) method works by looking at the overlap of the ground and excited state wavefunctions and ascribing a relative probability and energy to that excitation based on the energy gap and Boltzmann distribution of that transition. These can then be combined into a spectrum with gaussian functions (the SD of the function is given by the reorganisation energy from the PCM) to give a better prediction of what the lineshape would be. The solvent is typically considered implicitly, and the PES is assumed to be harmonic around the minima. This accounts for vibronic considerations, but not solvent configurations, which can be important when strong solute-solvent interactions are at play<ul>
 <li>This is very sensitive to the DFT XC functionals.</li>
-<li>
-<p>In practice, this usually requires a small solvation shell, which is then frozen for Hessian calculations</p>
+<li>In practice, this usually requires a small solvation shell, which is then frozen for Hessian calculations</li>
+</ul>
 </li>
-<li>
-<p>Combining ensemble and Franck-Condon can account for both!</p>
-</li>
+</ul>
+<ul>
+<li>Combining ensemble and Franck-Condon can account for both!<ul>
 <li>Here the final lineshape is made by averaging the results of a bunch of FTFC calculations, each taken from snapshots of an MD run, calculated in a pocket of frozen solvent. This is obviously very expensive, however an Ensemble plus Zero Temperature Franck-Condon (E-ZCFC) method was developed that uses FTFC calculations on a small number of snapshots to give the linehsape, and uses vertical excitations from a large number of snapshots to account for more solvent effects. This method double counts some of the ZPVE though as it&rsquo;s modelled in both the FTCT and in the MD calculations.</li>
 </ul>
-<p><img alt="!qua25719-fig-0007-m" class="center" src="../qua25719-fig-0007-m.jpg" style="width: 50%; " /></p>
+</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="qua25719-fig-0007-m" href="../qua25719-fig-0007-m.jpg"><img alt="qua25719-fig-0007-m" class="center" src="../qua25719-fig-0007-m.jpg" style="width: 50%; " /></a></div></p>
 <p>A schematic representation of some lineshape forming methods</p>
 <h3 id="success-and-challenges">Success and Challenges<a class="headerlink" href="#success-and-challenges" title="Permanent link">&para;</a></h3>
 <ul>
 <li>If using MM forcefields, it&rsquo;s important to ensure a robust force field parameterisation of the chromophore</li>
-<li>One way to account to for weird configurations emerging from MD simulations is to weight the contributions of each MD snapshot based on the difference between the MM and QM energy</li>
+<li>One way to account to for weird configurations emerging from MD simulations is to weight the contributions of each MD snapshot based on the difference between the MM and QM energy<ul>
 <li>This seems like a pretty dodgy way to do this tbh&hellip;</li>
 <li>It looks like you can fix this with a proper QM/MM treatment, rather than just MD snapshotting</li>
+</ul>
+</li>
 <li>Capturing the effects of strong hydrogen bonding seems to be something that needs to be treated either quantum mechanically, with AIMD, QM/MM or PIMD</li>
 <li>Solvatochromic effects seems to be best handled with explicit QM solvation</li>
-<li>FTFC is better for rigid chromophores in a weakly interacting solvent </li>
+<li>FTFC is better for rigid chromophores in a weakly interacting solvent <ul>
 <li>As the lineshape will be dominated by vibronic contributions</li>
-<li>Ensemble is better for floppier molecules which will have more configurational space to sample</li>
+</ul>
+</li>
+<li>Ensemble is better for floppier molecules which will have more configurational space to sample<ul>
 <li>As the harmonic approximation will be less valid here</li>
+</ul>
+</li>
 </ul>
 
 

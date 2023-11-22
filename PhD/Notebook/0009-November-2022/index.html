@@ -11100,12 +11100,10 @@
 <ul>
 <li>Present to Michelle at the collaborator meeting next Wednesday</li>
 <li>Put the Monash logo in the header of the website</li>
-<li>
-<p>Add Gamess to software list</p>
-</li>
-<li>
-<p>Prepare for discussion with michelle</p>
-</li>
+<li>Add Gamess to software list</li>
+</ul>
+<ul>
+<li>Prepare for discussion with michelle</li>
 <li>How can we elucidate the number of determinants that we need in casscf to completely converge the correlation, and how can we relate that back to the correlation from DFT?</li>
 <li>Check CISD for red blue shift</li>
 </ul>
@@ -11142,9 +11140,9 @@
 <li>SOS is a slightly faster version that only scales the <em>opposite</em> spin terms</li>
 </ul>
 </li>
-<li>
-<p>Range separation in exchange is more important than using CIS(D) correlation</p>
-</li>
+</ul>
+<ul>
+<li>Range separation in exchange is more important than using CIS(D) correlation</li>
 </ul>
 <p><strong>Dispersion Corrections</strong></p>
 <ul>
@@ -11168,11 +11166,15 @@
 <p>emission energy from </p>
 <p><code>ChargeSeparation = Excited</code> and <code>StateSpecific = 1</code> &rarr; <code>StateSpecific = Marcus</code></p>
 <ol>
-<li>Do slow-fast charge separation es 1.</li>
+<li>Do slow-fast charge separation es 1.<ul>
 <li>I think this is calculating the ES slow and fast charges in eq via SS, and partitioning them</li>
-<li>Run self-consistent SS method in the ground-state with <strong>a given</strong> slow polarization charges.</li>
+</ul>
+</li>
+<li>Run self-consistent SS method in the ground-state with <strong>a given</strong> slow polarization charges.<ul>
 <li>Then the SS=Marcus line takes the ES slow charges and calculates the GS fast charges</li>
 <li>I&rsquo;m not sure what the reference wfn is though. It seems to be doing another TD-DFT calc, but I don&rsquo;t know for sure if it&rsquo;s </li>
+</ul>
+</li>
 </ol>
 <p>From the Herbert review:</p>
 <blockquote>
@@ -11192,8 +11194,10 @@
 <p>I think I double checked enough, so I spent the rest of my day writing documentation for the group wiki!</p>
 <h4 id="to-do">To Do<a class="headerlink" href="#to-do" title="Permanent link">&para;</a></h4>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Read up on more non-electrostatic terms for excited states</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Read up on more non-electrostatic terms for excited states<ul>
 <li>I&rsquo;ve found a few, but they&rsquo;re not much better than SMSSP</li>
+</ul>
+</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Look in to cLR gradients</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Prepare for meeting with Michelle</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Document notifications from SLURM</li>
@@ -11231,9 +11235,9 @@
 <h2 id="wednesday-23rd-november">Wednesday 23<sup>rd</sup> November<a class="headerlink" href="#wednesday-23rd-november" title="Permanent link">&para;</a></h2>
 <p>S-HPC seminar today was good, got chatting to some interesting people. Apart form that, I&rsquo;ve been trying to figure out these CASSCF calculations still. They&rsquo;re completely inconsistent between ORCA and PySCF, so I&rsquo;m having to go back and forth to figure out what each is doing (or not doing).</p>
 <p>Wait&hellip; Is ORCA culling states? That&rsquo;s the only way I can see these calculations being equivalent&hellip;</p>
-<p><img _="," alt="!Screenshot 2022-11-23 at 5.40.37 pm" class="center" src="../Screenshot%202022-11-23%20at%205.40.37%20pm.png" style="max-width: 60%;" /></p>
+<p><div class="lightgallery"><a data-sub-html="Screenshot 2022-11-23 at 5.40.37 pm" href="../Screenshot%202022-11-23%20at%205.40.37%20pm.png"><img _="," alt="Screenshot 2022-11-23 at 5.40.37 pm" class="center" src="../Screenshot%202022-11-23%20at%205.40.37%20pm.png" style="max-width: 60%;" /></a></div></p>
 <p>When I cull out all the states that have a negligible transition dipole moment, this is what I get!</p>
-<p><img _="," alt="!Screenshot 2022-11-23 at 5.40.43 pm" class="center" src="../Screenshot%202022-11-23%20at%205.40.43%20pm.png" style="max-width: 60%;" /></p>
+<p><div class="lightgallery"><a data-sub-html="Screenshot 2022-11-23 at 5.40.43 pm" href="../Screenshot%202022-11-23%20at%205.40.43%20pm.png"><img _="," alt="Screenshot 2022-11-23 at 5.40.43 pm" class="center" src="../Screenshot%202022-11-23%20at%205.40.43%20pm.png" style="max-width: 60%;" /></a></div></p>
 <h2 id="thursday-24th-november">Thursday 24<sup>th</sup> November<a class="headerlink" href="#thursday-24th-november" title="Permanent link">&para;</a></h2>
 <p>I came across a really useful tool by Truhlar for identifying whether you need to treat a species with MR character, called the m-diagnostic</p>
 <p>DOI: <a href="https://doi.org/10.1021/ct800077r">10.1021/ct800077r</a></p>
@@ -11242,21 +11246,21 @@
 <li><span class="arithmatex">\(M \geq 0.04\)</span> need MR treatment (ref <a href="https://doi.org/10.1021/ct500775r">10.1021/ct500775r</a>)</li>
 <li>
 <p>With respect to the dominant determinant (occupation from SR Calculation):</p>
-</li>
-<li>
-<p><span class="arithmatex">\(n(MCDONO) =\)</span> occupation of the most correlated doubly occupied natural orbital</p>
 <ul>
+<li><span class="arithmatex">\(n(MCDONO) =\)</span> occupation of the most correlated doubly occupied natural orbital<ul>
 <li>The least occupied doubly occupied natural orbital</li>
 </ul>
 </li>
-<li>
-<p><span class="arithmatex">\(n(MCUNO) =\)</span> occupation of the most correlated unoccupied natural orbital</p>
+</ul>
 <ul>
+<li><span class="arithmatex">\(n(MCUNO) =\)</span> occupation of the most correlated unoccupied natural orbital<ul>
 <li>The most occupied unoccupied natural orbital</li>
 </ul>
 </li>
-<li>
-<p><span class="arithmatex">\(n(SONO) =\)</span> occupation of any singly occupied natural orbitals</p>
+</ul>
+<ul>
+<li><span class="arithmatex">\(n(SONO) =\)</span> occupation of any singly occupied natural orbitals</li>
+</ul>
 </li>
 </ul>
 <div class="arithmatex">\[
@@ -11273,34 +11277,38 @@ M=\frac{1}{2}\bigg(2-n(MCDONO)+\sum_{j=1}^{n_{SOMO}}|n(j)-1|  +n(MCUNO)\bigg)
 <ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://sites.google.com/monash.edu/chem/ohs-compliance?authuser=1">Prepare for Lab Induction</a></p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Please ensure you have an active Monash account and consult/meet with your supervisor.</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Watch the University OHS Induction video located in the my.monash portal under HR &amp; Employment/myDevelopment/Browse for Learning - Mandatory Compliance Training. *please note the link is available 24-48hrs after enrolment. Research students can access the University OHS Induction Video via this link (<a href="http://www.google.com/url?q=http%3A%2F%2Fwww.intranet.monash%2Fstaff-development%2FmyDevelopment%2Fstudent-access&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1K18i4UJFoGOUy7moAKVCF">http://www.intranet.monash/staff-development/myDevelopment/student-access</a>).</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Complete the online <a href="http://www.google.com/url?q=http%3A%2F%2Fsafety.chem.monash.edu%2Fchem%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3Xr9ksSyw-aoM2WEqskeXw">School of Chemistry OHS Induction Module</a><a href="http://www.google.com/url?q=http%3A%2F%2Fsafety.chem.monash.edu%2Fchem%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3Xr9ksSyw-aoM2WEqskeXw">.</a> This will take approx. 45 mins. You must submit the completion form at the end.</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Undertake a face to face building induction with your supervisor or delegate as directed by your supervisor and then complete the <a href="https://forms.gle/Qm39B37MGRJLN75o9">General OHS/Building Induction Form</a></p>
-</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Please ensure you have an active Monash account and consult/meet with your supervisor.</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Watch the University OHS Induction video located in the my.monash portal under HR &amp; Employment/myDevelopment/Browse for Learning - Mandatory Compliance Training. *please note the link is available 24-48hrs after enrolment. Research students can access the University OHS Induction Video via this link (<a href="http://www.google.com/url?q=http%3A%2F%2Fwww.intranet.monash%2Fstaff-development%2FmyDevelopment%2Fstudent-access&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1K18i4UJFoGOUy7moAKVCF">http://www.intranet.monash/staff-development/myDevelopment/student-access</a>).</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Complete the online <a href="http://www.google.com/url?q=http%3A%2F%2Fsafety.chem.monash.edu%2Fchem%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3Xr9ksSyw-aoM2WEqskeXw">School of Chemistry OHS Induction Module</a><a href="http://www.google.com/url?q=http%3A%2F%2Fsafety.chem.monash.edu%2Fchem%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3Xr9ksSyw-aoM2WEqskeXw">.</a> This will take approx. 45 mins. You must submit the completion form at the end.</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Undertake a face to face building induction with your supervisor or delegate as directed by your supervisor and then complete the <a href="https://forms.gle/Qm39B37MGRJLN75o9">General OHS/Building Induction Form</a></li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Print and complete</strong> the  <a href="https://drive.google.com/file/d/1mibF0DLNO-q1aVCnqjjDZM9LDbVVueM7/view?usp=sharing">Lab OHS Form</a>  with safety officers signing on completion and sign up for OHS training as required (see below) specific to your labs in consultation with your Lab Head/ Manager or School Safety Officers.</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Once the Lab OHS forms are completed please email a copy to <a href="mailto:chem-operations@monash.edu">chem-operations@monash.edu</a>. </li>
-</ul>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Once the Lab OHS forms are completed please email a copy to <a href="mailto:chem-operations@monash.edu">chem-operations@monash.edu</a>. </p>
 <p>You will be granted access to the School buildings &amp; facilities on completion of all the above forms.</p>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.monash.edu%2Fohs%2Fsarah%2Freport-incident-hazard%2Frisk-management-and-work-safe-instructions&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0shBIkJwoh2ORnKzV6zTj1">Online Risk Assessment</a> for your proposed laboratory work via the <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.monash.edu%2Fohs%2Fsarah&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0Y1rfr_RSe739_MBIO-3BO">SARAH system</a> and refer to the <a href="https://docs.google.com/document/d/1N4GqTDviMqgkLTJgbRo8KuDFRnAvrht8/edit?usp=sharing&amp;ouid=112723987336660940990&amp;rtpof=true&amp;sd=true">Chemistry Risk Assessment procedure</a>. Please ensure you add Dr. Craig Forsyth or Dr. Boujemaa Moubaraki (Safety Officers) as reviewers so they can check your risk assessments. It would be preferred to consult with the Safety officers prior to filling out your online Risk Assessment. </p>
+</ul>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Make your access key deposit online through the <a href="https://www.google.com/url?q=https%3A%2F%2Fshop.monash.edu%2Fkey-deposit-for-labs-and-offices.html&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0ifEfPtUC2b_KfV4VtJSAN">Monash Shop</a>. The deposit required to secure one key is $20, for two or more keys however, this is capped at $40. When you return the keys, the deposit is refunded back via the shop. </p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Once all the above are completed  you can apply for access to the School buildings by completing the  <a href="https://forms.gle/8fmfjg3GSbmHppEX7">Access &amp; Key Request Form</a>.</p>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.monash.edu%2Fohs%2Fsarah%2Freport-incident-hazard%2Frisk-management-and-work-safe-instructions&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0shBIkJwoh2ORnKzV6zTj1">Online Risk Assessment</a> for your proposed laboratory work via the <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.monash.edu%2Fohs%2Fsarah&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0Y1rfr_RSe739_MBIO-3BO">SARAH system</a> and refer to the <a href="https://docs.google.com/document/d/1N4GqTDviMqgkLTJgbRo8KuDFRnAvrht8/edit?usp=sharing&amp;ouid=112723987336660940990&amp;rtpof=true&amp;sd=true">Chemistry Risk Assessment procedure</a>. Please ensure you add Dr. Craig Forsyth or Dr. Boujemaa Moubaraki (Safety Officers) as reviewers so they can check your risk assessments. It would be preferred to consult with the Safety officers prior to filling out your online Risk Assessment. </li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Make your access key deposit online through the <a href="https://www.google.com/url?q=https%3A%2F%2Fshop.monash.edu%2Fkey-deposit-for-labs-and-offices.html&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0ifEfPtUC2b_KfV4VtJSAN">Monash Shop</a>. The deposit required to secure one key is $20, for two or more keys however, this is capped at $40. When you return the keys, the deposit is refunded back via the shop. </li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Once all the above are completed  you can apply for access to the School buildings by completing the  <a href="https://forms.gle/8fmfjg3GSbmHppEX7">Access &amp; Key Request Form</a>.</li>
+</ul>
 </li>
 </ul>
 <h4 id="from-meeting">From Meeting:<a class="headerlink" href="#from-meeting" title="Permanent link">&para;</a></h4>
@@ -11312,49 +11320,59 @@ M=\frac{1}{2}\bigg(2-n(MCDONO)+\sum_{j=1}^{n_{SOMO}}|n(j)-1|  +n(MCUNO)\bigg)
 <ul>
 <li>Slack Education has been approved</li>
 <li>Should I drop everything and just focus on IPR?</li>
-<li>Not sure of the best way to do CASSCF. </li>
+<li>Not sure of the best way to do CASSCF. <ul>
 <li>Nothing seems to have ES opts for CASSCF, is this just SA-CASSCF with all the weights set to 0 except for 1 for the root of interest?</li>
-<li>
-<p>Can use M-diagnostic of Truhlar to determine level of MR character?</p>
+<li>Can use M-diagnostic of Truhlar to determine level of MR character?</li>
+</ul>
 </li>
+</ul>
+<ul>
 <li>
 <p>Updated Thesis title?</p>
+<ul>
+<li>So I can get an appropriate panel</li>
+<li>&ldquo;Untangling Implicit Solvation for Quantum Modelling of Excited States; Can we do Better?&rdquo;</li>
+</ul>
 </li>
-<li>
-<p>So I can get an appropriate panel</p>
-</li>
-<li>
-<p>&ldquo;Untangling Implicit Solvation for Quantum Modelling of Excited States; Can we do Better?&rdquo;</p>
-</li>
+</ul>
+<ul>
 <li>
 <p>Talk about dataset selection</p>
-</li>
+<ul>
 <li>
 <p>Should we get rid of h-bonding solvents unless they&rsquo;re needed to cover the dielectric spectrum?</p>
 <ul>
 <li>I feel like this is removing the chemical diversity that we want though!</li>
 </ul>
 </li>
+</ul>
+<ul>
 <li>
 <p>Which species are less suitable</p>
 <ul>
 <li>Should I completely cut certain classes that we know are unsuitable</li>
 <li>
 <p>Should I cut anything with too high of an MR character?</p>
-</li>
-<li>
-<p>I feel like this would eliminate my whole dataset.</p>
+<ul>
+<li>I feel like this would eliminate my whole dataset.</li>
+</ul>
 </li>
 </ul>
 </li>
-<li>
-<p>If we want to be comparing the whole spectra, we need to be doing excited state dynamics to resolve proper band shapes. The point of using 0-0 transitions is that you&rsquo;re avoiding the adiabatic vertical transition approximation, and thus reducing errors.</p>
+</ul>
 </li>
+</ul>
+<ul>
+<li>If we want to be comparing the whole spectra, we need to be doing excited state dynamics to resolve proper band shapes. The point of using 0-0 transitions is that you&rsquo;re avoiding the adiabatic vertical transition approximation, and thus reducing errors.<ul>
 <li>ESD is only available as G09 addons, or in ORCA</li>
-<li>Discuss the 0-0 transition dilemma</li>
+</ul>
+</li>
+<li>Discuss the 0-0 transition dilemma<ul>
 <li>Yes, I did get grumpy and do a deep dive. This is everywhere and seems to be very fundamental.</li>
 <li>The key takeaway is that the 0-0 from intersection of spectra comes as the product of the harmonic oscillator approximation<ul>
 <li>This only seems to break down in non-realistic systems</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -11374,7 +11392,7 @@ M=\frac{1}{2}\bigg(2-n(MCDONO)+\sum_{j=1}^{n_{SOMO}}|n(j)-1|  +n(MCUNO)\bigg)
 <li>(E)-(2-phenylazo-phenyl)bis(pentafluoro- phenyl)borane</li>
 </ul>
 <p>This seems to just be a common knowledge approach to 0-0 transitions that appears everywhere in the literature
-<img _="," alt="!Screenshot 2022-11-23 at 4.35.12 pm" class="center" src="../Screenshot%202022-11-23%20at%204.35.12%20pm.png" style="width: 60%;" /></p>
+<div class="lightgallery"><a data-sub-html="Screenshot 2022-11-23 at 4.35.12 pm" href="../Screenshot%202022-11-23%20at%204.35.12%20pm.png"><img _="," alt="Screenshot 2022-11-23 at 4.35.12 pm" class="center" src="../Screenshot%202022-11-23%20at%204.35.12%20pm.png" style="width: 60%;" /></a></div></p>
 <p><a href="https://mattermodeling.stackexchange.com/a/9346">mattermodeling.stackexchange</a></p>
 <p>&ldquo;Yes, the absorption maximum is usually close to (but not necessarily exactly equal to) the vertical excitation from the ground state, due to the Franck-Condon principle. However, this does not mean that the 0-0 excitation energy is not experimentally measurable. The point is that, when one approximates the ground and excited state potential energy surfaces as quadratic surfaces with the same quadrature, one can show that the 0-0 energy is exactly the average of the Franck-Condon absorption energy and the Franck-Condon fluorescence energy. Therefore, one can derive an experimental estimate of the 0-0 energy from an average of the experimental absorption and fluorescence energies. Some similar but slightly different alternatives are (1) averaging the absorption and fluorescence wavelengths instead (which is not equivalent to averaging the excitation energies due to the non-linear relationship between wavelengths and excitation energies), and (2) plotting both the absorption and fluorescence spectra, find the intersection point of the two spectra, and read off the corresponding excitation energy. I&rsquo;m not sure which of the three strategies is the best, but mathematically they should give quite similar results for systems whose Stokes shift is not too large; when the Stokes shift is very large, all methods should become unreliable since the quadratic approximation of the PESs break down (EDIT: this holds for most, if not all, realistic molecular PESs, but does not necessarily hold for artificial PESs, such as those that are by construction globally quadratic. Thanks Hans Wurst for pointing this out).&rdquo;</p>
 </blockquote>
@@ -11403,74 +11421,74 @@ M=\frac{1}{2}\bigg(2-n(MCDONO)+\sum_{j=1}^{n_{SOMO}}|n(j)-1|  +n(MCUNO)\bigg)
 <tr>
 <th></th>
 <th>Exp.</th>
-<th style="text-align: center;">def2-tzvp</th>
-<th style="text-align: center;">def2-tzvpd</th>
-<th style="text-align: center;">cc-pvdz</th>
-<th style="text-align: center;">aug-cc-pvdz</th>
-<th style="text-align: center;">cc-pvtz</th>
-<th style="text-align: center;">aug-cc-pvtz</th>
+<th align="center">def2-tzvp</th>
+<th align="center">def2-tzvpd</th>
+<th align="center">cc-pvdz</th>
+<th align="center">aug-cc-pvdz</th>
+<th align="center">cc-pvtz</th>
+<th align="center">aug-cc-pvtz</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CASSCF 0 &rarr; 1</td>
 <td>1.77</td>
-<td style="text-align: center;">2.74</td>
-<td style="text-align: center;">2.73</td>
-<td style="text-align: center;">2.21</td>
-<td style="text-align: center;">2.44</td>
-<td style="text-align: center;">2.81</td>
-<td style="text-align: center;">2.43</td>
+<td align="center">2.74</td>
+<td align="center">2.73</td>
+<td align="center">2.21</td>
+<td align="center">2.44</td>
+<td align="center">2.81</td>
+<td align="center">2.43</td>
 </tr>
 <tr>
 <td>CASSCF 0 &rarr; 2</td>
 <td>3.56</td>
-<td style="text-align: center;">4.76</td>
-<td style="text-align: center;">4.75</td>
-<td style="text-align: center;">4.50</td>
-<td style="text-align: center;">4.59</td>
-<td style="text-align: center;">4.84</td>
-<td style="text-align: center;">4.59</td>
+<td align="center">4.76</td>
+<td align="center">4.75</td>
+<td align="center">4.50</td>
+<td align="center">4.59</td>
+<td align="center">4.84</td>
+<td align="center">4.59</td>
 </tr>
 <tr>
 <td>CASSCF 2 &rarr; 0</td>
 <td>3.36</td>
-<td style="text-align: center;">3.70</td>
-<td style="text-align: center;">3.68</td>
-<td style="text-align: center;">3.77</td>
-<td style="text-align: center;">3.70</td>
-<td style="text-align: center;">3.77</td>
-<td style="text-align: center;"><span style='color:red;'>dnf</span></td>
+<td align="center">3.70</td>
+<td align="center">3.68</td>
+<td align="center">3.77</td>
+<td align="center">3.70</td>
+<td align="center">3.77</td>
+<td align="center"><span style='color:red;'>dnf</span></td>
 </tr>
 <tr>
 <td>NEVPT2 0 &rarr; 1</td>
 <td>1.77</td>
-<td style="text-align: center;">2.78</td>
-<td style="text-align: center;">2.77</td>
-<td style="text-align: center;">2.52</td>
-<td style="text-align: center;">2.42</td>
-<td style="text-align: center;">2.81</td>
-<td style="text-align: center;">2.42</td>
+<td align="center">2.78</td>
+<td align="center">2.77</td>
+<td align="center">2.52</td>
+<td align="center">2.42</td>
+<td align="center">2.81</td>
+<td align="center">2.42</td>
 </tr>
 <tr>
 <td>NEVPT2 0 &rarr; 2</td>
 <td>3.56</td>
-<td style="text-align: center;">4.58</td>
-<td style="text-align: center;">4.56</td>
-<td style="text-align: center;">4.34</td>
-<td style="text-align: center;">4.23</td>
-<td style="text-align: center;">4.59</td>
-<td style="text-align: center;">4.23</td>
+<td align="center">4.58</td>
+<td align="center">4.56</td>
+<td align="center">4.34</td>
+<td align="center">4.23</td>
+<td align="center">4.59</td>
+<td align="center">4.23</td>
 </tr>
 <tr>
 <td>NEVPT2 2 &rarr; 0</td>
 <td>3.36</td>
-<td style="text-align: center;">3.81</td>
-<td style="text-align: center;">3.94</td>
-<td style="text-align: center;">3.85</td>
-<td style="text-align: center;">3.74</td>
-<td style="text-align: center;">3.85</td>
-<td style="text-align: center;"><span style='color:red;'>dnf</span></td>
+<td align="center">3.81</td>
+<td align="center">3.94</td>
+<td align="center">3.85</td>
+<td align="center">3.74</td>
+<td align="center">3.85</td>
+<td align="center"><span style='color:red;'>dnf</span></td>
 </tr>
 </tbody>
 </table>
@@ -11480,82 +11498,82 @@ M=\frac{1}{2}\bigg(2-n(MCDONO)+\sum_{j=1}^{n_{SOMO}}|n(j)-1|  +n(MCUNO)\bigg)
 <tr>
 <th></th>
 <th>Exp.</th>
-<th style="text-align: center;">cc-pvtz</th>
-<th style="text-align: center;">aug-cc-pvtz</th>
+<th align="center">cc-pvtz</th>
+<th align="center">aug-cc-pvtz</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CASSCF 0 &rarr; 1</td>
 <td>1.77</td>
-<td style="text-align: center;">1.94</td>
-<td style="text-align: center;">1.93</td>
+<td align="center">1.94</td>
+<td align="center">1.93</td>
 </tr>
 <tr>
 <td>CASSCF 0 &rarr; 2</td>
 <td>3.56</td>
-<td style="text-align: center;">4.39</td>
-<td style="text-align: center;">4.38</td>
+<td align="center">4.39</td>
+<td align="center">4.38</td>
 </tr>
 <tr>
 <td>CASSCF 2 &rarr; 0</td>
 <td>3.36</td>
-<td style="text-align: center;">3.54</td>
-<td style="text-align: center;">5.87</td>
+<td align="center">3.54</td>
+<td align="center">5.87</td>
 </tr>
 <tr>
 <td>CASPT2 0 &rarr; 1</td>
 <td>1.77</td>
-<td style="text-align: center;">2.05</td>
-<td style="text-align: center;">2.04</td>
+<td align="center">2.05</td>
+<td align="center">2.04</td>
 </tr>
 <tr>
 <td>CASPT2 0 &rarr; 2</td>
 <td>3.56</td>
-<td style="text-align: center;">3.85</td>
-<td style="text-align: center;">4.08</td>
+<td align="center">3.85</td>
+<td align="center">4.08</td>
 </tr>
 <tr>
 <td>CASPT2 2 &rarr; 0</td>
 <td>3.36</td>
-<td style="text-align: center;">3.40</td>
-<td style="text-align: center;">3.53</td>
+<td align="center">3.40</td>
+<td align="center">3.53</td>
 </tr>
 <tr>
 <td>NEVPT2 0 &rarr; 1</td>
 <td>1.77</td>
-<td style="text-align: center;">2.30</td>
-<td style="text-align: center;">2.29</td>
+<td align="center">2.30</td>
+<td align="center">2.29</td>
 </tr>
 <tr>
 <td>NEVPT2 0 &rarr; 2</td>
 <td>3.56</td>
-<td style="text-align: center;">4.06</td>
-<td style="text-align: center;">4.04</td>
+<td align="center">4.06</td>
+<td align="center">4.04</td>
 </tr>
 <tr>
 <td>NEVPT2 2 &rarr; 0</td>
 <td>3.36</td>
-<td style="text-align: center;">3.65</td>
-<td style="text-align: center;">3.54</td>
+<td align="center">3.65</td>
+<td align="center">3.54</td>
 </tr>
 <tr>
 <td>QDNEVPT2 0 &rarr; 1</td>
 <td>1.77</td>
-<td style="text-align: center;">2.44</td>
-<td style="text-align: center;">2.43</td>
+<td align="center">2.44</td>
+<td align="center">2.43</td>
 </tr>
 <tr>
 <td>QDNEVPT2 0 &rarr; 2</td>
 <td>3.56</td>
-<td style="text-align: center;">3.93</td>
-<td style="text-align: center;">3.92</td>
+<td align="center">3.93</td>
+<td align="center">3.92</td>
 </tr>
 <tr>
 <td>QDNEVPT2 2 &rarr; 0</td>
 <td>3.36</td>
-<td style="text-align: center;">3.64</td>
-<td style="text-align: center;">3.56</td>
+<td align="center">3.64</td>
+<td align="center">3.56</td>
 </tr>
 </tbody>
 </table>
@@ -11568,34 +11586,34 @@ M=\frac{1}{2}\bigg(2-n(MCDONO)+\sum_{j=1}^{n_{SOMO}}|n(j)-1|  +n(MCUNO)\bigg)
 <tr>
 <th></th>
 <th>Exp.</th>
-<th style="text-align: center;">def2-tzvp - ss - regular conv</th>
-<th style="text-align: center;">def2-tzvp -  tight conv</th>
+<th align="center">def2-tzvp - ss - regular conv</th>
+<th align="center">def2-tzvp -  tight conv</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CASSCF 0 &rarr; 1</td>
 <td>1.77</td>
-<td style="text-align: center;">3.02</td>
-<td style="text-align: center;">3.01</td>
+<td align="center">3.02</td>
+<td align="center">3.01</td>
 </tr>
 <tr>
 <td>CASSCF 0 &rarr; 2</td>
 <td>3.56</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;">5.16</td>
+<td align="center">5.16</td>
+<td align="center">5.16</td>
 </tr>
 <tr>
 <td>NEVPT2 0 &rarr; 1</td>
 <td>1.77</td>
-<td style="text-align: center;">2.91</td>
-<td style="text-align: center;">2.91</td>
+<td align="center">2.91</td>
+<td align="center">2.91</td>
 </tr>
 <tr>
 <td>NEVPT2 0 &rarr; 2</td>
 <td>3.56</td>
-<td style="text-align: center;">4.67</td>
-<td style="text-align: center;">4.67</td>
+<td align="center">4.67</td>
+<td align="center">4.67</td>
 </tr>
 </tbody>
 </table>
@@ -11603,80 +11621,78 @@ M=\frac{1}{2}\bigg(2-n(MCDONO)+\sum_{j=1}^{n_{SOMO}}|n(j)-1|  +n(MCUNO)\bigg)
 <table>
 <thead>
 <tr>
-<th style="text-align: center;"></th>
+<th align="center"></th>
 <th>Exp.</th>
-<th style="text-align: center;">def2-tzvp - 3 states</th>
-<th style="text-align: center;">def2-tzvp - 10 states</th>
-<th style="text-align: center;">def2-tzvp - 20 states</th>
+<th align="center">def2-tzvp - 3 states</th>
+<th align="center">def2-tzvp - 10 states</th>
+<th align="center">def2-tzvp - 20 states</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">CASSCF 0 &rarr; 1</td>
+<td align="center">CASSCF 0 &rarr; 1</td>
 <td>1.77</td>
-<td style="text-align: center;">2.74</td>
-<td style="text-align: center;">2.68</td>
-<td style="text-align: center;">2.57</td>
+<td align="center">2.74</td>
+<td align="center">2.68</td>
+<td align="center">2.57</td>
 </tr>
 <tr>
-<td style="text-align: center;">CASSCF 0 &rarr; 2</td>
+<td align="center">CASSCF 0 &rarr; 2</td>
 <td>3.56</td>
-<td style="text-align: center;">4.76</td>
-<td style="text-align: center;">4.81</td>
-<td style="text-align: center;">4.72</td>
+<td align="center">4.76</td>
+<td align="center">4.81</td>
+<td align="center">4.72</td>
 </tr>
 <tr>
-<td style="text-align: center;">CASSCF 2 &rarr; 0</td>
+<td align="center">CASSCF 2 &rarr; 0</td>
 <td>3.36</td>
-<td style="text-align: center;">3.70</td>
-<td style="text-align: center;">3.87</td>
-<td style="text-align: center;">3.66</td>
+<td align="center">3.70</td>
+<td align="center">3.87</td>
+<td align="center">3.66</td>
 </tr>
 <tr>
-<td style="text-align: center;">NEVPT2 0 &rarr; 1</td>
+<td align="center">NEVPT2 0 &rarr; 1</td>
 <td>1.77</td>
-<td style="text-align: center;">2.78</td>
-<td style="text-align: center;">2.59</td>
-<td style="text-align: center;">2.56</td>
+<td align="center">2.78</td>
+<td align="center">2.59</td>
+<td align="center">2.56</td>
 </tr>
 <tr>
-<td style="text-align: center;">NEVPT2 0 &rarr; 2</td>
+<td align="center">NEVPT2 0 &rarr; 2</td>
 <td>3.56</td>
-<td style="text-align: center;">4.58</td>
-<td style="text-align: center;">4.23</td>
-<td style="text-align: center;">4.19</td>
+<td align="center">4.58</td>
+<td align="center">4.23</td>
+<td align="center">4.19</td>
 </tr>
 <tr>
-<td style="text-align: center;">NEVPT2 2 &rarr; 0</td>
+<td align="center">NEVPT2 2 &rarr; 0</td>
 <td>3.36</td>
-<td style="text-align: center;">3.81</td>
-<td style="text-align: center;">3.88</td>
-<td style="text-align: center;">3.72</td>
+<td align="center">3.81</td>
+<td align="center">3.88</td>
+<td align="center">3.72</td>
 </tr>
 <tr>
-<td style="text-align: center;">M-diagnostic</td>
+<td align="center">M-diagnostic</td>
 <td></td>
-<td style="text-align: center;">0.86/0.89</td>
-<td style="text-align: center;">0.914/0.78</td>
-<td style="text-align: center;">0.93/0.86</td>
+<td align="center">0.86/0.89</td>
+<td align="center">0.914/0.78</td>
+<td align="center">0.93/0.86</td>
 </tr>
 </tbody>
 </table>
 <p>I had a chat with Sakol, and he really helped me with my intro structure. After this HPC seminar, I&rsquo;ll need to sink my teeth in to writing.</p>
 <h2 id="to-dos">To Dos<a class="headerlink" href="#to-dos" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Start on IPR</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read cLR geom paper <a href="https://doi.org/10.1039/C4CP03919J">10.1039/C4CP03919J</a></p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write geom LERPing script</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write notes on <strong>each</strong> fluorophore in the dataset</p>
-</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Start on IPR</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read cLR geom paper <a href="https://doi.org/10.1039/C4CP03919J">10.1039/C4CP03919J</a></li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write geom LERPing script</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write notes on <strong>each</strong> fluorophore in the dataset<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Rhodamine 800</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> NDI</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Napthalamide</li>
@@ -11690,61 +11706,65 @@ M=\frac{1}{2}\bigg(2-n(MCDONO)+\sum_{j=1}^{n_{SOMO}}|n(j)-1|  +n(MCUNO)\bigg)
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Indigo Carmine</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 1-aminoanthraquinone</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 7-azaindole</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Anthracene</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Anthracene</li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Exclude species that we don&rsquo;t want</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Investigate potential new species list</p>
-</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Exclude species that we don&rsquo;t want</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Investigate potential new species list</li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Develop a casscf/caspt2 workflow for my fluorophore testing</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Once the dataset is finalised, identify the active spaces for the molecules with IBOView</p>
-</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Once the dataset is finalised, identify the active spaces for the molecules with IBOView</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Then do some basis set benchmarking</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Try linearly interpolating between states</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Try linearly interpolating between states</li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Write proposal for project change</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="http://emilygraceripka.com/blog/16">Gaussian deconvolution in python</a></p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab induction and key request</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Email Rosie about equipment training</p>
-</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Write proposal for project change</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="http://emilygraceripka.com/blog/16">Gaussian deconvolution in python</a></li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab induction and key request</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Email Rosie about equipment training</li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <mark>test this^</mark> (do you need a CASSCI job to feed the NEVPT2 job, or is CASSCF enough?)</p>
-</li>
-<li>
-<p>SS-CASSCF opt for geom</p>
-</li>
+<ol>
+<li>SS-CASSCF opt for geom</li>
 <li>SA-CASSCF to optimise orbitals</li>
-<li>
-<p>CASCI with nstates to get all the states out</p>
+<li>CASCI with nstates to get all the states out</li>
+</ol>
 </li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Read up on the 0-0 transition form intersection of spectra</p>
+<ul>
+<li>I can&rsquo;t find the origins of this idea, but it looks like you have to normalise the fluorescence to the absorbance to make it work</li>
+</ul>
 </li>
-<li>
-<p>I can&rsquo;t find the origins of this idea, but it looks like you have to normalise the fluorescence to the absorbance to make it work</p>
-</li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Look into &ldquo;linear interpolation of internal coordinates&rdquo; to search for crossing points.</p>
-</li>
-<li>
-<p>This seems to just be linearly interpolating form one state geometry to another in both excited states, checking the energy at each step and seeing if there&rsquo;s any intersections in the PES.</p>
-</li>
+<ul>
+<li>This seems to just be linearly interpolating form one state geometry to another in both excited states, checking the energy at each step and seeing if there&rsquo;s any intersections in the PES.</li>
 <li>If there&rsquo;s no crossing, I guess that means that any vibrational relaxation requires some other energy input than just the photon.</li>
 <li>It looks like you can check for <span class="arithmatex">\(s_n \to t_n\)</span> intersystem crossing this way as well.</li>
+</ul>
+</li>
 </ul>
 <h2 id="papers">Papers<a class="headerlink" href="#papers" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">COSMO double cavity</label></div>

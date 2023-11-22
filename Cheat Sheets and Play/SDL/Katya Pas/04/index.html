@@ -11026,22 +11026,20 @@ E(HF)=\sum\limits_{i=1}^{N}\epsilon+\frac{1}{2}J-K
 \]</div>
 <p>The Fock equation returns three components</p>
 <ul>
-<li>
-<p>The HF energy</p>
-</li>
-<li>
-<p>The energies of all the orbitals (occupied and unoccupied)</p>
-</li>
-<li>
-<p>All the MOs from the basis sets</p>
-</li>
+<li>The HF energy</li>
+</ul>
+<ul>
+<li>The energies of all the orbitals (occupied and unoccupied)</li>
+</ul>
+<ul>
+<li>All the MOs from the basis sets</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">MOs are not real</p>
 <p>It&rsquo;s worth being aware that MOs are not a real entity. They are the product basis sets of the QM calculation. The nature of having discrete electrons in discrete orbitals breaks the fundamental principles of quantum mechanics that state that electrons don&rsquo;t really exist as particles. While we can get an idea of the electron density an we can use MOs to understand some properties of reactivity, they are fundamentally not something real.</p>
 </div>
 <h2 id="rhf-rohf-and-uhf">RHF, ROHF and UHF<a class="headerlink" href="#rhf-rohf-and-uhf" title="Permanent link">&para;</a></h2>
-<p><img alt="!" class="center" src="https://d3i71xaburhd42.cloudfront.net/cdcebaf6681432a43222e13ab606efabe5aadd65/21-Figure2.1-1.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="" href="https://d3i71xaburhd42.cloudfront.net/cdcebaf6681432a43222e13ab606efabe5aadd65/21-Figure2.1-1.png"><img alt="" class="center" src="https://d3i71xaburhd42.cloudfront.net/cdcebaf6681432a43222e13ab606efabe5aadd65/21-Figure2.1-1.png" style="width: 50%; " /></a></div></p>
 <p>RHF is appropriate for closed shell systems, where all the electrons are paired. for UHF, the SCF is calculated once for <span class="arithmatex">\(\alpha\)</span> (spin up) orbitals and a second time for <span class="arithmatex">\(\beta\)</span> (spin down) orbitals. Since there will be a different amount of electrons in each, the resulting energies will be different between the <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> orbitals.</p>
 <h3 id="spin-contamination">Spin Contamination<a class="headerlink" href="#spin-contamination" title="Permanent link">&para;</a></h3>
 <p>This error is known as &ldquo;spin contamination&rdquo; and can be quantified to detemrine how bad it is. The QM package will spit out a value of the spin contamination (<span class="arithmatex">\(\langle s^2\rangle\)</span>) that we can compare to our theoretical limit.</p>
@@ -11056,48 +11054,48 @@ E(HF)=\sum\limits_{i=1}^{N}\epsilon+\frac{1}{2}J-K
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Method</th>
-<th style="text-align: center;">RHF</th>
-<th style="text-align: center;">ROHF</th>
-<th style="text-align: center;">UHF</th>
+<th align="left">Method</th>
+<th align="center">RHF</th>
+<th align="center">ROHF</th>
+<th align="center">UHF</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">For systems with Multiplicity:</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">Any</td>
-<td style="text-align: center;">Any</td>
+<td align="left">For systems with Multiplicity:</td>
+<td align="center">1</td>
+<td align="center">Any</td>
+<td align="center">Any</td>
 </tr>
 <tr>
-<td style="text-align: left;">Do <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> orbitals have the same spacial component</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">For multiplicity 1 yes, otherwise no</td>
+<td align="left">Do <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> orbitals have the same spacial component</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">For multiplicity 1 yes, otherwise no</td>
 </tr>
 <tr>
-<td style="text-align: left;">Relative energy for multiplicity 1</td>
-<td style="text-align: center;">Identical</td>
-<td style="text-align: center;">Identical</td>
-<td style="text-align: center;">Identical</td>
+<td align="left">Relative energy for multiplicity 1</td>
+<td align="center">Identical</td>
+<td align="center">Identical</td>
+<td align="center">Identical</td>
 </tr>
 <tr>
-<td style="text-align: left;">Relative energy for multiplicity &gt;1</td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;">Higher than E(UHF)</td>
-<td style="text-align: center;">Lower than E(ROHF)</td>
+<td align="left">Relative energy for multiplicity &gt;1</td>
+<td align="center">N/A</td>
+<td align="center">Higher than E(UHF)</td>
+<td align="center">Lower than E(ROHF)</td>
 </tr>
 <tr>
-<td style="text-align: left;">Advantages (multiplicity &gt; 1)</td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;">Simple orbital analysis<br/>Spin of the system is correct</td>
-<td style="text-align: center;">Energy is lower than E(ROHF)</td>
+<td align="left">Advantages (multiplicity &gt; 1)</td>
+<td align="center">N/A</td>
+<td align="center">Simple orbital analysis<br/>Spin of the system is correct</td>
+<td align="center">Energy is lower than E(ROHF)</td>
 </tr>
 <tr>
-<td style="text-align: left;">Disadvantages (multiplicity &gt; 1)</td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;">Energy is higher than E(RHF)</td>
-<td style="text-align: center;">Spin of the system is not correct</td>
+<td align="left">Disadvantages (multiplicity &gt; 1)</td>
+<td align="center">N/A</td>
+<td align="center">Energy is higher than E(RHF)</td>
+<td align="center">Spin of the system is not correct</td>
 </tr>
 </tbody>
 </table>

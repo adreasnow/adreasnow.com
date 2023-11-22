@@ -10807,18 +10807,24 @@ P(r)=e^{\frac{-E(q,p)}{k_BT}}
 <h2 id="metropolis-monte-carlo">Metropolis Monte Carlo<a class="headerlink" href="#metropolis-monte-carlo" title="Permanent link">&para;</a></h2>
 <p>A lower energy geometry will ultimately have a higher population distribution</p>
 <ol>
-<li>Pick a starting geometry, propose a change and calculate that change&rsquo;s energy</li>
+<li>Pick a starting geometry, propose a change and calculate that change&rsquo;s energy<ul>
 <li><span class="arithmatex">\(r_1\ce{-&gt;} r_2\)</span></li>
-<li>If the energy of the new geometry is less than the energy of the initial geometry, you accept the change</li>
+</ul>
+</li>
+<li>If the energy of the new geometry is less than the energy of the initial geometry, you accept the change<ul>
 <li>if: <span class="arithmatex">\(-E(r_1)&lt;-E(r_2)\)</span></li>
-<li>Otherwise you calculate the probability and compare it to a randomly generated number and if it&rsquo;s greater than that, you can also accept it</li>
+</ul>
+</li>
+<li>Otherwise you calculate the probability and compare it to a randomly generated number and if it&rsquo;s greater than that, you can also accept it<ul>
 <li>elif: <span class="arithmatex">\(e^{\frac{-U(r_1)-U(r_2)}{k_BT}}&gt;random \#\:\varepsilon[0,1]\)</span></li>
+</ul>
+</li>
 <li>Otherwise you reject the change and iterate again</li>
 </ol>
-<p><img alt="!image" class="center" src="../MMFF2-MC.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MMFF2-MC.png"><img alt="image" class="center" src="../MMFF2-MC.png" style="width: 50%; " /></a></div></p>
 <h2 id="simulated-annealing">Simulated Annealing<a class="headerlink" href="#simulated-annealing" title="Permanent link">&para;</a></h2>
 <p>We start the Monte Carlo simulation at a really high temperature and gradually decrease it. If we do this infinitely slow enough, we should easily be able to fall into the global minima</p>
-<p><img alt="!image" class="center" src="../MMFF2-SA.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MMFF2-SA.png"><img alt="image" class="center" src="../MMFF2-SA.png" style="width: 50%; " /></a></div></p>
 <h2 id="molecular-dynamics-md">Molecular Dynamics (MD)<a class="headerlink" href="#molecular-dynamics-md" title="Permanent link">&para;</a></h2>
 <p>We solve classical (newtonian) equations of motion to calculate the behaviour of the atoms</p>
 <ul>
@@ -10827,7 +10833,7 @@ P(r)=e^{\frac{-E(q,p)}{k_BT}}
 <p>The logic goes that if we do this for long enough, we&rsquo;ll sample phase space in a weighted way</p>
 <h2 id="high-energy-quenching">High Energy Quenching<a class="headerlink" href="#high-energy-quenching" title="Permanent link">&para;</a></h2>
 <p>Make a list of minima by randomly heating the system and occasionally cooling it rapidly to see where it lands</p>
-<p><img alt="!image" class="center" src="../MMFF2-HEQ.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MMFF2-HEQ.png"><img alt="image" class="center" src="../MMFF2-HEQ.png" style="width: 50%; " /></a></div></p>
 
 
   

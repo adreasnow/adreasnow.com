@@ -10789,60 +10789,74 @@
 <h1 id="vibrational-spectra">Vibrational Spectra<a class="headerlink" href="#vibrational-spectra" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Is a really important tool to calculate:
-<img alt="!image" class="right" src="../VS1.png" style="width: 30%; " /></li>
+<div class="lightgallery"><a data-sub-html="image" href="../VS1.png"><img alt="image" class="right" src="../VS1.png" style="width: 30%; " /></a></div><ul>
 <li>IR spectra</li>
 <li>Raman spectra</li>
 <li>ZPE</li>
 <li>Thermochemical properties</li>
 <li>Reaction rate coefficients</li>
 <li>Isotopic substitution effects</li>
-<li>
-<p>Tunnelling corrections</p>
+<li>Tunnelling corrections</li>
+</ul>
 </li>
-<li>
-<p>IR and Raman are complementary to each other
-<img alt="!image" class="right" src="../VS2.png" style="width: 30%; " /></p>
-</li>
+</ul>
+<ul>
+<li>IR and Raman are complementary to each other
+<div class="lightgallery"><a data-sub-html="image" href="../VS2.png"><img alt="image" class="right" src="../VS2.png" style="width: 30%; " /></a></div><ul>
 <li>Ramen is the de-excitation process, where are IR is the excitation<ul>
 <li>Think IR=UV-Vis, Raman=fluorescence</li>
 </ul>
 </li>
-<li>Vibrational calculations are really important for thermochemical calculations, as the electronic energy is devoid of real world influences</li>
+</ul>
+</li>
+<li>Vibrational calculations are really important for thermochemical calculations, as the electronic energy is devoid of real world influences<ul>
 <li>E+ZPE is equal to <span class="arithmatex">\(\nu\)</span>=0,x note that in the diagram, this is the difference between <span class="arithmatex">\(r_e\)</span> and <span class="arithmatex">\(r_0\)</span>, the geometric oscillation triggered by the zero point energy that permeates through all of spacetime<ul>
 <li>Anything with a subscript e is the  calculated result, and subscript O is experimental (observed)</li>
 </ul>
 </li>
 <li>The excitations that come out of vibrational calculations are calculated as harmonic, before a correction is applied to make them behave in a Morse/anharmonic fashion.</li>
 </ul>
+</li>
+</ul>
 <h2 id="franck-condon-states">Franck-Condon States<a class="headerlink" href="#franck-condon-states" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Describe why vibrational spectra can never exist in discreet bands, such as with AAS/AES
-<img alt="!image" class="right" src="../VS3.png" style="width: 30%; " /></li>
-<li>The geometry of the bond will spend most of its time near the extremes of its vibration, as it’s slowing down and reversing direction, this means that the majority of the excitations will be to a particular excited state</li>
+<div class="lightgallery"><a data-sub-html="image" href="../VS3.png"><img alt="image" class="right" src="../VS3.png" style="width: 30%; " /></a></div></li>
+<li>The geometry of the bond will spend most of its time near the extremes of its vibration, as it’s slowing down and reversing direction, this means that the majority of the excitations will be to a particular excited state<ul>
 <li>In the diagram, the transitions will only ever happen exactly vertically, but where they will come from and go to will depend on the statistical distribution of the geometry at that particular moment</li>
+</ul>
+</li>
 <li>This is because much like in the BO approximation, the electrons move so fast that the nuclear movement is negligible in comparison</li>
 <li>This primarily denotes the peak distribution of the fine rotational states in between the vibrational states and will describe the intensity of their peaks accordingly.
-<img alt="!image" class="right" src="../VS4.png" style="width: 50%; " /></li>
+<div class="lightgallery"><a data-sub-html="image" href="../VS4.png"><img alt="image" class="right" src="../VS4.png" style="width: 50%; " /></a></div></li>
 </ul>
 <h2 id="computing-vibrational-spectra">Computing vibrational spectra<a class="headerlink" href="#computing-vibrational-spectra" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The rotational constants (<span class="arithmatex">\(R_A\)</span>, <span class="arithmatex">\(R_B\)</span> and <span class="arithmatex">\(R_C\)</span>) give us a sense of the proportions of the geometry</li>
+<li>The rotational constants (<span class="arithmatex">\(R_A\)</span>, <span class="arithmatex">\(R_B\)</span> and <span class="arithmatex">\(R_C\)</span>) give us a sense of the proportions of the geometry<ul>
 <li>A, B, C are akin to X, Y and Z</li>
-<li><span class="arithmatex">\(\mu\)</span> is the permanent dipole moment</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(\mu\)</span> is the permanent dipole moment<ul>
 <li><span class="arithmatex">\(\mu\neq 0\)</span> means that the molecule is IR active</li>
 <li><span class="arithmatex">\(\mu=0\)</span> can still have IR activity, but it is not guaranteed</li>
 <li>Symmetric molecules such as <span class="arithmatex">\(CO_2\)</span>  can still have asymmetric vibrations</li>
+</ul>
+</li>
 <li><span class="arithmatex">\(\mu_T\)</span>  is the transition dipole, the dipole created by vibrational excitation</li>
 </ul>
 <h2 id="how-to-calculate">How to calculate:<a class="headerlink" href="#how-to-calculate" title="Permanent link">&para;</a></h2>
 <ol>
-<li>We need to calculate the relevant molecular properties</li>
+<li>We need to calculate the relevant molecular properties<ul>
 <li>Geometry</li>
 <li>Force constants</li>
 <li>Electronic energy states</li>
-<li>This information can be used to calculate the spectra</li>
+</ul>
+</li>
+<li>This information can be used to calculate the spectra<ul>
 <li>Transition frequencies (energies)</li>
 <li>Intensities </li>
+</ul>
+</li>
 <li>Assigning peaks and DFT scaling</li>
 <li>Comparison to the experiment</li>
 </ol>
@@ -10853,14 +10867,14 @@
 </ul>
 <h2 id="thermochemistry">Thermochemistry<a class="headerlink" href="#thermochemistry" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Freq calcs are based on:</li>
+<li>Freq calcs are based on:<ul>
 <li><span class="arithmatex">\(0K\)</span> at gas phase for vibrational frequencies</li>
-<li>
-<p><span class="arithmatex">\(298.1K /1.0atm\)</span> standard state for thermochemical frequencies</p>
+<li><span class="arithmatex">\(298.1K /1.0atm\)</span> standard state for thermochemical frequencies</li>
+</ul>
 </li>
-<li>
-<p><span class="arithmatex">\(E_tot\)</span>  is the electronic energy calculated by the theoretical model</p>
-</li>
+</ul>
+<ul>
+<li><span class="arithmatex">\(E_tot\)</span>  is the electronic energy calculated by the theoretical model</li>
 <li><span class="arithmatex">\(ZPE\)</span> is the zero point vibrational energy that permeates through all of space</li>
 <li><span class="arithmatex">\(E_O=E_{tot}+ZPE\)</span></li>
 </ul>

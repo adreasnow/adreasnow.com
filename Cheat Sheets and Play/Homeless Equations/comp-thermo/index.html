@@ -10897,7 +10897,7 @@ k_{eq}&amp;&gt;&gt;&gt;1
 <p><mark>As a shortcut, we can also say that kinetcs favours the acid with the higher <span class="arithmatex">\(pK_a\)</span>, and as there&rsquo;s a big difference between the two, the reactants will be favoured over the reagents</mark></p>
 </details>
 <h2 id="calculating-pk_a-from-thermodynamics-calculations">Calculating <span class="arithmatex">\(pK_a\)</span> From Thermodynamics Calculations<a class="headerlink" href="#calculating-pk_a-from-thermodynamics-calculations" title="Permanent link">&para;</a></h2>
-<p><img alt="!pkascheme" class="center" src="../pkascheme.svg" style="width: 80%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="pkascheme" href="../pkascheme.svg"><img alt="pkascheme" class="center" src="../pkascheme.svg" style="width: 80%; " /></a></div></p>
 <p>Using &lsquo;the proton exchange method&rsquo; from <a href="http://link.springer.com/10.1007/s00214-009-0667-0">A universal approach for continuum solvent <span class="arithmatex">\(pK_a\)</span> calculations: are we there yet?</a> (Ho and Coote 2010), we can use a reference species with a known <span class="arithmatex">\(pK_a\)</span>to act as our proton acceptor, this will give us the reference <span class="arithmatex">\(pK_a(\text{HRef})\)</span>.</p>
 <div class="arithmatex">\[
 \begin{align}
@@ -11003,9 +11003,11 @@ A&amp;=\frac{k_BT}{h}\exp{\bigg(\frac{1+\Delta S^{\circ\ddagger}}{R}\bigg)}
 <ul>
 <li><span class="arithmatex">\(V^\ddagger=\)</span> Activation energy (this is formally <span class="arithmatex">\(V_0=E^\ddagger-E_i\)</span>)</li>
 <li><span class="arithmatex">\(V=\max(V_1,0)\)</span> (formally <span class="arithmatex">\(V_2\)</span>); where <span class="arithmatex">\(V_1=\max\big([E_f-E_i],0\big)\)</span></li>
-<li><span class="arithmatex">\(\text{Im}(\nu^\ddagger)=\)</span> Magnitude of the imaginary frequency of the transition state</li>
+<li><span class="arithmatex">\(\text{Im}(\nu^\ddagger)=\)</span> Magnitude of the imaginary frequency of the transition state<ul>
 <li>Note that this needs to be the frequency in <span class="arithmatex">\(Hz\)</span> or <span class="arithmatex">\(s^{-1}\)</span>, so you&rsquo;ll need to convert it from <span class="arithmatex">\(\tilde\nu(cm^{-1})\)</span> as <span class="arithmatex">\(\nu(s^{-1})=\frac{c\cdot100}{\tilde\nu(cm^{-1})^{-1}}\)</span></li>
 <li>Also note that the frequency is temperature dependent, so this can&rsquo;t be extrapolated beyond the temperature of the calculation. </li>
+</ul>
+</li>
 </ul>
 <div class="arithmatex">\[
 \begin{align}

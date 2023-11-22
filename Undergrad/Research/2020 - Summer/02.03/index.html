@@ -10771,15 +10771,15 @@
 <p>I checked the jobs that ran over the weekend:</p>
 <ul>
 <li>All the SAPT jobs failed</li>
-<li>The Ion Pairs: </li>
+<li>The Ion Pairs: <ul>
 <li>Timed out</li>
 <li>Linear angles</li>
-<li>
-<p>Link 9999 error</p>
+<li>Link 9999 error</li>
+</ul>
 </li>
-<li>
-<p>Both the PES jobs failed</p>
-</li>
+</ul>
+<ul>
+<li>Both the PES jobs failed</li>
 </ul>
 <p>I pulled the output geometry of the failed opt jobs and put them into new input files and resubmitted them to the cluster <img alt="🤞" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f91e.svg" title=":crossed_fingers:" /></p>
 <p>For the Pd PES jobs, I restarted them with more SOSCF iterations (10) and increased the threshold from <code>5.0e-3</code> to <code>5.0e-5</code></p>

@@ -10819,12 +10819,10 @@
 <h2 id="rules-for-explicit-solvation">Rules for explicit solvation<a class="headerlink" href="#rules-for-explicit-solvation" title="Permanent link">&para;</a></h2>
 <h3 id="1-it-takes-a-lot-of-solvent-molecules-to-look-like-a-solution">1. It takes a LOT of solvent molecules to look like a solution<a class="headerlink" href="#1-it-takes-a-lot-of-solvent-molecules-to-look-like-a-solution" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p>too few and it looks like a cluster, which is not a solution</p>
-</li>
-<li>
-<p>This makes it incredibly expensive</p>
-</li>
+<li>too few and it looks like a cluster, which is not a solution</li>
+</ul>
+<ul>
+<li>This makes it incredibly expensive</li>
 <li>We have tools to make this more simple - PBC, Ewald sums, QM/MM, split basis?</li>
 </ul>
 <h3 id="benefits">Benefits:<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
@@ -10835,21 +10833,21 @@
 <h4 id="eg-solvation-of-trna">E.g. Solvation of tRNA<a class="headerlink" href="#eg-solvation-of-trna" title="Permanent link">&para;</a></h4>
 <p>In this example, we can see that while there is typically only favourable solvation along the <span class="arithmatex">\(\ce{PO4}\)</span> spine in RNA (<strong>2AA:IsoC</strong> and <strong>G:C</strong>), in this case (<strong>G:U</strong>), we have hydration in the typically hydrophobic minor groove.</p>
 <p>This extra solvation also correlates with enzymatic methylation of the base pair in this particular species.</p>
-<p><img alt="!image" class="center" src="../2.1.png" style="width: 60%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../2.1.png"><img alt="image" class="center" src="../2.1.png" style="width: 60%; " /></a></div></p>
 <h3 id="2-equilibrium-properties-eg-free-energies-require-averaging-over-phase-space-mmmd">2. Equilibrium properties (e.g. free energies) require averaging over phase space (MM/MD)<a class="headerlink" href="#2-equilibrium-properties-eg-free-energies-require-averaging-over-phase-space-mmmd" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p>There are far too many minima if we do this though optimisation, making a QM-only solvation process near impossible to do rigorously</p>
-</li>
+<li>There are far too many minima if we do this though optimisation, making a QM-only solvation process near impossible to do rigorously</li>
+</ul>
+<ul>
 <li>
 <p>Solvation really should be done through MC or MD, until <a href="../../2.%20The%20PES/02.08/#quasi-ergodic-sampling-problem">ergodic</a> behaviour is identified.</p>
-</li>
-<li>
-<p>To make this more rigorous, different starting trajectories should be chosen and the system should converge to the same average geometry</p>
-</li>
+<ul>
+<li>To make this more rigorous, different starting trajectories should be chosen and the system should converge to the same average geometry</li>
 <li>This also allows for averages of flexible molecules with dynamic structures (particularly biopolymers)</li>
 <li>You could also choose a small portion of MD steps to then run QM calculations on, reducing the amount of possible configurations</li>
 <li>You can obtain structural details that are associated specifically with the solvation shell. Specific solvent-solute molecular interactions.</li>
+</ul>
+</li>
 </ul>
 <h3 id="radial-distribution-function">Radial distribution function<a class="headerlink" href="#radial-distribution-function" title="Permanent link">&para;</a></h3>
 <p>Tells us the distribution of distances between atoms <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. (The probability of finding an atom at distance <span class="arithmatex">\(r\)</span>)</p>
@@ -10866,7 +10864,7 @@
 \frac{1}{V}g_{AB}(r)=\frac{1}{N_A\cdot N_B}\bigg\langle\sum\limits_{i=1}^{N_A}\sum\limits_{j=1}^{N_B}\delta\big[r-r_{A_iB_j}\big]\bigg\rangle
 \]</div>
 <p>In the plot below, the distances (<span class="arithmatex">\(r\)</span>) of the shells of hydration are </p>
-<p><img alt="!image" class="center" src="../2.2.png" style="width: 60%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../2.2.png"><img alt="image" class="center" src="../2.2.png" style="width: 60%; " /></a></div></p>
 
 
   

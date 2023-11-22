@@ -11072,19 +11072,21 @@
 <p>I have a meeting with Toby today, which should be useful, and I&rsquo;ll be in the office for the whole day, so this could be a tiring one&hellip;</p>
 <h4 id="to-ask-toby">To ask Toby:<a class="headerlink" href="#to-ask-toby" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Is my dataset complete enough?</li>
+<li>Is my dataset complete enough?<ul>
 <li>Alexa Fluor 532</li>
 <li>Napthalamides</li>
 <li>Cyanine 5</li>
 <li>Fluorines</li>
+</ul>
+</li>
 <li>Is there more space of fluorophores we need to consider?</li>
-<li>
-<p>Would it be possible to get our own spectrochemical data?</p>
-</li>
-<li>
-<p>Interesting BODIPY:</p>
-</li>
+<li>Would it be possible to get our own spectrochemical data?</li>
+</ul>
+<ul>
+<li>Interesting BODIPY:<ul>
 <li>Why is the photoswitching happening?</li>
+</ul>
+</li>
 </ul>
 <p>Hopefully I&rsquo;ll be productive though :)</p>
 <p>I got the Pople (and Ahlrichs) jobs queued, and have been continuing to read that very long and very thorough review of PCMs</p>
@@ -11191,13 +11193,17 @@ $end
 <p>I spent most of my day trying to figure out ssPCM and on my way home I combined a bunch of my python optimisation checking scripts into one, with argparse switching to select the specific function.</p>
 <h4 id="meeting-with-katya">Meeting with Katya:<a class="headerlink" href="#meeting-with-katya" title="Permanent link">&para;</a></h4>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Contact NCI and ask what requitemements there are to getting qchem</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Contact NCI and ask what requitemements there are to getting qchem<ul>
 <li>It was apparently gifted to the users of Gadi by Peter Gill</li>
+</ul>
+</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Contact Philip and Simon if they have retail access and what pricing</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <del>Contact Q-Chem about which licenses are site specific</del> Not needed if Q-Chem is free on Gadi</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> wB97X-D basis set Comparison</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> LJ params from polarisability</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> LJ params from polarisability<ul>
 <li>This is proving to be a bit more complicated&hellip;</li>
+</ul>
+</li>
 </ul>
 <h2 id="sunday-14th-august">Sunday 14<sup>th</sup> August<a class="headerlink" href="#sunday-14th-august" title="Permanent link">&para;</a></h2>
 <p>Spent my afternoon preparing for teaching tomorrow and reading through the paper for group meeting on Tuesday.</p>
@@ -11232,7 +11238,7 @@ In my working, I found a few useful tools for linear scaling PCM calculations in
 <li>Having a well behaved wavefunction is seemingly more important than anything else.</li>
 </ul>
 <p>These are not complete yet, there&rsquo;s still a bunch of failed jobs that would likely skew the results (particularly for aug-cc-pvdz), but the trend is pretty clear.</p>
-<p><img alt="!output" class="center" src="../output-0721912.svg" style="width: 80%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="output" href="../output-0721912.svg"><img alt="output" class="center" src="../output-0721912.svg" style="width: 80%; " /></a></div></p>
 <h2 id="thursday-18th-august">Thursday 18<sup>th</sup> August<a class="headerlink" href="#thursday-18th-august" title="Permanent link">&para;</a></h2>
 <p>I&rsquo;ve been trying to clean up the failed jobs from my basis set testing and I&rsquo;ve definitely found a few badly behaving sets.</p>
 <ul>
@@ -11249,40 +11255,40 @@ In my working, I found a few useful tools for linear scaling PCM calculations in
 <thead>
 <tr>
 <th>Functional</th>
-<th style="text-align: center;">Basis</th>
-<th style="text-align: center;">Error (eV)</th>
+<th align="center">Basis</th>
+<th align="center">Error (eV)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;">aug-cc-pvtz</td>
-<td style="text-align: center;">0.762</td>
+<td align="center">aug-cc-pvtz</td>
+<td align="center">0.762</td>
 </tr>
 <tr>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;">aug-pc-0</td>
-<td style="text-align: center;">0.749</td>
+<td align="center">aug-pc-0</td>
+<td align="center">0.749</td>
 </tr>
 <tr>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;">aug-pc-1</td>
-<td style="text-align: center;">0.748</td>
+<td align="center">aug-pc-1</td>
+<td align="center">0.748</td>
 </tr>
 <tr>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;">aug-pc-2</td>
-<td style="text-align: center;"></td>
+<td align="center">aug-pc-2</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>ωB97X-D3</td>
-<td style="text-align: center;">aug-cc-pvtz</td>
-<td style="text-align: center;">0.775</td>
+<td align="center">aug-cc-pvtz</td>
+<td align="center">0.775</td>
 </tr>
 <tr>
 <td>ωB97X-D3</td>
-<td style="text-align: center;">aug-pc-0</td>
-<td style="text-align: center;">0.776</td>
+<td align="center">aug-pc-0</td>
+<td align="center">0.776</td>
 </tr>
 </tbody>
 </table>
@@ -11291,9 +11297,9 @@ In my working, I found a few useful tools for linear scaling PCM calculations in
 <thead>
 <tr>
 <th><h3>Time (s) </h3></th>
-<th style="text-align: center;">ma-def2-svp</th>
-<th style="text-align: center;">aug-cc-pvdz</th>
-<th style="text-align: center;">6-31+G(d)</th>
+<th align="center">ma-def2-svp</th>
+<th align="center">aug-cc-pvdz</th>
+<th align="center">6-31+G(d)</th>
 <th>aug-pc-0</th>
 <th>aug-pc-1</th>
 </tr>
@@ -11301,17 +11307,17 @@ In my working, I found a few useful tools for linear scaling PCM calculations in
 <tbody>
 <tr>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;">78</td>
-<td style="text-align: center;">685</td>
-<td style="text-align: center;">51</td>
+<td align="center">78</td>
+<td align="center">685</td>
+<td align="center">51</td>
 <td>34</td>
 <td>491</td>
 </tr>
 <tr>
 <td>ωB97X-D3</td>
-<td style="text-align: center;">84</td>
-<td style="text-align: center;">715</td>
-<td style="text-align: center;">61</td>
+<td align="center">84</td>
+<td align="center">715</td>
+<td align="center">61</td>
 <td>43</td>
 <td>537</td>
 </tr>
@@ -11321,9 +11327,9 @@ In my working, I found a few useful tools for linear scaling PCM calculations in
 <thead>
 <tr>
 <th><h3>Energy</h3></th>
-<th style="text-align: center;">ma-def2-svp</th>
-<th style="text-align: center;">aug-cc-pvdz</th>
-<th style="text-align: center;">6-31+G(d)</th>
+<th align="center">ma-def2-svp</th>
+<th align="center">aug-cc-pvdz</th>
+<th align="center">6-31+G(d)</th>
 <th>aug-pc-0</th>
 <th>aug-pc-1</th>
 </tr>
@@ -11331,17 +11337,17 @@ In my working, I found a few useful tools for linear scaling PCM calculations in
 <tbody>
 <tr>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;">4.4065</td>
-<td style="text-align: center;">4.3396</td>
-<td style="text-align: center;">4.3798</td>
+<td align="center">4.4065</td>
+<td align="center">4.3396</td>
+<td align="center">4.3798</td>
 <td>4.4332</td>
 <td>4.3555</td>
 </tr>
 <tr>
 <td>ωB97X-D3</td>
-<td style="text-align: center;">4.4792</td>
-<td style="text-align: center;">4.4130</td>
-<td style="text-align: center;">4.4548</td>
+<td align="center">4.4792</td>
+<td align="center">4.4130</td>
+<td align="center">4.4548</td>
 <td>4.5193</td>
 <td>4.4340</td>
 </tr>
@@ -11396,23 +11402,33 @@ I think I might need to try the 7h4mc-h2o species with some higher level calcula
 <p>I&rsquo;m teaching today which is going to occupy most of my afternoon, but it&rsquo;s also been a rough day for me emotionally, so I&rsquo;m not sure how productive I will be in general outside of that.</p>
 <h2 id="q-chem-notes-my-mini-dot-point-review">Q-Chem Notes (My Mini Dot-Point Review)<a class="headerlink" href="#q-chem-notes-my-mini-dot-point-review" title="Permanent link">&para;</a></h2>
 <ul>
-<li>ssPCM gradients non-analytical</li>
+<li>ssPCM gradients non-analytical<ul>
 <li>Also can&rsquo;t seem to get them to <em>not</em> crash</li>
-<li>Non-El approches to PCM are also non-analytical</li>
+</ul>
+</li>
+<li>Non-El approches to PCM are also non-analytical<ul>
 <li>Very susceptible to parameter errors</li>
 <li>Not sure if it will even make a difference to the TD-DFT, since it seems to be an energetic correction</li>
+</ul>
+</li>
 <li>QM/MM only needs LJ and charge params for the QM region (WOO!)</li>
-<li>No density fitting for PCM</li>
+<li>No density fitting for PCM<ul>
 <li>Makes it much slower than ORCA</li>
-<li>EFP is only optimisable for EFP only jobs</li>
+</ul>
+</li>
+<li>EFP is only optimisable for EFP only jobs<ul>
 <li>Doing it in GAMESS is very slow</li>
+</ul>
+</li>
 <li>Has nicer print for solvation, but doesn&rsquo;t give you a huge amount for everything else or gives you far too much</li>
 <li>Really bad error handling. It likes to segfault without giving any info as to why</li>
 </ul>
 <h2 id="important-play-coding">Important (play) coding:<a class="headerlink" href="#important-play-coding" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Write a server-side script for reading files? (should be faster than catting over ssh)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Write a server-side script for reading files? (should be faster than catting over ssh)<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Potentially explore sftp file reads instead of ssh catting</li>
+</ul>
+</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> QM/MM in Q-Chem</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> QM solvation shell + EFP for long range</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Having a few explicit water molecules around charged functionality + EFP/PCM</li>
@@ -11423,29 +11439,31 @@ I think I might need to try the 7h4mc-h2o species with some higher level calcula
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Finish the Benedetta Mennucci review</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Finish the non-Benedetta Mennucci review</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read up on domain decomposition solvation (ddPCM/ddCOSMO)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read up on <a href="https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.56">COSMO-RS</a></li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <del>Should we get a license? Perhaps not, since this would be effectively paywall restricted science&hellip;</del></p>
-<ul>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read up on <a href="https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.56">COSMO-RS</a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <del>Should we get a license? Perhaps not, since this would be effectively paywall restricted science&hellip;</del><ul>
 <li>Yeah, not worth it. Katya agrees.</li>
 </ul>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Watch Lectures</p>
+</ul>
 </li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Watch Lectures<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://www.youtube.com/watch?v=Y2nNag-70w4">Understanding strongly correlated systems in excited state chemistry</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://www.youtube.com/watch?v=rlicz_ISDbU">Benchmarking multiconfigurational methods for vertical excitation energies</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://winterschool.cc/2016/concepts-of-molecular-excited-states-calculations">Concepts of Molecular Excited State Calculations</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://winterschool.cc/webinars-2022/modelling-photoabsorption-and-photoelectron-vibronic-band-shapes">Modelling Photoabsorption and Photoelectron Vibronic Band Shapes</a></li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://winterschool.cc/2016/intro-to-casscf-calculations">Intro to CASSCF Calculations</a></p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://winterschool.cc/2016/intro-to-casscf-calculations">Intro to CASSCF Calculations</a></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read program&rsquo;s manual&rsquo;s solvation sections and pull out key discussed papers</p>
-</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read program&rsquo;s manual&rsquo;s solvation sections and pull out key discussed papers<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ORCA</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Q-Chem</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> PCMSolver (read the paper)</li>
+</ul>
+</li>
 </ul>
 
 

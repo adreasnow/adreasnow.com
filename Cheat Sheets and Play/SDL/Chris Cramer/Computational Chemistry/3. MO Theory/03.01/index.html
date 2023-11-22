@@ -10896,7 +10896,7 @@ E=\frac{\int\bigg(\sum\limits_i{a_i^*\varphi_i^*}\bigg)H\bigg(\sum\limits_j{a_j\
 <div class="arithmatex">\[
 \frac{\partial E}{\partial a_k}=0\hspace{2cm} \text{for all }k
 \]</div>
-<p>That is that all the partial derivatives of all the <span class="arithmatex">\(a\)</span>&rsquo;s must equal zero - They&rsquo;re all at a stationary point</p>
+<p>That is that all the partial derivatives of all the <span class="arithmatex">\(a\)</span>&lsquo;s must equal zero - They&rsquo;re all at a stationary point</p>
 <p>If we take all the partial derivative of the energy calculation, we get <span class="arithmatex">\(N\)</span> linear equations with the form</p>
 <p>Where we are now treating <span class="arithmatex">\(a_i\)</span> as the variable and <span class="arithmatex">\((H_{ki}-ES_{ki})\)</span> as the coefficient term. If we break that down further, we can evaluate <span class="arithmatex">\(H_{ki}\)</span> and <span class="arithmatex">\(S_{ki}\)</span>, but we need to determine the energy that results in the equation <span class="arithmatex">\(=0\)</span>.</p>
 <div class="arithmatex">\[
@@ -10916,8 +10916,10 @@ H_{N1}-ES_{N1} &amp; H_{N2}-ES_{N2} &amp; \cdots &amp; H_{NN}-ES_{NN}
 <h2 id="the-steps-to-calculate-the-mo">The steps to calculate the MO:<a class="headerlink" href="#the-steps-to-calculate-the-mo" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Select a set of <span class="arithmatex">\(N\)</span> basis functions</li>
-<li>Determine all (<span class="arithmatex">\(N(N-1)/2\)</span>) values of both <span class="arithmatex">\(H_{ij}\)</span> and <span class="arithmatex">\(S_{ij}\)</span></li>
+<li>Determine all (<span class="arithmatex">\(N(N-1)/2\)</span>) values of both <span class="arithmatex">\(H_{ij}\)</span> and <span class="arithmatex">\(S_{ij}\)</span><ul>
 <li>While the determinant grows at a rate <span class="arithmatex">\(N^2\)</span>, because of the symmetry of the matrix, there are fewer solutions.</li>
+</ul>
+</li>
 <li>From all the values of <span class="arithmatex">\(H_{ij}\)</span> and <span class="arithmatex">\(S_{ij}\)</span>, form the secular determinant and determine the values of <span class="arithmatex">\(E_{j}\)</span> that satisfy the secular equation.</li>
 <li>For each <span class="arithmatex">\(E_j\)</span>, solve the set of linear equations <span class="arithmatex">\(\bigg({a_i(H_{ki}-ES_{ki})}\bigg)\)</span> to determine the basis set coefficients <span class="arithmatex">\(a_{ij}\)</span> for that MO</li>
 </ol>

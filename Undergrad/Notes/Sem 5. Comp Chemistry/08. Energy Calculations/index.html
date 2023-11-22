@@ -10824,7 +10824,7 @@
 <ul>
 <li>The structure of your chemical compound</li>
 <li>What properties you want to calculate</li>
-<li>What resources you have:</li>
+<li>What resources you have:<ul>
 <li>Hardware<ul>
 <li>Memory</li>
 <li>CPU threads</li>
@@ -10839,7 +10839,9 @@
 <li>Does it support GPUs?</li>
 </ul>
 </li>
-<li>What model you will need for your particular properties</li>
+</ul>
+</li>
+<li>What model you will need for your particular properties<ul>
 <li>Are you running an iterative process? (PES scan, optimisation) or a single point calculation  (NMR, freq)<ul>
 <li>(Optimisation time) ≈ (single point time) × (degrees of freedom) × 5</li>
 </ul>
@@ -10856,33 +10858,39 @@
 </ul>
 </li>
 </ul>
-<p><img alt="!image" class="right" src="../PES1.png" style="width: 40%; " /></p>
+</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="image" href="../PES1.png"><img alt="image" class="right" src="../PES1.png" style="width: 40%; " /></a></div></p>
 <h4 id="potential-energy-surface">Potential Energy Surface<a class="headerlink" href="#potential-energy-surface" title="Permanent link">&para;</a></h4>
 <ul>
 <li>The potential energy surface is an highly dimensional surface that depicts the energy landscape of a molecule</li>
-<li>It can be characterised by a few features:</li>
+<li>It can be characterised by a few features:<ul>
 <li>Minima<ul>
 <li>Where all second derivatives are +ve</li>
 <li>Local minima are where we fine isomers, conformers etc</li>
-<li>The global is the most stable form of the molecule</li>
+<li>The global is the most stable form of the molecule<ul>
 <li>This can be defined as any change in the geometry causing an increase in energy (<span class="arithmatex">\(E_{(R)}\)</span>)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Maxima<ul>
-<li>Where all second derivatives are -ve</li>
+<li>Where all second derivatives are -ve<ul>
 <li>This can be defined as any change in the geometry causing an increase in energy (<span class="arithmatex">\(E_{(R)}\)</span>)</li>
 </ul>
 </li>
-<li>
-<p>Saddle point</p>
-<ul>
+</ul>
+</li>
+<li>Saddle point<ul>
 <li>Where all derivatives except for one are +ve</li>
 <li>This is the transition state between two equilibrium structures</li>
 </ul>
 </li>
-<li>
-<p>These stationary points can initially be found by looking at where the first derivative is 0</p>
+</ul>
 </li>
+</ul>
+<ul>
+<li>These stationary points can initially be found by looking at where the first derivative is 0</li>
 <li>The plane of second derivatives is called the hessian</li>
 <li>The equilibrium of a structure will be determined by the statistical interpretation of all the minima, given a certain temperature</li>
 </ul>
@@ -10893,20 +10901,22 @@
 <li>In 3D, we can visualise the transition between excited and non excited states, to see how the geometry behaves and transitions</li>
 <li>Notice the subtle difference in bond length between excited states in these PES curves</li>
 </ul>
-<p><img alt="!image" class="left" src="../PES2.gif" style="width: 50%;" />
-<img alt="!image" class="right" src="../PES3.png" style="width: 40%; border-color: black; border-style: solid; border-width: 1px;" /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../PES2.gif"><img alt="image" class="left" src="../PES2.gif" style="width: 50%;" />
+</a></div><div class="lightgallery"><a data-sub-html="image" href="../PES3.png"><img alt="image" class="right" src="../PES3.png" style="width: 40%; border-color: black; border-style: solid; border-width: 1px;" /></a></div></p>
 <p><br/><br/></p>
 <h2 id="optimisation">Optimisation<a class="headerlink" href="#optimisation" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The optimisation is said to be complete when the four key properties have converged.</li>
-<li>They are:</li>
+<li>They are:<ul>
 <li>Maximum force</li>
 <li>RMS force</li>
 <li>Maximum displacement</li>
 <li>RMS displacement</li>
+</ul>
+</li>
 <li>Force is the first derivative of the PES and the threshold is to make sure that in all dimensions the derivatives are within a certain distance of each other</li>
 <li>Displacement is the energy distance between the current geometry (<span class="arithmatex">\(r\)</span>) and the next step (<span class="arithmatex">\(r+1\)</span>) </li>
-<li>Geometry certainty:</li>
+<li>Geometry certainty:<ul>
 <li>Energy - 6 d.p. for Ha and 1-2 d.p. for KJ/mol</li>
 <li>Bond length - 3 d.p.</li>
 <li>Bond angle - 2 d.p.</li>
@@ -10914,37 +10924,37 @@
 <li>Polarisability - 2 d.p.</li>
 <li>Rotational constant - 6 d.p.</li>
 </ul>
+</li>
+</ul>
 <h4 id="checklist">Checklist:<a class="headerlink" href="#checklist" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Have you converged?<ul>
-<li>Check the four criteria (four &ldquo;YES&rdquo;)</li>
-<li>Look for normal termination</li>
-</ul>
-</li>
-<li>Was the minima and saddle point found?<ul>
-<li>Check with a freq calculation<ul>
-<li>All frequencies should be positive</li>
-<li>All but one frequency means the saddle point has been found</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Is this the local or global minima?<ul>
-<li>Run a PES scan to verify the geometry</li>
-</ul>
-</li>
+<li>Have you converged?
+    * Check the four criteria (four &ldquo;YES&rdquo;)
+    * Look for normal termination</li>
+<li>Was the minima and saddle point found?
+    * Check with a freq calculation
+        * All frequencies should be positive
+        * All but one frequency means the saddle point has been found</li>
+<li>Is this the local or global minima?
+    * Run a PES scan to verify the geometry</li>
 </ul>
 <h4 id="optimisation-precautions">Optimisation Precautions<a class="headerlink" href="#optimisation-precautions" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Optimisation will only find the local minima of the initial geometry.
-<img alt="!image" class="right" src="../PES4.png" style="width: 30%; " /></li>
+<div class="lightgallery"><a data-sub-html="image" href="../PES4.png"><img alt="image" class="right" src="../PES4.png" style="width: 30%; " /></a></div><ul>
 <li>Semi-empirical methods are an effective way of ensuring that the starting geometry is close to the global minima</li>
 <li>A PES scan run in logical locations can also help to identify any possible lower minima</li>
-<li>Optimisation will only account for the specified geometry.</li>
+</ul>
+</li>
+<li>Optimisation will only account for the specified geometry.<ul>
 <li>Tautomer, isomer and conformer variance will not be accounted for and to truly represent the molecule, one needs to calculate all of these and take a weighted average</li>
 <li>This is particularly important for gas phase experimental results which will typically be run at higher temperatures and will thus have higher isomeric variance</li>
-<li>Zero Point Energy is another important consideration, as the energy minimisation will find the lowest possible configuration of the geometry, but in reality, the energy within the vacuum of space is enough to prevent the molecule from resting in its minima.</li>
+</ul>
+</li>
+<li>Zero Point Energy is another important consideration, as the energy minimisation will find the lowest possible configuration of the geometry, but in reality, the energy within the vacuum of space is enough to prevent the molecule from resting in its minima.<ul>
 <li>What this means in reality is that the difference between the PES minima and the actual minima is the zero point energy contribution, which can be calculated with freq </li>
+</ul>
+</li>
 </ul>
 <h4 id="pes-scan">PES scan<a class="headerlink" href="#pes-scan" title="Permanent link">&para;</a></h4>
 <ul>

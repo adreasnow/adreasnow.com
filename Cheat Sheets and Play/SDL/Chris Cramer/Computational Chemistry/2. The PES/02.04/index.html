@@ -10835,11 +10835,11 @@ U(r)=\frac{1}{2}k(r-r_{eq})^2
 <li><span class="arithmatex">\(r_{eq}\)</span> is the known equilibrium bond length for this specific bond type</li>
 <li>This simplification, however only produces a harmonic oscillator, not the Morse potential</li>
 </ul>
-<p><img alt="!image" class="center" src="../MM-HO.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MM-HO.png"><img alt="image" class="center" src="../MM-HO.png" style="width: 50%; " /></a></div></p>
 <ul>
 <li>Since the force tends towards infinity as <span class="arithmatex">\(|r|\)</span> increases, there is no way to break bonds using these approximation&hellip; Consider this a limitation of the method </li>
 </ul>
-<p><img alt="!image" class="center" src="../MM-HO2.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MM-HO2.png"><img alt="image" class="center" src="../MM-HO2.png" style="width: 50%; " /></a></div></p>
 <ul>
 <li>Note that the alkane has a much smaller force constant <span class="arithmatex">\(k\)</span> and will therefore have a much wider oscillator</li>
 </ul>
@@ -10856,13 +10856,13 @@ U(r)=\frac{1}{2}k(r-r_{eq})^2
 <ul>
 <li>Since angle bending is calculated agains two other atoms, the force constants increase faster (<span class="arithmatex">\(N^3\)</span>) than bond length, as new atom types are increased </li>
 </ul>
-<p><img alt="!image" class="center" src="../BFF3-Strain.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../BFF3-Strain.png"><img alt="image" class="center" src="../BFF3-Strain.png" style="width: 50%; " /></a></div></p>
 <h2 id="torsion">Torsion<a class="headerlink" href="#torsion" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Here we use a Fourier series to describe these forces, since the rotation of a bond will be periodic <span class="arithmatex">\(360^\circ = 0^\circ\)</span></li>
 <li>The triangle curve is the sum of the three other curves</li>
 </ul>
-<p><img alt="!image" class="center" src="../MM-Torsion.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MM-Torsion.png"><img alt="image" class="center" src="../MM-Torsion.png" style="width: 50%; " /></a></div></p>
 <ul>
 <li>The three curves that it&rsquo;s summing could represent</li>
 <li>The constants here increase at a rate <span class="arithmatex">\(N^4\)</span> with atom types introduced</li>
@@ -10871,25 +10871,23 @@ U(r)=\frac{1}{2}k(r-r_{eq})^2
 <ol>
 <li>Assign atom types to all the atoms</li>
 <li>Specify which atoms are bonded together (either assumed using vdW spheres, or manually specified)</li>
-<li>
-<p>look up all the force constants/equilibrium value/phase angles required for the specified system (and decide what to do if any are missing)</p>
-</li>
-<li>
-<p>Specify a force constant based on a similar atom type</p>
-</li>
-<li>Error and tell you what&rsquo;s missing</li>
-<li>Fail to run and not tell you what&rsquo;s missing</li>
+<li>look up all the force constants/equilibrium value/phase angles required for the specified system (and decide what to do if any are missing)</li>
 </ol>
+<ul>
+<li>Specify a force constant based on a similar atom type<ul>
+<li>Error and tell you what&rsquo;s missing</li>
+</ul>
+</li>
+<li>Fail to run and not tell you what&rsquo;s missing</li>
+</ul>
 <h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>Two compare two different molecules, the two molecules need to have the exact same atom type, or they&rsquo;ll be compared against different constants</p>
-</li>
-<li>
-<p>In the image below, because the two molecules use different atom types, we can only compare their energies to the hypothetical unstrained version, we cannot compare them to each other</p>
-</li>
+<li>Two compare two different molecules, the two molecules need to have the exact same atom type, or they&rsquo;ll be compared against different constants</li>
 </ul>
-<p><img alt="!image" class="center" src="../RelativeE.png" style="width: 50%; " /></p>
+<ul>
+<li>In the image below, because the two molecules use different atom types, we can only compare their energies to the hypothetical unstrained version, we cannot compare them to each other</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="image" href="../RelativeE.png"><img alt="image" class="center" src="../RelativeE.png" style="width: 50%; " /></a></div></p>
 <ul>
 <li>To compare them to each other, we&rsquo;d need to calculate <span class="arithmatex">\(\Delta H^\circ _f\)</span> for each molecule to be able to compare the unstrained versions. From there, we can compare the relative, strained energies.</li>
 </ul>

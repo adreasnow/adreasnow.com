@@ -11113,18 +11113,20 @@
 <h2 id="saturdaysunday-1st2nd-april">Saturday/Sunday 1<sup>st</sup>/2<sup>nd</sup> April<a class="headerlink" href="#saturdaysunday-1st2nd-april" title="Permanent link">&para;</a></h2>
 <h4 id="things-to-to-this-weekend">Things to to this weekend:<a class="headerlink" href="#things-to-to-this-weekend" title="Permanent link">&para;</a></h4>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> TD-DFT vs CASSCF geometries (read up on them)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> TD-DFT vs CASSCF geometries (read up on them)<ul>
 <li>I suspect that CASSCF geoms would be about as good as HF&hellip;<ul>
 <li>Yeah, based on some of the erroneous geometries I&rsquo;ve been getting, even if it can do GS geometries vaguely okay, I&rsquo;m really not convinced that it can handle ES geoms.</li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Update <code>hess2trans.py</code> to include dipole overlaps</li>
-<li>
-<p>Turns out that you have to linalg this guy and take the inner product of your vectors.</p>
+</ul>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Read HT paper to try to digest that maths</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Update <code>hess2trans.py</code> to include dipole overlaps<ul>
+<li>Turns out that you have to linalg this guy and take the inner product of your vectors.</li>
+</ul>
 </li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Read HT paper to try to digest that maths</li>
 </ul>
 <p>I spent way too much of my weekend listening to ChatGPT telling me how to do physics, and I think it&rsquo;s shot me in the foot&hellip;</p>
 <h2 id="monday-3rd-april">Monday 3<sup>rd</sup> April<a class="headerlink" href="#monday-3rd-april" title="Permanent link">&para;</a></h2>
@@ -11140,15 +11142,17 @@
 <h2 id="thursday-6th-april">Thursday 6<sup>th</sup> April<a class="headerlink" href="#thursday-6th-april" title="Permanent link">&para;</a></h2>
 <p>Crazy day!
 The new cuvettes came in and they look amazing!
-<img alt="!Capture" src="../Capture-0766178.PNG" /></p>
+<div class="lightgallery"><a data-sub-html="Capture" href="../Capture-0766178.PNG"><img alt="Capture" src="../Capture-0766178.PNG" /></a></div></p>
 <p>Only problem is that there are rubber seals in the PTFE caps, that all my organic solvents dissolve. I tried using parafilm to get around this, not realising that parafilm dissolves in organic solvents&hellip; So I&rsquo;ve spent the past 30 mins huffing DCM fumes trying to clean parafilm off all my shiny new cuvettes <img alt="😒" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f612.svg" title=":unamused:" /></p>
 <p>I also realised that using syringes is a problem (below: solvent blank vs solvent from syringe):</p>
-<p><img alt="!solvent_vs_syringe_fluor" src="../solvent_vs_syringe_fluor.PNG" /></p>
+<p><div class="lightgallery"><a data-sub-html="solvent_vs_syringe_fluor" href="../solvent_vs_syringe_fluor.PNG"><img alt="solvent_vs_syringe_fluor" src="../solvent_vs_syringe_fluor.PNG" /></a></div></p>
 <p>This means that syringe filters are a no go, so I&rsquo;ve been trying to set up a Soxhlet extractor and also test out glass syringes. The soxhlet did a few cycles before it reached the end of the day and I switched it off, but we need to re-do all our spectra that we took today.</p>
 <p>I think for solvents I&rsquo;ll probably need:</p>
 <ul>
-<li>One syringe for all high volatility solvents:</li>
+<li>One syringe for all high volatility solvents:<ul>
 <li>(nhex, toll ans, ether, chcl3, thf, tdcm, etoh, acn)</li>
+</ul>
+</li>
 <li>One for c8oh</li>
 <li>One for dmf </li>
 <li>One for dmso</li>
@@ -11159,57 +11163,57 @@ The new cuvettes came in and they look amazing!
 <thead>
 <tr>
 <th>Solvent</th>
-<th style="text-align: left;">Plastic</th>
+<th align="left">Plastic</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><em>N</em>-Hexane</td>
-<td style="text-align: left;">Nylon</td>
+<td align="left">Nylon</td>
 </tr>
 <tr>
 <td>Toluene</td>
-<td style="text-align: left;">Nylon</td>
+<td align="left">Nylon</td>
 </tr>
 <tr>
 <td>Anisole</td>
-<td style="text-align: left;">Nylon should work?</td>
+<td align="left">Nylon should work?</td>
 </tr>
 <tr>
 <td>Diethyl ether</td>
-<td style="text-align: left;">Nylon</td>
+<td align="left">Nylon</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\ce{CH3Cl}\)</span></td>
-<td style="text-align: left;">Nylon</td>
+<td align="left">Nylon</td>
 </tr>
 <tr>
 <td>THF</td>
-<td style="text-align: left;">Nylon</td>
+<td align="left">Nylon</td>
 </tr>
 <tr>
 <td>DCM</td>
-<td style="text-align: left;">Nylon should work?</td>
+<td align="left">Nylon should work?</td>
 </tr>
 <tr>
 <td>Ocanol</td>
-<td style="text-align: left;">Either</td>
+<td align="left">Either</td>
 </tr>
 <tr>
 <td>EtOH</td>
-<td style="text-align: left;">Either</td>
+<td align="left">Either</td>
 </tr>
 <tr>
 <td>ACN</td>
-<td style="text-align: left;">Nylon</td>
+<td align="left">Nylon</td>
 </tr>
 <tr>
 <td>DMF</td>
-<td style="text-align: left;">Either</td>
+<td align="left">Either</td>
 </tr>
 <tr>
 <td>DMSO</td>
-<td style="text-align: left;">Either</td>
+<td align="left">Either</td>
 </tr>
 </tbody>
 </table>
@@ -11241,60 +11245,60 @@ The new cuvettes came in and they look amazing!
 <thead>
 <tr>
 <th>job</th>
-<th style="text-align: center;">Time</th>
-<th style="text-align: center;">s1 (r0)</th>
-<th style="text-align: center;">s2 (r0)</th>
-<th style="text-align: center;">s3 (r0)</th>
-<th style="text-align: center;">s1 (r1)</th>
-<th style="text-align: center;">s2 (r1)</th>
-<th style="text-align: center;">s3 (r1)</th>
-<th style="text-align: center;">0-0</th>
+<th align="center">Time</th>
+<th align="center">s1 (r0)</th>
+<th align="center">s2 (r0)</th>
+<th align="center">s3 (r0)</th>
+<th align="center">s1 (r1)</th>
+<th align="center">s2 (r1)</th>
+<th align="center">s3 (r1)</th>
+<th align="center">0-0</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Base QD-NEVPT2</td>
-<td style="text-align: center;">9:15:01</td>
-<td style="text-align: center;">380.5</td>
-<td style="text-align: center;">294.3</td>
-<td style="text-align: center;">210.9</td>
-<td style="text-align: center;">395.8</td>
-<td style="text-align: center;">292.6</td>
-<td style="text-align: center;">251.0</td>
-<td style="text-align: center;">3.071</td>
+<td align="center">9:15:01</td>
+<td align="center">380.5</td>
+<td align="center">294.3</td>
+<td align="center">210.9</td>
+<td align="center">395.8</td>
+<td align="center">292.6</td>
+<td align="center">251.0</td>
+<td align="center">3.071</td>
 </tr>
 <tr>
 <td>Base NEVPT2 + relaxed canonical orbitals</td>
-<td style="text-align: center;">10:09:38</td>
-<td style="text-align: center;">384.4</td>
-<td style="text-align: center;">300.6</td>
-<td style="text-align: center;">214.1</td>
-<td style="text-align: center;">396.3</td>
-<td style="text-align: center;">210.9</td>
-<td style="text-align: center;">197.9</td>
-<td style="text-align: center;">3.033</td>
+<td align="center">10:09:38</td>
+<td align="center">384.4</td>
+<td align="center">300.6</td>
+<td align="center">214.1</td>
+<td align="center">396.3</td>
+<td align="center">210.9</td>
+<td align="center">197.9</td>
+<td align="center">3.033</td>
 </tr>
 <tr>
 <td>QD-NEVPT2 + RIJK</td>
-<td style="text-align: center;">1:14:29</td>
-<td style="text-align: center;">380.7</td>
-<td style="text-align: center;">289.6</td>
-<td style="text-align: center;">247.1</td>
-<td style="text-align: center;">391.9</td>
-<td style="text-align: center;">207.5</td>
-<td style="text-align: center;">194.2</td>
-<td style="text-align: center;">3.113</td>
+<td align="center">1:14:29</td>
+<td align="center">380.7</td>
+<td align="center">289.6</td>
+<td align="center">247.1</td>
+<td align="center">391.9</td>
+<td align="center">207.5</td>
+<td align="center">194.2</td>
+<td align="center">3.113</td>
 </tr>
 <tr>
 <td>NEVPT2 + RIJK + relaxed canonical orbitals</td>
-<td style="text-align: center;">1:09:59</td>
-<td style="text-align: center;">396.1</td>
-<td style="text-align: center;">379.0</td>
-<td style="text-align: center;">253.3</td>
-<td style="text-align: center;">397.9</td>
-<td style="text-align: center;">210.1</td>
-<td style="text-align: center;">197.3</td>
-<td style="text-align: center;">2.981</td>
+<td align="center">1:09:59</td>
+<td align="center">396.1</td>
+<td align="center">379.0</td>
+<td align="center">253.3</td>
+<td align="center">397.9</td>
+<td align="center">210.1</td>
+<td align="center">197.3</td>
+<td align="center">2.981</td>
 </tr>
 </tbody>
 </table>
@@ -11305,72 +11309,74 @@ The new cuvettes came in and they look amazing!
 <thead>
 <tr>
 <th>Solvent</th>
-<th style="text-align: center;">DOI</th>
-<th style="text-align: center;">m/v of sieves <a href="https://pubs.acs.org/doi/10.1021/jo101589h">link</a></th>
+<th align="center">DOI</th>
+<th align="center">m/v of sieves <a href="https://pubs.acs.org/doi/10.1021/jo101589h">link</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>THF</td>
-<td style="text-align: center;"><a href="https://pubs.acs.org/doi/pdf/10.1021/je030196t">10.1021/je030196t</a></td>
-<td style="text-align: center;">sure/seal</td>
+<td align="center"><a href="https://pubs.acs.org/doi/pdf/10.1021/je030196t">10.1021/je030196t</a></td>
+<td align="center">sure/seal</td>
 </tr>
 <tr>
 <td>DMSO</td>
-<td style="text-align: center;"><a href="https://pubs.acs.org/doi/pdf/10.1021/je60012a032">10.1021/je60012a032</a></td>
-<td style="text-align: center;">sure/seal</td>
+<td align="center"><a href="https://pubs.acs.org/doi/pdf/10.1021/je60012a032">10.1021/je60012a032</a></td>
+<td align="center">sure/seal</td>
 </tr>
 <tr>
 <td>DMF</td>
-<td style="text-align: center;"><a href="https://materials.springer.com/googlecdn/assets/sm_lbs/326/sm_lbs_978-3-540-75291-2_367/sm_lbs_978-3-540-75291-2_367.pdf?trackRequired=true&amp;originUrl=/lb/docs/sm_lbs_978-3-540-75291-2_367&amp;componentId=Download%20Chapter">10.1007/978-3-540-75291-2</a></td>
-<td style="text-align: center;">sure/seal</td>
+<td align="center"><a href="https://materials.springer.com/googlecdn/assets/sm_lbs/326/sm_lbs_978-3-540-75291-2_367/sm_lbs_978-3-540-75291-2_367.pdf?trackRequired=true&amp;originUrl=/lb/docs/sm_lbs_978-3-540-75291-2_367&amp;componentId=Download%20Chapter">10.1007/978-3-540-75291-2</a></td>
+<td align="center">sure/seal</td>
 </tr>
 <tr>
 <td>Anisole</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">sure/seal</td>
+<td align="center"></td>
+<td align="center">sure/seal</td>
 </tr>
 <tr>
 <td>DCM</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">10%</td>
+<td align="center"></td>
+<td align="center">10%</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\ce{CHCl3}\)</span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">10%</td>
+<td align="center"></td>
+<td align="center">10%</td>
 </tr>
 <tr>
 <td>EtOH</td>
-<td style="text-align: center;"><a href="https://materials.springer.com/googlecdn/assets/sm_lbs/320/sm_lbs_978-3-540-75291-2_361/sm_lbs_978-3-540-75291-2_361.pdf?trackRequired=true&amp;originUrl=/lb/docs/sm_lbs_978-3-540-75291-2_361&amp;componentId=Download%20Chapter">10.1007/978-3-540-75291-2</a></td>
-<td style="text-align: center;"><del>20%</del></td>
+<td align="center"><a href="https://materials.springer.com/googlecdn/assets/sm_lbs/320/sm_lbs_978-3-540-75291-2_361/sm_lbs_978-3-540-75291-2_361.pdf?trackRequired=true&amp;originUrl=/lb/docs/sm_lbs_978-3-540-75291-2_361&amp;componentId=Download%20Chapter">10.1007/978-3-540-75291-2</a></td>
+<td align="center"><del>20%</del></td>
 </tr>
 <tr>
 <td>ACN</td>
-<td style="text-align: center;"><a href="https://materials.springer.com/googlecdn/assets/sm_lbs/297/sm_lbs_978-3-540-75291-2_359/sm_lbs_978-3-540-75291-2_359.pdf?trackRequired=true&amp;originUrl=/lb/docs/sm_lbs_978-3-540-75291-2_359&amp;componentId=Download%20Chapter">10.1007/978-3-540-75291-2</a></td>
-<td style="text-align: center;">10%</td>
+<td align="center"><a href="https://materials.springer.com/googlecdn/assets/sm_lbs/297/sm_lbs_978-3-540-75291-2_359/sm_lbs_978-3-540-75291-2_359.pdf?trackRequired=true&amp;originUrl=/lb/docs/sm_lbs_978-3-540-75291-2_359&amp;componentId=Download%20Chapter">10.1007/978-3-540-75291-2</a></td>
+<td align="center">10%</td>
 </tr>
 <tr>
 <td>Toluene</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">10%</td>
+<td align="center"></td>
+<td align="center">10%</td>
 </tr>
 <tr>
 <td></td>
-<td style="text-align: center;">Total for 150mL</td>
-<td style="text-align: center;">135g</td>
+<td align="center">Total for 150mL</td>
+<td align="center">135g</td>
 </tr>
 </tbody>
 </table>
 <h3 id="new-protocol">New protocol<a class="headerlink" href="#new-protocol" title="Permanent link">&para;</a></h3>
 <p>Working one solvent at a time (solvent series, not fluorophore series)</p>
 <ol>
-<li>Pour out solvent into beaker or syringe using <mark>a 5mL glass syringe and disposable needle</mark>. </li>
 <li>
-<p>For sure/seal:</p>
+<p>Pour out solvent into beaker or syringe using <mark>a 5mL glass syringe and disposable needle</mark>. </p>
 <ul>
+<li>For sure/seal:<ul>
 <li>use <mark>a 5mL glass syringe and long metal needle</mark></li>
 <li>Use <mark>a 20mL glass syringe with nitrogen</mark> for refilling the headpsace</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -11390,46 +11396,56 @@ The new cuvettes came in and they look amazing!
 </ol>
 <h4 id="if-filtering-needed">If filtering needed:<a class="headerlink" href="#if-filtering-needed" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Cotton wool through pipette filter!</li>
+<li>Cotton wool through pipette filter!<ul>
 <li>This seems to be able to pull daa out of n-hexane, but I&rsquo;m not sure how it will got for non-polar fluorophores in polar solvents.</li>
+</ul>
+</li>
 </ul>
 <h2 id="to-testanswer">To Test/Answer:<a class="headerlink" href="#to-testanswer" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Can cotton wool alone filter dansyl amide?</p>
+<ul>
+<li>I think so, though there&rsquo;s also some polarity selective partitioning going on that probably won&rsquo;t be there for filtering azulene (for example) out of dmso</li>
+</ul>
 </li>
-<li>
-<p>I think so, though there&rsquo;s also some polarity selective partitioning going on that probably won&rsquo;t be there for filtering azulene (for example) out of dmso</p>
-</li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Do we have any thimbles for Soxhlet if we need to clean our celite?</p>
+<ul>
+<li>No, so we&rsquo;re going to need to buy some if we want to go down that route.</li>
+</ul>
 </li>
-<li>
-<p>No, so we&rsquo;re going to need to buy some if we want to go down that route.</p>
-</li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> What kind of molecular sieves does the Robinson lab have?</p>
-</li>
-<li>
-<p>We&rsquo;re going to need a bit too much to mooch off them</p>
-</li>
-<li>
-<p>Will they leach any contaminant into solution?</p>
 <ul>
+<li>We&rsquo;re going to need a bit too much to mooch off them</li>
+</ul>
+<ul>
+<li>Will they leach any contaminant into solution?<ul>
 <li>Yes, but this should be minimal and included in the baseline.</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> How can I safely back-fill a sure/seal bottle with nitrogen?</p>
+<ul>
+<li>I think the solution to do this relatively cheaply will be to pre-pressurise the bottle with another syringe and single needle</li>
+</ul>
 </li>
-<li>
-<p>I think the solution to do this relatively cheaply will be to pre-pressurise the bottle with another syringe and single needle</p>
-</li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> TCSPC: Can I use the UV laser?</p>
-</li>
-<li>
-<p>Yes, by using the PicoQuant line instead of the laserdiode trigger.</p>
+<ul>
+<li>Yes, by using the PicoQuant line instead of the laserdiode trigger.</li>
+</ul>
 </li>
 </ul>
 <h2 id="suggestions-form-peter">Suggestions form Peter<a class="headerlink" href="#suggestions-form-peter" title="Permanent link">&para;</a></h2>
@@ -11444,18 +11460,16 @@ The new cuvettes came in and they look amazing!
 <p>Teaching/marking days</p>
 <h4 id="conferences-to-look-in-to">Conferences to look in to<a class="headerlink" href="#conferences-to-look-in-to" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p>Gordon Conferences</p>
-</li>
-<li>
-<p>RSC - Faraday discussions - pick a relevant symposium</p>
-</li>
-<li>
-<p>WATOC 2025 - Oslo June 22-27</p>
-</li>
-<li>
-<p>APATCC - Kobe Japan Autumn 2024</p>
-</li>
+<li>Gordon Conferences</li>
+</ul>
+<ul>
+<li>RSC - Faraday discussions - pick a relevant symposium</li>
+</ul>
+<ul>
+<li>WATOC 2025 - Oslo June 22-27</li>
+</ul>
+<ul>
+<li>APATCC - Kobe Japan Autumn 2024</li>
 </ul>
 <h2 id="wednesday-19th-april">Wednesday 19<sup>th</sup> April<a class="headerlink" href="#wednesday-19th-april" title="Permanent link">&para;</a></h2>
 <p>Today I&rsquo;m going to be slamming out my CHM3911 marking. Don&rsquo;t expect too much else from me&hellip;</p>
@@ -11470,65 +11484,65 @@ The new cuvettes came in and they look amazing!
 <thead>
 <tr>
 <th>job</th>
-<th style="text-align: center;">Time</th>
-<th style="text-align: center;">s1 (r0)</th>
-<th style="text-align: center;">s2 (r0)</th>
-<th style="text-align: center;">s3 (r0)</th>
-<th style="text-align: center;">s1 (r1)</th>
-<th style="text-align: center;">s2 (r1)</th>
-<th style="text-align: center;">s3 (r1)</th>
+<th align="center">Time</th>
+<th align="center">s1 (r0)</th>
+<th align="center">s2 (r0)</th>
+<th align="center">s3 (r0)</th>
+<th align="center">s1 (r1)</th>
+<th align="center">s2 (r1)</th>
+<th align="center">s3 (r1)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>EOM-CC2/aug-cc-pvdz</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">392.0</td>
-<td style="text-align: center;">303.4</td>
-<td style="text-align: center;">280.3</td>
-<td style="text-align: center;">408.4</td>
-<td style="text-align: center;">307.0</td>
-<td style="text-align: center;">280.9</td>
+<td align="center"></td>
+<td align="center">392.0</td>
+<td align="center">303.4</td>
+<td align="center">280.3</td>
+<td align="center">408.4</td>
+<td align="center">307.0</td>
+<td align="center">280.9</td>
 </tr>
 <tr>
 <td>Base QD-NEVPT2 (RI)</td>
-<td style="text-align: center;">9:15:01</td>
-<td style="text-align: center;">380.5</td>
-<td style="text-align: center;">294.3</td>
-<td style="text-align: center;">210.9</td>
-<td style="text-align: center;">395.8</td>
-<td style="text-align: center;">292.6</td>
-<td style="text-align: center;">251.0</td>
+<td align="center">9:15:01</td>
+<td align="center">380.5</td>
+<td align="center">294.3</td>
+<td align="center">210.9</td>
+<td align="center">395.8</td>
+<td align="center">292.6</td>
+<td align="center">251.0</td>
 </tr>
 <tr>
 <td>NEVPT2 (RI) + relaxed canonical orbitals</td>
-<td style="text-align: center;">10:09:38</td>
-<td style="text-align: center;">384.4</td>
-<td style="text-align: center;">300.6</td>
-<td style="text-align: center;">214.1</td>
-<td style="text-align: center;">396.3</td>
-<td style="text-align: center;">210.9</td>
-<td style="text-align: center;">197.9</td>
+<td align="center">10:09:38</td>
+<td align="center">384.4</td>
+<td align="center">300.6</td>
+<td align="center">214.1</td>
+<td align="center">396.3</td>
+<td align="center">210.9</td>
+<td align="center">197.9</td>
 </tr>
 <tr>
 <td>CAM-B3LYP/aug-cc-pvdz</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">384.7</td>
-<td style="text-align: center;">295.6</td>
-<td style="text-align: center;">270.8</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">384.7</td>
+<td align="center">295.6</td>
+<td align="center">270.8</td>
 </tr>
 <tr>
 <td>ωB97X-D3/aug-cc-pvdz</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">381.9</td>
-<td style="text-align: center;">284.8</td>
-<td style="text-align: center;">262.7</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">381.9</td>
+<td align="center">284.8</td>
+<td align="center">262.7</td>
 </tr>
 </tbody>
 </table>
@@ -11541,25 +11555,31 @@ The new cuvettes came in and they look amazing!
 <h2 id="monday-24th-april">Monday 24<sup>th</sup> April<a class="headerlink" href="#monday-24th-april" title="Permanent link">&para;</a></h2>
 <p>Steps ESD Follows:</p>
 <ol>
-<li>Calculates vertical R(GS) transition energy</li>
+<li>Calculates vertical R(GS) transition energy<ul>
 <li>Not sure what this is for</li>
+</ul>
+</li>
 <li>Adjusts ES and GS geoms to center of mass</li>
 <li>Rotates ES geom to align with GS</li>
 <li>Calculates Wilson&rsquo;s (<span class="arithmatex">\(\bf{B}\)</span>) matrix </li>
 <li>Converts geometries to &ldquo;delocalised Internal&rdquo; (BAKER) coordinates</li>
-<li><mark><code>USEJ</code> ONLY</mark> - Calculates the Duschinsky rotation matrix (<span class="arithmatex">\(\bf{J}\)</span>) and displacement vector (<span class="arithmatex">\(\bf{K}\)</span>)</li>
+<li><mark><code>USEJ</code> ONLY</mark> - Calculates the Duschinsky rotation matrix (<span class="arithmatex">\(\bf{J}\)</span>) and displacement vector (<span class="arithmatex">\(\bf{K}\)</span>)<ul>
 <li>If <code>usej false</code>, <span class="arithmatex">\(\bf{J}\)</span> is a 3Nx3N matrix of zeros and <span class="arithmatex">\(\bf{K}\)</span> ids a 3N vector of ones</li>
-<li>Calculate the ES stationary point geometry</li>
-<li>I think this is for the R(ES) Eq solvation energy</li>
-<li><mark>HT ONLY</mark> - Computes the transition dipole derivatives from step <strong>6</strong></li>
-<li><mark>HT ONLY</mark> - Calculate the HT displacements</li>
-<li>I think this is done by transforming the mode matrix (<span class="arithmatex">\(\bf{Q}\)</span>) into internal coordinates</li>
-<li><mark>HT ONLY</mark> - Displaces each mode to obtain the transition dipole</li>
-<li><mark>HT ONLY</mark> - Calculates the transition dipole derivatives</li>
-<li>Builds the correlation function<ul>
-<li>This takes a very long time if applying Duschinsky rotations</li>
 </ul>
 </li>
+<li>Calculate the ES stationary point geometry<ul>
+<li>I think this is for the R(ES) Eq solvation energy</li>
+</ul>
+</li>
+<li><mark>HT ONLY</mark> - Computes the transition dipole derivatives from step <strong>6</strong></li>
+<li><mark>HT ONLY</mark> - Calculate the HT displacements<ul>
+<li>I think this is done by transforming the mode matrix (<span class="arithmatex">\(\bf{Q}\)</span>) into internal coordinates</li>
+</ul>
+</li>
+<li><mark>HT ONLY</mark> - Displaces each mode to obtain the transition dipole</li>
+<li><mark>HT ONLY</mark> - Calculates the transition dipole derivatives</li>
+<li>Builds the correlation function
+    * This takes a very long time if applying Duschinsky rotations</li>
 <li>Fourier transforms the correlation function</li>
 <li>Calculates the rate constant</li>
 </ol>
@@ -11571,44 +11591,50 @@ The new cuvettes came in and they look amazing!
 <h2 id="thursday-27th-april">Thursday 27<sup>th</sup> April<a class="headerlink" href="#thursday-27th-april" title="Permanent link">&para;</a></h2>
 <p>I spent most of my day on the TCSPC, setting up the new UV line and troubleshooting all losses of power across the system.</p>
 <ul>
-<li>
-<p>The approach of using a cover slip to redirect some of the light into the trigger diode has a loss of ~10-12%T when done properly. That is; the whole diameter of the laser must be passing through the cover slip, and the cover slip must be clean. The Trigger diode takes a lot of power to trigger, so this is really important.</p>
-</li>
+<li>The approach of using a cover slip to redirect some of the light into the trigger diode has a loss of ~10-12%T when done properly. That is; the whole diameter of the laser must be passing through the cover slip, and the cover slip must be clean. The Trigger diode takes a lot of power to trigger, so this is really important.</li>
+</ul>
+<ul>
 <li>
 <p>The PicoQuant laser driver has a base rate of 80MHz of 1MHz and needs to be subdivided to get to different rep rates.</p>
-</li>
-<li>
-<p>Do not exceed a cps that is &gt;1% of the rep rate, e.g. if the rep rate = 1MHz, keep the cps ~1e+4 in order to avoid <a href="https://www.tcspc.com/doku.php/glossary:pile-up_effect">pile-up</a></p>
-</li>
-<li>
-<p>I think the base frequency is set by the INT1 and INT2 options, with CW being continuous and EXT being externally triggered</p>
-</li>
-<li>
-<p>Lower frequencies result in higher power</p>
-</li>
+<ul>
+<li>Do not exceed a cps that is &gt;1% of the rep rate, e.g. if the rep rate = 1MHz, keep the cps ~1e+4 in order to avoid <a href="https://www.tcspc.com/doku.php/glossary:pile-up_effect">pile-up</a></li>
+</ul>
+<ul>
+<li>I think the base frequency is set by the INT1 and INT2 options, with CW being continuous and EXT being externally triggered</li>
+</ul>
+<ul>
+<li>Lower frequencies result in higher power</li>
+</ul>
+<ul>
 <li>
 <p>The discriminator (in the software) should be set to half of the amplitude voltage of the sync signal</p>
 <ul>
-<li>The peak voltage of the trigger diode is &gt;100 mV when the LED is green and &gt;350mV when the LED is red according to the <a href="https://www.picoquant.com/products/category/accessories/tda-200-trigger-diode-assembly#specification">spec page</a></li>
-<li>
-<p>Discriminator should be set somewhere between 50 and 200 mV</p>
+<li>The peak voltage of the trigger diode is &gt;100 mV when the LED is green and &gt;350mV when the LED is red according to the <a href="https://www.picoquant.com/products/category/accessories/tda-200-trigger-diode-assembly#specification">spec page</a><ul>
+<li>Discriminator should be set somewhere between 50 and 200 mV</li>
+</ul>
 </li>
-<li>
-<p>The PicoQuant outputs an 800mV pulse according to the <a href="http://ridl.cfd.rit.edu/products/manuals/PicoQuant/PDL800B_%20manual.pdf">PicoQuant manual (old version)</a></p>
-</li>
+</ul>
+<ul>
+<li>The PicoQuant outputs an 800mV pulse according to the <a href="http://ridl.cfd.rit.edu/products/manuals/PicoQuant/PDL800B_%20manual.pdf">PicoQuant manual (old version)</a><ul>
 <li>Discriminator should theoretically be set to ~400mV</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+<ul>
 <li>
 <blockquote>
 <p>&ldquo;Then look at the Sync Divider. It must be set so that the sync rate divided by the shown divider value does not exceed 10 MHz. E.g. for a diode laser with 80 MHz repetition rate it must be set to 8&rdquo;</p>
 </blockquote>
 </li>
-<li>
-<p>Software defaults form the <a href="http://ridl.cfd.rit.edu/products/manuals/PicoQuant/PicoHarp%20300%20v2.3/manual/Manual.pdf">PicoHarp manual</a>:</p>
+</ul>
+<ul>
+<li>Software defaults form the <a href="http://ridl.cfd.rit.edu/products/manuals/PicoQuant/PicoHarp%20300%20v2.3/manual/Manual.pdf">PicoHarp manual</a>:</li>
+</ul>
 </li>
 </ul>
-<p><img alt="!Screenshot 2023-04-27 at 8.23.30 pm" src="../Screenshot%202023-04-27%20at%208.23.30%20pm.png" /></p>
+<p><div class="lightgallery"><a data-sub-html="Screenshot 2023-04-27 at 8.23.30 pm" href="../Screenshot%202023-04-27%20at%208.23.30%20pm.png"><img alt="Screenshot 2023-04-27 at 8.23.30 pm" src="../Screenshot%202023-04-27%20at%208.23.30%20pm.png" /></a></div></p>
 <table>
 <thead>
 <tr>
@@ -11711,50 +11737,58 @@ The new cuvettes came in and they look amazing!
 <ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Does changing the INT value switch the base frequency of the PicoQuant?</p>
+<ul>
+<li>Yes</li>
+</ul>
 </li>
-<li>
-<p>Yes</p>
-</li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Does setting a lower rep rate remove the weird artefacting?</p>
+<ul>
+<li>Yes</li>
+</ul>
 </li>
-<li>
-<p>Yes</p>
-</li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Does changing the discriminator value remove the artefacting?</p>
-</li>
-<li>
-<p>Yes</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Does this decrease the performance of the trigger diode?</p>
 <ul>
+<li>Yes</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Does this decrease the performance of the trigger diode?<ul>
 <li>I think this is going to need to be manually set based on the wavelength anyway</li>
 </ul>
 </li>
-<li>
-<p>Can we use the difference between TDDFT Eq and nEq energies to figure out the stokes correction to the 0-0 energy in abs and fluor</p>
+</ul>
 </li>
+</ul>
+<ul>
+<li>Can we use the difference between TDDFT Eq and nEq energies to figure out the stokes correction to the 0-0 energy in abs and fluor</li>
+</ul>
+<ul>
 <li>
 <p>Dielectric constants do include the water content</p>
+<ul>
+<li>Just buy some more DMSO</li>
+</ul>
 </li>
-<li>
-<p>Just buy some more DMSO</p>
-</li>
+</ul>
+<ul>
 <li>
 <p>For confirmation</p>
-</li>
-<li>
-<p>What are the &ldquo;critical points&rdquo; that I needed to fix in order to get the point of data collection?</p>
 <ul>
+<li>What are the &ldquo;critical points&rdquo; that I needed to fix in order to get the point of data collection?<ul>
 <li>Be honest about how much work has gone in to getting to the point of being able to collect data</li>
 </ul>
 </li>
-<li>
-<p>Present the matrix of the dataset - with values</p>
-</li>
+</ul>
+<ul>
+<li>Present the matrix of the dataset - with values</li>
 <li>Present a bit of an update on the current state of how we calculate things theoretically.</li>
+</ul>
+</li>
 </ul>
 <h4 id="tcspc-to-re-do">TCSPC to re-do:<a class="headerlink" href="#tcspc-to-re-do" title="Permanent link">&para;</a></h4>
 <ul class="task-list">
@@ -11766,12 +11800,16 @@ The new cuvettes came in and they look amazing!
 <h2 id="questions-im-currently-trying-to-answer">Questions I&rsquo;m currently trying to answer<a class="headerlink" href="#questions-im-currently-trying-to-answer" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Can we use frequency calculations directly to think about the individual transitions?</li>
-<li>How significant is anharmonicity in effecting transition energies?</li>
+<li>How significant is anharmonicity in effecting transition energies?<ul>
 <li>Even if it&rsquo;s significant in overall thermodynamic properties, do the errors cancel out when considering both GS and ES PES anharmonically?</li>
-<li>In investigating 0-0 transition energies, what is the most correct formal approach?</li>
+</ul>
+</li>
+<li>In investigating 0-0 transition energies, what is the most correct formal approach?<ul>
 <li><del>Adiabatic 0-0 - R(initial) Eq &rarr;  R(initial) nEq</del> <mark>!! This approach is fundamentally flawed, as you will ALWAYS get negative frequencies !!</mark></li>
 <li>Equilibirated 0-0 - R(initial) Eq &rarr;  R(final) Eq<ul>
 <li><mark>This doesn&rsquo;t give the distinct difference in abs and fluor 0-0 peaks though</mark></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -11781,31 +11819,31 @@ The new cuvettes came in and they look amazing!
 <thead>
 <tr>
 <th>State</th>
-<th style="text-align: center;">Active Spaces</th>
-<th style="text-align: center;">Opt</th>
-<th style="text-align: center;">Freq</th>
-<th style="text-align: center;">FIC-CASPT2K</th>
-<th style="text-align: center;">SC-NEVPT2</th>
+<th align="center">Active Spaces</th>
+<th align="center">Opt</th>
+<th align="center">Freq</th>
+<th align="center">FIC-CASPT2K</th>
+<th align="center">SC-NEVPT2</th>
 <th>QD-NEVPT2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>s0</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center">N/A</td>
+<td align="center">N/A</td>
+<td align="center"></td>
+<td align="center"></td>
 <td></td>
 </tr>
 <tr>
 <td>s1+2</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center">N/A</td>
+<td align="center">N/A</td>
+<td align="center"></td>
+<td align="center"></td>
 <td></td>
 </tr>
 </tbody>
@@ -11816,49 +11854,49 @@ The new cuvettes came in and they look amazing!
 <tr>
 <th>State</th>
 <th>Functional</th>
-<th style="text-align: center;">Opt</th>
-<th style="text-align: center;">Freq</th>
-<th style="text-align: center;">Pol</th>
-<th style="text-align: center;">Ex/Em</th>
-<th style="text-align: center;">ESD</th>
+<th align="center">Opt</th>
+<th align="center">Freq</th>
+<th align="center">Pol</th>
+<th align="center">Ex/Em</th>
+<th align="center">ESD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>s0</td>
 <td>ωB97X-D</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s1+2</td>
 <td>ωB97X-D</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s0</td>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center">N/A</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s1+2</td>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center">N/A</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -11868,81 +11906,91 @@ The new cuvettes came in and they look amazing!
 <tr>
 <th>State</th>
 <th>Functional</th>
-<th style="text-align: center;">Opt</th>
-<th style="text-align: center;">Freq</th>
-<th style="text-align: center;">Pol</th>
-<th style="text-align: center;">SS</th>
-<th style="text-align: center;">VEM</th>
-<th style="text-align: center;">ESD</th>
+<th align="center">Opt</th>
+<th align="center">Freq</th>
+<th align="center">Pol</th>
+<th align="center">SS</th>
+<th align="center">VEM</th>
+<th align="center">ESD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>s0</td>
 <td>ωB97X-D</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s1+2</td>
 <td>ωB97X-D</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s0</td>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s1+2</td>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
 <h2 id="to-do">To do:<a class="headerlink" href="#to-do" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> To read</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> To read<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read Betaine 30 paper 10.1002/chem.201604619</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jobs to figure out</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jobs to figure out<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Test QChem to figure out how to do VEM/cLR/LR/IBSF <strong>emission</strong></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Code</li>
+</ul>
+</li>
 <li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write energy extractors</p>
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Code</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> pullQChem_Freq</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write energy extractors<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> pullQChem_Freq<ul class="task-list">
 <li><span class="arithmatex">\(\Delta E_{ZPVE}\)</span></li>
 <li><span class="arithmatex">\(\Delta E_{elec}\)</span></li>
 <li>Number of -ve freqs</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Extend and test for CASSCF</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Q-chem ex/em extractors</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Q-chem ex/em extractors<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ss-ex</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ss-em</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> lr-ex</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> lr-em</li>
 </ul>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Try lerping between states</p>
+</ul>
+</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Try lerping between states</li>
+</ul>
 </li>
 </ul>
 <h2 id="gantt-chart">GANTT Chart<a class="headerlink" href="#gantt-chart" title="Permanent link">&para;</a></h2>

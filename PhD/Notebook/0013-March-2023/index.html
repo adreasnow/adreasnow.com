@@ -11165,9 +11165,11 @@
 <h3 id="from-meeting-re-laura">From meeting re Laura:<a class="headerlink" href="#from-meeting-re-laura" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Start on lit review asap</li>
-<li>What goals need to be covered, then work backwards from there</li>
+<li>What goals need to be covered, then work backwards from there<ul>
 <li>Focus on the broad issues, then explore the underlying issues</li>
 <li>Keep description and properties of fluorophores to a minimum</li>
+</ul>
+</li>
 <li>Week 3: Aims</li>
 <li>Week 6: Skills and knowledge </li>
 <li>Week 8: Intro - draft after mid-sem (week 7)</li>
@@ -11183,11 +11185,13 @@
 <li>r800 is still going&hellip;</li>
 </ul>
 <p>From meeting</p>
-<ul class="task-list">
-<li>Case study of a single species with ESD in low polarity solvent</li>
+<ul>
+<li>Case study of a single species with ESD in low polarity solvent<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Currently re-opt <code>s1</code> and <code>s2</code> with <code>calchess</code> and <code>angulargrid 6</code></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Then Freqs of all states</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Then ESD</li>
+</ul>
+</li>
 <li>+Deconvolution</li>
 </ul>
 <p>I&rsquo;ve written code additions for generation of an adiabatic hessian (hessian of other state at current state geom) and for ESD additions, and I&rsquo;m waiting for some other jobs to finish before I can get these through.</p>
@@ -11198,10 +11202,12 @@
 <p>I need to write a standalone deconvolution script for Sophie:</p>
 <p>Files to save out:</p>
 <ul>
-<li>CSV of the three specra </li>
+<li>CSV of the three specra <ol>
 <li>Processed/smoothed raw spectra</li>
 <li>Deriv space spectra</li>
 <li>Normalised spectra</li>
+</ol>
+</li>
 <li>CSV with deriv space fitted gaussians (loc, amp, sigma)</li>
 <li>CSV with re-fitted gaussians (loc, amp, sigma)</li>
 <li>TOML settings file with ALL the input parameters</li>
@@ -11261,7 +11267,7 @@
 <p>Teaching day. Nothing to report.</p>
 <h2 id="tuesday-21st-march">Tuesday 21<sup>st</sup> March<a class="headerlink" href="#tuesday-21st-march" title="Permanent link">&para;</a></h2>
 <p>I&rsquo;ve been feeling a bunch of burnout building, so I spent my day <a href="https://github.com/adreasnow/apiApp">working on an API</a> that runs on my home server and takes in job status updates to spit out a nicely formatted table of jobs, their cluster, status, and when their status last changed. I have it up and running and it looks good! (well, useful).</p>
-<p><img alt="!Screenshot 2023-03-22 at 10.07.53 am" src="../Screenshot%202023-03-22%20at%2010.07.53%20am.png" /></p>
+<p><div class="lightgallery"><a data-sub-html="Screenshot 2023-03-22 at 10.07.53 am" href="../Screenshot%202023-03-22%20at%2010.07.53%20am.png"><img alt="Screenshot 2023-03-22 at 10.07.53 am" src="../Screenshot%202023-03-22%20at%2010.07.53%20am.png" /></a></div></p>
 <p>It was pretty easy to write the Flask and SQL app, but the hard part (that took many hours) was getting to run as a subdomain using Apache.</p>
 <h2 id="wednesday-22nd-march">Wednesday 22<sup>nd</sup> March<a class="headerlink" href="#wednesday-22nd-march" title="Permanent link">&para;</a></h2>
 <p>Another teaching day, so not much to report&hellip;</p>
@@ -11272,8 +11278,10 @@
 <ol>
 <li>Our nda sample may not be pure</li>
 <li>I&rsquo;m going to need a solvent blank for EVERY fluorophore/solvent emission at every different excitation wavelength to account for Raman scattering</li>
-<li>This means I need more cuvettes so that I don&rsquo;t constantly have to empty and blank between each reading (Toby is going to order more)</li>
+<li>This means I need more cuvettes so that I don&rsquo;t constantly have to empty and blank between each reading (Toby is going to order more)<ul>
 <li>This can&rsquo;t really be mitigated with protocol work since I need to play with the excitation wavelength to get the correct peak and minimise scatter, so I need at least one more that I can get a solvent blank with.</li>
+</ul>
+</li>
 </ol>
 <h2 id="monday-27th-march">Monday 27<sup>th</sup> March<a class="headerlink" href="#monday-27th-march" title="Permanent link">&para;</a></h2>
 <p>Another big teaching week, don&rsquo;t expect too much from me</p>
@@ -11282,29 +11290,29 @@
 <thead>
 <tr>
 <th>Code</th>
-<th style="text-align: center;">Structure</th>
+<th align="center">Structure</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>NDA1 (2)</td>
-<td style="text-align: center;"><img alt="Screenshot 2023-03-27 at 11.00.26 am" src="../Screenshot%202023-03-27%20at%2011.00.26%20am.png" /></td>
+<td align="center"><img alt="Screenshot 2023-03-27 at 11.00.26 am" src="../Screenshot%202023-03-27%20at%2011.00.26%20am.png" /></td>
 </tr>
 <tr>
 <td>NDA2 (8)</td>
-<td style="text-align: center;"><img alt="Screenshot 2023-03-27 at 11.07.05 am" src="../Screenshot%202023-03-27%20at%2011.07.05%20am.png" /></td>
+<td align="center"><img alt="Screenshot 2023-03-27 at 11.07.05 am" src="../Screenshot%202023-03-27%20at%2011.07.05%20am.png" /></td>
 </tr>
 <tr>
 <td>NDA3 (3)</td>
-<td style="text-align: center;"><img alt="Screenshot 2023-03-27 at 11.09.53 am" src="../Screenshot%202023-03-27%20at%2011.09.53%20am.png" /></td>
+<td align="center"><img alt="Screenshot 2023-03-27 at 11.09.53 am" src="../Screenshot%202023-03-27%20at%2011.09.53%20am.png" /></td>
 </tr>
 </tbody>
 </table>
 <h4 id="new-theory">New Theory<a class="headerlink" href="#new-theory" title="Permanent link">&para;</a></h4>
 <p>I suspect that I can&rsquo;t use these small NDAs that have a hydroxyl, unless I ensure their protonation state.</p>
-<p><img alt="!Screenshot 2023-03-27 at 1.27.30 pm" src="../Screenshot%202023-03-27%20at%201.27.30%20pm.png" /></p>
+<p><div class="lightgallery"><a data-sub-html="Screenshot 2023-03-27 at 1.27.30 pm" href="../Screenshot%202023-03-27%20at%201.27.30%20pm.png"><img alt="Screenshot 2023-03-27 at 1.27.30 pm" src="../Screenshot%202023-03-27%20at%201.27.30%20pm.png" /></a></div></p>
 <p>There are a few NDAs that don&rsquo;t need to be forced into a protonation state, but they are much less computationally friendly.</p>
-<p><img alt="!Screenshot 2023-03-27 at 1.28.46 pm" src="../Screenshot%202023-03-27%20at%201.28.46%20pm.png" /></p>
+<p><div class="lightgallery"><a data-sub-html="Screenshot 2023-03-27 at 1.28.46 pm" href="../Screenshot%202023-03-27%20at%201.28.46%20pm.png"><img alt="Screenshot 2023-03-27 at 1.28.46 pm" src="../Screenshot%202023-03-27%20at%201.28.46%20pm.png" /></a></div></p>
 <h2 id="i-think-this-might-need-to-be-out-new-nda">I think this might need to be out new nda:<a class="headerlink" href="#i-think-this-might-need-to-be-out-new-nda" title="Permanent link">&para;</a></h2>
 <p>6-Methoxy-2-(2-methoxyethyl)-1*H*-benzo[<em>de</em>]isoquinoline-1,3(2*H*)-dione</p>
 <ul>
@@ -11319,8 +11327,8 @@
 <thead>
 <tr>
 <th>identifier</th>
-<th style="text-align: center;">fialed tests (qm subset)</th>
-<th style="text-align: center;">CPU Time</th>
+<th align="center">fialed tests (qm subset)</th>
+<th align="center">CPU Time</th>
 <th>Wall Time ⬇︎</th>
 <th>efficiency</th>
 </tr>
@@ -11328,78 +11336,78 @@
 <tbody>
 <tr>
 <td>-f90</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">1166.0</td>
+<td align="center"></td>
+<td align="center">1166.0</td>
 <td>1169.5</td>
 <td>99.7%</td>
 </tr>
 <tr>
 <td>-knl</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">1207.2</td>
+<td align="center"></td>
+<td align="center">1207.2</td>
 <td>1211.3</td>
 <td>99.7%</td>
 </tr>
 <tr>
 <td>-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">1280.5</td>
+<td align="center"></td>
+<td align="center">1280.5</td>
 <td>1286.4</td>
 <td>99.5%</td>
 </tr>
 <tr>
 <td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>knl+f90</strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>-openib-full-gcc10 (simint)</td>
-<td style="text-align: center;">5  (./doalltests)</td>
-<td style="text-align: center;">959.6</td>
+<td align="center">5  (./doalltests)</td>
+<td align="center">959.6</td>
 <td>970.8</td>
 <td>98.8%</td>
 </tr>
 <tr>
 <td>-openib-full-gcc10 (nosimint)</td>
-<td style="text-align: center;">5  (./doalltests)</td>
-<td style="text-align: center;">966.6</td>
+<td align="center">5  (./doalltests)</td>
+<td align="center">966.6</td>
 <td>978.0</td>
 <td>98.8%</td>
 </tr>
 <tr>
 <td>-openib-full</td>
-<td style="text-align: center;">6 (./doalltests)</td>
-<td style="text-align: center;">1011.9</td>
+<td align="center">6 (./doalltests)</td>
+<td align="center">1011.9</td>
 <td>1019.8</td>
 <td>99.2%</td>
 </tr>
 <tr>
 <td>-openib</td>
-<td style="text-align: center;">37 (./doqmtests)</td>
-<td style="text-align: center;">1019.7</td>
+<td align="center">37 (./doqmtests)</td>
+<td align="center">1019.7</td>
 <td>1028.1</td>
 <td>99.2%</td>
 </tr>
 <tr>
 <td>- (armci)</td>
-<td style="text-align: center;">38 (./doqmtests)</td>
-<td style="text-align: center;">1226.0</td>
+<td align="center">38 (./doqmtests)</td>
+<td align="center">1226.0</td>
 <td>1229.9</td>
 <td>99.7%</td>
 </tr>
 <tr>
 <td>-mpipr</td>
-<td style="text-align: center;">37 (./doqmtests)</td>
-<td style="text-align: center;">1292.9</td>
+<td align="center">37 (./doqmtests)</td>
+<td align="center">1292.9</td>
 <td>1336.3</td>
 <td>96.7%</td>
 </tr>
@@ -11419,24 +11427,34 @@
 <ul>
 <li>Drop QY entirely</li>
 <li>Should be able to get transition oscillator approximation by measuring the overlap between GS ZPVE dipole and ES <span class="arithmatex">\(v=n\)</span> dipole derivative</li>
-<li>HT should have a geometric approximation</li>
+<li>HT should have a geometric approximation<ul>
 <li><a href="https://escholarship.org/content/qt33c9b7zs/qt33c9b7zs.pdf?t=rb3s6h">https://escholarship.org/content/qt33c9b7zs/qt33c9b7zs.pdf?t=rb3s6h</a></li>
-<li>Excitation spectra is probably better to use than absorbance for deconvolution, since it&rsquo;s going to give us fewer peaks and thus cleaner data.</li>
+</ul>
+</li>
+<li>Excitation spectra is probably better to use than absorbance for deconvolution, since it&rsquo;s going to give us fewer peaks and thus cleaner data.<ul>
 <li>Need to account for this in our oscillator overlap as well - transition probability of both up and down.</li>
+</ul>
+</li>
 </ul>
 <h2 id="questions-im-currently-trying-to-answer">Questions I&rsquo;m currently trying to answer<a class="headerlink" href="#questions-im-currently-trying-to-answer" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Can we use frequency calculations directly to think about the individual transitions?</li>
-<li>How significant is anharmonicity in effecting transition energies?</li>
+<li>How significant is anharmonicity in effecting transition energies?<ul>
 <li>Even if it&rsquo;s significant in overall thermodynamic properties, do the errors cancel out when considering both GS and ES PES anharmonically?</li>
-<li>In investigating 0-0 transition energies, what is the most correct formal approach?</li>
+</ul>
+</li>
+<li>In investigating 0-0 transition energies, what is the most correct formal approach?<ul>
 <li><del>Adiabatic 0-0 - R(initial) Eq &rarr;  R(initial) nEq</del> <mark>!! This approach is fundamentally flawed, as you will ALWAYS get negative frequencies !!</mark><ul>
-<li><del>Using relaxed densities is probably important here though since the wfn will have time to relax</del></li>
+<li><del>Using relaxed densities is probably important here though since the wfn will have time to relax</del><ul>
 <li><del>QChem: <code>CIS_RELAXED_DENSITY   TRUE</code></del></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Equilibirated 0-0 - R(initial) Eq &rarr;  R(final) Eq<ul>
 <li><mark>This doesn&rsquo;t give the distinct difference in abs and fluor 0-0 peaks though</mark></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -11454,31 +11472,31 @@
 <thead>
 <tr>
 <th>State</th>
-<th style="text-align: center;">Active Spaces</th>
-<th style="text-align: center;">Opt</th>
-<th style="text-align: center;">Freq</th>
-<th style="text-align: center;">FIC-CASPT2K</th>
-<th style="text-align: center;">SC-NEVPT2</th>
+<th align="center">Active Spaces</th>
+<th align="center">Opt</th>
+<th align="center">Freq</th>
+<th align="center">FIC-CASPT2K</th>
+<th align="center">SC-NEVPT2</th>
 <th>QD-NEVPT2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>s0</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center"></td>
+<td align="center"></td>
 <td></td>
 </tr>
 <tr>
 <td>s1+2</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center"></td>
+<td align="center"></td>
 <td></td>
 </tr>
 </tbody>
@@ -11489,49 +11507,49 @@
 <tr>
 <th>State</th>
 <th>Functional</th>
-<th style="text-align: center;">Opt</th>
-<th style="text-align: center;">Freq</th>
-<th style="text-align: center;">Pol</th>
-<th style="text-align: center;">Ex/Em</th>
-<th style="text-align: center;">ESD</th>
+<th align="center">Opt</th>
+<th align="center">Freq</th>
+<th align="center">Pol</th>
+<th align="center">Ex/Em</th>
+<th align="center">ESD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>s0</td>
 <td>ωB97X-D</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s1+2</td>
 <td>ωB97X-D</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s0</td>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center">N/A</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s1+2</td>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🏃" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f3c3.svg" title=":running:" /></td>
+<td align="center">N/A</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -11541,99 +11559,109 @@
 <tr>
 <th>State</th>
 <th>Functional</th>
-<th style="text-align: center;">Opt</th>
-<th style="text-align: center;">Freq</th>
-<th style="text-align: center;">Pol</th>
-<th style="text-align: center;">SS</th>
-<th style="text-align: center;">VEM</th>
-<th style="text-align: center;">ESD</th>
+<th align="center">Opt</th>
+<th align="center">Freq</th>
+<th align="center">Pol</th>
+<th align="center">SS</th>
+<th align="center">VEM</th>
+<th align="center">ESD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>s0</td>
 <td>ωB97X-D</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s1+2</td>
 <td>ωB97X-D</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s0</td>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>s1+2</td>
 <td>CAM-B3LYP</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
 <h2 id="to-run-an-esd-job">To Run an ESD job:<a class="headerlink" href="#to-run-an-esd-job" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Calculate frequencies of GS and ES</li>
-<li>Run ESD Calcs for both states - both with eq solvation</li>
+<li>Run ESD Calcs for both states - both with eq solvation<ul>
 <li>GS: <code>ESD(ABS)</code></li>
 <li>ES: <code>ESD(FLUOR)</code></li>
+</ul>
+</li>
 </ol>
 <h2 id="to-do">To do:<a class="headerlink" href="#to-do" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> To read</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> To read<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read Betaine 30 paper 10.1002/chem.201604619</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jobs to write</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jobs to write<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Test QChem to figure out how to do VEM/cLR/LR/IBSF <strong>emission</strong></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Code</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Code<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Write standalone deconvolution notebook</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write energy extractors</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> pullQChem_Freq</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write energy extractors<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> pullQChem_Freq<ul class="task-list">
 <li><span class="arithmatex">\(\Delta E_{ZPVE}\)</span></li>
 <li><span class="arithmatex">\(\Delta E_{elec}\)</span></li>
 <li>Number of -ve freqs</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Extend and test for CASSCF</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Q-chem ex/em extractors</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Q-chem ex/em extractors<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ss-ex</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ss-em</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> lr-ex</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> lr-em</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Documentation</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Transfers documentation</p>
-</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Transfers documentation</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Contact List</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ORCA and QChem examples</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Try lerping between states</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ORCA and QChem examples</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Try lerping between states</li>
+</ul>
 </li>
 </ul>
 <h2 id="gantt-chart">GANTT Chart<a class="headerlink" href="#gantt-chart" title="Permanent link">&para;</a></h2>

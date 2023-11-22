@@ -10851,10 +10851,12 @@
 
 <h1 id="ab-initio">Ab Initio<a class="headerlink" href="#ab-initio" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Ab initio methods utilise the HF approximations</li>
+<li>Ab initio methods utilise the HF approximations<ul>
 <li>BO approximation - PES</li>
 <li>HF approximation (mean field approximation) - SCF</li>
 <li>LCAO</li>
+</ul>
+</li>
 </ul>
 <h2 id="hf-theory">HF Theory<a class="headerlink" href="#hf-theory" title="Permanent link">&para;</a></h2>
 <ul>
@@ -10884,13 +10886,15 @@ E_{HF}=E_T+E_v+E_J+E_K+E_C
 <ul>
 <li><span class="arithmatex">\(\Phi_i\)</span>= the molecular orbital</li>
 <li><span class="arithmatex">\(c_{\mu i}\)</span>= the molecular orbital coefficient - a weighted contribution of how much each basis function effects the final molecular orbital</li>
-<li><span class="arithmatex">\(\chi_\mu\)</span>= the basis function</li>
+<li><span class="arithmatex">\(\chi_\mu\)</span>= the basis function<ul>
 <li>The basis function here is <span class="arithmatex">\(Ne^{−\zeta r^2}\)</span>  </li>
 <li><span class="arithmatex">\(N\)</span> in the basis set is a normalisation constant <span class="arithmatex">\(C_i\)</span> in this unit</li>
 <li><span class="arithmatex">\(\zeta\)</span> is the exponent, providing the width of the Gaussian function</li>
 <li><span class="arithmatex">\(r\)</span> is the spacial location of the orbital</li>
 <li>The amount of zeta determines the amount of functions that can be optimised<ul>
 <li>E.g. Triple <span class="arithmatex">\(\zeta\)</span> would be  <span class="arithmatex">\(\chi=(Ne^{−\zeta_1r^2})+(Ne^{−\zeta_2r^2})+(Ne^{−\zeta_3r^2})\)</span></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -10909,32 +10913,40 @@ E_{HF}=E_T+E_v+E_J+E_K+E_C
 </ul>
 <h2 id="rhfrohfuhf">RHF/ROHF/UHF<a class="headerlink" href="#rhfrohfuhf" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Restricted Hartree-Fock (RHF)</li>
+<li>Restricted Hartree-Fock (RHF)<ul>
 <li>For closed shell systems all the spin up and spin down orbitals have the same spatial coordinates
 <br><br></li>
-<li>Restricted Open-Shell Hartree-Fock (ROHF)</li>
+</ul>
+</li>
+<li>Restricted Open-Shell Hartree-Fock (ROHF)<ul>
 <li>All paired electrons are treated are RHF and any unpaired electrons have different functionals for the occupied component and the unoccupied virtual component
 <br><br></li>
-<li>Unrestricted Hartree-Fock (UHF)</li>
+</ul>
+</li>
+<li>Unrestricted Hartree-Fock (UHF)<ul>
 <li>All electrons are considered to have their own orbital, without considering paired and unpaired electrons in the same orbital</li>
 </ul>
-<p><img alt="!image" class="center" src="../AI1.png" style="width: 70%;" /></p>
+</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="image" href="../AI1.png"><img alt="image" class="center" src="../AI1.png" style="width: 70%;" /></a></div></p>
 <h2 id="advantages-and-disadvantages-of-uhf">Advantages and Disadvantages of UHF<a class="headerlink" href="#advantages-and-disadvantages-of-uhf" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Advantages</li>
+<li>Advantages<ul>
 <li>Accounts for the influence that unpaired electrons have on the paired electrons<ul>
 <li>They have a habit of changing spin densities</li>
 </ul>
 </li>
 <li>Provides qualitatively description of bond breaking/forming</li>
-<li>
-<p>Models open shell systems more accurately than RHF</p>
+<li>Models open shell systems more accurately than RHF</li>
+</ul>
 </li>
-<li>
-<p>Disadvantages</p>
-</li>
+</ul>
+<ul>
+<li>Disadvantages<ul>
 <li>Computationally more expensive</li>
 <li>Can lead to spin contamination - where the wavefunction isn&rsquo;t always made of one spin up and one spin down electron. This leads to an improper wavefunction being formed</li>
+</ul>
+</li>
 </ul>
 <h2 id="electron-correlation">Electron Correlation<a class="headerlink" href="#electron-correlation" title="Permanent link">&para;</a></h2>
 <ul>
@@ -10948,41 +10960,47 @@ E_{HF}=E_T+E_v+E_J+E_K+E_C
 \widehat{V}_{ee}=E_J+E_K+E_C
 \]</div>
 <ul>
-<li>Where:</li>
+<li>Where:<ul>
 <li><span class="arithmatex">\(E_T\)</span>= electron kinetic energy</li>
 <li><span class="arithmatex">\(E_V\)</span>= electron potential energy</li>
 <li><span class="arithmatex">\(E_J\)</span>= coulombic repulsion energy</li>
 <li><span class="arithmatex">\(E_K\)</span>= exchange energy</li>
 <li><span class="arithmatex">\(E_C\)</span>= correlation energy
 <br><br></li>
+</ul>
+</li>
 <li>Correlation energy is always negative as it&rsquo;s the process by which electrons minimise their energy</li>
-<li>Is sensitive to the amount of electron pairs and comes in two types</li>
+<li>Is sensitive to the amount of electron pairs and comes in two types<ul>
 <li>Dynamic Correlation - which is the dance that electrons make to try and avoid each other</li>
 <li>Static Correlation - is the energy associated with electrons being able to change their configuration as needed to minimise their energy (accounted for in CI)</li>
+</ul>
+</li>
 <li>Calculating this is the single most important thing in quantum chemistry</li>
 </ul>
 <h2 id="mller-plesset">Møller-Plesset<a class="headerlink" href="#mller-plesset" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Perturbation methods like MP theory assume that the problem we&rsquo;d like to solve differs only slightly from a problem that we&rsquo;ve already solved</li>
-<li>The energy is calculated to various orders  of approximation</li>
+<li>The energy is calculated to various orders  of approximation<ul>
 <li>MP2 - second order</li>
 <li>MP3 - third order</li>
 <li>Etc..</li>
-<li>The computational cost greatly increases with each successive order</li>
-<li>The series is not even guaranteed to converge.<ul>
-<li>The job may never finish and unlike SCF will not necessarily give you an error</li>
 </ul>
 </li>
+<li>The computational cost greatly increases with each successive order</li>
+<li>The series is not even guaranteed to converge.
+    * The job may never finish and unlike SCF will not necessarily give you an error</li>
 <li>In general only MP2 is recommend</li>
 <li>MP2 approximately includes single and double excitations</li>
 </ul>
 <h2 id="configuration-interaction">Configuration Interaction<a class="headerlink" href="#configuration-interaction" title="Permanent link">&para;</a></h2>
 <ul>
 <li>To account for this, the next generation of ab initio methods accounts for this and are called &ldquo;post HF methods&rdquo;</li>
-<li>One of the ways this works is to look at Configuration Interaction (CI)</li>
+<li>One of the ways this works is to look at Configuration Interaction (CI)<ul>
 <li>This theory considers that the actual composition of a quantum system accounts for all the possible &ldquo;configurations&rdquo; (determinants). In this case, that means that a linear combination of all the possible configurations needs to be calculated to account for this process.</li>
 </ul>
-<p><img alt="!image" class="center" src="../AI2.png" style="width: 70%" /></p>
+</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="image" href="../AI2.png"><img alt="image" class="center" src="../AI2.png" style="width: 70%" /></a></div></p>
 <div class="highlight"><pre><span></span><code>    Single           Double        Triple       Quadruple
 </code></pre></div>
 <p>This number is the amount of electrons that are excited in the process</p>
@@ -11011,42 +11029,44 @@ E_{HF}=E_T+E_v+E_J+E_K+E_C
 <h2 id="cost">Cost<a class="headerlink" href="#cost" title="Permanent link">&para;</a></h2>
 <p>As a comparison, here is a cost table of how computational time where <span class="arithmatex">\(N=\)</span> the number of basis functions</p>
 <ul>
-<li>DFT is similar to HF (~<span class="arithmatex">\(N^3\)</span>)  <img alt="!image" class="center" src="../AI3.png" style="width: 30%; " /></li>
+<li>DFT is similar to HF (~<span class="arithmatex">\(N^3\)</span>)  <div class="lightgallery"><a data-sub-html="image" href="../AI3.png"><img alt="image" class="center" src="../AI3.png" style="width: 30%; " /></a></div></li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Method</th>
-<th style="text-align: left;">Scaling Cost</th>
+<th align="left">Scaling Cost</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>HF</td>
-<td style="text-align: left;">N^2</td>
+<td align="left">N^2</td>
 </tr>
 <tr>
 <td>MP2</td>
-<td style="text-align: left;">N^5</td>
+<td align="left">N^5</td>
 </tr>
 <tr>
 <td>CCSD</td>
-<td style="text-align: left;">N^6</td>
+<td align="left">N^6</td>
 </tr>
 <tr>
 <td>CCSD(T)</td>
-<td style="text-align: left;">N^7</td>
+<td align="left">N^7</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>While CISD is an approach that can be used, it has a few shortfalls that make it inefficient</li>
+<li>While CISD is an approach that can be used, it has a few shortfalls that make it inefficient<ul>
 <li>QCISD fixes these issues but is more costly  than CCSD which is more accurate</li>
 <li>&ldquo;CISD is not sufficient, CISDTQ is too expensive &ldquo;</li>
 </ul>
+</li>
+</ul>
 <h2 id="semiempirical-methods-am1-pm3-rm1-etc">Semiempirical Methods (AM1, PM3, RM1, etc.)<a class="headerlink" href="#semiempirical-methods-am1-pm3-rm1-etc" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Make a fair few simplifications</li>
+<li>Make a fair few simplifications<ul>
 <li>Only look at the valence electrons, so as to minimise the amount of functions needed</li>
 <li>Don’t look at long range interactions<ul>
 <li>Really important in protein modelling, as there is just far too much going on to account  for everything</li>
@@ -11059,6 +11079,8 @@ E_{HF}=E_T+E_v+E_J+E_K+E_C
 </li>
 <li>Use a minimal basis set, such as 3-21G</li>
 <li>Employ a non iterative solution process, that is it won’t use guess and check methods such as with SCF</li>
+</ul>
+</li>
 </ul>
 
 

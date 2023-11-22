@@ -10780,17 +10780,23 @@
 <p>The big takeaway here for me is that semiempirical methods work by pre-screening the Fock matrix and using absolute values to replace the calculation of some of the more expensive integrals in the Hamiltonian</p>
 <h2 id="two-electron-integrals">Two Electron Integrals<a class="headerlink" href="#two-electron-integrals" title="Permanent link">&para;</a></h2>
 <ul>
-<li>CNDO - Complete Neglect of Differential Overlap</li>
+<li>CNDO - Complete Neglect of Differential Overlap<ul>
 <li>Uses the ionisation potential and electron affinity to act as values in the electron repulsion term</li>
 <li>Doesn&rsquo;t differentiate between different orbitals on the same atom (no singlet-triplet splitting)</li>
 <li>Doesn&rsquo;t account for difference in energy between rotamers </li>
-<li>INDO - Intermediate Neglect of Differential Overlap</li>
+</ul>
+</li>
+<li>INDO - Intermediate Neglect of Differential Overlap<ul>
 <li>Differentiates between different orbital shapes on the same atom</li>
 <li>Are (often) useful for molecular spectroscopy in large molecules</li>
-<li>NDDO - Neglect of Diatomic Differential Overlap</li>
+</ul>
+</li>
+<li>NDDO - Neglect of Diatomic Differential Overlap<ul>
 <li>Uses INDO for electrons on the same atom</li>
 <li>Uses a set of values for the 100 possible combinations of orbital/atom pairs for electrons on different atoms<ul>
 <li>Treats the interactions of different orbital shapes as point charge (s/s), dipole (s/p) or quadrupole (p/p)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -10996,12 +10996,12 @@ So today, I’ve been spending my morning filling out forms, completing complian
 </ul>
 </div>
 <p>So I got distracted based on something that Chris Cramer said about the excited state orbitals being so close together (as per Kasha&rsquo;s rule) and ended up writing a script to visualise the energy levels of calculations instead of reading/studying. This is benzene btw ⇩</p>
-<p><img alt="!output" class="center" src="../output.svg" style="width: 40%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="output" href="../output.svg"><img alt="output" class="center" src="../output.svg" style="width: 40%; " /></a></div></p>
 <h2 id="thursday-7th-april">Thursday 7<sup>th</sup> April<a class="headerlink" href="#thursday-7th-april" title="Permanent link">&para;</a></h2>
 <p>Today I didn&rsquo;t do a huge amount. I sat in a cafe and worked through the PhD compliance modules, saw my psych, met with Toby, and that&rsquo;s about it.</p>
 <h3 id="meeting-notes">Meeting Notes<a class="headerlink" href="#meeting-notes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Toby&rsquo;s main areas of interest seem to be in photoswitching mechanisms and understanding the behaviour of excited states</li>
+<li>Toby&rsquo;s main areas of interest seem to be in photoswitching mechanisms and understanding the behaviour of excited states<ul>
 <li>He mentioned that most researchers seem to have their known set of fluoropohres that they can use base don empirically derived protocols</li>
 <li>There was definitely an emphasis on switching these fluorophores  on and off. A few concepts/mechanisms were highlighted, including:<ul>
 <li>Excited states that don&rsquo;t emit, so called &ldquo;dark states&rdquo;</li>
@@ -11011,17 +11011,23 @@ So today, I’ve been spending my morning filling out forms, completing complian
 </ul>
 </li>
 <li>Modern fluorophores that act as &ldquo;polarity probes,&rdquo; where the  extent of charge transfer is controlled by conformation of the molecule</li>
-<li>Photoswitchable proteins are also of interest. These could be:</li>
+</ul>
+</li>
+<li>Photoswitchable proteins are also of interest. These could be:<ul>
 <li>Dark when created, requiring photo-activation </li>
 <li>Reversibly switchable, either being photo or chemically driven</li>
+</ul>
+</li>
 <li><mark>One particularly interesting system was that of BODIPY derivatives. Apparently they are attracted to lipid droplets and light up when in that lipid environment, but the mechanism behind this is currently unknown.</mark></li>
-<li>Photoswitching of NDIs?</li>
+<li>Photoswitching of NDIs?<ul>
 <li>Toby theorised that NDIs might be able to undergo a process to make them switchable, essentially:<ul>
 <li>Photoreduction ⟹ singlet excited state ⟹ (relaxes to) triplet state ⟹ (binds to another species) stable radical species</li>
 </ul>
 </li>
 <li>Naphalene monoimides might also be useful, since they&rsquo;re smaller and can be more water soluble</li>
-<li>When I asked Toby about what key properties he&rsquo;d be interested in investigating computationally, he mentioned:</li>
+</ul>
+</li>
+<li>When I asked Toby about what key properties he&rsquo;d be interested in investigating computationally, he mentioned:<ul>
 <li>Photostability - knowing how long these species last while activated. Molecules don&rsquo;t seem to like being activated and deactivated over and over again :P</li>
 <li>General questions of:<ul>
 <li>What makes a photostable compound?</li>
@@ -11030,6 +11036,8 @@ So today, I’ve been spending my morning filling out forms, completing complian
 </li>
 <li>I mentioned that these properties might actually be quite difficult to explore because of the breadth of the question and the extent of the PES that might need to be explored</li>
 <li>He also mentioned liquid-liquid phase separations that occur within cells and how molecules seem to have quite different fluorescence properties in there, compared to the rest of the cell</li>
+</ul>
+</li>
 </ul>
 <h2 id="friday-sunday-8-10th-april">Friday - Sunday 8-10<sup>th</sup> April<a class="headerlink" href="#friday-sunday-8-10th-april" title="Permanent link">&para;</a></h2>
 <p>Today I&rsquo;ve been trying to get my head around the role of multi-determinant calculations in fluorescence spectroscopy, which seems to be quite difficult to do. Following Kasha&rsquo;s rule, for most systems there should only be one primary de-excitation, so fluorescence spectroscopic studies should mostly be (by my internal logic):</p>
@@ -11050,77 +11058,77 @@ I&rsquo;m currently watching the David Sherril lecture on <a href="../../../Chea
 <thead>
 <tr>
 <th>Job<br/></th>
-<th style="text-align: center;">Absorbance energy (eV)</th>
-<th style="text-align: center;">Absorbance wavelength (nm)</th>
-<th style="text-align: center;">Error (eV)</th>
-<th style="text-align: center;">Emission energy (eV)</th>
-<th style="text-align: center;">Emission wavelength (nm)</th>
-<th style="text-align: center;">Error (eV)</th>
+<th align="center">Absorbance energy (eV)</th>
+<th align="center">Absorbance wavelength (nm)</th>
+<th align="center">Error (eV)</th>
+<th align="center">Emission energy (eV)</th>
+<th align="center">Emission wavelength (nm)</th>
+<th align="center">Error (eV)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Experiment</td>
-<td style="text-align: center;"><mark>2.460</mark></td>
-<td style="text-align: center;"><mark>504</mark></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"><mark>2.407</mark></td>
-<td style="text-align: center;"><mark>515</mark></td>
-<td style="text-align: center;">-</td>
+<td align="center"><mark>2.460</mark></td>
+<td align="center"><mark>504</mark></td>
+<td align="center">-</td>
+<td align="center"><mark>2.407</mark></td>
+<td align="center"><mark>515</mark></td>
+<td align="center">-</td>
 </tr>
 <tr>
 <td>ωB87X-D/cc-PVTZ</td>
-<td style="text-align: center;">2.889</td>
-<td style="text-align: center;">429.2</td>
-<td style="text-align: center;">0.429</td>
-<td style="text-align: center;">2.796</td>
-<td style="text-align: center;">443.4</td>
-<td style="text-align: center;">0.389</td>
+<td align="center">2.889</td>
+<td align="center">429.2</td>
+<td align="center">0.429</td>
+<td align="center">2.796</td>
+<td align="center">443.4</td>
+<td align="center">0.389</td>
 </tr>
 <tr>
 <td>cam-B3LYP/cc-PVTZ <br/>(ωB87X-D/cc-PVTZ geom)</td>
-<td style="text-align: center;">2.705</td>
-<td style="text-align: center;">458.4</td>
-<td style="text-align: center;">0.245</td>
-<td style="text-align: center;">2.620</td>
-<td style="text-align: center;">473.2</td>
-<td style="text-align: center;">0.213</td>
+<td align="center">2.705</td>
+<td align="center">458.4</td>
+<td align="center">0.245</td>
+<td align="center">2.620</td>
+<td align="center">473.2</td>
+<td align="center">0.213</td>
 </tr>
 <tr>
 <td>CASSCF (8,6)/cc-PVTZ</td>
-<td style="text-align: center;">3.528</td>
-<td style="text-align: center;">351.5</td>
-<td style="text-align: center;">1.068</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">3.528</td>
+<td align="center">351.5</td>
+<td align="center">1.068</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>RI-NEVPT2 (SC) (8,6)/cc-PVTZ</td>
-<td style="text-align: center;">2.690</td>
-<td style="text-align: center;">461.0</td>
-<td style="text-align: center;">0.320</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">2.690</td>
+<td align="center">461.0</td>
+<td align="center">0.320</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>RI-NEVPT2 (QD) (8,6)/cc-PVTZ</td>
-<td style="text-align: center;">2.584</td>
-<td style="text-align: center;">479.9</td>
-<td style="text-align: center;">0.124</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">2.584</td>
+<td align="center">479.9</td>
+<td align="center">0.124</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>DLPNO-STEOM-CCSD (geom from TDDFT)</td>
-<td style="text-align: center;">2.376</td>
-<td style="text-align: center;">521.9</td>
-<td style="text-align: center;">-0.084</td>
-<td style="text-align: center;">2.376</td>
-<td style="text-align: center;">547.2</td>
-<td style="text-align: center;">-0.031</td>
+<td align="center">2.376</td>
+<td align="center">521.9</td>
+<td align="center">-0.084</td>
+<td align="center">2.376</td>
+<td align="center">547.2</td>
+<td align="center">-0.031</td>
 </tr>
 </tbody>
 </table>
@@ -11151,10 +11159,14 @@ orca_plot<span class="w"> </span><span class="nv">$1</span><span class="w"> </sp
 <p>Reading through <a href="http://scienide2.uwaterloo.ca/~nooijen/Chem-440-computational/CASSCF_and_NEVPT2_calculations.pdf">this pdf</a> it looks like a general procedure for CASSCF could be described as:</p>
 <ol>
 <li>Choose a starting guess for the active space based on chemical intuition. in ORCA, run your MP2 or DFT calc with <code>!normalPrint</code> to get the <code>LOEWDIN REDUCED ORBITAL POPULATIONS PER MO</code> which will give an indicator of the character of each orbital. You might want to aim for a 𝜋 system for example, or d orbitals if working with a transition metal. Also look at the orbital energies and add easily accessible and degenerate orbitals. The final active space should probably be symetrical for occupied and unoccupied</li>
-<li>Run a CASSCF job (loading in the orbitals from step 1) optimising for only one root (<code>nroots 1</code>) </li>
+<li>Run a CASSCF job (loading in the orbitals from step 1) optimising for only one root (<code>nroots 1</code>) <ul>
 <li>This gives us a basic starting point to test our active space</li>
-<li>Run the CASSCF job (loading in the orbitals from step 2) again, with more roots (maybe <code>nroots 20</code>) without re-optimising the orbitals (<code>!NoIter</code>). </li>
+</ul>
+</li>
+<li>Run the CASSCF job (loading in the orbitals from step 2) again, with more roots (maybe <code>nroots 20</code>) without re-optimising the orbitals (<code>!NoIter</code>). <ul>
 <li>This will give us an idea of which states will be important to optimise for.</li>
+</ul>
+</li>
 <li>Run another CASSCF job (loading in the orbitals from step 2) optimising the orbitals for only the roots that we care about and inspect the output for unoccupied orbitals with minimal occupation, which can be culled from the active space.</li>
 <li>If everything is looking good, now you can think about running your production run with the culled active space, and for the roots of interest, probably tightening up the scf convergence to <code>VeryTightSCF</code> or <code>ExtremeSCF</code> </li>
 <li>You can then run an RI-NEVPT2 calc for added correlation, reading in the orbitals from step 5 and freezing the orbitals using <code>!NoIter</code>. This could potentially be QD-NEVPT2 (quality) or DLPNO-NEVPT2 (cheap) </li>
@@ -11163,13 +11175,15 @@ orca_plot<span class="w"> </span><span class="nv">$1</span><span class="w"> </sp
 <details class="example">
 <summary>To Do</summary>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Re-Watch Chris Cramer&rsquo;s excited state videos</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Re-Watch Chris Cramer&rsquo;s excited state videos<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.youtube.com/watch?v=KrDz8zayXoI&amp;list=WL&amp;index=9">Configuration interaction</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.youtube.com/watch?v=YG9eXUzlHRk&amp;list=WL&amp;index=10">Perturbation and time-dependent DFT</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.youtube.com/watch?v=Jsi8b1M45bg&amp;list=WL&amp;index=11">Conical intersections</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.youtube.com/watch?v=PdNE4VZrhys&amp;list=WL&amp;index=12">Solvatochromism</a></li>
+</ul>
+</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Watch David Sherill&rsquo;s <a href="https://www.youtube.com/watch?v=MlbKoXACAx8&amp;list=WL&amp;index=8">talk on excited electronic states</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read the review papers (to start with)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read the review papers (to start with)<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Spectroscopic Approaches<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Modelling absorption spectra of molecules in solution</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Polarizable embedding QM/MM: the future gold standard for complex (bio)systems?</li>
@@ -11185,16 +11199,20 @@ orca_plot<span class="w"> </span><span class="nv">$1</span><span class="w"> </sp
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Polarizable continuum model</li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read state of the art papers</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read state of the art papers<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Time-Dependent Complete Active Space Embedded in a Polarizable Force Field</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Photochemistry and transient intermediates in a bacteriophytochrome photocycle revealed by multiscale simulations</li>
+</ul>
+</li>
 </ul>
 </details>
 <h2 id="monday-11th-april">Monday 11<sup>th</sup> April<a class="headerlink" href="#monday-11th-april" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Plonked in a cafe trying to slam out some marking with a very large mocha. Also continuing on with those CASSCF jobs&hellip; They&rsquo;re not easy to slam out your first time <img alt="😅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f605.svg" title=":sweat_smile:" /></li>
 <li>I&rsquo;ve prettied up the TD-DFT jobs, but the CASSCF jobs are still nasty. I&rsquo;m currently looking at expanding the active space to see what might be going on. I also turned my jupyter orbital visualiser into a script that can be run remotely. I think I need to really just get to reading though&hellip;</li>
-<li>I&rsquo;m slowly working my way through &lsquo;<em>Modelling absorption spectra of molecules in solution</em>&rsquo; and am writing up my notes <a href="../../Notes/solventsForEstates">here</a></li>
+<li>I&rsquo;m slowly working my way through &lsquo;<em>Modelling absorption spectra of molecules in solution</em>&lsquo; and am writing up my notes <a href="../../Notes/solventsForEstates">here</a></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Everyone seems to state a different "Gold Standard"</p>
@@ -11208,29 +11226,29 @@ I guess that I need to read some benchmarking studies!</p>
 <p>I <em>have</em> been working through the rest of the paper from yesterday, but it&rsquo;s been slow&hellip; It feels a lot like a love letter to one particular method and I&rsquo;m not sure how I fI&rsquo;ve also been eel about that.</p>
 <h2 id="wednesday-13th-april">Wednesday 13<sup>th</sup> April<a class="headerlink" href="#wednesday-13th-april" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>Today I&rsquo;m teaching CHM3911, so I&rsquo;ve been working through the exercise and questions to make sure I understand them all, but I decided to make <a href="https://www.desmos.com/calculator/uwjilj9iwn">a little visual tool</a> to help explain negative frequencies</p>
+<li>Today I&rsquo;m teaching CHM3911, so I&rsquo;ve been working through the exercise and questions to make sure I understand them all, but I decided to make <a href="https://www.desmos.com/calculator/uwjilj9iwn">a little visual tool</a> to help explain negative frequencies</li>
+</ul>
+<ul>
+<li>I&rsquo;ve also been playing with some of ORCA&rsquo;s other spectroscopy tools in it&rsquo;s <code>ORCA_ESD</code> module, that allows it to calculate Franck-Condon weighted spectra for absorption, fluorescence and phosphorescence. These jobs are naturally pretty slow since they&rsquo;re analysing the hessians of both the ground and excited state, so I&rsquo;m playing with them with TDDFT for now, but I&rsquo;ll be curious to see how much the results reflect experiment for BODIPY.<ul>
+<li>In reading deeper, if you run the <code>ESD(ABS)</code> or <code>ESD(FLUOR)</code> jobs, with <code>doht true</code> if will calculate both the Herzberg- Teller (HT) and Franck-Condon (FC) components of the spectrum.</li>
+</ul>
 </li>
-<li>
-<p>I&rsquo;ve also been playing with some of ORCA&rsquo;s other spectroscopy tools in it&rsquo;s <code>ORCA_ESD</code> module, that allows it to calculate Franck-Condon weighted spectra for absorption, fluorescence and phosphorescence. These jobs are naturally pretty slow since they&rsquo;re analysing the hessians of both the ground and excited state, so I&rsquo;m playing with them with TDDFT for now, but I&rsquo;ll be curious to see how much the results reflect experiment for BODIPY.</p>
-</li>
-<li>
-<p>In reading deeper, if you run the <code>ESD(ABS)</code> or <code>ESD(FLUOR)</code> jobs, with <code>doht true</code> if will calculate both the Herzberg- Teller (HT) and Franck-Condon (FC) components of the spectrum.</p>
-</li>
-<li>
-<p>I don&rsquo;t think I&rsquo;ll have a huge amount of time for reading today, but I might be able to sneak in a couple of hours before my TA session.</p>
-</li>
+</ul>
+<ul>
+<li>I don&rsquo;t think I&rsquo;ll have a huge amount of time for reading today, but I might be able to sneak in a couple of hours before my TA session.</li>
 </ul>
 <h2 id="thursday-14th-april">Thursday 14<sup>th</sup> April<a class="headerlink" href="#thursday-14th-april" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Today I am teaching again, and I&rsquo;ve had an emotionally rough morning so I haven&rsquo;t done a huge amount of work, but I did look over the outputs form my &ldquo;excited state dynamics&rdquo; jobs, and while the fluorescence was very bad, the absorbance actually looks kind of good! </li>
+<li>Today I am teaching again, and I&rsquo;ve had an emotionally rough morning so I haven&rsquo;t done a huge amount of work, but I did look over the outputs form my &ldquo;excited state dynamics&rdquo; jobs, and while the fluorescence was very bad, the absorbance actually looks kind of good! <ul>
 <li><strong>Edit:</strong> I have since re-done the fluorescence with <code>!usesym</code> off and not specifying <code>maxdim</code>, and it looks much better, but doesn&rsquo;t seem to have much of a stokes shift, though admittedly, experimentally it&rsquo;s only 11 nm&hellip;</li>
 </ul>
-<p><img alt="!Picture 1" class="center" src="../Picture%201.svg" style="width: 40%; " /></p>
+</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="Picture 1" href="../Picture%201.svg"><img alt="Picture 1" class="center" src="../Picture%201.svg" style="width: 40%; " /></a></div></p>
 <ul>
 <li>And as a test, I also did it with CAM-B3LYP in Ethanol (exp <span class="arithmatex">\(\lambda_{abs}=499\:nm\)</span> <span class="arithmatex">\(\lambda_{em}=535\:nm\)</span>). These results seem to be even worse&hellip;</li>
 </ul>
-<p><img alt="!Picture 1" class="center" src="../Picture%201-9979812.svg" style="width: 40%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="Picture 1" href="../Picture%201-9979812.svg"><img alt="Picture 1" class="center" src="../Picture%201-9979812.svg" style="width: 40%; " /></a></div></p>
 <div class="admonition info">
 <p class="admonition-title">Definition of the day</p>
 <ul>
@@ -11242,8 +11260,10 @@ I guess that I need to read some benchmarking studies!</p>
 <p>I keep finding more fantastic looking papers pop up in my twitter feed that keep getting added to my library. This seems counterproductive, and it would be nice if science just stopped and waited for me to catch up!</p>
 <p>I did decide to do a few extra calculations thought to figure out a few particular things:</p>
 <ul>
-<li>Is CAM-B3LYP opt better than ωB87X-D? <mark>Here, yes</mark></li>
+<li>Is CAM-B3LYP opt better than ωB87X-D? <mark>Here, yes</mark><ul>
 <li>Does this also help with STEOM-DLPNO-CCSD? <mark>Yes</mark></li>
+</ul>
+</li>
 <li>Do diffuse functions help? <mark>Not looking good</mark></li>
 <li>Can I get <code>iroot 1</code> opt working with CASSCF? <mark>In reading the tips and tricks in the ESD section, it looks lime the indexing of roots for MRSCF jobs starts at 1, not 0, so <span class="arithmatex">\(S_1\)</span> would actually be <code>iroot 2</code></mark></li>
 </ul>
@@ -11251,64 +11271,64 @@ I guess that I need to read some benchmarking studies!</p>
 <thead>
 <tr>
 <th>Job<br/></th>
-<th style="text-align: center;">Absorbance energy (eV)</th>
-<th style="text-align: center;">Absorbance wavelength (nm)</th>
-<th style="text-align: center;">Error (eV)</th>
-<th style="text-align: center;">Emission energy (eV)</th>
-<th style="text-align: center;">Emission wavelength (nm)</th>
-<th style="text-align: center;">Error (eV)</th>
+<th align="center">Absorbance energy (eV)</th>
+<th align="center">Absorbance wavelength (nm)</th>
+<th align="center">Error (eV)</th>
+<th align="center">Emission energy (eV)</th>
+<th align="center">Emission wavelength (nm)</th>
+<th align="center">Error (eV)</th>
 <th>Stokes Shift (nm)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Experiment</td>
-<td style="text-align: center;"><mark>2.460</mark></td>
-<td style="text-align: center;"><mark>504</mark></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"><mark>2.407</mark></td>
-<td style="text-align: center;"><mark>515</mark></td>
-<td style="text-align: center;">-</td>
+<td align="center"><mark>2.460</mark></td>
+<td align="center"><mark>504</mark></td>
+<td align="center">-</td>
+<td align="center"><mark>2.407</mark></td>
+<td align="center"><mark>515</mark></td>
+<td align="center">-</td>
 <td>10</td>
 </tr>
 <tr>
 <td>CAM-B3LYP/aug-cc-PVTZ</td>
-<td style="text-align: center;">2.675</td>
-<td style="text-align: center;">463.4</td>
-<td style="text-align: center;">0.215</td>
-<td style="text-align: center;">2.591</td>
-<td style="text-align: center;">478.5</td>
-<td style="text-align: center;">0.184</td>
+<td align="center">2.675</td>
+<td align="center">463.4</td>
+<td align="center">0.215</td>
+<td align="center">2.591</td>
+<td align="center">478.5</td>
+<td align="center">0.184</td>
 <td>15.1</td>
 </tr>
 <tr>
 <td>CASSCF (8,6)/aug-cc-PVTZ</td>
-<td style="text-align: center;">3.697</td>
-<td style="text-align: center;">335.3</td>
-<td style="text-align: center;">1.237</td>
-<td style="text-align: center;">3.697</td>
-<td style="text-align: center;">335.3</td>
-<td style="text-align: center;">1.290</td>
+<td align="center">3.697</td>
+<td align="center">335.3</td>
+<td align="center">1.237</td>
+<td align="center">3.697</td>
+<td align="center">335.3</td>
+<td align="center">1.290</td>
 <td>0</td>
 </tr>
 <tr>
 <td>RI-NEVPT2 (QD) (8,6)/aug-cc-PVTZ</td>
-<td style="text-align: center;">2.708</td>
-<td style="text-align: center;">457.9</td>
-<td style="text-align: center;">0.249</td>
-<td style="text-align: center;">2.708</td>
-<td style="text-align: center;">457.9</td>
-<td style="text-align: center;">0.302</td>
+<td align="center">2.708</td>
+<td align="center">457.9</td>
+<td align="center">0.249</td>
+<td align="center">2.708</td>
+<td align="center">457.9</td>
+<td align="center">0.302</td>
 <td>0</td>
 </tr>
 <tr>
 <td>DLPNO-STEOM-CCSD (CAM-B3LYP geom)</td>
-<td style="text-align: center;">2.422</td>
-<td style="text-align: center;">512.0</td>
-<td style="text-align: center;">0.038</td>
-<td style="text-align: center;">2.332</td>
-<td style="text-align: center;">531.7</td>
-<td style="text-align: center;">0.075</td>
+<td align="center">2.422</td>
+<td align="center">512.0</td>
+<td align="center">0.038</td>
+<td align="center">2.332</td>
+<td align="center">531.7</td>
+<td align="center">0.075</td>
 <td>19.7</td>
 </tr>
 </tbody>
@@ -11318,89 +11338,89 @@ I guess that I need to read some benchmarking studies!</p>
 <thead>
 <tr>
 <th>Program</th>
-<th style="text-align: center;">ORCA</th>
-<th style="text-align: center;">Analytical<br/>grads</th>
-<th style="text-align: center;">Psi4</th>
-<th style="text-align: center;">Analytical<br/>grads</th>
+<th align="center">ORCA</th>
+<th align="center">Analytical<br/>grads</th>
+<th align="center">Psi4</th>
+<th align="center">Analytical<br/>grads</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Solvation</td>
-<td style="text-align: center;">CPCM (LR, PTE, PTE(S))<br>CPCMC (COSMO)<br/>SMD</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;">IEFPCM<br/>CPCM<br>(non-equilibrium)</td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center">CPCM (LR, PTE, PTE(S))<br>CPCMC (COSMO)<br/>SMD</td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center">IEFPCM<br/>CPCM<br>(non-equilibrium)</td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
 </tr>
 <tr>
 <td>TD-DFT</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
 </tr>
 <tr>
 <td>EOM-CCSD*</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
 </tr>
 <tr>
 <td>STEOM-CCSD (RI)</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;">N/A</td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center">N/A</td>
 </tr>
 <tr>
 <td>DLPNO-EOM-CCSD</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;">N/A</td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center">N/A</td>
 </tr>
 <tr>
 <td>DLPNO-STEOM-CCSD</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;">N/A</td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center">N/A</td>
 </tr>
 <tr>
 <td>CASSCF</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
 <td>PC embedding</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
 <td>NEVPT2</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;">N/A</td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center">N/A</td>
 </tr>
 <tr>
 <td>CC2*</td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"></td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center">N/A</td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>ADC*</td>
-<td style="text-align: center;">(2)</td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
-<td style="text-align: center;">(2) built in (unmaintained)<br/><br/>(1), (2), (2)-x, (3) <br/>through <code>set qc_module adcc</code><br/>With/without CVS</td>
-<td style="text-align: center;"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center">(2)</td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
+<td align="center">(2) built in (unmaintained)<br/><br/>(1), (2), (2)-x, (3) <br/>through <code>set qc_module adcc</code><br/>With/without CVS</td>
+<td align="center"><img alt="🚫" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f6ab.svg" title=":no_entry_sign:" /></td>
 </tr>
 </tbody>
 </table>
@@ -11413,215 +11433,215 @@ I guess that I need to read some benchmarking studies!</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Job<br/></th>
-<th style="text-align: center;">Transition</th>
-<th style="text-align: center;">Absorbance energy (eV)</th>
-<th style="text-align: center;">Absorbance wavelength (nm)</th>
-<th style="text-align: center;">Error (eV)</th>
-<th style="text-align: center;">Transition</th>
-<th style="text-align: center;">Emission energy (eV)</th>
-<th style="text-align: center;">Emission wavelength (nm)</th>
-<th style="text-align: center;">Error (eV)</th>
+<th align="left">Job<br/></th>
+<th align="center">Transition</th>
+<th align="center">Absorbance energy (eV)</th>
+<th align="center">Absorbance wavelength (nm)</th>
+<th align="center">Error (eV)</th>
+<th align="center">Transition</th>
+<th align="center">Emission energy (eV)</th>
+<th align="center">Emission wavelength (nm)</th>
+<th align="center">Error (eV)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Experiment</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><mark>3.22</mark></td>
-<td style="text-align: center;">385</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><mark>2.36</mark></td>
-<td style="text-align: center;"><mark>525</mark></td>
-<td style="text-align: center;">-</td>
+<td align="left">Experiment</td>
+<td align="center"></td>
+<td align="center"><mark>3.22</mark></td>
+<td align="center">385</td>
+<td align="center">-</td>
+<td align="center"></td>
+<td align="center"><mark>2.36</mark></td>
+<td align="center"><mark>525</mark></td>
+<td align="center">-</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>SMD (ORCA)</strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left"><strong>SMD (ORCA)</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: left;">CAM-B3LYP/aug-cc-pvtz</td>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f = 0.1285\)</span></td>
-<td style="text-align: center;">3.312</td>
-<td style="text-align: center;">374.4</td>
-<td style="text-align: center;">0.09</td>
-<td style="text-align: center;"><span class="arithmatex">\(f=0.3460\)</span></td>
-<td style="text-align: center;">2.958</td>
-<td style="text-align: center;">419.2</td>
-<td style="text-align: center;">0.60</td>
+<td align="left">CAM-B3LYP/aug-cc-pvtz</td>
+<td align="center"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f = 0.1285\)</span></td>
+<td align="center">3.312</td>
+<td align="center">374.4</td>
+<td align="center">0.09</td>
+<td align="center"><span class="arithmatex">\(f=0.3460\)</span></td>
+<td align="center">2.958</td>
+<td align="center">419.2</td>
+<td align="center">0.60</td>
 </tr>
 <tr>
-<td style="text-align: left;">ωB97X-D/aug-cc-pvtz</td>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f = 0.1422\)</span></td>
-<td style="text-align: center;">3.377</td>
-<td style="text-align: center;">367.2</td>
-<td style="text-align: center;">0.16</td>
-<td style="text-align: center;"><span class="arithmatex">\(f=0.3610\)</span></td>
-<td style="text-align: center;">3.01</td>
-<td style="text-align: center;">412.6</td>
-<td style="text-align: center;">0.65</td>
+<td align="left">ωB97X-D/aug-cc-pvtz</td>
+<td align="center"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f = 0.1422\)</span></td>
+<td align="center">3.377</td>
+<td align="center">367.2</td>
+<td align="center">0.16</td>
+<td align="center"><span class="arithmatex">\(f=0.3610\)</span></td>
+<td align="center">3.01</td>
+<td align="center">412.6</td>
+<td align="center">0.65</td>
 </tr>
 <tr>
-<td style="text-align: left;">NEVPT2/aug-cc-pvtz</td>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f = 0.2623\)</span></td>
-<td style="text-align: center;">3.276</td>
-<td style="text-align: center;">378.5</td>
-<td style="text-align: center;">0.06</td>
-<td style="text-align: center;"><span class="arithmatex">\(f=0.2057\)</span></td>
-<td style="text-align: center;">2.688</td>
-<td style="text-align: center;">461.2</td>
-<td style="text-align: center;">0.33</td>
+<td align="left">NEVPT2/aug-cc-pvtz</td>
+<td align="center"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f = 0.2623\)</span></td>
+<td align="center">3.276</td>
+<td align="center">378.5</td>
+<td align="center">0.06</td>
+<td align="center"><span class="arithmatex">\(f=0.2057\)</span></td>
+<td align="center">2.688</td>
+<td align="center">461.2</td>
+<td align="center">0.33</td>
 </tr>
 <tr>
-<td style="text-align: left;">RI-ADC(2)/aug-cc-pvdz</td>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f = 0.1479\)</span></td>
-<td style="text-align: center;">3.204</td>
-<td style="text-align: center;">387.0</td>
-<td style="text-align: center;">0.02</td>
-<td style="text-align: center;"><span class="arithmatex">\(f = 0.1308\)</span></td>
-<td style="text-align: center;">2.806</td>
-<td style="text-align: center;">441.8</td>
-<td style="text-align: center;">0.45</td>
+<td align="left">RI-ADC(2)/aug-cc-pvdz</td>
+<td align="center"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f = 0.1479\)</span></td>
+<td align="center">3.204</td>
+<td align="center">387.0</td>
+<td align="center">0.02</td>
+<td align="center"><span class="arithmatex">\(f = 0.1308\)</span></td>
+<td align="center">2.806</td>
+<td align="center">441.8</td>
+<td align="center">0.45</td>
 </tr>
 <tr>
-<td style="text-align: left;">DLPNO-STEOM-CCSD/aug-cc-pvtz</td>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\to S_2\)</span><br/><span class="arithmatex">\(f = 0.2857\)</span></td>
-<td style="text-align: center;">3.302</td>
-<td style="text-align: center;">375.4</td>
-<td style="text-align: center;">0.08</td>
-<td style="text-align: center;"><span class="arithmatex">\(f=0.1451\)</span></td>
-<td style="text-align: center;">2.591</td>
-<td style="text-align: center;">478.6</td>
-<td style="text-align: center;">0.23</td>
+<td align="left">DLPNO-STEOM-CCSD/aug-cc-pvtz</td>
+<td align="center"><span class="arithmatex">\(S_0\to S_2\)</span><br/><span class="arithmatex">\(f = 0.2857\)</span></td>
+<td align="center">3.302</td>
+<td align="center">375.4</td>
+<td align="center">0.08</td>
+<td align="center"><span class="arithmatex">\(f=0.1451\)</span></td>
+<td align="center">2.591</td>
+<td align="center">478.6</td>
+<td align="center">0.23</td>
 </tr>
 <tr>
-<td style="text-align: left;">STEOM-CCSD/aug-cc-pvtz<br/>(10 roots)</td>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f=0.1745\)</span></td>
-<td style="text-align: center;">3.064</td>
-<td style="text-align: center;">404.7</td>
-<td style="text-align: center;">0.16</td>
-<td style="text-align: center;">Too expensive to compute</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left">STEOM-CCSD/aug-cc-pvtz<br/>(10 roots)</td>
+<td align="center"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f=0.1745\)</span></td>
+<td align="center">3.064</td>
+<td align="center">404.7</td>
+<td align="center">0.16</td>
+<td align="center">Too expensive to compute</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: left;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Explicit Solvation<br/>(2 water shells)</strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left"><strong>Explicit Solvation<br/>(2 water shells)</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: left;">CAM-B3LYP/cc-pvdz/aug-cc-pvtz (ORCA + SMD)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left">CAM-B3LYP/cc-pvdz/aug-cc-pvtz (ORCA + SMD)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: left;">CAM-B3LYP/cc-pvdz/aug-cc-pvtz (Psi4)</td>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f = 0.\)</span>2442</td>
-<td style="text-align: center;">3.803</td>
-<td style="text-align: center;">326.0</td>
-<td style="text-align: center;">0.58</td>
-<td style="text-align: center;"><span class="arithmatex">\(f=0.2021\)</span></td>
-<td style="text-align: center;">3.083</td>
-<td style="text-align: center;">402.2</td>
-<td style="text-align: center;">0.72</td>
+<td align="left">CAM-B3LYP/cc-pvdz/aug-cc-pvtz (Psi4)</td>
+<td align="center"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f = 0.\)</span>2442</td>
+<td align="center">3.803</td>
+<td align="center">326.0</td>
+<td align="center">0.58</td>
+<td align="center"><span class="arithmatex">\(f=0.2021\)</span></td>
+<td align="center">3.083</td>
+<td align="center">402.2</td>
+<td align="center">0.72</td>
 </tr>
 <tr>
-<td style="text-align: left;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>XTB2 optimised EFP (Psi4)</strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left"><strong>XTB2 optimised EFP (Psi4)</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: left;">CAM-B3LYP/aug-cc-pvtz</td>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\to S_2\)</span><br/><span class="arithmatex">\(f = 0.1705\)</span></td>
-<td style="text-align: center;">3.337</td>
-<td style="text-align: center;">371.5</td>
-<td style="text-align: center;">0.12</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left">CAM-B3LYP/aug-cc-pvtz</td>
+<td align="center"><span class="arithmatex">\(S_0\to S_2\)</span><br/><span class="arithmatex">\(f = 0.1705\)</span></td>
+<td align="center">3.337</td>
+<td align="center">371.5</td>
+<td align="center">0.12</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: left;">ADC(2)/aug-cc-pvdz</td>
-<td style="text-align: center;">Huge amounts of mem needed</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left">ADC(2)/aug-cc-pvdz</td>
+<td align="center">Huge amounts of mem needed</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: left;">EOM-CC2/aug-cc-pvdz<br/>(5 roots)</td>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\to S_2\)</span><br/><span class="arithmatex">\(f=0.1892\)</span></td>
-<td style="text-align: center;">3.116</td>
-<td style="text-align: center;">397.9</td>
-<td style="text-align: center;">0.10</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left">EOM-CC2/aug-cc-pvdz<br/>(5 roots)</td>
+<td align="center"><span class="arithmatex">\(S_0\to S_2\)</span><br/><span class="arithmatex">\(f=0.1892\)</span></td>
+<td align="center">3.116</td>
+<td align="center">397.9</td>
+<td align="center">0.10</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: left;">EOM-CCSD/aug-cc-pvdz<br/>(5 roots)</td>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f=0.2021\)</span></td>
-<td style="text-align: center;">3.320</td>
-<td style="text-align: center;">373.5</td>
-<td style="text-align: center;">0.02</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left">EOM-CCSD/aug-cc-pvdz<br/>(5 roots)</td>
+<td align="center"><span class="arithmatex">\(S_0\to S_1\)</span><br/><span class="arithmatex">\(f=0.2021\)</span></td>
+<td align="center">3.320</td>
+<td align="center">373.5</td>
+<td align="center">0.02</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -11642,7 +11662,7 @@ I guess that I need to read some benchmarking studies!</p>
 <li>Found out first hand how much better SMD is for excited state modelling of strongly interacting solvents than regular CPCM or IEFCPM</li>
 <li>Realised that I&rsquo;m made a very stupid, very basic chemistry mistake with HINA that means I&rsquo;m redoing all my calcs</li>
 </ul>
-<p><img alt="!Figure_1" class="center" src="../Figure_1.svg" style="width: 40%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="Figure_1" href="../Figure_1.svg"><img alt="Figure_1" class="center" src="../Figure_1.svg" style="width: 40%; " /></a></div></p>
 <ul>
 <li>Ths revised, CAM-B3LYP optimised abs and emission spectra of HINA^ they the second largest peak is spot on for <span class="arithmatex">\(\lambda_{max}\)</span>, but there&rsquo;s obviously the other peak that&rsquo;s kind of screwing that up&hellip;</li>
 <li>The emission spectrum is still completely off though. I wonder if I can use DLPNO-STEOM-CCSD to do the ESD calcs though, since it got much closer!</li>
@@ -11650,10 +11670,12 @@ I guess that I need to read some benchmarking studies!</p>
 </ul>
 <h4 id="jobs-currently-running">Jobs currently running:<a class="headerlink" href="#jobs-currently-running" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Re-doing the BODIPY CASSCF jobs <code>3-bodipy-casscf-root-*.inp</code></li>
+<li>Re-doing the BODIPY CASSCF jobs <code>3-bodipy-casscf-root-*.inp</code><ul>
 <li>Next will be the corresponding NEVPT2 jobs <code>4-bodipy-nevpt2-root-*.inp</code></li>
 <li><mark>These didn&rsquo;t optimise to separate roots again. I don&rsquo;t know that the CASSCF jobs can do this tbh.</mark></li>
-<li>Low level opt of a full solvation shell for HINA <code>25-hina-cb3lyp-preefp.inp</code></li>
+</ul>
+</li>
+<li>Low level opt of a full solvation shell for HINA <code>25-hina-cb3lyp-preefp.inp</code><ul>
 <li>Next will be the efp job <code>25-hina-cb3lyp-efp.in</code><ul>
 <li>Compare these values with ORCA SMD solvated jobs</li>
 </ul>
@@ -11664,50 +11686,60 @@ I guess that I need to read some benchmarking studies!</p>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 <h2 id="friday-22nd-april">Friday 22<sup>nd</sup> April<a class="headerlink" href="#friday-22nd-april" title="Permanent link">&para;</a></h2>
 <p>I sat in a cafe this morning and decided to read some of Skoog to round out my undergrad knowledge of fluorescence spectroscopy and these are my basic notes:</p>
 <div class="admonition summary">
 <p class="admonition-title">Notes from Skoog on fluorescence</p>
 <ul>
 <li>Excitation will typically happen from the lowest vibration state of the ground singlet state to whatever corresponding state on the excited state PES as detemrined by the FC rules</li>
-<li>Nonradiative <strong>&ldquo;internal conversion&rdquo;</strong> between states will typically happen when the states are close together in energy or when the molecule is reasonably flexible</li>
+<li>Nonradiative <strong>&ldquo;internal conversion&rdquo;</strong> between states will typically happen when the states are close together in energy or when the molecule is reasonably flexible<ul>
 <li>This in turn means that the more rigid a molecule, the more likely it is to fluoresce</li>
-<li>FLuorescence is typically a <span class="arithmatex">\(S_*\to S_0\)</span> process, as the <span class="arithmatex">\(T_*\to S_0\)</span> transition requires a spin pairing to happen which could take a fair amount of time</li>
+</ul>
+</li>
+<li>FLuorescence is typically a <span class="arithmatex">\(S_*\to S_0\)</span> process, as the <span class="arithmatex">\(T_*\to S_0\)</span> transition requires a spin pairing to happen which could take a fair amount of time<ul>
 <li>The triplet state will also be lower in energy than the corresponding singlet state, and will thus be more prone to internal conversion than emission </li>
-<li>Increaing temperature leads to an increase in internal conversion and collision relaxation, thus leading to a decrease in quantum yield</li>
+</ul>
+</li>
+<li>Increaing temperature leads to an increase in internal conversion and collision relaxation, thus leading to a decrease in quantum yield<ul>
 <li>The same also happens for a decrease in solvent viscosity </li>
-<li>Absorbance and fluorescence spectra tend to be mirror images to each other (<a href="#thursday-21st-april">as shown on Thursday</a>), which is a product of the FC principle and the idea that the PES of the excited state and ground state will be relatively similar.</li>
+</ul>
+</li>
+<li>Absorbance and fluorescence spectra tend to be mirror images to each other (<a href="#thursday-21st-april">as shown on Thursday</a>), which is a product of the FC principle and the idea that the PES of the excited state and ground state will be relatively similar.<ul>
 <li>Molecules with larger PES changes through the excitaiton process will have less symmetric spectra</li>
+</ul>
+</li>
 </ul>
 </div>
 <table>
 <thead>
 <tr>
 <th>Transition</th>
-<th style="text-align: center;">Timeframe (s)</th>
-<th style="text-align: center;">Timeframe (human)</th>
+<th align="center">Timeframe (s)</th>
+<th align="center">Timeframe (human)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="arithmatex">\(S_0\to S_*\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10^{-15}s\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1\:fs\)</span></td>
+<td align="center"><span class="arithmatex">\(10^{-15}s\)</span></td>
+<td align="center"><span class="arithmatex">\(1\:fs\)</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(S_1\to S_0\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10^{-9}s\)</span> to <span class="arithmatex">\(10^{-7}s\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1\:ns\)</span> to <span class="arithmatex">\(100\:ns\)</span></td>
+<td align="center"><span class="arithmatex">\(10^{-9}s\)</span> to <span class="arithmatex">\(10^{-7}s\)</span></td>
+<td align="center"><span class="arithmatex">\(1\:ns\)</span> to <span class="arithmatex">\(100\:ns\)</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(T_1\to S_0\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10^{-3}s\)</span> to <span class="arithmatex">\(10^{2}s\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1\:ms\)</span> to <span class="arithmatex">\(100\:s\)</span></td>
+<td align="center"><span class="arithmatex">\(10^{-3}s\)</span> to <span class="arithmatex">\(10^{2}s\)</span></td>
+<td align="center"><span class="arithmatex">\(1\:ms\)</span> to <span class="arithmatex">\(100\:s\)</span></td>
 </tr>
 <tr>
 <td>Internal conversion<br/>Vibrational relaxation</td>
-<td style="text-align: center;"><span class="arithmatex">\(10^{-14}s\)</span> to <span class="arithmatex">\(10^{-11}s\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10\:fs\)</span> to <span class="arithmatex">\(10\:ps\)</span></td>
+<td align="center"><span class="arithmatex">\(10^{-14}s\)</span> to <span class="arithmatex">\(10^{-11}s\)</span></td>
+<td align="center"><span class="arithmatex">\(10\:fs\)</span> to <span class="arithmatex">\(10\:ps\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -11758,32 +11790,40 @@ I guess that I need to read some benchmarking studies!</p>
 <p>I have a meeting with Katya in a couple of hours , which should be interesting.</p>
 <ul>
 <li>I spent my afternoon re-writing my <code>2slm</code> input generator in python</li>
-<li>When I got home I started to play with MOPAC (PM7) and XTB2 optimised structures for EFP input and the results are actually quite impressive with 500 water molecules.</li>
+<li>When I got home I started to play with MOPAC (PM7) and XTB2 optimised structures for EFP input and the results are actually quite impressive with 500 water molecules.<ul>
 <li>Since the chromophore geometry is going be kind of messed up, I&rsquo;ve been using the semiempirical optimised geometry to position the EFP fragments and have been optimising the chromophore in the static EFP. The results in the <a href="#hina-table">HINA table</a> speak for themselves</li>
+</ul>
+</li>
 </ul>
 <h3 id="meeting-notes_1">Meeting Notes<a class="headerlink" href="#meeting-notes_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Katya&rsquo;s big criticism of the field seems to be that it&rsquo;s constantly chasing experimental results, rather than understanding the underlying physics, so her big suggestion is that we need to:</li>
+<li>Katya&rsquo;s big criticism of the field seems to be that it&rsquo;s constantly chasing experimental results, rather than understanding the underlying physics, so her big suggestion is that we need to:<ul>
 <li>Separating out the error of the computational method (level of theory) compared with the methodology used to get the results</li>
 <li>Separating out the implementation of solvent effects from how they behave with that particular methodology</li>
 <li>Separating out vertical excitation (0-0) from the emission spectra</li>
-<li>Katya&rsquo;s idea:</li>
+</ul>
+</li>
+<li>Katya&rsquo;s idea:<ul>
 <li>To build an established approach or process of thinking that has understandable and predictable errors involved.<ul>
 <li>She seems to be very keen on the detection of metals as a grand challenge.</li>
 </ul>
 </li>
-<li>The process for my approach to this might need to be to figure out</li>
+</ul>
+</li>
+<li>The process for my approach to this might need to be to figure out<ol>
 <li>What are all the different approaches? - benchmark them to find their associated errors<ul>
 <li>I think I might need to talk to toby about building a dataset.</li>
 </ul>
 </li>
 <li>What would be the most expensive gold standard option that we could use?</li>
 <li>How can we use this knowledge to break down this field into predictable simple approaches with well understood errors.</li>
+</ol>
+</li>
 </ul>
 <details class="example" open="open">
 <summary>To Do</summary>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read the review papers (to start with)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read the review papers (to start with)<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Spectroscopic Approaches<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Modelling absorption spectra of molecules in solution</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Polarizable embedding QM/MM: the future gold standard for complex (bio)systems?</li>
@@ -11800,9 +11840,13 @@ I guess that I need to read some benchmarking studies!</p>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Polarizable continuum model</li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read state of the art papers</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read state of the art papers<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Time-Dependent Complete Active Space Embedded in a Polarizable Force Field</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Photochemistry and transient intermediates in a bacteriophytochrome photocycle revealed by multiscale simulations</li>
+</ul>
+</li>
 </ul>
 </details>
 

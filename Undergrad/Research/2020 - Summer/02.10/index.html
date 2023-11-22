@@ -10777,26 +10777,22 @@
 <h1 id="monday-10-february-2020">Monday, 10. February 2020<a class="headerlink" href="#monday-10-february-2020" title="Permanent link">&para;</a></h1>
 <h2 id="to-do">To do<a class="headerlink" href="#to-do" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read deeper into SAPT</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Figure out why Pyrrole-Ni Is giving silly charge transfer values</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Figure out how to converge benzene-Ni SAPT</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Check ion pair jobs and re-optimise with PCM, then SAPT2+-CT</p>
-</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read deeper into SAPT</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Figure out why Pyrrole-Ni Is giving silly charge transfer values</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Figure out how to converge benzene-Ni SAPT</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Check ion pair jobs and re-optimise with PCM, then SAPT2+-CT</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Check pyrrole-Ni</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Check benzene-Ni</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Manually extract HOMO-LUMO data from the ion pairs, so as to extract the base molecule orbitals and not the ions themselves</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Find pcm opt flag in Psi4 <strong>(not worth it)</strong></p>
-</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Manually extract HOMO-LUMO data from the ion pairs, so as to extract the base molecule orbitals and not the ions themselves</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Find pcm opt flag in Psi4 <strong>(not worth it)</strong></li>
 </ul>
 <h2 id="what-i-did">What I did<a class="headerlink" href="#what-i-did" title="Permanent link">&para;</a></h2>
 <p>sI mostly just spent my morning cleaning up the jobs that have been running over the weekend. I also found that optimisation with psi4 pcm just doesn’t seem to work, there’s probably a flag somewhere, but I need to look for it. I did however find a <a href="../../../../Cheat%20Sheets/Psi4/#errors">line that forces OPTKING to use cartesian coordinates</a>, rather than converting to z-matrix, which prevents back-transformation, linear angle and torsional issues</p>

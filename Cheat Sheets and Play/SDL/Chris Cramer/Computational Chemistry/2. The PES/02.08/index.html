@@ -10841,18 +10841,22 @@
 </center></p>
 </details>
 <p>When we calculate properties that are based on a Boltzmann distribution, it&rsquo;s easy to think of the <span class="arithmatex">\(\pm\)</span> as being an error, however while some of it is, there is an element that is simply the statistical variance of the distribution itself, that is that the system will not just exist as the <a href=".././02.07/#integrating-over-phase-space">expectation value</a>, but will deviate around it.</p>
-<p><img alt="!image" class="center" src="../MMFF3-Dist.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MMFF3-Dist.png"><img alt="image" class="center" src="../MMFF3-Dist.png" style="width: 50%; " /></a></div></p>
 <h2 id="whats-the-point">What&rsquo;s the point?<a class="headerlink" href="#whats-the-point" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Running MD simulations allows us to calculate time and momentum dependant properties about the geometry</li>
-<li>Allows us to perform certain &ldquo;tricks&rdquo; that couldn&rsquo;t be done experimentally:</li>
+<li>Allows us to perform certain &ldquo;tricks&rdquo; that couldn&rsquo;t be done experimentally:<ul>
 <li>Maintaining constant temperature (thermostats)</li>
 <li>Maintaining constant pressure (pistons)</li>
 </ul>
+</li>
+</ul>
 <h3 id="solvation-in-md">Solvation in MD<a class="headerlink" href="#solvation-in-md" title="Permanent link">&para;</a></h3>
 <ul>
-<li>If only one shell of hydration is used to calculate solvation, while one side of the solvent molecules sees the solute, the other side will effectively see a vacuum</li>
+<li>If only one shell of hydration is used to calculate solvation, while one side of the solvent molecules sees the solute, the other side will effectively see a vacuum<ul>
 <li>We could use more solvent molecules to prevent this, however that would be computationally not useful</li>
+</ul>
+</li>
 </ul>
 <h4 id="pbc">PBC<a class="headerlink" href="#pbc" title="Permanent link">&para;</a></h4>
 <p>Instead we can use PBC which essentially clones the current geometry into the surrounding cells to reduce the amount of computation required to calculate the system. This effectively makes a &ldquo;pseudo crystal&rdquo;. You calculate the force fields on the primary unit cell and extend out into other cells only for long range interactions</p>
@@ -10861,7 +10865,7 @@
 <p class="admonition-title">Note</p>
 <p>It&rsquo;s really important to make sure there are well designed cutoffs to long range interactions, or a particular atom could potentially interact with itself. </p>
 </div>
-<p><img alt="!image" class="center" src="../MMFF3-PBC.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MMFF3-PBC.png"><img alt="image" class="center" src="../MMFF3-PBC.png" style="width: 50%; " /></a></div></p>
 <h3 id="quasi-ergodic-sampling-problem">&ldquo;Quasi-Ergodic&rdquo; sampling problem<a class="headerlink" href="#quasi-ergodic-sampling-problem" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Effects MD and Monte Carlo systems</li>
@@ -10896,7 +10900,7 @@
 <li>The equations below the plot refer to the method of calculation one might use to obtain the desired properties</li>
 <li>the plot is both on a scale of the size of the system, and of the timescale of the system</li>
 </ul>
-<p><img alt="!image" class="center" src="../MMFF3-WM.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MMFF3-WM.png"><img alt="image" class="center" src="../MMFF3-WM.png" style="width: 50%; " /></a></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>&ldquo;Coarse Graining&rdquo; is a process of breaking down each component of a larger scale model into smaller models (e.g. continuum models for implicit solvation, MD for explicit solvation)</p>

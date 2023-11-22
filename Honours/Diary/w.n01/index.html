@@ -10915,10 +10915,12 @@
 <p>MonARCH and M3 go down at 8am tomorrow, so I&rsquo;m just trying to get as much done with these OptTS jobs as I can, before I need to start doing things on Rosalind again.</p>
 <h3 id="what-i-did-today">What I did today:<a class="headerlink" href="#what-i-did-today" title="Permanent link">&para;</a></h3>
 <ul>
-<li>I fired off a bunch jobs to have a maximum of 16 hours (will die at 7am), based on the output form the NEB calculation</li>
+<li>I fired off a bunch jobs to have a maximum of 16 hours (will die at 7am), based on the output form the NEB calculation<ul>
 <li>Forcing a bond coordinate between the new bonding atoms - following modes 0-2 - new hessian every 5 steps</li>
 <li>Specifying for the OptTS job to follow the eigenvector that has strong bonding between the new bonding atoms</li>
 <li>Forcing the new bond coordinate and setting only a small hessian active region around the bonding atoms (16 coordinates, computed numerically&hellip; at least they can be computed in one lot as one per core)</li>
+</ul>
+</li>
 </ul>
 <h2 id="monday-57">Monday 5/7<a class="headerlink" href="#monday-57" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -10928,11 +10930,15 @@ Katya</p>
 <p>So we drank, ate and were merry to celebrate <img alt="😄" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f604.svg" title=":smile:" /></p>
 <h3 id="what-i-did-today-that-wasnt-just-eating-and-drinking">What I did today (that wasn&rsquo;t just eating and drinking):<a class="headerlink" href="#what-i-did-today-that-wasnt-just-eating-and-drinking" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Had a meeting with Katya who advised me to try using B3LYP to get the OptTS jobs to work</li>
+<li>Had a meeting with Katya who advised me to try using B3LYP to get the OptTS jobs to work<ul>
 <li>I gave it a shot, but I think the force field that ORCA is using between full hessian steps is throwing off the optimisation&hellip;</li>
 <li>So of course I went full tilt, and am optimising with B3LYP, calculating a full analytical hessian at every step! (on Rosalind, the poor gal)</li>
-<li>Katya also suggested that I start getting the MD runs equilibrating, which meant that I need to get everything parameterised.</li>
+</ul>
+</li>
+<li>Katya also suggested that I start getting the MD runs equilibrating, which meant that I need to get everything parameterised.<ul>
 <li>I had a chat with Tom about this and it&rsquo;s difficult to say the least. The reactant is a radical pecies to probably will have some parameterisation issues, and LigParGen for atom typing is failing at atom typing the molecule.</li>
+</ul>
+</li>
 </ul>
 <h2 id="tuesday-67">Tuesday 6/7<a class="headerlink" href="#tuesday-67" title="Permanent link">&para;</a></h2>
 <h3 id="what-i-did-today_1">What I did today:<a class="headerlink" href="#what-i-did-today_1" title="Permanent link">&para;</a></h3>
@@ -10940,11 +10946,15 @@ Katya</p>
 <li>I had a psych appt this morning and am donating plasma this arvo, so it&rsquo;s going to be a short one</li>
 <li>Pushed through the B3LYP OptTS job on Rosalind</li>
 <li>Threw together some slides for tomorrow&rsquo;s meeting with Michelle</li>
-<li>Tonight I&rsquo;ll probably try to get some more jobs going on MonARCH and M3 when they&rsquo;re back up at 6</li>
+<li>Tonight I&rsquo;ll probably try to get some more jobs going on MonARCH and M3 when they&rsquo;re back up at 6<ul>
 <li>Probably a decent quality NEB-ZOOM-CI job to find the highest energy point in the rxn trajectory, in case we can&rsquo;t find a TS</li>
 <li>Probably some more <code>recalc_hess 1</code> at different levels of theory.</li>
-<li>^ I got these up and running <img alt="🙂" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f642.svg" title=":slightly_smiling_face:" /></li>
+</ul>
+</li>
+<li>^ I got these up and running <img alt="🙂" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f642.svg" title=":slightly_smiling_face:" /><ul>
 <li>MP2 jobs have finished, I can start to parameterise, minimise and check them tomorrow</li>
+</ul>
+</li>
 </ul>
 <h3 id="to-do">To Do:<a class="headerlink" href="#to-do" title="Permanent link">&para;</a></h3>
 <ul>
@@ -10954,8 +10964,10 @@ Katya</p>
 <h3 id="what-i-did-today-pre-meeting">What I did today (pre meeting):<a class="headerlink" href="#what-i-did-today-pre-meeting" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Put some more detail into the slides for the Pas-Coote collaborations meeting</li>
-<li>The OptTS m1 jobs followed the wrong mode, so I started some m0 jobs that didn&rsquo;t do much better, and some m2 jobs.</li>
+<li>The OptTS m1 jobs followed the wrong mode, so I started some m0 jobs that didn&rsquo;t do much better, and some m2 jobs.<ul>
 <li>These jobs still seem to be following weird modes</li>
+</ul>
+</li>
 <li>Fired off a new B3LYP <code>recalc_hess 1</code> OptTS job, following the bond formation trajectory</li>
 </ul>
 <div class="admonition note">
@@ -10967,9 +10979,11 @@ Katya</p>
 </div>
 <h3 id="what-i-did-today-post-meeting">What I did today (post meeting):<a class="headerlink" href="#what-i-did-today-post-meeting" title="Permanent link">&para;</a></h3>
 <ul>
-<li>REALLY proud of myself for this</li>
+<li>REALLY proud of myself for this<ul>
 <li>I figured out a way to generate a whole bunch of vectors from a couple of lists of angles, by maintaining a constant radius and scanning through the azimuth and zenith</li>
 <li>I then took these coordinates and in Psi4 am scanning through all of them and printing them out at the end as a long list.</li>
+</ul>
+</li>
 </ul>
 <h2 id="thursday-87">Thursday 8/7<a class="headerlink" href="#thursday-87" title="Permanent link">&para;</a></h2>
 <p>What a busy day!</p>
@@ -10982,48 +10996,58 @@ Katya</p>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/6q7yFpWzWLg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen; class="center"></iframe>
 
 <ul>
-<li>I then ran an IRC (still running) and ran the forward trajectory through a Psi4 script builder that will run an E-filed scan for each of the IRC steps (localised around the field direction that proved the most stabilising)</li>
+<li>I then ran an IRC (still running) and ran the forward trajectory through a Psi4 script builder that will run an E-filed scan for each of the IRC steps (localised around the field direction that proved the most stabilising)<ul>
 <li>Nerves O.O I haven&rsquo;t had to do this kind of batch data runs since my internship with Katya</li>
+</ul>
+</li>
 </ul>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/riRUisK4YwU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen; class="center"></iframe>
 
 <ul>
-<li>Those jobs were scanning the wrong coordinate system, so third time&rsquo;s the charm and hopefully now* they&rsquo;ll be correct&hellip;</li>
+<li>Those jobs were scanning the wrong coordinate system, so third time&rsquo;s the charm and hopefully now* they&rsquo;ll be correct&hellip;<ul>
 <li>When in doubt, insert your unquestionable axes!
-    <img alt="!Screen Shot 2021-07-08 at 9.44.14 pm" class="center" src="../Screen%20Shot%202021-07-08%20at%209.44.14%20pm.png" style="width: 40%; " /></li>
+  <div class="lightgallery"><a data-sub-html="Screen Shot 2021-07-08 at 9.44.14 pm" href="../Screen%20Shot%202021-07-08%20at%209.44.14%20pm.png"><img alt="Screen Shot 2021-07-08 at 9.44.14 pm" class="center" src="../Screen%20Shot%202021-07-08%20at%209.44.14%20pm.png" style="width: 40%; " /></a></div></li>
+</ul>
+</li>
 <li>Still not working&hellip; I think it&rsquo;s an issue with how I&rsquo;m rotating the coordinates. Trying a different method now!</li>
 <li>11:30 pm and I finally have everything going along smoothly <img alt="🤞" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f91e.svg" title=":crossed_fingers:" /></li>
 </ul>
 <h3 id="to-do_1">To do:<a class="headerlink" href="#to-do_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>I&rsquo;ll probably try and form the data into this data, with the steps of the IRC as a function of time</li>
+<li>I&rsquo;ll probably try and form the data into this data, with the steps of the IRC as a function of time<ul>
 <li>I was initially thinking of doing a 3D plot, with IRC, <span class="arithmatex">\(\Delta E\)</span> and <span class="arithmatex">\(\vec F\)</span> as the axes, but I think it might be hard to unwrap <span class="arithmatex">\(\vec F\)</span> into anything logically interpretable</li>
+</ul>
+</li>
 </ul>
 <h2 id="friday-97">Friday 9/7<a class="headerlink" href="#friday-97" title="Permanent link">&para;</a></h2>
 <h3 id="what-i-did-today_3">What I did today:<a class="headerlink" href="#what-i-did-today_3" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Today&rsquo;s scientific conclusions</p>
 <ul>
-<li>In the non activated pathway, due to the reaction bushing the electrons up onto the oxygen, the reaction axis seems to be going straight up towards the oxygen. This puts it squarely in line with the molecular dipole, which means that as the molecule aligns itself with the electric field, it will also be aligning the reaction axis.</li>
+<li>In the non activated pathway, due to the reaction bushing the electrons up onto the oxygen, the reaction axis seems to be going straight up towards the oxygen. This puts it squarely in line with the molecular dipole, which means that as the molecule aligns itself with the electric field, it will also be aligning the reaction axis.<ul>
 <li>Given that the acid catalysed pathways have a reaction axis that runs almost perpendicular to the molecular dipole, it would be much harder to stabilise those</li>
+</ul>
+</li>
 <li>Running these crude calculations, we&rsquo;re getting stabilisation energies of over <span class="arithmatex">\(100\:\kjmol\)</span> </li>
 </ul>
 </div>
 <ul>
 <li>Analysed the data from last night and decided that it wasn&rsquo;t centred enough to be really useful</li>
 </ul>
-<p><img alt="!test" class="center" src="../test.png" style="width: 40%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="test" href="../test.png"><img alt="test" class="center" src="../test.png" style="width: 40%; " /></a></div></p>
 <ul>
 <li>In response the above issue, Idid some more work on my vec field generator notebook and positioned it nicely using PyMOL to preview the points, before I submitted all the jobs again.</li>
 <li>Had a good chat with Peter about the data that I have so far to come up with the aforementioned conclusions</li>
-<li>Ran a little bit of interpretation on the data I collected last night</li>
+<li>Ran a little bit of interpretation on the data I collected last night<ul>
 <li>It looks like the reactant is definitely being stabilised more than the product</li>
 </ul>
-<p><img alt="!energystabilisation" class="center" src="../energystabilisation.svg" style="width: 40%; " /></p>
+</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="energystabilisation" href="../energystabilisation.svg"><img alt="energystabilisation" class="center" src="../energystabilisation.svg" style="width: 40%; " /></a></div></p>
 <ul>
 <li>And the dipole is being displaced by the EField to different amounts at different points in the IRC. The most stabilising EField seems to push the dipole closer to the product state much sooner in the IRC and is definitely polarising the molecule to a huge amount, which is demonstrated by massive magnitude increase in the perturbed dipole.</li>
 </ul>
-<p><img alt="!relativedipoledisplacement" class="center" src="../relativedipoledisplacement.svg" style="width: 40%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="relativedipoledisplacement" href="../relativedipoledisplacement.svg"><img alt="relativedipoledisplacement" class="center" src="../relativedipoledisplacement.svg" style="width: 40%; " /></a></div></p>
 <ul>
 <li>This can be seen in the video below; (pink is the perturbed dipole, blue is the unperturbed dipole. Length is relative to magnitude)****</li>
 </ul>

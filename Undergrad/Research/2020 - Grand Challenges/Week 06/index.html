@@ -10940,33 +10940,33 @@
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">S1</th>
-<th style="text-align: center;">S2</th>
-<th style="text-align: center;">S3</th>
-<th style="text-align: center;">S4</th>
+<th align="center">S1</th>
+<th align="center">S2</th>
+<th align="center">S3</th>
+<th align="center">S4</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Gas</strong></td>
-<td style="text-align: center;">Opt/Freq <span style="color: green;">Done</span></td>
-<td style="text-align: center;">Opt/Freq <span style="color: green;">Done</span></td>
-<td style="text-align: center;">Opt/Freq <span style="color: green;">Done</span></td>
-<td style="text-align: center;">N/A</td>
+<td align="center">Opt/Freq <span style="color: green;">Done</span></td>
+<td align="center">Opt/Freq <span style="color: green;">Done</span></td>
+<td align="center">Opt/Freq <span style="color: green;">Done</span></td>
+<td align="center">N/A</td>
 </tr>
 <tr>
 <td><strong>Water</strong></td>
-<td style="text-align: center;">Opt/Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">Opt/Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">Opt/Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">Opt/Freq <span style="color: orange;">Running</span></td>
+<td align="center">Opt/Freq <span style="color: orange;">Running</span></td>
+<td align="center">Opt/Freq <span style="color: orange;">Running</span></td>
+<td align="center">Opt/Freq <span style="color: orange;">Running</span></td>
+<td align="center">Opt/Freq <span style="color: orange;">Running</span></td>
 </tr>
 <tr>
 <td><strong>IL</strong></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Stale</span></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Stale</span></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Stale</span></td>
-<td style="text-align: center;">Low Opt <span style="color: orange;">Running</span></td>
+<td align="center">Low Opt <span style="color: red;">Stale</span></td>
+<td align="center">Low Opt <span style="color: red;">Stale</span></td>
+<td align="center">Low Opt <span style="color: red;">Stale</span></td>
+<td align="center">Low Opt <span style="color: orange;">Running</span></td>
 </tr>
 </tbody>
 </table>
@@ -10974,7 +10974,7 @@
 <ol>
 <li>It shows how important dispersion is, accounting up to &ldquo;15.9 % of the interaction energy&rdquo;</li>
 <li>How good TZ basis sets are, but also how aug-cc-pvtz isn&rsquo;t much better that cc-pvtz, for the cost</li>
-<li>Meta-GGA hybrids (M06-2X and ωB97X-D) are better than dispersion corrected GGA functionals, which are better than pure GGA functionals</li>
+<li>Meta-GGA hybrids (M06-2X and ωB97X-D) are better than dispersion corrected GGA functionals, which are better than pure GGA functionals<ul>
 <li>The performance of Meta-GGA hybrids improves with aug tz or larger basis sets</li>
 <li>These are four highly recommended methods/basis sets for optimisation of large-scale clusters of ILs, each with an RMSD of <span class="arithmatex">\(&lt;1.0\:\AA\)</span>.<ul>
 <li>PBE-D3/VTZ</li>
@@ -10984,12 +10984,14 @@
 </ul>
 </li>
 <li>PBE-D3 and BLYP-D3 only produce good results with a tz basis</li>
+</ul>
+</li>
 </ol>
 <h3 id="1101-am">11:01 AM<a class="headerlink" href="#1101-am" title="Permanent link">&para;</a></h3>
 <p>This is quite interesting to me. The combination of using a finer DFT grid and levelshifting has resulted in immediately lower SCF energies, however it takes significantly longer to converge than just using levelshifting on it&rsquo;s own.</p>
 <p>This (in conjunction with Zoe&rsquo;s paper) makes me wonder if leveshifting with a tz basis set, but still using a coarse grid might actually speed things up&hellip;</p>
 <p>unfortunately I&rsquo;m already using 96 cores out of my allocated 100 on MonARCH, so I&rsquo;d need to kill a job to find out, or run one locally on my computer.</p>
-<p><img alt="!Figure_1" class="center" src="../Figure_1.png" style="width: 80%;" /></p>
+<p><div class="lightgallery"><a data-sub-html="Figure_1" href="../Figure_1.png"><img alt="Figure_1" class="center" src="../Figure_1.png" style="width: 80%;" /></a></div></p>
 <h2 id="tuesday-8-september-2020">Tuesday, 8. September 2020<a class="headerlink" href="#tuesday-8-september-2020" title="Permanent link">&para;</a></h2>
 <h3 id="937-am">9:37 AM<a class="headerlink" href="#937-am" title="Permanent link">&para;</a></h3>
 <p>I&rsquo;m a bit conflicted about my next course of action, as the g5 + levelshifting job is by far optimising the smoothest, but it&rsquo;s also incredibly slow, taking almost 1000 SCF iterations to converge. This is also at the sz level, I&rsquo;m not sure how much slower it will become at the tz level. </p>
@@ -10999,33 +11001,33 @@
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">S1</th>
-<th style="text-align: center;">S2</th>
-<th style="text-align: center;">S3</th>
-<th style="text-align: center;">S4</th>
+<th align="center">S1</th>
+<th align="center">S2</th>
+<th align="center">S3</th>
+<th align="center">S4</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Gas</strong></td>
-<td style="text-align: center;">Opt/Freq <span style="color: green;">Done</span></td>
-<td style="text-align: center;">Opt/Freq <span style="color: green;">Done</span></td>
-<td style="text-align: center;">Opt/Freq <span style="color: green;">Done</span></td>
-<td style="text-align: center;">N/A</td>
+<td align="center">Opt/Freq <span style="color: green;">Done</span></td>
+<td align="center">Opt/Freq <span style="color: green;">Done</span></td>
+<td align="center">Opt/Freq <span style="color: green;">Done</span></td>
+<td align="center">N/A</td>
 </tr>
 <tr>
 <td><strong>Water</strong></td>
-<td style="text-align: center;">Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">High Opt <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">Freq <span style="color: orange;">Running</span></td>
+<td align="center">Freq <span style="color: orange;">Running</span></td>
+<td align="center">High Opt <span style="color: orange;">Running</span></td>
+<td align="center">Freq <span style="color: orange;">Running</span></td>
+<td align="center">Freq <span style="color: orange;">Running</span></td>
 </tr>
 <tr>
 <td><strong>IL</strong></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Stale</span></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Stale</span></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Stale</span></td>
-<td style="text-align: center;">Low Opt <span style="color: orange;">Running</span></td>
+<td align="center">Low Opt <span style="color: red;">Stale</span></td>
+<td align="center">Low Opt <span style="color: red;">Stale</span></td>
+<td align="center">Low Opt <span style="color: red;">Stale</span></td>
+<td align="center">Low Opt <span style="color: orange;">Running</span></td>
 </tr>
 </tbody>
 </table>
@@ -11061,33 +11063,33 @@ end
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">S1</th>
-<th style="text-align: center;">S2</th>
-<th style="text-align: center;">S3</th>
-<th style="text-align: center;">S4</th>
+<th align="center">S1</th>
+<th align="center">S2</th>
+<th align="center">S3</th>
+<th align="center">S4</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Gas</strong></td>
-<td style="text-align: center;">Opt/Freq <span style="color: green;">Done</span></td>
-<td style="text-align: center;">Opt/Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">Opt/Freq <span style="color: blue;">Queued</span></td>
-<td style="text-align: center;">N/A</td>
+<td align="center">Opt/Freq <span style="color: green;">Done</span></td>
+<td align="center">Opt/Freq <span style="color: orange;">Running</span></td>
+<td align="center">Opt/Freq <span style="color: blue;">Queued</span></td>
+<td align="center">N/A</td>
 </tr>
 <tr>
 <td><strong>Water</strong></td>
-<td style="text-align: center;">High Opt <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">High Opt <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">High Opt <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">High Opt <span style="color: orange;">Running</span></td>
+<td align="center">High Opt <span style="color: orange;">Running</span></td>
+<td align="center">High Opt <span style="color: orange;">Running</span></td>
+<td align="center">High Opt <span style="color: orange;">Running</span></td>
+<td align="center">High Opt <span style="color: orange;">Running</span></td>
 </tr>
 <tr>
 <td><strong>IL</strong></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Waiting</span></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Waiting</span></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Waiting</span></td>
-<td style="text-align: center;">Low Opt <span style="color: orange;">Running</span></td>
+<td align="center">Low Opt <span style="color: red;">Waiting</span></td>
+<td align="center">Low Opt <span style="color: red;">Waiting</span></td>
+<td align="center">Low Opt <span style="color: red;">Waiting</span></td>
+<td align="center">Low Opt <span style="color: orange;">Running</span></td>
 </tr>
 </tbody>
 </table>
@@ -11099,33 +11101,33 @@ end
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">S1</th>
-<th style="text-align: center;">S2</th>
-<th style="text-align: center;">S3</th>
-<th style="text-align: center;">S4</th>
+<th align="center">S1</th>
+<th align="center">S2</th>
+<th align="center">S3</th>
+<th align="center">S4</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Gas</strong></td>
-<td style="text-align: center;">Opt/Freq <span style="color: green;">Done</span></td>
-<td style="text-align: center;"><mark>Freq <span style="color: green;">Done</span></mark></td>
-<td style="text-align: center;"><mark>Freq <span style="color: orange;">Running</span></mark></td>
-<td style="text-align: center;">N/A</td>
+<td align="center">Opt/Freq <span style="color: green;">Done</span></td>
+<td align="center"><mark>Freq <span style="color: green;">Done</span></mark></td>
+<td align="center"><mark>Freq <span style="color: orange;">Running</span></mark></td>
+<td align="center">N/A</td>
 </tr>
 <tr>
 <td><strong>Water</strong></td>
-<td style="text-align: center;">Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;"><mark>Freq <span style="color: orange;">Running (restarted)</span></mark></td>
-<td style="text-align: center;">Freq <span style="color: orange;">Running</span></td>
+<td align="center">Freq <span style="color: orange;">Running</span></td>
+<td align="center">Freq <span style="color: orange;">Running</span></td>
+<td align="center"><mark>Freq <span style="color: orange;">Running (restarted)</span></mark></td>
+<td align="center">Freq <span style="color: orange;">Running</span></td>
 </tr>
 <tr>
 <td><strong>IL</strong></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Waiting</span></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Waiting</span></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Waiting</span></td>
-<td style="text-align: center;">Low Opt <span style="color: orange;">Running</span></td>
+<td align="center">Low Opt <span style="color: red;">Waiting</span></td>
+<td align="center">Low Opt <span style="color: red;">Waiting</span></td>
+<td align="center">Low Opt <span style="color: red;">Waiting</span></td>
+<td align="center">Low Opt <span style="color: orange;">Running</span></td>
 </tr>
 </tbody>
 </table>
@@ -11135,33 +11137,33 @@ end
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">S1</th>
-<th style="text-align: center;">S2</th>
-<th style="text-align: center;">S3</th>
-<th style="text-align: center;">S4</th>
+<th align="center">S1</th>
+<th align="center">S2</th>
+<th align="center">S3</th>
+<th align="center">S4</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Gas</strong></td>
-<td style="text-align: center;">Opt/Freq <span style="color: green;">Done</span></td>
-<td style="text-align: center;">Freq <span style="color: green;">Done</span></td>
-<td style="text-align: center;"><mark>Freq <span style="color: green;">Done</span></mark></td>
-<td style="text-align: center;">N/A</td>
+<td align="center">Opt/Freq <span style="color: green;">Done</span></td>
+<td align="center">Freq <span style="color: green;">Done</span></td>
+<td align="center"><mark>Freq <span style="color: green;">Done</span></mark></td>
+<td align="center">N/A</td>
 </tr>
 <tr>
 <td><strong>Water</strong></td>
-<td style="text-align: center;">Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">Freq <span style="color: orange;">Running</span></td>
-<td style="text-align: center;">Freq <span style="color: orange;">Running</span></td>
+<td align="center">Freq <span style="color: orange;">Running</span></td>
+<td align="center">Freq <span style="color: orange;">Running</span></td>
+<td align="center">Freq <span style="color: orange;">Running</span></td>
+<td align="center">Freq <span style="color: orange;">Running</span></td>
 </tr>
 <tr>
 <td><strong>IL</strong></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Waiting</span></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Waiting</span></td>
-<td style="text-align: center;">Low Opt <span style="color: red;">Waiting</span></td>
-<td style="text-align: center;">Low Opt <span style="color: orange;">Running</span></td>
+<td align="center">Low Opt <span style="color: red;">Waiting</span></td>
+<td align="center">Low Opt <span style="color: red;">Waiting</span></td>
+<td align="center">Low Opt <span style="color: red;">Waiting</span></td>
+<td align="center">Low Opt <span style="color: orange;">Running</span></td>
 </tr>
 </tbody>
 </table>
@@ -11218,25 +11220,25 @@ end
 <thead>
 <tr>
 <th>Guess</th>
-<th style="text-align: center;">Energy</th>
+<th align="center">Energy</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>PModel</td>
-<td style="text-align: center;">-4610.67419</td>
+<td align="center">-4610.67419</td>
 </tr>
 <tr>
 <td>HCore</td>
-<td style="text-align: center;">-14508.68116</td>
+<td align="center">-14508.68116</td>
 </tr>
 <tr>
 <td>Hueckel</td>
-<td style="text-align: center;">-4594.98199</td>
+<td align="center">-4594.98199</td>
 </tr>
 <tr>
 <td>PAtom</td>
-<td style="text-align: center;">-4597.414589</td>
+<td align="center">-4597.414589</td>
 </tr>
 </tbody>
 </table>

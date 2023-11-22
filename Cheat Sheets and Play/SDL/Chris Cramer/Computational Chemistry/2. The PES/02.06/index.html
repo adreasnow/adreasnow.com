@@ -10791,19 +10791,25 @@
 </details>
 <h2 id="how-do-you-find-a-global-minimum-when-theres-so-many-local-minima">How do you find a global minimum when there&rsquo;s so many local minima?<a class="headerlink" href="#how-do-you-find-a-global-minimum-when-theres-so-many-local-minima" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Systematically search all the coordinates?</li>
-<li>
-<p>Impossible (<span class="arithmatex">\(~N^100\)</span>)</p>
+<li>Systematically search all the coordinates?<ul>
+<li>Impossible (<span class="arithmatex">\(~N^100\)</span>)</li>
+</ul>
 </li>
-<li>
-<p>Dynamics and quench (MD/Monte Carlo)</p>
-</li>
+</ul>
+<ul>
+<li>Dynamics and quench (MD/Monte Carlo)<ul>
 <li>Run a dynamics simulation at a high temperature and periodically cool it down to see which structure it relaxes in to</li>
-<li>Simulated annealing (MD/Monte Carlo)</li>
+</ul>
+</li>
+<li>Simulated annealing (MD/Monte Carlo)<ul>
 <li>Heat the system up and cool it down slowly (similar to dynamics and quench)</li>
-<li>Evolutionary/Genetic Algorithms</li>
+</ul>
+</li>
+<li>Evolutionary/Genetic Algorithms<ul>
 <li>Allow &ldquo;good&rdquo; geometries to survive and share properties and &ldquo;bad&rdquo; ones to die</li>
 <li>Not a likely option</li>
+</ul>
+</li>
 </ul>
 <h3 id="phase-space">Phase Space<a class="headerlink" href="#phase-space" title="Permanent link">&para;</a></h3>
 <p>The space that&rsquo;s characterised by the momentum and the position of the particles within the system</p>
@@ -10812,14 +10818,16 @@
 <li><span class="arithmatex">\(r=(q_{1x},q_{1y},q_{1z},p_{1x},p_{1y},p_{1z},...)\)</span></li>
 </ul>
 <p>In the image below, the middle plot shows the trajectory of momentum (<span class="arithmatex">\(p\)</span>) and position (<span class="arithmatex">\(q\)</span>). Since it is harmonic, the plot is elliptical</p>
-<p><img alt="!image" class="center" src="../MMFF1-PS.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MMFF1-PS.png"><img alt="image" class="center" src="../MMFF1-PS.png" style="width: 50%; " /></a></div></p>
 <h4 id="are-you-following-this-phase-space-in-small-enough-time-steps">Are you following this phase space in small enough time steps?<a class="headerlink" href="#are-you-following-this-phase-space-in-small-enough-time-steps" title="Permanent link">&para;</a></h4>
 <ul>
-<li>If the steps are too big, the trajectory may differ from the realistic (infinitely small) steps taken in reality</li>
+<li>If the steps are too big, the trajectory may differ from the realistic (infinitely small) steps taken in reality<ul>
 <li>Think, broken physics in games</li>
+</ul>
+</li>
 <li>The image below shows an example of a normal phase space trajectory</li>
 </ul>
-<p><img alt="!image" class="center" src="../MMFF1-TS.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../MMFF1-TS.png"><img alt="image" class="center" src="../MMFF1-TS.png" style="width: 50%; " /></a></div></p>
 
 
   

@@ -10936,7 +10936,7 @@
 <ul>
 <li>The M06-2X/6-31+G* efield scans finished and the results looks pretty good!</li>
 </ul>
-<p><img alt="!download" class="center" src="../download.svg" style="width: 80%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="download" href="../download.svg"><img alt="download" class="center" src="../download.svg" style="width: 80%; " /></a></div></p>
 <ul>
 <li>The magnitude of the splitting is also in line with the static benchmark jobs</li>
 </ul>
@@ -10947,10 +10947,12 @@
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/zwPtJ0IakpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen; class="center"></iframe>
 
 <ul>
-<li>I&rsquo;m currently testing the gaussian relaxed bench job again though, as it seemed to be refusing to optimise before. This time I&rsquo;m not aiming for a hessian guided optimisation to see if it will help.</li>
+<li>I&rsquo;m currently testing the gaussian relaxed bench job again though, as it seemed to be refusing to optimise before. This time I&rsquo;m not aiming for a hessian guided optimisation to see if it will help.<ul>
 <li>I decided to fix this by starting from the rough geometry each time, so that it can&rsquo;t just look at the previous hessian and say &ldquo;nup, I&rsquo;m good.&rdquo; so hopefully now is should actually optimise <img alt="🙂" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f642.svg" title=":slightly_smiling_face:" /></li>
 <li>These jobs are currently running</li>
 <li>In looking closer, it seems that the jobs that I <em>did</em> managed to get to calculate the first hessian were saying &ldquo;oh, you have more than one negative eigenvalue? nup, I&rsquo;m bailing&rdquo;, so I&rsquo;ve set the <code>opt=noeigentest</code> flag to prevent that from happening and have requeued the relaxed perturbation jobs. These may take a while though&hellip; </li>
+</ul>
+</li>
 <li>Katya has made it clear that I should really start writing, so I&rsquo;ve ordered a Keychron K3 as motivation and will need to get started on that&hellip; probably tomorrow tbh. I&rsquo;m quite fuzzy after yesterday&rsquo;s vaccination and lack of sleep :/</li>
 </ul>
 <h2 id="tuesday-108">Tuesday 10/8<a class="headerlink" href="#tuesday-108" title="Permanent link">&para;</a></h2>
@@ -10963,19 +10965,25 @@
 <h3 id="what-i-did-today_1">What I did today:<a class="headerlink" href="#what-i-did-today_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>I&rsquo;ve been moving to another method of doing the relaxed scans, where I generate all the ninput files within the slurm file. This allows my to run the opt jobs in ORCA first to get a rough geometry, then to run them in Gaussian as a full hessian guided opt. This should hopefully help with my negative eigenvalues issue&hellip;</li>
-<li>Okay that meeting fucked me over a bit</li>
+<li>Okay that meeting fucked me over a bit<ul>
 <li>The PCCP paper is unlikely at this point since we cant use functionality to do r/s selection as we&rsquo;d just be introducing chirality to be able to stereoselect and that&rsquo;s bad, so instead what I can do is to run e-field scans on a few derivatives of the aminochalcone. A matrix has been created below of these</li>
 <li>The IL stuff has been resurrected, but we&rsquo;re only going to <span class="arithmatex">\(\il{C4mpyr}{OTF}\)</span></li>
 <li>We&rsquo;re also going to do an analysis on the ILs themselves to see what kind of field they generate internally</li>
 </ul>
+</li>
+</ul>
 <h2 id="thursday-128">Thursday 12/8<a class="headerlink" href="#thursday-128" title="Permanent link">&para;</a></h2>
 <h3 id="what-i-did-today_2">What I did today:<a class="headerlink" href="#what-i-did-today_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>I woke up to find that only one of my jobs had started, though a few had tried and failed (in the dependency chain or relaxed derivatives)</li>
+<li>I woke up to find that only one of my jobs had started, though a few had tried and failed (in the dependency chain or relaxed derivatives)<ul>
 <li>I&rsquo;m an idiot and I forgot that the neutrality of an <span class="arithmatex">\(\ce{R-NO2}\)</span> group comes form the +ve and -ve charges balancing out, so adding in an extra proton, like a nitrogen based carboxylic acid, made my charge/multiplicity wrong</li>
-<li>I had a thought last night that may make things a tad more difficult&hellip; If I&rsquo;m trying to calculate the energy of just the core of the IL MD runs, then I&rsquo;ll need to do some perturbative magic, as the composition of the ILS on the outside is going to differ quite a lot. This means that for each SP, I&rsquo;ll need to do 3(?) jobs; one of just the core, one of just the ILS and one of the core and the ILs to be able to get just the energy difference provided by the IL electric field.</li>
+</ul>
+</li>
+<li>I had a thought last night that may make things a tad more difficult&hellip; If I&rsquo;m trying to calculate the energy of just the core of the IL MD runs, then I&rsquo;ll need to do some perturbative magic, as the composition of the ILS on the outside is going to differ quite a lot. This means that for each SP, I&rsquo;ll need to do 3(?) jobs; one of just the core, one of just the ILS and one of the core and the ILs to be able to get just the energy difference provided by the IL electric field.<ul>
 <li>I set off some actual tests for this to see how long it would take to do an SP of a full core in Gaussian vs in ORCA. I should probably do Psi4 for completeness, but I know it will be much slower, even if it will be much <em>smoother</em></li>
 <li>This seems to not be going quite as smoothly as I&rsquo;d like, as the ORCA job just crashed <img alt="😒" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f612.svg" title=":unamused:" /></li>
+</ul>
+</li>
 <li>Tonight I got a response form Katya that kept me working till 11:45 PM. She emphasised the importance of extracting neutral clusters from the MD trajectories and that we can&rsquo;t use EFPs or anything like that. She also made it clear that the energy of the whole cluster is what we need to procure, and not the interaction energy, so a single single point of each of the geometry is what we need.</li>
 <li>This got me thinking about how to get only the core energy of the cluster, and I suggested using ghost atoms, to represent the ILs, to which I haven&rsquo;t really heard a no?</li>
 </ul>
@@ -10994,21 +11002,25 @@
 <h3 id="what-i-did-today_4">What I did today:<a class="headerlink" href="#what-i-did-today_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Things are looking better! After having a long email discussion with Katya and Michelle, We&rsquo;ve decided (again) to drop the ILs and focus on a small molecule study of the cyclisation for 2&rsquo;-aminochalcone to aza-flavanone (<em>phew</em>). I think that this has mostly been sparked by me doing some benchmarking that&rsquo;s showed exactly how costly these SPs will be to run on Gadi (looks like 200-400 KSU)</li>
-<li>I ran a test of optimising the unoptimisable catalytic geometries in Psi4, and even without a hessian to follow, it optimised really quickly and cleanly without any fuss. I verified the geometry in Gaussian and it&rsquo;s only producing one -ve freq, corresponding to the TS mode! so it beat out ORCA and Gaussian, when they both had analytical hessians to follow!</li>
+<li>I ran a test of optimising the unoptimisable catalytic geometries in Psi4, and even without a hessian to follow, it optimised really quickly and cleanly without any fuss. I verified the geometry in Gaussian and it&rsquo;s only producing one -ve freq, corresponding to the TS mode! so it beat out ORCA and Gaussian, when they both had analytical hessians to follow!<ul>
 <li>I should probably flag this for the future, as it seems that Psi4 can handle electric fields better than Gaussian or ORCA.</li>
 <li>I&rsquo;m still testing this method to see if ORCA can produce nice solvated geometries from this though, as there&rsquo;s no analytical hessians for PCMsolver in Psi4</li>
+</ul>
+</li>
 <li>I&rsquo;m currently digging up the lb2t jobs to try and get them optimised to a TS as we&rsquo;d like. What I&rsquo;ve done is to take the geometry of the ring forming centre of the optimised na1t geometry and apply it to the lb2t starting point. I&rsquo;ve then checked the geom into Psi4 (can it do it twice? :D) and into ORCA (without hessian guidance) to see if it will be able to find the TS this way.</li>
 <li>I&rsquo;ve synced the derivative efield scans up between MonARCH and M3 and have queued the jobs up on MonARCH, but I might actually cancel these, in order to get the bench jobs through once I&rsquo;m done testing the psi4 -&gt; orca -&gt; gaussian pathway.</li>
 <li>I&rsquo;m also currently testing F-SAPT as an approach to being able to get intramolecular energy decomposition, though the examples provided seem to mainly focus a molecule and comparing two sub regions, so three fragments all up, and I&rsquo;m not sure how this will translate.</li>
-<li>I&rsquo;ve been trying to sort out these relaxed bench jobs and I stumbled upon something in the GAMESS documentation that said that you need to optimise in cartesian coordinates, as the field will generate a torque on the molecule that the can&rsquo;t be addressed with internal coordinates.</li>
+<li>I&rsquo;ve been trying to sort out these relaxed bench jobs and I stumbled upon something in the GAMESS documentation that said that you need to optimise in cartesian coordinates, as the field will generate a torque on the molecule that the can&rsquo;t be addressed with internal coordinates.<ul>
 <li>I wonder if this also means that you can only trust numerical hessians and not analytical ones&hellip;</li>
+</ul>
+</li>
 </ul>
 <h4 id="job-times">Job Times<a class="headerlink" href="#job-times" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
 <th>Job</th>
-<th style="text-align: center;">Time (h)</th>
+<th align="center">Time (h)</th>
 <th># SCF cycles</th>
 <th>Energy</th>
 <th>Memory Used (GB)</th>
@@ -11018,7 +11030,7 @@
 <tbody>
 <tr>
 <td>Gaussian (10 IP) - MonARCH</td>
-<td style="text-align: center;">10:05</td>
+<td align="center">10:05</td>
 <td>26</td>
 <td>-14416.1063713</td>
 <td></td>
@@ -11026,7 +11038,7 @@
 </tr>
 <tr>
 <td>Gaussian (10 IP) - Gadi</td>
-<td style="text-align: center;">11:30</td>
+<td align="center">11:30</td>
 <td>27</td>
 <td>-14416.1063713</td>
 <td>14.94</td>
@@ -11034,7 +11046,7 @@
 </tr>
 <tr>
 <td>Gaussian w Ghost ILs (10 IP) - Gadi</td>
-<td style="text-align: center;">6:27</td>
+<td align="center">6:27</td>
 <td>20</td>
 <td>-709.001510682</td>
 <td>17.74</td>
@@ -11042,7 +11054,7 @@
 </tr>
 <tr>
 <td>Gaussian w Ghost ILs &amp; CPCM(Ethanol) (10 IP) - Gadi</td>
-<td style="text-align: center;">6:35</td>
+<td align="center">6:35</td>
 <td>16</td>
 <td>-709.024908436</td>
 <td>30.87</td>
@@ -11050,7 +11062,7 @@
 </tr>
 <tr>
 <td>Gaussian core only</td>
-<td style="text-align: center;">-</td>
+<td align="center">-</td>
 <td></td>
 <td>-708.995468</td>
 <td></td>
@@ -11058,7 +11070,7 @@
 </tr>
 <tr>
 <td>Gaussian w Ghost ILs (10 IP)</td>
-<td style="text-align: center;">6:40</td>
+<td align="center">6:40</td>
 <td>20</td>
 <td>-709.001510</td>
 <td></td>
@@ -11066,7 +11078,7 @@
 </tr>
 <tr>
 <td>Gaussian w Ghost ILs &amp; CPCM(Ethanol) (10 IP)</td>
-<td style="text-align: center;">6:40</td>
+<td align="center">6:40</td>
 <td>16</td>
 <td>-709.024908</td>
 <td></td>
@@ -11080,29 +11092,29 @@
 <thead>
 <tr>
 <th>↓ left | right →</th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{NH2}\)</span>​</th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{NO2}\)</span></th>
-<th style="text-align: center;">-</th>
+<th align="center"><span class="arithmatex">\(\ce{NH2}\)</span>​</th>
+<th align="center"><span class="arithmatex">\(\ce{NO2}\)</span></th>
+<th align="center">-</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="arithmatex">\(\ce{NH2}\)</span></td>
-<td style="text-align: center;"><mark>running</mark> (37)</td>
-<td style="text-align: center;"><mark>running</mark> (30)</td>
-<td style="text-align: center;">queued (88)</td>
+<td align="center"><mark>running</mark> (37)</td>
+<td align="center"><mark>running</mark> (30)</td>
+<td align="center">queued (88)</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\ce{NO2}\)</span></td>
-<td style="text-align: center;"><mark>running</mark> (70)</td>
-<td style="text-align: center;"><mark>running</mark> (28)</td>
-<td style="text-align: center;"><mark>running</mark> (28)</td>
+<td align="center"><mark>running</mark> (70)</td>
+<td align="center"><mark>running</mark> (28)</td>
+<td align="center"><mark>running</mark> (28)</td>
 </tr>
 <tr>
 <td>-</td>
-<td style="text-align: center;"><mark>running</mark> (46)</td>
-<td style="text-align: center;"><mark>running</mark> (31)</td>
-<td style="text-align: center;">-</td>
+<td align="center"><mark>running</mark> (46)</td>
+<td align="center"><mark>running</mark> (31)</td>
+<td align="center">-</td>
 </tr>
 </tbody>
 </table>
@@ -11111,29 +11123,29 @@
 <thead>
 <tr>
 <th>↓ left | right →</th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{NH2}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{NO2}\)</span></th>
-<th style="text-align: center;">-</th>
+<th align="center"><span class="arithmatex">\(\ce{NH2}\)</span></th>
+<th align="center"><span class="arithmatex">\(\ce{NO2}\)</span></th>
+<th align="center">-</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="arithmatex">\(\ce{NH2}\)</span></td>
-<td style="text-align: center;"><mark>running</mark> (29)</td>
-<td style="text-align: center;"><mark>running</mark> (40)</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><mark>running</mark> (29)</td>
+<td align="center"><mark>running</mark> (40)</td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\ce{NO2}\)</span></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark> (17)</td>
-<td style="text-align: center;"><mark>running</mark> (29)</td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark> (17)</td>
+<td align="center"><mark>running</mark> (29)</td>
 </tr>
 <tr>
 <td>-</td>
-<td style="text-align: center;"><mark>running</mark> (46)</td>
-<td style="text-align: center;"><mark>running</mark> (36)</td>
-<td style="text-align: center;">-</td>
+<td align="center"><mark>running</mark> (46)</td>
+<td align="center"><mark>running</mark> (36)</td>
+<td align="center">-</td>
 </tr>
 </tbody>
 </table>
@@ -11142,47 +11154,47 @@
 <thead>
 <tr>
 <th>solvent</th>
-<th style="text-align: center;">na1r</th>
-<th style="text-align: center;">na1t</th>
-<th style="text-align: center;">na1p</th>
+<th align="center">na1r</th>
+<th align="center">na1t</th>
+<th align="center">na1p</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>gas</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>hexane</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>ethanol</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>dcm</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>dmso</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>water</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -11191,96 +11203,96 @@
 <thead>
 <tr>
 <th>IL</th>
-<th style="text-align: center;">na1r-r</th>
-<th style="text-align: center;">na1t-1-r</th>
-<th style="text-align: center;">na1t-2-r</th>
-<th style="text-align: center;">na1t-3-r</th>
-<th style="text-align: center;">na1p-r</th>
-<th style="text-align: center;">na1r-s</th>
-<th style="text-align: center;">na1t-1-s</th>
-<th style="text-align: center;">na1t-2-s</th>
-<th style="text-align: center;">na1t-3-s</th>
-<th style="text-align: center;">na1p-s</th>
+<th align="center">na1r-r</th>
+<th align="center">na1t-1-r</th>
+<th align="center">na1t-2-r</th>
+<th align="center">na1t-3-r</th>
+<th align="center">na1p-r</th>
+<th align="center">na1r-s</th>
+<th align="center">na1t-1-s</th>
+<th align="center">na1t-2-s</th>
+<th align="center">na1t-3-s</th>
+<th align="center">na1p-s</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{OTF} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{MSO4} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center">queued</td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{TCM} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{OTF} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{MSO4} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{TCM} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 </tbody>
 </table>

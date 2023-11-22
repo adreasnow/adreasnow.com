@@ -10845,10 +10845,12 @@
 <h2 id="the-wavefunction">The Wavefunction<a class="headerlink" href="#the-wavefunction" title="Permanent link">&para;</a></h2>
 <ul>
 <li><span class="arithmatex">\(\Psi\)</span> is a mathematical expression that determines the probability of electron distribution in 3D space</li>
-<li>From it we can determine some important properties about the electrons, such as:</li>
+<li>From it we can determine some important properties about the electrons, such as:<ul>
 <li>The energy</li>
 <li>The angular momentum</li>
 <li>The orbital orientation within the shape</li>
+</ul>
+</li>
 <li><span class="arithmatex">\(\Psi\)</span> being  a wavefunction has a  polarity and can be combined to form in and out of phase combinations</li>
 </ul>
 <h2 id="slater-type-orbitals-stos">Slater Type Orbitals (STOs)<a class="headerlink" href="#slater-type-orbitals-stos" title="Permanent link">&para;</a></h2>
@@ -10863,7 +10865,7 @@
 <li>Also have a complete set but they don&rsquo;t represent the electron distribution as well at STOs</li>
 <li>The can have nodes and are much more easily integrated</li>
 </ul>
-<p><img alt="!image" class="right" src="../GTOSTO.png" style="width: 30%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../GTOSTO.png"><img alt="image" class="right" src="../GTOSTO.png" style="width: 30%; " /></a></div></p>
 <h2 id="the-solution">The Solution<a class="headerlink" href="#the-solution" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Use multiple GTOs to approximate an STO</li>
@@ -10878,52 +10880,62 @@
 <h2 id="pople-basis-sets">Pople Basis Sets<a class="headerlink" href="#pople-basis-sets" title="Permanent link">&para;</a></h2>
 <p align="center"><span style="color:red">6</span>-<span style="color:blue">311</span>G<span style="color:purple">+</span><span style="color:green">(d)</span></p>
 <ul>
-<li><span style="color:red">Uses 6 primitive basis sets to  describe the core electrons</span></li>
-<li>
-<p><span style="color:red">All 6 gaussians use the same α</span></p>
+<li><span style="color:red">Uses 6 primitive basis sets to  describe the core electrons</span><ul>
+<li><span style="color:red">All 6 gaussians use the same α</span></li>
+</ul>
 </li>
-<li>
-<p><span style="color:blue">Uses three separate functions to describe the valence orbitals</span></p>
+</ul>
+<ul>
+<li><span style="color:blue">Uses three separate functions to describe the valence orbitals</span><ul>
+<li><span style="color:blue">Each ζ split uses a different α in the gaussians</span></li>
+</ul>
 </li>
-<li>
-<p><span style="color:blue">Each ζ split uses a different α in the gaussians</span></p>
+</ul>
+<ul>
+<li><span style="color:purple">Adds an extra (larger) function on each atom of Z&gt;2 to account for loosely held electrons, long range interactions, excited states and transition states</span><ul>
+<li><span style="color:purple">++ adds them form H as well</span></li>
+</ul>
 </li>
-<li>
-<p><span style="color:purple">Adds an extra (larger) function on each atom of Z&gt;2 to account for loosely held electrons, long range interactions, excited states and transition states</span></p>
-</li>
-<li>
-<p><span style="color:purple">++ adds them form H as well</span></p>
-</li>
-<li>
-<p><span style="color:green">For bonding  atoms adds extra functions of angular momentum as specified. First letter to Z&gt;2 the second to Z≤2 atoms</span></p>
-</li>
-<li><span style="color:green">(d,p) adds p functions for Z≤2 atoms as well</span></li>
+</ul>
+<ul>
+<li><span style="color:green">For bonding  atoms adds extra functions of angular momentum as specified. First letter to Z&gt;2 the second to Z≤2 atoms</span></li>
+<li><span style="color:green">(d,p) adds p functions for Z≤2 atoms as well</span><ul>
 <li><span style="color:green">(2df,pd) adds 2d and 1f functions to Z&gt;2 and a p and d function to Z≤2</span></li>
+</ul>
+</li>
 </ul>
 <h2 id="correlation-consistent-basis-sets-dunning">Correlation Consistent Basis Sets - Dunning<a class="headerlink" href="#correlation-consistent-basis-sets-dunning" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Designed mathematically so that they will <strong>systematically converge</strong> to the Complete Basis Set (CBS) limit</li>
+<li>Designed mathematically so that they will <strong>systematically converge</strong> to the Complete Basis Set (CBS) limit<ul>
 <li>This limit is the maximum accuracy that a basis set can provide</li>
 <li>The target of this convergence is different for different property calculations and is typically &ldquo;trained&rdquo; with empirical data to achieve the results desired</li>
+</ul>
+</li>
 </ul>
 <p align="center"><span style="color:red">aug</span>-<span style="color:purple">cc</span>-<span style="color:blue">p</span><span style="color:green">VTZ</span></p>
 <ul>
 <li><span style="color:purple">Is correlation consistent</span></li>
 <li><span style="color:blue">Is polarised (has higher angular momentums)</span></li>
-<li><span style="color:green">Has a split valence number - Valence Triple Zeta</span></li>
+<li><span style="color:green">Has a split valence number - Valence Triple Zeta</span><ul>
 <li><span style="color:green">D=Double, T=Triple, Q=Quadruple, 5=5…</span></li>
+</ul>
+</li>
 <li><span style="color:red">aug- are augmented with a diffuse function</span></li>
 </ul>
 <h2 id="dunning-vs-pople">Dunning Vs Pople<a class="headerlink" href="#dunning-vs-pople" title="Permanent link">&para;</a></h2>
 <ul>
-<li>A parallel can be drawn with a few basis sets</li>
+<li>A parallel can be drawn with a few basis sets<ul>
 <li>cc-pVDZ ≈ 6-31G(d,p)</li>
 <li>cc-pVTZ ≈ 6-311G(2df,2pd)</li>
 </ul>
+</li>
+</ul>
 <h2 id="cost">Cost<a class="headerlink" href="#cost" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Number of GTOs used is roughly:</li>
+<li>Number of GTOs used is roughly:<ul>
 <li>Minimal &lt; Split Valence &lt; Polarised &lt; Diffuse</li>
+</ul>
+</li>
 <li>The increase in the number of integrals is approximately <span class="arithmatex">\(N^4\)</span>  where <span class="arithmatex">\(N\)</span> is  the number of basis functions</li>
 <li>Each iteration of the energy minimisation process iterates on the exponents (parameters) of the orbitals to define a new basis function for the next iteration</li>
 </ul>

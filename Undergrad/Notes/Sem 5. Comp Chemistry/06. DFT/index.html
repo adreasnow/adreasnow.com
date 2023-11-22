@@ -10908,7 +10908,7 @@ E[\rho]=T[\rho]+E_{ext}[\rho]+E_{coul}[\rho]+E_{xc}[\rho]
 <div class="arithmatex">\[
 E_x^{LDA}[\rho]=−c_x\int{\rho^{\frac{4}{3}}(\hat{r})d\hat{r}} 
 \]</div>
-<p><img alt="!image" class="right" src="../DFT1.png" style="width: 30%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../DFT1.png"><img alt="image" class="right" src="../DFT1.png" style="width: 30%; " /></a></div></p>
 <h4 id="gga-generalised-gradient-approximation">GGA - generalised gradient approximation<a class="headerlink" href="#gga-generalised-gradient-approximation" title="Permanent link">&para;</a></h4>
 <ul>
 <li><span class="arithmatex">\(V_{xc}\)</span>  is also includes the first derivative of <span class="arithmatex">\(\rho\)</span> </li>
@@ -10941,14 +10941,16 @@ E_{xc}^{B3}=(1−a) E_x^{LDA}[\rho]+a_x^{HF}+b\Delta E_x^{B88}[\rho]+(1−c) E_c
 <p><code>Parameters = a, b, c</code></p>
 <h4 id="hybrid-meta-gga">Hybrid-Meta-GGA<a class="headerlink" href="#hybrid-meta-gga" title="Permanent link">&para;</a></h4>
 <ul>
-<li>E.g. <span style="color:green">M05</span>-<span style="color:red">2X</span>, <span style="color:green">M06</span>-<span style="color:red">2x</span>, MPWB1K</li>
+<li>E.g. <span style="color:green">M05</span>-<span style="color:red">2X</span>, <span style="color:green">M06</span>-<span style="color:red">2x</span>, MPWB1K<ul>
 <li><span style="color:green">Meta-GGA</span> <span style="color:red">Hybrid</span></li>
+</ul>
+</li>
 </ul>
 <h3 id="running-dft">Running DFT<a class="headerlink" href="#running-dft" title="Permanent link">&para;</a></h3>
 <h4 id="what-you-need">What you need<a class="headerlink" href="#what-you-need" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Molecule geometry
-<img alt="!image" class="right" src="../DFT2.png" style="width: 50%; " /></li>
+<div class="lightgallery"><a data-sub-html="image" href="../DFT2.png"><img alt="image" class="right" src="../DFT2.png" style="width: 50%; " /></a></div></li>
 <li>Molecular charge</li>
 <li>Spin multiplicity (2s+1)</li>
 <li>Basis set</li>
@@ -10964,22 +10966,30 @@ E_{xc}^{B3}=(1−a) E_x^{LDA}[\rho]+a_x^{HF}+b\Delta E_x^{B88}[\rho]+(1−c) E_c
 </ul>
 <h4 id="strengths-and-weaknesses-of-dft">Strengths and Weaknesses of DFT<a class="headerlink" href="#strengths-and-weaknesses-of-dft" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Strengths</li>
+<li>Strengths<ul>
 <li>Low computational cost</li>
 <li>Accurate for structures and thermochemistry</li>
 <li>The density is conceptually simpler than <span class="arithmatex">\(\Psi\)</span></li>
-<li>Weaknesses</li>
+</ul>
+</li>
+<li>Weaknesses<ul>
 <li>Can fail in spectacular and unexpected ways</li>
 <li>There isn&rsquo;t a  systematic way of  improving results</li>
 <li>Multidimensional integrals can be problematic</li>
 </ul>
+</li>
+</ul>
 <h4 id="hf-vs-dft">HF vs DFT<a class="headerlink" href="#hf-vs-dft" title="Permanent link">&para;</a></h4>
 <ul>
-<li>DFT is not approximate, it  is exact</li>
+<li>DFT is not approximate, it  is exact<ul>
 <li>Everything we do however is a functional of <span class="arithmatex">\(\rho\)</span> which means that the density has to be accurate</li>
+</ul>
+</li>
 <li>Hohenberg-Kohn proved that the functional of <span class="arithmatex">\(\rho\)</span> must exist</li>
-<li>There is no definition as to what the functional should look like</li>
+<li>There is no definition as to what the functional should look like<ul>
 <li>We know <span class="arithmatex">\(f[\rho]\)</span>  exists, we just don&rsquo;t know what it is</li>
+</ul>
+</li>
 </ul>
 <h4 id="contrast">Contrast<a class="headerlink" href="#contrast" title="Permanent link">&para;</a></h4>
 <ul>
@@ -10991,8 +11001,10 @@ E_{xc}^{B3}=(1−a) E_x^{LDA}[\rho]+a_x^{HF}+b\Delta E_x^{B88}[\rho]+(1−c) E_c
 <ul>
 <li>DFT is good for determining geometries, but not so much for calculating energy</li>
 <li>Totally fails for non-covalent interaction</li>
-<li>Can have large errors for excitation energies</li>
+<li>Can have large errors for excitation energies<ul>
 <li>Fixes include CAM-B3LYP or TD-DFT</li>
+</ul>
+</li>
 </ul>
 
 

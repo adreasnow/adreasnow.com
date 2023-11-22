@@ -10786,17 +10786,21 @@
 <h1 id="thursday-20-february-2020">Thursday, 20. February 2020<a class="headerlink" href="#thursday-20-february-2020" title="Permanent link">&para;</a></h1>
 <h2 id="to-do">To do<a class="headerlink" href="#to-do" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optimise TEMPO anion</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optimise TEMPO anion<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Genmer/Molclus TEMPO anion</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> SAPT/HF TEMPO anion</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Look into pyrrole N-H bonding</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Look into pyrrole N-H bonding<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Bond length</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Charge analysis</li>
+</ul>
+</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Update scripts and notebook to include TEMPO</li>
 </ul>
 <h2 id="what-i-did">What I did<a class="headerlink" href="#what-i-did" title="Permanent link">&para;</a></h2>
 <h4 id="1126-am">11:26 AM<a class="headerlink" href="#1126-am" title="Permanent link">&para;</a></h4>
-<p>After submitting the tempo radical to optimise last night, it turns out that we want to tempo anion:<img alt="!tempo" class="center" src="../tempo.png" style="width: 50%; " /></p>
+<p>After submitting the tempo radical to optimise last night, it turns out that we want to tempo anion:<div class="lightgallery"><a data-sub-html="tempo" href="../tempo.png"><img alt="tempo" class="center" src="../tempo.png" style="width: 50%; " /></a></div></p>
 <p>That means I have to re-optimise the structure.</p>
 <p>I’m also getting on some analysis to look at what’s happening with the pyrrole N-H bond, to see if the pyrrole is trying to donate a proton. It doesn’t look like it is from preliminary results though.</p>
 <h4 id="1244-pm">12:44 PM<a class="headerlink" href="#1244-pm" title="Permanent link">&para;</a></h4>
@@ -10804,49 +10808,49 @@
 <thead>
 <tr>
 <th>System</th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{H-ion}\)</span> Distance (<span class="arithmatex">\(\AA\)</span>)</th>
-<th style="text-align: center;"><span class="arithmatex">\(\Delta\ce{N-H}\)</span> Bond length (<span class="arithmatex">\(\AA\)</span>)</th>
-<th style="text-align: center;">Ion charge CHELPG (au)</th>
-<th style="text-align: center;"><span class="arithmatex">\(\Delta\)</span>N Charge CHELPG (au)</th>
-<th style="text-align: center;"><span class="arithmatex">\(\Delta\)</span>H Charge CHELPG (au)</th>
-<th style="text-align: center;">Ion charge Hirshfeld (au)</th>
-<th style="text-align: center;"><span class="arithmatex">\(\Delta\)</span>N Charge Hirshfeld (au)</th>
-<th style="text-align: center;"><span class="arithmatex">\(\Delta\)</span>H Charge Hirshfeld (au)</th>
+<th align="center"><span class="arithmatex">\(\ce{H-ion}\)</span> Distance (<span class="arithmatex">\(\AA\)</span>)</th>
+<th align="center"><span class="arithmatex">\(\Delta\ce{N-H}\)</span> Bond length (<span class="arithmatex">\(\AA\)</span>)</th>
+<th align="center">Ion charge CHELPG (au)</th>
+<th align="center"><span class="arithmatex">\(\Delta\)</span>N Charge CHELPG (au)</th>
+<th align="center"><span class="arithmatex">\(\Delta\)</span>H Charge CHELPG (au)</th>
+<th align="center">Ion charge Hirshfeld (au)</th>
+<th align="center"><span class="arithmatex">\(\Delta\)</span>N Charge Hirshfeld (au)</th>
+<th align="center"><span class="arithmatex">\(\Delta\)</span>H Charge Hirshfeld (au)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Pyrrole-<span class="arithmatex">\(\ce{Cl-}\)</span></td>
-<td style="text-align: center;">2.173</td>
-<td style="text-align: center;"><span class="arithmatex">\(+0.017\)</span></td>
-<td style="text-align: center;">-0.923</td>
-<td style="text-align: center;">+0.10</td>
-<td style="text-align: center;">+0.001</td>
-<td style="text-align: center;">-1.000</td>
-<td style="text-align: center;">-0.008</td>
-<td style="text-align: center;">-0.058</td>
+<td align="center">2.173</td>
+<td align="center"><span class="arithmatex">\(+0.017\)</span></td>
+<td align="center">-0.923</td>
+<td align="center">+0.10</td>
+<td align="center">+0.001</td>
+<td align="center">-1.000</td>
+<td align="center">-0.008</td>
+<td align="center">-0.058</td>
 </tr>
 <tr>
 <td>Pyrrole-<span class="arithmatex">\(\ce{N(CN)2-}\)</span></td>
-<td style="text-align: center;">1.947 (To <span class="arithmatex">\(\ce{C#N}\)</span> N)</td>
-<td style="text-align: center;"><span class="arithmatex">\(+0.011\)</span></td>
-<td style="text-align: center;">-0.955</td>
-<td style="text-align: center;">+0.021</td>
-<td style="text-align: center;">+0.042</td>
-<td style="text-align: center;">-0.881</td>
-<td style="text-align: center;">-0.010</td>
-<td style="text-align: center;">-0.027</td>
+<td align="center">1.947 (To <span class="arithmatex">\(\ce{C#N}\)</span> N)</td>
+<td align="center"><span class="arithmatex">\(+0.011\)</span></td>
+<td align="center">-0.955</td>
+<td align="center">+0.021</td>
+<td align="center">+0.042</td>
+<td align="center">-0.881</td>
+<td align="center">-0.010</td>
+<td align="center">-0.027</td>
 </tr>
 <tr>
 <td>Pyrrole-<span class="arithmatex">\(\ce{C(CN)3-}\)</span></td>
-<td style="text-align: center;">2.546 (To <span class="arithmatex">\(\ce{C#N}\)</span> N)</td>
-<td style="text-align: center;"><span class="arithmatex">\(+0.001\)</span></td>
-<td style="text-align: center;">-0.948</td>
-<td style="text-align: center;">-0.118</td>
-<td style="text-align: center;">+0.032</td>
-<td style="text-align: center;">-0.945</td>
-<td style="text-align: center;">-0.017</td>
-<td style="text-align: center;">-0.009</td>
+<td align="center">2.546 (To <span class="arithmatex">\(\ce{C#N}\)</span> N)</td>
+<td align="center"><span class="arithmatex">\(+0.001\)</span></td>
+<td align="center">-0.948</td>
+<td align="center">-0.118</td>
+<td align="center">+0.032</td>
+<td align="center">-0.945</td>
+<td align="center">-0.017</td>
+<td align="center">-0.009</td>
 </tr>
 </tbody>
 </table>

@@ -10862,32 +10862,44 @@
 <h2 id="monday-267">Monday 26/7<a class="headerlink" href="#monday-267" title="Permanent link">&para;</a></h2>
 <h3 id="what-i-did-today">What I did today:<a class="headerlink" href="#what-i-did-today" title="Permanent link">&para;</a></h3>
 <ul>
-<li>After my meeting with Katya there&rsquo;s a few things I need to do:</li>
+<li>After my meeting with Katya there&rsquo;s a few things I need to do:<ul>
 <li>Generate MESPs for the efield perturbations</li>
 <li>Potentially redo the relaxed efield perturbations with a more appropriate integration grid for M06-2X</li>
 <li>Redo all the benchmarks in Psi4, since ORCA isn&rsquo;t behaving nicely</li>
+</ul>
+</li>
 <li>We&rsquo;ve decided to not use DCA as an anion, which makes my job slightly easier <img alt="🙂" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f642.svg" title=":slightly_smiling_face:" /></li>
 <li>I generated the MESPs and put them into the PyMOL project</li>
 <li>I tweaked the script builder job</li>
-<li>I submitted the better scan jobs which are doing their thing</li>
+<li>I submitted the better scan jobs which are doing their thing<ul>
 <li>I might actually cancel and resubmit these with MESP generation&hellip;</li>
 <li>^this has been done</li>
+</ul>
+</li>
 <li>I spent a fair amount of time trying to figure out how to extract a clustered trajectory from the dcd files with mda, but I think it&rsquo;s probably not the best method.</li>
-<li><del>I&rsquo;ve set off my MD generator script and it is now building and queueing jobs!</del></li>
+<li><del>I&rsquo;ve set off my MD generator script and it is now building and queueing jobs!</del><ul>
 <li>I&rsquo;ve suspended these jobs, only because when the IL test jobs finish tomorrow, I want to be able to get them straight back on.</li>
+</ul>
+</li>
 </ul>
 <h2 id="tuesday-277">Tuesday 27/7<a class="headerlink" href="#tuesday-277" title="Permanent link">&para;</a></h2>
 <h3 id="what-i-did-today_1">What I did today:<a class="headerlink" href="#what-i-did-today_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>All the test runs timed out as expected, so I restarted them, making sure to specify to use P100 gpus so they should finish within 24 hours.</li>
 <li>Submitted all the jobs I generated yesterday <img alt="😅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f605.svg" title=":sweat_smile:" /></li>
-<li>Worked on finding decent cavities for PCMSolver, which meant troubleshooting compiling geomview, before I learned that nothing else can read <code>.off</code> files&hellip; except for <a href="https://3dviewer.net">https://3dviewer.net</a> <img alt="😒" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f612.svg" title=":unamused:" /></li>
+<li>Worked on finding decent cavities for PCMSolver, which meant troubleshooting compiling geomview, before I learned that nothing else can read <code>.off</code> files&hellip; except for <a href="https://3dviewer.net">https://3dviewer.net</a> <img alt="😒" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f612.svg" title=":unamused:" /><ul>
 <li>I settled on using a cavity area of 0.9</li>
-<li>Tweaked the benchmark jobs and brushed up on SCF algorithms to try and speed them up/prevent them from oscillating.</li>
+</ul>
+</li>
+<li>Tweaked the benchmark jobs and brushed up on SCF algorithms to try and speed them up/prevent them from oscillating.<ul>
 <li>I settled on using SOSCF, but we shall see how effective that is&hellip; (It works for ORCA)</li>
+</ul>
+</li>
 <li>Mostly spent a lot of time troubleshooting XQuartz again, and also jupyterlab&hellip;</li>
-<li>I noticed that the temperatures of the jobs is closer to 200-230K when I&rsquo;m specifying 343K for the thermostat, trying to follow up on this with Tom or Michael, but it&rsquo;s late.</li>
+<li>I noticed that the temperatures of the jobs is closer to 200-230K when I&rsquo;m specifying 343K for the thermostat, trying to follow up on this with Tom or Michael, but it&rsquo;s late.<ul>
 <li>This is because the reported temperature is the average of the temperature of all the particles, which Drudes have their own thermostat that keeps them at ~2K</li>
+</ul>
+</li>
 </ul>
 <h2 id="wednesday-287">Wednesday 28/7<a class="headerlink" href="#wednesday-287" title="Permanent link">&para;</a></h2>
 <h3 id="to-do">To do:<a class="headerlink" href="#to-do" title="Permanent link">&para;</a></h3>
@@ -10898,24 +10910,30 @@
 </ul>
 <h3 id="what-i-did-today_2">What I did today:<a class="headerlink" href="#what-i-did-today_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>I wrote a script to load all the geometries into PyMOL in different states to make it easier to browse their respective geometries</li>
+<li>I wrote a script to load all the geometries into PyMOL in different states to make it easier to browse their respective geometries<ul>
 <li>This should easily be extended to loading in ESPs </li>
+</ul>
+</li>
 <li>I wrote an RDF generation script that uses MDAnalysis, which is much faster than TRAVIS</li>
-<li>I had a collaborator meeting in which Michelle was really happy with the work I&rsquo;ve done and wants to get it into a paper, but now I&rsquo;m feeling overwhelmed</li>
+<li>I had a collaborator meeting in which Michelle was really happy with the work I&rsquo;ve done and wants to get it into a paper, but now I&rsquo;m feeling overwhelmed<ul>
 <li>So I just sent an email to Katya about feeling overwhelmed</li>
+</ul>
+</li>
 <li>The IL pMD jobs have begun to run at speeds of ~50-55ns/day, which should mean they&rsquo;ll take just over two days to complete which is reasonable</li>
 <li>I managed to get MDAnalysis cluster selection and exporting working! and I managed to speed up the <code>.dcd</code> to <code>.pdb</code> conversion process, and I managed to get the geometry to read properly in pymol</li>
-<li>The RDFs I&rsquo;m getting form MDAnalysis don&rsquo;t feel quite right, so I&rsquo;m trying again with TRAVIS to see if looks any different.</li>
+<li>The RDFs I&rsquo;m getting form MDAnalysis don&rsquo;t feel quite right, so I&rsquo;m trying again with TRAVIS to see if looks any different.<ul>
 <li>This didn&rsquo;t but I realised the error. I was computing all atoms of one molecule against thee other, as opposed ot sat the N-S distance.</li>
 <li>I also used mdtraj as per Tom&rsquo;s suggestion which made this process so much faster!</li>
 <li>Using both of these things, I&rsquo;m still not seeing any difference between the two IL test jobs, but I think it might have something to do with the constant acceleration. If I compare that RDF to one of the in progress na1* jobs, I <em>do</em> see a difference!</li>
+</ul>
+</li>
 <li>
 <p>I also forgot that I need to do comparative MD between field off and on, so I&rsquo;ve queued up those jobs as well!</p>
-</li>
-<li>
-<p>I might also get them queued on M3 just in case they get picked up there sooner&hellip; - done</p>
-</li>
+<ul>
+<li>I might also get them queued on M3 just in case they get picked up there sooner&hellip; - done</li>
 <li>I also noticed that my MonARCH jobs weren&rsquo;t submitted under partner, so I&rsquo;ve fixed that up</li>
+</ul>
+</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">From meeting with Michelle</p>
@@ -10943,68 +10961,68 @@ this can then be explored thorugh a Hammett study to detemrine the effectiveness
 <thead>
 <tr>
 <th>Job</th>
-<th style="text-align: center;">na1r - r</th>
-<th style="text-align: center;">na1t - r</th>
-<th style="text-align: center;">na1p - r</th>
-<th style="text-align: center;">na1r - s</th>
-<th style="text-align: center;">na1t - s</th>
-<th style="text-align: center;">na1p - s</th>
+<th align="center">na1r - r</th>
+<th align="center">na1t - r</th>
+<th align="center">na1p - r</th>
+<th align="center">na1r - s</th>
+<th align="center">na1t - s</th>
+<th align="center">na1p - s</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Non-catalysed benchmark</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
 </tr>
 <tr>
 <td>R benchmark (static)</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
 </tr>
 <tr>
 <td>S benchmark (static)</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
 </tr>
 <tr>
 <td>Catalysed benchmark (relaxed)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>R benchmark (relaxed)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>S benchmark (relaxed)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -11013,96 +11031,96 @@ this can then be explored thorugh a Hammett study to detemrine the effectiveness
 <thead>
 <tr>
 <th>IL</th>
-<th style="text-align: center;">na1r-r</th>
-<th style="text-align: center;">na1t-1-r</th>
-<th style="text-align: center;">na1t-2-r</th>
-<th style="text-align: center;">na1t-3-r</th>
-<th style="text-align: center;">na1p-r</th>
-<th style="text-align: center;">na1r-s</th>
-<th style="text-align: center;">na1t-1-s</th>
-<th style="text-align: center;">na1t-2-s</th>
-<th style="text-align: center;">na1t-3-s</th>
-<th style="text-align: center;">na1p-s</th>
+<th align="center">na1r-r</th>
+<th align="center">na1t-1-r</th>
+<th align="center">na1t-2-r</th>
+<th align="center">na1t-3-r</th>
+<th align="center">na1p-r</th>
+<th align="center">na1r-s</th>
+<th align="center">na1t-1-s</th>
+<th align="center">na1t-2-s</th>
+<th align="center">na1t-3-s</th>
+<th align="center">na1p-s</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{OTF} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​​​</td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center"><mark>running</mark></td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center"><mark>running</mark></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{MSO4} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{TCM} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{OTF} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{MSO4} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{TCM} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
 </tr>
 </tbody>
 </table>

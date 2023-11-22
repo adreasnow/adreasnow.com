@@ -10821,7 +10821,7 @@
 <li>Solver - (D)PCM, CPCM (<span class="arithmatex">\(k=0)\)</span>, IEFPCM, IPCM, COSMO (<span class="arithmatex">\(k=0.5\)</span>), ddCOSMO, SS(V)PE</li>
 <li>Excitation treatment - LR, VEM, SS (cLR)</li>
 <li>Equilibrium/non-equilibrium (flips the excitation direction)</li>
-<li>Cavity</li>
+<li>Cavity<ul>
 <li>Radii set - Bondi, UFF, Allinger</li>
 <li>Radii scale - 1.0, 1.2</li>
 <li>Cavity formation - vdW, GEPOL, SES, SAS, isodensty </li>
@@ -10829,16 +10829,20 @@
 <li>Switching Function (for Gaussian) - SWIG, ISWIG</li>
 </ul>
 </li>
+</ul>
+</li>
 <li>Non-electrostatic terms - none, integration of atom types, stat-mech, QM/ESP based</li>
 </ul>
 <h2 id="notes">Notes:<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>So as I keep reading, this tangled web of solvation models gets more complicated. It seems as though there&rsquo;s a handful of approaches, all of which branch out with different corrections. From what I can tell, these are the main overarching categories:</li>
+<li>So as I keep reading, this tangled web of solvation models gets more complicated. It seems as though there&rsquo;s a handful of approaches, all of which branch out with different corrections. From what I can tell, these are the main overarching categories:<ul>
 <li>PCM<ul>
-<li>Is broken down into:</li>
+<li>Is broken down into:<ul>
 <li>CPCM, DPCM, IPCM, IEFPCM, COSMO, ddCOSMO, SS(V)PE</li>
 <li>These are all different formalisms for how to consider the polarisable continuum. IEFPCM and SS(V)PE seem to be considered the most sophisticated implementations.</li>
-<li>With vertical excitation models:</li>
+</ul>
+</li>
+<li>With vertical excitation models:<ul>
 <li>LR, VEM, SS<ul>
 <li>I think ptSS and ptLR are just QChem implementations?</li>
 <li>and cLR seems to be an implementation of SS</li>
@@ -10847,15 +10851,21 @@
 <li>These seem to use an optical dielectric <span class="arithmatex">\(\varepsilon_\infty\)</span> (square of the refractive index @ 293K?)</li>
 </ul>
 </li>
+</ul>
+</li>
 <li>Density and perturbation methods<ul>
 <li>EFP, CPPE, PDE, FPE</li>
 <li>These are solvent microstate methods that represent the solvent as either a responsive of frozen electrostatic mass, with differing amounts of dispersion contribution. They better represent solvent specific interactions, such as hydrogen bonding and pi stacking, but lack the generalised nature of continuum based methods.</li>
 </ul>
 </li>
 <li>Parameterised models<ul>
-<li>Usually take a PCM basis and apply a correction on top based on some sort of identification of sites or density of the solute</li>
+<li>Usually take a PCM basis and apply a correction on top based on some sort of identification of sites or density of the solute<ul>
 <li>nD-RISM, SMn, SMD, CMIRS</li>
 <li>These usually do not analytically support excited states</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>The term SCRF seems to refer specifically to a solvent model that&rsquo;s directly implemented in the SCF procedures and is thus self consistent with the electronic state, though since the SCF procedure is typically the ground state, the excitation model is used a correction, taking into account either the transition density or the density difference between the GS and ES.</li>
@@ -10864,45 +10874,49 @@
 <ul>
 <li>DPCM is the initial formulation of PCM and uses the electrostatic definition of charge forming at the surface of two dielectric media</li>
 <li>CPCM and COSMO are both methods that utilise a conductor as the bulk and scale the resulting surface charges as a function of the dielectric constant. The scaling factor takes the form <span class="arithmatex">\(f(\varepsilon)=\frac{\varepsilon-1}{\varepsilon+k}\)</span>. CPCM takes the value of <span class="arithmatex">\(k=0\)</span> where in COSMO <span class="arithmatex">\(k=0.5\)</span>. This is known as the epsilon function. </li>
-<li>The Integral Equation Formulation of PCM (IEFPCM) is a more generalised case from which DPCM and CPCM can be considered subcases. It is considered to be more mathematically exact</li>
+<li>The Integral Equation Formulation of PCM (IEFPCM) is a more generalised case from which DPCM and CPCM can be considered subcases. It is considered to be more mathematically exact<ul>
 <li>IEFPCM fixes two big issues of DPCM<ol>
 <li>It correctly models the case in which the solute charge extends beyond the cavity</li>
 <li>It can be extended to work with anisotropic dielectrics and complex environments</li>
 </ol>
 </li>
 </ul>
+</li>
+</ul>
 <h4 id="excited-states-with-pcm">Excited States With PCM<a class="headerlink" href="#excited-states-with-pcm" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p>In terms of solvation, <strong>Linear Response</strong> is a correction to the ground state density used for the SCRF procedure. It&rsquo;s implemented by calculating the excited state dynamic polarisation response from the transition density. <strong>State Specific</strong> uses a slightly different approach, calculating the dynamic polarisation from the difference between the ground and exited state densities.</p>
-</li>
-<li>
-<p>The SS solvation approach comes in three forms:</p>
-</li>
+<li>In terms of solvation, <strong>Linear Response</strong> is a correction to the ground state density used for the SCRF procedure. It&rsquo;s implemented by calculating the excited state dynamic polarisation response from the transition density. <strong>State Specific</strong> uses a slightly different approach, calculating the dynamic polarisation from the difference between the ground and exited state densities.</li>
+</ul>
+<ul>
+<li>The SS solvation approach comes in three forms:<ul>
 <li>Vertical Excitation Method (VEM) - An iterative/self consistent approach</li>
 <li>Sate Specific (SS) or Corrected-LR (cLR) - &ldquo;can be seen as the first cycle of this iterative process.&rdquo;</li>
 <li>Improta, Barone, Scalmani, and Frisch (IBSF) - Iterative like VEM, but the total excited state density is used instead of just the density difference.</li>
+</ul>
+</li>
 <li>LR is good for systems where there is little electronic rearrangement between the GS and ES, otherwise an SS approach needs to be used.</li>
 </ul>
 <h4 id="numerical-implementation">Numerical Implementation<a class="headerlink" href="#numerical-implementation" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Initially this was done by creating a vdW surface around the solute and treating each point as a specific charge.</li>
+<li>Initially this was done by creating a vdW surface around the solute and treating each point as a specific charge.<ul>
 <li>The Solvent Excluded Surface (SES) is the surface at the vdW radii of the solute that is accessible by the solvent (using a probe of the radius of the solvent).</li>
 <li>The GEPOL algorithm can effectively be thought of as the SES method, but with the surface made of convex elements (spheres inside of the solute instead of outside) rather than concave ones.</li>
 <li>The Solvent Accessible Surface (SAS) is effectively the intersection of the vdW radii of the solute + the radius of the solvent probe, and is thus made of convex elements only.</li>
 <li>The area of the individual faces produced by these methods determines the integration weight for that particular point charge.</li>
 </ul>
-<p><img alt="!crFbp" class="center" src="../crFbp.png" style="width: 60%; " /></p>
+</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="crFbp" href="../crFbp.png"><img alt="crFbp" class="center" src="../crFbp.png" style="width: 60%; " /></a></div></p>
 <ul>
-<li>Modern implementations use a Continuous Surface Charge (CSC) by modelling these points with simple spherical Gaussian functions</li>
+<li>Modern implementations use a Continuous Surface Charge (CSC) by modelling these points with simple spherical Gaussian functions<ul>
 <li>These use a Lebedev grid rather than a face area to determine the integration weights.</li>
 <li>The SES method does not work here, so instead a scaling factor of 1.2 is typically used to increase the vdW radii to recover the solvent excluded regions</li>
-<li>
-<p>A &ldquo;switching function&rdquo; is used to measure the contribution of the Gaussian charge to the solvation energy.</p>
+<li>A &ldquo;switching function&rdquo; is used to measure the contribution of the Gaussian charge to the solvation energy.</li>
+</ul>
 </li>
-<li>
-<p>There appears to also be a way to use the isosurface of the solute&rsquo;s density, though according to Q-chem&rsquo;s manual, this isn&rsquo;t any superior to radii based cavity production and also doesn&rsquo;t support analytical gradients</p>
-</li>
+</ul>
+<ul>
+<li>There appears to also be a way to use the isosurface of the solute&rsquo;s density, though according to Q-chem&rsquo;s manual, this isn&rsquo;t any superior to radii based cavity production and also doesn&rsquo;t support analytical gradients</li>
 </ul>
 <h4 id="non-electrostatic-terms">Non-electrostatic terms<a class="headerlink" href="#non-electrostatic-terms" title="Permanent link">&para;</a></h4>
 <p>Implicit solvation energy is typically broken down into a few terms, with electrostatics, cavitation, dispersion and repulsion all having their own contributions.

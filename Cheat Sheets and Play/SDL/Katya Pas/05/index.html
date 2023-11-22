@@ -10869,38 +10869,38 @@ E^{corr}=E_{method}-E_{HF}
 <p>Occurs as a result of the fact that electrons cannot exist in the same place at the same time, and will ultimately avoid each other. The electrons will have a certain energy associated with this avoidant behaviour</p>
 <h2 id="static-correlation-energy">Static Correlation Energy<a class="headerlink" href="#static-correlation-energy" title="Permanent link">&para;</a></h2>
 <p>Also known as &ldquo;Non-dynamic&rdquo; or &ldquo;Strong&rdquo;, comes form the near degeneracy of MOs.  Since electrons are indistinguishable from each other, in certain cases (such as transition metals and <span class="arithmatex">\(\ce{O3}\)</span>), the wavefunction will have to be made of a combination of the possible states of the system, leading to a difference in energy.</p>
-<p><img alt="!staticCorr" class="center" src="../staticCorr.png" style="width: 70%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="staticCorr" href="../staticCorr.png"><img alt="staticCorr" class="center" src="../staticCorr.png" style="width: 70%; " /></a></div></p>
 <p>This energy accounts for about 1% of the total energy, however since it predominantly effects the valence electrons, it can account for <span class="arithmatex">\(&gt;90%\)</span> of the reaction energy</p>
 <h2 id="pople-diagram">Pople Diagram<a class="headerlink" href="#pople-diagram" title="Permanent link">&para;</a></h2>
 <p>The Pople diagram gives us a sense that to achieve higher levels of theory and accuracy (to obtain a more accurate solution to the Schrodinger equation), we need an appropriately large basis set:</p>
-<p><img alt="!PopleDiagram" class="center" src="../PopleDiagram.png" style="width: 70%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="PopleDiagram" href="../PopleDiagram.png"><img alt="PopleDiagram" class="center" src="../PopleDiagram.png" style="width: 70%; " /></a></div></p>
 <h2 id="solving-correlated-levels-of-theory">Solving Correlated Levels of Theory<a class="headerlink" href="#solving-correlated-levels-of-theory" title="Permanent link">&para;</a></h2>
 <p>To get the exact solution to the Schrodinger equation using Configuration Interaction (CI) we need to consider all the possible excitations of the system. For each increase of the number of excitations, you significantly increase the number of possible configurations </p>
 <div class="arithmatex">\[
 \Psi=\color{red}C_{HF}\Phi_{HF}\color{blue}+\sum\limits_{ia}C_i^a\Phi_i^a\color{green}+\sum\limits_{a&lt;b\\i&lt;j}C_{ij}^{ab}\Phi_{ij}^{ab}\color{purple}+\sum\limits_{a&lt;b&lt;c\\i&lt;j&lt;k}C_{ijk}^{abc}\Phi_{ijk}^{abc}\color{orange}+...
 \]</div>
 <p>Where <span class="arithmatex">\(a, b, c, ...\)</span> are virtual orbitals and <span class="arithmatex">\(i, j, k, ...\)</span> are occupied orbitals.</p>
-<p><img alt="!CI" class="center" src="../CI.png" style="width: 70%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="CI" href="../CI.png"><img alt="CI" class="center" src="../CI.png" style="width: 70%; " /></a></div></p>
 <h3 id="the-cost">The Cost<a class="headerlink" href="#the-cost" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Excitations</th>
-<th style="text-align: center;">Cost</th>
+<th align="center">Excitations</th>
+<th align="center">Cost</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Single</td>
-<td style="text-align: center;"><span class="arithmatex">\(n_{occ}\cdot N_{virt}\)</span></td>
+<td align="center">Single</td>
+<td align="center"><span class="arithmatex">\(n_{occ}\cdot N_{virt}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;">Double</td>
-<td style="text-align: center;"><span class="arithmatex">\(n_{occ}^2\cdot N_{virt}^2\)</span></td>
+<td align="center">Double</td>
+<td align="center"><span class="arithmatex">\(n_{occ}^2\cdot N_{virt}^2\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;">Triple</td>
-<td style="text-align: center;"><span class="arithmatex">\(n_{occ}^3\cdot N_{virt}^3\)</span></td>
+<td align="center">Triple</td>
+<td align="center"><span class="arithmatex">\(n_{occ}^3\cdot N_{virt}^3\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -10920,24 +10920,24 @@ E^{corr}=E_{method}-E_{HF}
 <h3 id="mp2">MP2<a class="headerlink" href="#mp2" title="Permanent link">&para;</a></h3>
 <p>MP2 is a non-variational method that uses the HF method and is thus fundamentally variational, that recovers 80-95% of the correlation energy.</p>
 <p>MP2 is the typical go to, as it has been shown that higher orders will not necessarily converge and can have quite nasty issues in terms of consistency, as can be seen below.</p>
-<p><img alt="!MPn" class="center" src="../MPn.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="MPn" href="../MPn.png"><img alt="MPn" class="center" src="../MPn.png" style="width: 50%; " /></a></div></p>
 <table>
 <thead>
 <tr>
 <th>Method</th>
-<th style="text-align: center;">MP2</th>
-<th style="text-align: center;">CISD</th>
-<th style="text-align: center;">CCSD</th>
-<th style="text-align: center;">CCSD(T)</th>
+<th align="center">MP2</th>
+<th align="center">CISD</th>
+<th align="center">CCSD</th>
+<th align="center">CCSD(T)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Cost</td>
-<td style="text-align: center;"><span class="arithmatex">\(N^5\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(N^5\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(N^6\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(N^7\)</span></td>
+<td align="center"><span class="arithmatex">\(N^5\)</span></td>
+<td align="center"><span class="arithmatex">\(N^5\)</span></td>
+<td align="center"><span class="arithmatex">\(N^6\)</span></td>
+<td align="center"><span class="arithmatex">\(N^7\)</span></td>
 </tr>
 </tbody>
 </table>

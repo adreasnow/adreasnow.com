@@ -10944,10 +10944,12 @@
 <h2 id="monday-197">Monday 19/7<a class="headerlink" href="#monday-197" title="Permanent link">&para;</a></h2>
 <h3 id="from-meeting-with-katya">From meeting with Katya:<a class="headerlink" href="#from-meeting-with-katya" title="Permanent link">&para;</a></h3>
 <ul>
-<li>We&rsquo;re going to switch from DCA to MeSO4 for our third il, giving us:</li>
+<li>We&rsquo;re going to switch from DCA to MeSO4 for our third il, giving us:<ul>
 <li><del>No dipole - <span class="arithmatex">\(\il{C4mpyr}{PF6}\)</span></del> No dipole - <span class="arithmatex">\(\il{C4mpyr}{TCM}\)</span></li>
 <li>Mid dipole - <span class="arithmatex">\(\il{C4mpyr}{OTf}\)</span></li>
 <li>Big dipole - <span class="arithmatex">\(\il{C4mpyr}{MeSO4}\)</span></li>
+</ul>
+</li>
 <li>The project has officially pivoted to stereocontrol, and we (as of the moment) haven&rsquo;t got a good protocol for comparing MD energies. Katya and Michelle weren&rsquo;t happy with Luke&rsquo;s approach in the JACS paper.</li>
 <li>Katya wants me to start equilibrating geometries in the ILs and wants me to do both the R and S isomers of the TS, possibly at multiple different <span class="arithmatex">\(\ce{N-C}\)</span> bond lengths&hellip;</li>
 <li>Okay&hellip; So I&rsquo;m a bit frustrated, but I&rsquo;ve resorted back to TCM for the non-dipole one, as <span class="arithmatex">\(\il{C4mpyr}{PF6}\)</span> has a <span class="arithmatex">\(T_m\)</span> of $87^\circ $c, making it impossible to get useful densities and meaning that we&rsquo;d have to run the sims at crazy high temps.</li>
@@ -10955,34 +10957,38 @@
 <h3 id="bong-length-selection">Bong length selection<a class="headerlink" href="#bong-length-selection" title="Permanent link">&para;</a></h3>
 <p>These were determined by finding the difference between the bond lengths in na1t and na1p.</p>
 <ul>
-<li>For N0E-C0B</li>
+<li>For N0E-C0B<ul>
 <li>Half of this length was subtracted from the TS to give na1t-1</li>
 <li>The TS geometry was used for na1t-2</li>
 <li>Half of this length was added to the TS to give na1t-3</li>
-<li>For C0J-N0E</li>
+</ul>
+</li>
+<li>For C0J-N0E<ul>
 <li>The subtractions and additions were reversed.</li>
+</ul>
+</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Bond</th>
-<th style="text-align: center;">na1t-1</th>
-<th style="text-align: center;">na1t-2</th>
-<th style="text-align: center;">na1t-3</th>
+<th align="center">na1t-1</th>
+<th align="center">na1t-2</th>
+<th align="center">na1t-3</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>N0E-C0B</td>
-<td style="text-align: center;">1.873</td>
-<td style="text-align: center;">1.760</td>
-<td style="text-align: center;">1.648</td>
+<td align="center">1.873</td>
+<td align="center">1.760</td>
+<td align="center">1.648</td>
 </tr>
 <tr>
 <td>C0J-N0E</td>
-<td style="text-align: center;">1.448</td>
-<td style="text-align: center;">1.453</td>
-<td style="text-align: center;">1.459</td>
+<td align="center">1.448</td>
+<td align="center">1.453</td>
+<td align="center">1.459</td>
 </tr>
 </tbody>
 </table>
@@ -11000,10 +11006,12 @@
 <h3 id="what-i-did-today_1">What I did today:<a class="headerlink" href="#what-i-did-today_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Collaborator meeting - nothing to report&hellip;</li>
-<li>Trying to fix the scaling issues, I&rsquo;m going to:</li>
+<li>Trying to fix the scaling issues, I&rsquo;m going to:<ul>
 <li>Re-optimise with M06-2X Def2-TZVP</li>
 <li>Scan the interaction difference with SAPT0</li>
 <li>Re-run the SAPT2+ interaction energies</li>
+</ul>
+</li>
 <li>I wrote up the SAPT0 scan script</li>
 <li>Set off all the reopt jobs (c4mpyr-anion and na1r-ion&hellip; I&rsquo;m not going to bother with ion-ion interactions for now)</li>
 <li>I am also re-running the relaxed efield scan jobs, as my field wasn&rsquo;t continuous and running the jobs again locally, I got results that were more in line with my expectations. I&rsquo;ve bumped up the memory and am also spitting out geometries of the optimised structures now</li>
@@ -11017,10 +11025,12 @@
 <h2 id="friday-237">Friday 23/7<a class="headerlink" href="#friday-237" title="Permanent link">&para;</a></h2>
 <h3 id="what-i-did-today_3">What I did today:<a class="headerlink" href="#what-i-did-today_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Today I had a look back at some of my tests from the past little while and have realised that I was getting better results without using the SAPT scanning method, so I&rsquo;ve finished off the <span class="arithmatex">\(k_{ij}\)</span>​​ parameterisation based on the old method and am now running some final baseline tests of the MD simulations with and without an electric field (<span class="arithmatex">\(0.1\:V/\AA\)</span>)</li>
+<li>Today I had a look back at some of my tests from the past little while and have realised that I was getting better results without using the SAPT scanning method, so I&rsquo;ve finished off the <span class="arithmatex">\(k_{ij}\)</span>​​ parameterisation based on the old method and am now running some final baseline tests of the MD simulations with and without an electric field (<span class="arithmatex">\(0.1\:V/\AA\)</span>)<ul>
 <li>10ns npt</li>
 <li>10ns nvt equilib</li>
 <li>100ns nvt production</li>
+</ul>
+</li>
 <li>I am calling parameterisation pretty much done, which is insanely cool!</li>
 <li>I&rsquo;m also doing some more fine grained efield perturbations of the difference between R and S on fixed geometry, so that I can get some simple benchmark data of what&rsquo;s possible</li>
 <li>The relaxed scans did something similar again where the field doesn&rsquo;t appear to be continuous. I&rsquo;ll chat with Katya about it on Monday, but it&rsquo;s why I&rsquo;m focusing on the benchmark calculations instead</li>
@@ -11028,15 +11038,21 @@
 </ul>
 <h4 id="running-jobs">Running Jobs:<a class="headerlink" href="#running-jobs" title="Permanent link">&para;</a></h4>
 <ul>
-<li>MD Runs (MonARCH)</li>
+<li>MD Runs (MonARCH)<ul>
 <li>MD IL tests (10,10,100 &plusmn; 0.1V/Å)</li>
 <li>MD IL spawner test job</li>
 <li>MD na1t-2-s in IL orienting with the field (proof of concept)</li>
-<li>Efield scans</li>
+</ul>
+</li>
+<li>Efield scans<ul>
 <li>Fixed geom efield scans (R/S) (MonARCH)</li>
-<li>Benchmark Jobs</li>
+</ul>
+</li>
+<li>Benchmark Jobs<ul>
 <li>Relaxed perturbed bench jobs (M3)</li>
 <li>Fixed perturbed bench jobs (MonARCH)</li>
+</ul>
+</li>
 </ul>
 <h2 id="saturday-247">Saturday 24/7<a class="headerlink" href="#saturday-247" title="Permanent link">&para;</a></h2>
 <h3 id="what-i-did-today_4">What I did today:<a class="headerlink" href="#what-i-did-today_4" title="Permanent link">&para;</a></h3>
@@ -11047,73 +11063,77 @@
 </ul>
 <h4 id="running-jobs_1">Running Jobs:<a class="headerlink" href="#running-jobs_1" title="Permanent link">&para;</a></h4>
 <ul>
-<li>MD Runs (MonARCH)</li>
+<li>MD Runs (MonARCH)<ul>
 <li>MD IL tests (10,10,100 &plusmn; 0.1V/Å)</li>
 <li>MD IL spawner test job</li>
 <li>MD na1t-2-s in IL orienting with the field (proof of concept)</li>
-<li>Benchmark Jobs</li>
+</ul>
+</li>
+<li>Benchmark Jobs<ul>
 <li>Relaxed perturbed bench jobs (M3)</li>
 <li>Fixed perturbed catalytic bench jobs (MonARCH)</li>
 <li>Fixed perturbed stereoselection bench jobs (R - MonARCH, S - MonARCH &amp; M3)</li>
+</ul>
+</li>
 </ul>
 <h3 id="na1-parameterisation-progress-matrix">Na1 Parameterisation Progress Matrix<a class="headerlink" href="#na1-parameterisation-progress-matrix" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Task</th>
-<th style="text-align: center;">na1r</th>
-<th style="text-align: center;">na1t</th>
-<th style="text-align: center;">na1p</th>
+<th align="center">na1r</th>
+<th align="center">na1t</th>
+<th align="center">na1p</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>MP2 Opt (gas)</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
 <td>Molecular polarisability</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
 <td>Atomic polarisability</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(k_{ij}\)</span></td>
-<td style="text-align: center;">See matrix below</td>
-<td style="text-align: center;">N/A</td>
-<td style="text-align: center;">N/A</td>
+<td align="center">See matrix below</td>
+<td align="center">N/A</td>
+<td align="center">N/A</td>
 </tr>
 <tr>
 <td>LigParGen</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
 <td>Check params (minimise test)</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
 <td>POLAR section</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
 <td>Flip stereo</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 </tbody>
 </table>
@@ -11122,41 +11142,41 @@
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">na1</th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{C4mpyr+}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{OTf-}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{TCM-}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{MSO4-}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{DCA-}\)</span></th>
+<th align="center">na1</th>
+<th align="center"><span class="arithmatex">\(\ce{C4mpyr+}\)</span></th>
+<th align="center"><span class="arithmatex">\(\ce{OTf-}\)</span></th>
+<th align="center"><span class="arithmatex">\(\ce{TCM-}\)</span></th>
+<th align="center"><span class="arithmatex">\(\ce{MSO4-}\)</span></th>
+<th align="center"><span class="arithmatex">\(\ce{DCA-}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>na1</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\ce{C4mpyr+}\)</span></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
 <td>Polarisability</td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-<td style="text-align: center;"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+<td align="center"><img alt="✅" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 </tbody>
 </table>

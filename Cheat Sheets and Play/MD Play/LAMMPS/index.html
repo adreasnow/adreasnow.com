@@ -10796,15 +10796,23 @@
 <h3 id="generating-the-lammps-input">Generating the LAMMPS Input<a class="headerlink" href="#generating-the-lammps-input" title="Permanent link">&para;</a></h3>
 <p>You want to follow the instructions over at <a href="https://github.com/agiliopadua/fftool">fftool on github</a>, but the basic process is as follows</p>
 <ol>
-<li>Generate the PACKMOL script from the pdb file(s) you&rsquo;ve just generated. The force field will be read form the PBD file.</li>
+<li>Generate the PACKMOL script from the pdb file(s) you&rsquo;ve just generated. The force field will be read form the PBD file.<ul>
 <li><code>fftool 100 molecule.xyz -b 10</code></li>
+</ul>
+</li>
 <li>Modify the <code>pack.inp</code> to build your geometry how you want it, using the files specified in the file. Examples are available at the <a href="http://m3g.iqm.unicamp.br/packmol/examples.shtml">packmol website</a></li>
-<li>Run PACKMOL to generate the box</li>
+<li>Run PACKMOL to generate the box<ul>
 <li><code>packmol &lt; pack.inp</code></li>
-<li>Run the fftool line again, but specify the MD package to generate your scripts (<code>-l</code> for LAMMPS)</li>
+</ul>
+</li>
+<li>Run the fftool line again, but specify the MD package to generate your scripts (<code>-l</code> for LAMMPS)<ul>
 <li><code>fftool 100 molecule.pdb -b 10 -l</code></li>
-<li>Modfy the in.lmp and you&rsquo;re ready to run! you should only need the <code>in.lmp</code> and <code>data.lmp</code> files to run LAMMPS</li>
+</ul>
+</li>
+<li>Modfy the in.lmp and you&rsquo;re ready to run! you should only need the <code>in.lmp</code> and <code>data.lmp</code> files to run LAMMPS<ul>
 <li><code>mpirun -np 4 lmp -pk gpu 1 -sf gpu -in in.lmp</code></li>
+</ul>
+</li>
 </ol>
 
 

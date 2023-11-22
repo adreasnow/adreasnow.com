@@ -10876,26 +10876,26 @@
 3 atoms gives bond length and bond angle <br/>
 4 atoms gives bond length, bond angle and dihedral angle</p>
 </div>
-<p><img alt="!image" class="center" src="../QM1.jpg" style="width: 70%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../QM1.jpg"><img alt="image" class="center" src="../QM1.jpg" style="width: 70%; " /></a></div></p>
 <h2 id="first-principles-ab-initio">First Principles (ab initio)<a class="headerlink" href="#first-principles-ab-initio" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Calculation of chemistry without parametric properties input</li>
-<li>Uses the principles of:</li>
+<li>Uses the principles of:<ul>
 <li>Conservation of mass</li>
 <li>Conservation of energy</li>
-<li>
-<p>Conservation of momentum</p>
+<li>Conservation of momentum</li>
+</ul>
 </li>
-<li>
-<p>Based on mathematically solving the Schrodinger equation to get an eigenvalue (energy) for an eigenfunction (wavefunction), and thus the electronic/structural configuration of the atoms</p>
-</li>
+</ul>
+<ul>
+<li>Based on mathematically solving the Schrodinger equation to get an eigenvalue (energy) for an eigenfunction (wavefunction), and thus the electronic/structural configuration of the atoms</li>
 </ul>
 <h2 id="schrodinger-equation">Schrodinger Equation<a class="headerlink" href="#schrodinger-equation" title="Permanent link">&para;</a></h2>
 <p>The basic Schrodinger equation links the Hamiltonian to the energy output of the system</p>
 <div class="arithmatex">\[
 H\Psi_{(R,r)}=E\Psi_{(R,r)}
 \]</div>
-<p><img alt="!image" class="right" src="../QM2.png" style="width: 40%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../QM2.png"><img alt="image" class="right" src="../QM2.png" style="width: 40%; " /></a></div></p>
 <h4 id="the-wavefunction-psi">The Wavefunction ($\psi)<a class="headerlink" href="#the-wavefunction-psi" title="Permanent link">&para;</a></h4>
 <p>This contains all of the probability information about the &ldquo;particles&rdquo; in the system. We cannot know <span class="arithmatex">\(\Psi\)</span>, so we have to keep it on both sides an assume it instead</p>
 <div class="arithmatex">\[
@@ -10909,10 +10909,12 @@ H\Psi_{(R,r)}=E\Psi_{(R,r)}
 <h3 id="the-hamiltonian">The Hamiltonian<a class="headerlink" href="#the-hamiltonian" title="Permanent link">&para;</a></h3>
 <ul>
 <li>This term contains all of the kinetic and potential energy of the system</li>
-<li>Where:</li>
+<li>Where:<ul>
 <li><span class="arithmatex">\(\widehat{T}\)</span>= Kinetic energy</li>
 <li><span class="arithmatex">\(\widehat{V}\)</span>= Potential energy<ul>
 <li><span class="arithmatex">\(nn\)</span>/<span class="arithmatex">\(ne\)</span>/<span class="arithmatex">\(ee\)</span> are interactions of protons (<span class="arithmatex">\(n\)</span>) and electrons (<span class="arithmatex">\(e\)</span>)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -10933,9 +10935,11 @@ H\Psi_{(R,r)}=E\Psi_{(R,r)}
 <li>Also known as the Adiabatic principle</li>
 <li>Allows for the simplification of <span class="arithmatex">\(\Psi\)</span> to equal the LCAO approximation</li>
 <li>The BO approximation assumes that the electrons move so fast that the interaction of the protons and electrons can be ignored</li>
-<li>This cancels out terms in the Hamiltonian</li>
+<li>This cancels out terms in the Hamiltonian<ul>
 <li><span class="arithmatex">\(\widehat{V_{nn}}\)</span>  becomes a constant and can be omitted </li>
 <li><span class="arithmatex">\(\widehat{T_n}\)</span>  becomes zero</li>
+</ul>
+</li>
 </ul>
 <div class="arithmatex">\[
 \widehat{H}=\widehat{T_n}+\widehat{T_e}+\widehat{V_{nn}}+\widehat{V_{ne}}+\widehat{V_{ee}}
@@ -10952,17 +10956,19 @@ H\Psi_{R,r}=E_R \Psi_{R,r}
 <p>Ultimately, the electrons move independently of the movement of the nucleus and therefore this interaction can effectively ignored</p>
 <h4 id="hartree-fock-approximation-scf">Hartree-Fock Approximation - (SCF)<a class="headerlink" href="#hartree-fock-approximation-scf" title="Permanent link">&para;</a></h4>
 <ul>
-<li>The HF approximation is the &ldquo;mean field&rdquo; approximation. This means that all the electrons, except for the one you&rsquo;re trying to calculate can be approximated to be a single field, without any particular interactions.</li>
+<li>
+<p>The HF approximation is the &ldquo;mean field&rdquo; approximation. This means that all the electrons, except for the one you&rsquo;re trying to calculate can be approximated to be a single field, without any particular interactions.</p>
+<ul>
 <li>These interactions are correlation and account for a large amount of the electron&rsquo;s interaction</li>
 <li>The approximation typically accounts for ~99% of the total electronic energy, however the extra 1% is a significant amount, when considering the energy interactions in reactions; <span class="arithmatex">\(1\%=0.7500E_h\)</span> or ~<span class="arithmatex">\(1969 kJ\cdot mol^{−1}\)</span></li>
-<li>
-<p>This error increases the more electrons are in the system, a single sulphur atom could have n uncertainty of ~<span class="arithmatex">\(12415 kJ\cdot mol^{−1}\)</span></p>
-</li>
-<li>
-<p>The calculation is &ldquo;variational&rdquo;, the lower the energy, the more accurate the model (DFT is non-variational)</p>
-</li>
+<li>This error increases the more electrons are in the system, a single sulphur atom could have n uncertainty of ~<span class="arithmatex">\(12415 kJ\cdot mol^{−1}\)</span></li>
+</ul>
+<ul>
+<li>The calculation is &ldquo;variational&rdquo;, the lower the energy, the more accurate the model (DFT is non-variational)</li>
 <li>HF methods are qualitative, but can’t be used quantitatively</li>
 <li>The iteration process of finding \Psi and E is called the Self Consistent Field and will continue until the  energy variation of the field between iteration is <span class="arithmatex">\(\Delta E&lt;10^{−8}E_ℎ\)</span></li>
+</ul>
+</li>
 </ul>
 <h4 id="correlation-energy">Correlation Energy<a class="headerlink" href="#correlation-energy" title="Permanent link">&para;</a></h4>
 <ul>
@@ -10972,13 +10978,15 @@ H\Psi_{R,r}=E_R \Psi_{R,r}
 E_{corr}=E_{exact}−E_{HF}
 \]</div>
 <ul>
-<li>There are multiple approaches to overcoming these issues</li>
+<li>There are multiple approaches to overcoming these issues<ul>
 <li>DFT which uses grids rather than wavefunctions</li>
 <li>Semiempirical methods that parameterise the process to base the calculations on real world measurements</li>
 <li>Post-HF methods that account for electron correlations<ul>
-<li>Configuration interaction (CI)</li>
+<li>Configuration interaction (CI)<ul>
 <li>CI, CID, CISD, QCISD, CCSD, CCSD(T)</li>
-<li>Moller-Plesset (MP) Perturbation Theory</li>
+</ul>
+</li>
+<li>Moller-Plesset (MP) Perturbation Theory<ul>
 <li>MPn = HF methods + Moller-Plesset calculations<ul>
 <li>MP2, MP3, MP4</li>
 </ul>
@@ -10988,16 +10996,22 @@ E_{corr}=E_{exact}−E_{HF}
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="atomic-units">Atomic units<a class="headerlink" href="#atomic-units" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Atomic units are used to simplify the calculations and cancel out nicely</li>
 <li>They put all the units used in the calculations on the same relative scale</li>
-<li>They consist of:</li>
+<li>They consist of:<ul>
 <li>Length - Bohr radius - <span class="arithmatex">\(a_0\)</span></li>
 <li>Mass - Electron mass - <span class="arithmatex">\(m_e\)</span></li>
 <li>Charge - Elementary Charge - <span class="arithmatex">\(e\)</span></li>
 <li>Action - <span class="arithmatex">\(\bar{h}\)</span></li>
 <li>Energy - Hartree - <span class="arithmatex">\(E_ℎ\)</span></li>
+</ul>
+</li>
 </ul>
 
 

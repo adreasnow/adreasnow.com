@@ -10848,13 +10848,15 @@
 <li>I had my meeting with Katya in which she suggested that I should drop the IL component for now, spend the next month just getting the data for the PCCP paper, and then write my thesis, ready to hand in with everyone else in November</li>
 <li>I&rsquo;ve been trying to get the scans and benchmarks through, but the queues seem to be a bit crazy atm.</li>
 <li>Things have been a bit crazy and I&rsquo;ve been all over the place, hence not really updating my diary much <img alt="😕" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f615.svg" title=":confused:" /></li>
-<li>I&rsquo;ve been really struggling with picking a high accuracy functional for the energetics of my system</li>
+<li>I&rsquo;ve been really struggling with picking a high accuracy functional for the energetics of my system<ul>
 <li>ωB97X-D3 is my current default based on Katya&rsquo;s suggestions, however looking at Martin Head-Gordon&rsquo;s recent &ldquo;30 years of DFT&rdquo; paper:<ul>
 <li>ωB97M-V is the best performer and is equivalently cheap and converges really nicely,</li>
 <li>M08-SO seems to perform the best for barrier heights</li>
 </ul>
 </li>
 <li>The problem is that neither the *-V,  nor the M08 functionals have analytical gradients, so they won&rsquo;t optimise properly in Psi4, and the frequency calcs will take forever with the 160+ DoF</li>
+</ul>
+</li>
 </ul>
 <h2 id="wednesday-48">Wednesday 4/8<a class="headerlink" href="#wednesday-48" title="Permanent link">&para;</a></h2>
 <h3 id="what-i-did-today">What I did today:<a class="headerlink" href="#what-i-did-today" title="Permanent link">&para;</a></h3>
@@ -10867,16 +10869,22 @@
 <h3 id="what-i-did-today_1">What I did today:<a class="headerlink" href="#what-i-did-today_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The Gaussian bench jobs haven&rsquo;t really been working, so I&rsquo;ve been troubleshooting them. As usual, Gaussian would rather just segfault than tell you what the issue is, so it&rsquo;s been a lot of troubleshooting.</li>
-<li>The efield scans results that I was getting out suddenly dropped by <span class="arithmatex">\(&gt;100\kjmol\)</span> so I&rsquo;m re-running those jobs and setting the optimisation dynamic level to only change after the initial optimisation has been completed.</li>
+<li>The efield scans results that I was getting out suddenly dropped by <span class="arithmatex">\(&gt;100\kjmol\)</span> so I&rsquo;m re-running those jobs and setting the optimisation dynamic level to only change after the initial optimisation has been completed.<ul>
 <li>I also put in the optimised geometry at this change in job, so if it still fails, I&rsquo;ll put in the old geometry</li>
 <li>The weird thing is though that this would have to mean that either the perturbed geometry is optimising much lower under <code>dynamic_level 2</code>, or that the base geometry is optimising much higher&hellip; I&rsquo;m honestly not sure which it is, but I&rsquo;d definitely rather not have to re-do these scans again!</li>
 <li>For the sake of consistency, I&rsquo;m starting form the old geometry again&hellip;</li>
-<li>I want to set up some high level benchmarking calcs, Perhaps CBS-QB3, as suggested by Michelle? to make sure that M06-2X/6-31+G(d) is actually acceptable, but I&rsquo;m not sure if I should be doing them solvated or not. I suspect that I need to be comparing gas to gas.</li>
+</ul>
+</li>
+<li>I want to set up some high level benchmarking calcs, Perhaps CBS-QB3, as suggested by Michelle? to make sure that M06-2X/6-31+G(d) is actually acceptable, but I&rsquo;m not sure if I should be doing them solvated or not. I suspect that I need to be comparing gas to gas.<ul>
 <li>I Might ask Katya if I should do this, or perhaps some DLPNO-CCSD(T)/CBS instead&hellip;</li>
-<li>The efield scan results are being really weird which seems to be triggered by changing the optimiser dynamic level. I compared the energy of the base molecule and it&rsquo;s off by <span class="arithmatex">\(0.0001\kjmol\)</span>, so the optimiser must be pushing the perturbed molecule harder&hellip;</li>
+</ul>
+</li>
+<li>The efield scan results are being really weird which seems to be triggered by changing the optimiser dynamic level. I compared the energy of the base molecule and it&rsquo;s off by <span class="arithmatex">\(0.0001\kjmol\)</span>, so the optimiser must be pushing the perturbed molecule harder&hellip;<ul>
 <li>I&rsquo;m going to re-start the scans again, but I&rsquo;m going to take the opportunity to use M06-2X/6-31+G* which should make the scans absolutely fly<ul>
 <li>It&rsquo;s fast, but it could/should be faster <img alt="😛" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f61b.svg" title=":stuck_out_tongue:" /></li>
 <li>I&rsquo;m guessing this is because it&rsquo;s probably using a pretty big JKFIT basis set </li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -10892,96 +10900,96 @@
 <thead>
 <tr>
 <th>IL</th>
-<th style="text-align: center;">na1r-r</th>
-<th style="text-align: center;">na1t-1-r</th>
-<th style="text-align: center;">na1t-2-r</th>
-<th style="text-align: center;">na1t-3-r</th>
-<th style="text-align: center;">na1p-r</th>
-<th style="text-align: center;">na1r-s</th>
-<th style="text-align: center;">na1t-1-s</th>
-<th style="text-align: center;">na1t-2-s</th>
-<th style="text-align: center;">na1t-3-s</th>
-<th style="text-align: center;">na1p-s</th>
+<th align="center">na1r-r</th>
+<th align="center">na1t-1-r</th>
+<th align="center">na1t-2-r</th>
+<th align="center">na1t-3-r</th>
+<th align="center">na1p-r</th>
+<th align="center">na1r-s</th>
+<th align="center">na1t-1-s</th>
+<th align="center">na1t-2-s</th>
+<th align="center">na1t-3-s</th>
+<th align="center">na1p-s</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{OTF} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{MSO4} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{TCM} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{OTF} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{MSO4} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center">queued</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{TCM} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><span style="color:red;">failed</span></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><span style="color:red;">failed</span></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
 </tr>
 </tbody>
 </table>

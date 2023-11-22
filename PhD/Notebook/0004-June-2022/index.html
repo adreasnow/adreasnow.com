@@ -10995,23 +10995,21 @@
 <ul>
 <li>
 <p>State averaged (SA) CASSCF optimises the orbitals to be appropriate for a number of electronic states, rather than just for one. The averages of these states is NOT a part of the CI.</p>
-</li>
-<li>
-<p>The determinants are generated and culled, and are optimised for the CI coefficients (CASCI)</p>
-</li>
+<ol>
+<li>The determinants are generated and culled, and are optimised for the CI coefficients (CASCI)</li>
 <li>The orbitals are optimised with the CI coefficients, either for a single state or for an average of multiple states (CASSCF/SA-CASSCF)</li>
-<li>
-<p>Apply a post CASSCF treatment to the wavefunction to incorporate dynamic correlation</p>
-<ul>
+<li>Apply a post CASSCF treatment to the wavefunction to incorporate dynamic correlation<ul>
 <li>This could be through perturbation theory (CASPT2/NEVPT2), through further CI, or through a density based correction.</li>
 </ul>
 </li>
-<li>
-<p>Orbitals that are good for ground state <strong>static</strong> correlation and those that are good for electronic excitations tend to be mutually exclusive.</p>
+</ol>
 </li>
-<li>
-<p>Size intensivity is similar to size extensivity, except that rather than looking at the difference in the energy of multiple isolated systems, it considers whether the excitation energy of one system (<span class="arithmatex">\(A\to A^*\)</span>) will be effected by a noninteracting system (<span class="arithmatex">\(B)\)</span>.</p>
-</li>
+</ul>
+<ul>
+<li>Orbitals that are good for ground state <strong>static</strong> correlation and those that are good for electronic excitations tend to be mutually exclusive.</li>
+</ul>
+<ul>
+<li>Size intensivity is similar to size extensivity, except that rather than looking at the difference in the energy of multiple isolated systems, it considers whether the excitation energy of one system (<span class="arithmatex">\(A\to A^*\)</span>) will be effected by a noninteracting system (<span class="arithmatex">\(B)\)</span>.</li>
 </ul>
 <div class="arithmatex">\[
 \begin{align}
@@ -11022,28 +11020,36 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 \end{align}
 \]</div>
 <ul>
-<li>SA-CASSCF is not size intensive. This could theoretically be overcome if the state average coefficients were not equal, however this would not represent multiple excited states with the same accuracy</li>
+<li>SA-CASSCF is not size intensive. This could theoretically be overcome if the state average coefficients were not equal, however this would not represent multiple excited states with the same accuracy<ul>
 <li>This lack of size intensivity is a result of the inclusion of different states degrading the accuracy of each state individually. </li>
-<li>CASSCF often produces discontinuous PES, as the solution of both the CI coefficients and the MOs isa linear problem that has multiple local solutions. </li>
+</ul>
+</li>
+<li>CASSCF often produces discontinuous PES, as the solution of both the CI coefficients and the MOs isa linear problem that has multiple local solutions. <ul>
 <li>This is also a present issue because the static correlation that is modelled by these methods is limited to the active space, and can thus localise on a particular region of interest.<ul>
 <li>This can be somewhat mitigated by using CASCI with MOs from a non-CAS correlated basis or by using naturalised orbitals.</li>
 </ul>
 </li>
-<li>CAS selection is complicated, particularly in optimisations and PES exploration as orbitals may shift in and out of the active space, and root-flipping may occur. (The active space is very geometry dependent)</li>
+</ul>
+</li>
+<li>CAS selection is complicated, particularly in optimisations and PES exploration as orbitals may shift in and out of the active space, and root-flipping may occur. (The active space is very geometry dependent)<ul>
 <li><mark>One proposed solution is to use an unrestricted natural orbital (UNO) MO basis, and use an active space that consists of all orbitals with occupations of 0.02-1.98</mark><ul>
 <li>This is a contentious method though&hellip; some say that a lack of complete occupation does not inherently mean correlation in an excited state manner.</li>
 </ul>
 </li>
 <li><mark>Another strategy is to use the active space that&rsquo;s the most appropriate for the most strongly correlated portion of the PES and use it to model all of the PES.</mark></li>
-<li>Dynamic correlation is a cumulation of very small and subtle configuration interactions, where static correlation is usually focused on a few configurations with larger contributions, form specific orbitals.</li>
+</ul>
+</li>
+<li>Dynamic correlation is a cumulation of very small and subtle configuration interactions, where static correlation is usually focused on a few configurations with larger contributions, form specific orbitals.<ul>
 <li>Static correlation typically requires the inclusion of excitations higher than those considered in post HF methods.</li>
 <li>DFT handles static correlation better than HF, but breaks down for strongly correlated systems.</li>
 <li>Dynamic correlation isn&rsquo;t hugely important for nuclear gradients, but is for very important for energetics.</li>
 </ul>
+</li>
+</ul>
 <h2 id="thursday-2nd-june">Thursday 2<sup>nd</sup> June<a class="headerlink" href="#thursday-2nd-june" title="Permanent link">&para;</a></h2>
 <h4 id="notes-from-todays-reading_1">Notes from today&rsquo;s reading<a class="headerlink" href="#notes-from-todays-reading_1" title="Permanent link">&para;</a></h4>
 <ul>
-<li>This paper is all about breaking down the UNO method for active space assignment.</li>
+<li>This paper is all about breaking down the UNO method for active space assignment.<ul>
 <li>It proposes that UNO occupation numbers could also be used to define the RAS subspaces, e.g.:<ul>
 <li>RAS1 = 1.99 - 1.90</li>
 <li>RAS2 = 1.90 - 0.1</li>
@@ -11055,6 +11061,8 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </ul>
 </li>
 <li>My final take is that I&rsquo;m not really convinced, though this might be because I can&rsquo;t seem to get a non-integer population form a UNO in ORCA&hellip;</li>
+</ul>
+</li>
 </ul>
 <h2 id="tuesday-7th-june">Tuesday 7<sup>th</sup> June<a class="headerlink" href="#tuesday-7th-june" title="Permanent link">&para;</a></h2>
 <p>Graduate research conference is happening atm, so I&rsquo;m not sure how much work I&rsquo;ll get done (on top of other issues), but I&rsquo;ll try to see.</p>
@@ -11073,18 +11081,18 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 <li>Need to make a table of comparisons of packages</li>
 <li>
 <p>What packages do the big names use?</p>
-</li>
-<li>
-<p>Martin Head-Gordon - Q-Chem</p>
-</li>
-<li>
-<p>Benedetta Mennucci - Gaussian</p>
-</li>
-<li>
-<p>Lars Goerigk - ORCA/turbomole</p>
-</li>
-<li>
-<p>Laura Gagliardi - (Open)Molcas/ORCA</p>
+<ul>
+<li>Martin Head-Gordon - Q-Chem</li>
+</ul>
+<ul>
+<li>Benedetta Mennucci - Gaussian</li>
+</ul>
+<ul>
+<li>Lars Goerigk - ORCA/turbomole</li>
+</ul>
+<ul>
+<li>Laura Gagliardi - (Open)Molcas/ORCA</li>
+</ul>
 </li>
 </ul>
 <h2 id="sunday-12th-june">Sunday 12<sup>th</sup> June<a class="headerlink" href="#sunday-12th-june" title="Permanent link">&para;</a></h2>
@@ -11095,97 +11103,97 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 <thead>
 <tr>
 <th>Solvent Model (<mark>Known to support ES</mark>)</th>
-<th style="text-align: center;">Packages</th>
+<th align="center">Packages</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><mark>CPCM</mark></td>
-<td style="text-align: center;">ORCA(A), Psi4(N), GAMESS(A), Gaussian(A), Molcas(A), QCHEM(A)</td>
+<td align="center">ORCA(A), Psi4(N), GAMESS(A), Gaussian(A), Molcas(A), QCHEM(A)</td>
 </tr>
 <tr>
 <td><mark>IEFPCM</mark></td>
-<td style="text-align: center;">Psi4(N), GAMESS(A), Gaussian(A), Dalton(A)</td>
+<td align="center">Psi4(N), GAMESS(A), Gaussian(A), Dalton(A)</td>
 </tr>
 <tr>
 <td><mark>SMD</mark></td>
-<td style="text-align: center;">ORCA(A), GAMESS(A), Gaussian(A), QCcem(A-g)(N-e), NWChem</td>
+<td align="center">ORCA(A), GAMESS(A), Gaussian(A), QCcem(A-g)(N-e), NWChem</td>
 </tr>
 <tr>
 <td><mark>SCIPCM</mark></td>
-<td style="text-align: center;">Gaussian(A)</td>
+<td align="center">Gaussian(A)</td>
 </tr>
 <tr>
 <td><mark>DPCM</mark></td>
-<td style="text-align: center;">GAMESS(A)</td>
+<td align="center">GAMESS(A)</td>
 </tr>
 <tr>
 <td><mark>IPCM</mark></td>
-<td style="text-align: center;">Gaussian(A)</td>
+<td align="center">Gaussian(A)</td>
 </tr>
 <tr>
 <td><mark>PTE</mark></td>
-<td style="text-align: center;">Gaussian(A-EOMCCSD), ORCA(A-CC)</td>
+<td align="center">Gaussian(A-EOMCCSD), ORCA(A-CC)</td>
 </tr>
 <tr>
 <td>SMX</td>
-<td style="text-align: center;">ADF(12), QChem(8)(A-g)(N-e)</td>
+<td align="center">ADF(12), QChem(8)(A-g)(N-e)</td>
 </tr>
 <tr>
 <td><mark>COSMO</mark></td>
-<td style="text-align: center;">PySCF(A), MolPro(A), ADF(A), QChem(A), NWChem(A), TURBOMOLE(A)</td>
+<td align="center">PySCF(A), MolPro(A), ADF(A), QChem(A), NWChem(A), TURBOMOLE(A)</td>
 </tr>
 <tr>
 <td><mark>(D)COSMO-RS</mark></td>
-<td style="text-align: center;">TURBOMOLE(A)</td>
+<td align="center">TURBOMOLE(A)</td>
 </tr>
 <tr>
 <td>Polarisable Embedding</td>
-<td style="text-align: center;">Psi4(Static), PySCF(Static), Dalton(Static)</td>
+<td align="center">Psi4(Static), PySCF(Static), Dalton(Static)</td>
 </tr>
 <tr>
 <td><mark>EFP</mark></td>
-<td style="text-align: center;">Psi4(Static), GAMESS(A), QChem(A), OpenMolcas?</td>
+<td align="center">Psi4(Static), GAMESS(A), QChem(A), OpenMolcas?</td>
 </tr>
 <tr>
 <td>1D-RISM</td>
-<td style="text-align: center;">ADF(A), NWChem(A)</td>
+<td align="center">ADF(A), NWChem(A)</td>
 </tr>
 <tr>
 <td>3D-RISM</td>
-<td style="text-align: center;">ADF(A)</td>
+<td align="center">ADF(A)</td>
 </tr>
 <tr>
 <td>VEM</td>
-<td style="text-align: center;">NWChem(A)</td>
+<td align="center">NWChem(A)</td>
 </tr>
 <tr>
 <td><mark>SS(V)PE</mark></td>
-<td style="text-align: center;">QChem(A-g)(N-e)</td>
+<td align="center">QChem(A-g)(N-e)</td>
 </tr>
 <tr>
 <td>CMIRS</td>
-<td style="text-align: center;">QChem(N-g)</td>
+<td align="center">QChem(N-g)</td>
 </tr>
 <tr>
 <td>Langevin Dipoles</td>
-<td style="text-align: center;">QChem(N-g)</td>
+<td align="center">QChem(N-g)</td>
 </tr>
 <tr>
 <td>PBC</td>
-<td style="text-align: center;">QChem(N-g)</td>
+<td align="center">QChem(N-g)</td>
 </tr>
 <tr>
 <td>Kirkwood</td>
-<td style="text-align: center;">Molcas(A)</td>
+<td align="center">Molcas(A)</td>
 </tr>
 <tr>
 <td>Polarisable Density Embedding</td>
-<td style="text-align: center;">Dalton(A)</td>
+<td align="center">Dalton(A)</td>
 </tr>
 <tr>
 <td>Frozen Density Embedding</td>
-<td style="text-align: center;">ADF(A), TURBOMOLE(A), Dalton(A)</td>
+<td align="center">ADF(A), TURBOMOLE(A), Dalton(A)</td>
 </tr>
 </tbody>
 </table>
@@ -11214,7 +11222,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 <thead>
 <tr>
 <th>Solvent Model</th>
-<th style="text-align: center;">Unknown</th>
+<th align="center">Unknown</th>
 <th>Fast (LR)</th>
 <th>Fast (SS)</th>
 <th>Slow/eq</th>
@@ -11224,7 +11232,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 <tbody>
 <tr>
 <td>CPCM</td>
-<td style="text-align: center;">GAMESS(A), Molcas(A)</td>
+<td align="center">GAMESS(A), Molcas(A)</td>
 <td>Psi4(N), ORCA(A), Gaussian(A), QCHEM(A-ptLR)</td>
 <td>Gaussian(A-cLR, N-VEM with VEMGAUSS[g09]), QCHEM(A-SS/ptSS)</td>
 <td>ORCA(A), Gaussian(A), QCHEM(A), QCHEM(A)</td>
@@ -11232,7 +11240,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </tr>
 <tr>
 <td>IEFPCM</td>
-<td style="text-align: center;">GAMESS(A)</td>
+<td align="center">GAMESS(A)</td>
 <td>Psi4(N), Gaussian(A)), QCHEM(A-ptLR), Dalton(A)</td>
 <td>Gaussian(A-cLR)), QCHEM(A-SS/ptSS)</td>
 <td>Gaussian(A), QCHEM(A), Dalton(A)</td>
@@ -11240,7 +11248,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </tr>
 <tr>
 <td>SMD</td>
-<td style="text-align: center;">ORCA(A), GAMESS(A), Gaussian(A), QCcem(A-g)(N-e), NWChem</td>
+<td align="center">ORCA(A), GAMESS(A), Gaussian(A), QCcem(A-g)(N-e), NWChem</td>
 <td></td>
 <td></td>
 <td></td>
@@ -11248,7 +11256,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </tr>
 <tr>
 <td>SCIPC</td>
-<td style="text-align: center;">Gaussian(A)</td>
+<td align="center">Gaussian(A)</td>
 <td></td>
 <td></td>
 <td></td>
@@ -11256,7 +11264,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </tr>
 <tr>
 <td>DPCM</td>
-<td style="text-align: center;">GAMESS(A)</td>
+<td align="center">GAMESS(A)</td>
 <td></td>
 <td></td>
 <td></td>
@@ -11264,7 +11272,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </tr>
 <tr>
 <td>IPCM</td>
-<td style="text-align: center;">Gaussian(A)</td>
+<td align="center">Gaussian(A)</td>
 <td></td>
 <td></td>
 <td></td>
@@ -11272,7 +11280,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </tr>
 <tr>
 <td></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
 <td></td>
 <td></td>
 <td></td>
@@ -11280,7 +11288,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </tr>
 <tr>
 <td>COSMO</td>
-<td style="text-align: center;">MolPro(A), ADF(A), QChem(A), TURBOMOLE(A)</td>
+<td align="center">MolPro(A), ADF(A), QChem(A), TURBOMOLE(A)</td>
 <td>PySCF(A)</td>
 <td>NWChem(A-VEM)</td>
 <td>PySCF(A), NWChem(A)</td>
@@ -11288,7 +11296,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </tr>
 <tr>
 <td>(D)COSMO-RS</td>
-<td style="text-align: center;">TURBOMOLE(A)</td>
+<td align="center">TURBOMOLE(A)</td>
 <td></td>
 <td></td>
 <td></td>
@@ -11296,7 +11304,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </tr>
 <tr>
 <td>EFP</td>
-<td style="text-align: center;">Psi4(Static), GAMESS(A), QChem(A), OpenMolcas?</td>
+<td align="center">Psi4(Static), GAMESS(A), QChem(A), OpenMolcas?</td>
 <td></td>
 <td></td>
 <td></td>
@@ -11304,7 +11312,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </tr>
 <tr>
 <td>SS(V)PE</td>
-<td style="text-align: center;">QChem(A-g)(N-e)</td>
+<td align="center">QChem(A-g)(N-e)</td>
 <td>GAMESS(A)(Does SS(V)PE use LR?)</td>
 <td></td>
 <td>GAMESS(A)</td>
@@ -11315,10 +11323,12 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 <h2 id="friday-17th-june">Friday 17<sup>th</sup> June<a class="headerlink" href="#friday-17th-june" title="Permanent link">&para;</a></h2>
 <h4 id="notes-from-todays-reading_3">Notes from today&rsquo;s reading<a class="headerlink" href="#notes-from-todays-reading_3" title="Permanent link">&para;</a></h4>
 <ul>
-<li>The SS solvation approach comes in three forms:</li>
+<li>The SS solvation approach comes in three forms:<ul>
 <li>Vertical Excitation Method (VEM) - An iterative/self consistent approach</li>
 <li>Corrected-LR (cLR) - &ldquo;can be seen as the first cycle of this iterative process.&rdquo;</li>
 <li>Improta, Barone, Scalmani, and Frisch (IBSF) - Iterative like VEM, but the total excited state density is used instead of just the density difference.</li>
+</ul>
+</li>
 <li>LR is good for systems where there is little electronic rearrangement between the GS and ES, otherwise an SS approach needs to be used.</li>
 </ul>
 <h2 id="tuesday-21st-june">Tuesday 21<sup>st</sup> June<a class="headerlink" href="#tuesday-21st-june" title="Permanent link">&para;</a></h2>
@@ -11329,12 +11339,14 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 <h2 id="thursday-23rd-june">Thursday 23<sup>rd</sup> June<a class="headerlink" href="#thursday-23rd-june" title="Permanent link">&para;</a></h2>
 <h4 id="notes-from-todays-reading_5">Notes from today&rsquo;s reading<a class="headerlink" href="#notes-from-todays-reading_5" title="Permanent link">&para;</a></h4>
 <ul>
-<li>So as I keep reading, this tangled web of solvation models gets more complicated. It seems as though there&rsquo;s a handful of approaches, all of which branch out with different corrections. From what I can tell, these are the main overarching categories:</li>
+<li>So as I keep reading, this tangled web of solvation models gets more complicated. It seems as though there&rsquo;s a handful of approaches, all of which branch out with different corrections. From what I can tell, these are the main overarching categories:<ul>
 <li>PCM<ul>
-<li>Is broken down into:</li>
+<li>Is broken down into:<ul>
 <li>CPCM, DPCM, IPCM, IEFPCM, COSMO, ddCOSMO, SS(V)PE</li>
 <li>These are all different formalisms for how to consider the polarisable continuum. IEFPCM and SS(V)PE seem to be considered the most sophisticated implementations.</li>
-<li>With vertical excitation models:</li>
+</ul>
+</li>
+<li>With vertical excitation models:<ul>
 <li>LR, VEM, SS<ul>
 <li>I think ptSS and ptLR are just QChem implementations?</li>
 <li>and cLR seems to be an implementation of SS</li>
@@ -11343,31 +11355,41 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 <li>These seem to use an optical dielectric <span class="arithmatex">\(\varepsilon_\infty\)</span> (square of the refractive index @ 293K?)</li>
 </ul>
 </li>
+</ul>
+</li>
 <li>Density and perturbation methods<ul>
 <li>EFP, CPPE, PDE, FPE</li>
 <li>These are solvent microstate methods that represent the solvent as either a responsive of frozen electrostatic mass, with differing amounts of dispersion contribution. They better represent solvent specific interactions, such as hydrogen bonding and pi stacking, but lack the generalised nature of continuum based methods.</li>
 </ul>
 </li>
 <li>Parameterised models<ul>
-<li>Usually take a PCM basis and apply a correction on top based on some sort of identification of sites or density of the solute</li>
+<li>Usually take a PCM basis and apply a correction on top based on some sort of identification of sites or density of the solute<ul>
 <li>nD-RISM, SMn, SMD, CMIRS</li>
 <li>These usually do not analytically support excited states</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>The term SCRF seems to refer specifically to a solvent model that&rsquo;s directly implemented in the SCF procedures and is thus self consistent with the electronic state, though since the SCF procedure is typically the ground state, the excitation model is used a correction, taking into account either the transition density or the density difference between the GS and ES.</li>
 </ul>
 <h2 id="thursday-30th-june">Thursday 30<sup>th</sup> June<a class="headerlink" href="#thursday-30th-june" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Formulations of PCM</li>
+<li>Formulations of PCM<ul>
 <li>DPCM is the initial formulation of PCM and uses the electrostatic definition of charge forming at the surface of two dielectric media</li>
 <li>CPCM and COSMO are both methods that utilise a conductor as the bulk and scale the resulting surface charges as a function of the dielectric constant. The scaling factor takes the form <span class="arithmatex">\(f(\varepsilon)=\frac{\varepsilon-1}{\varepsilon+x}\)</span>. CPCM takes the value of <span class="arithmatex">\(x=0\)</span> where in COSMO <span class="arithmatex">\(x=0.5\)</span></li>
 <li>The Integral Equation Formulation of PCM (IEFPCM) is a more generalised case from which DPCM and CPCM can be considered subcases. It is considered to be more mathematically exact<ul>
-<li>IEFPCM fixes two big issues of DPCM</li>
+<li>IEFPCM fixes two big issues of DPCM<ol>
 <li>It correctly models the case in which the solute charge extends beyond the cavity</li>
 <li>It can be extended to work with anisotropic dielectrics and complex environments</li>
+</ol>
+</li>
 </ul>
 </li>
-<li>Numerical Implementation</li>
+</ul>
+</li>
+<li>Numerical Implementation<ul>
 <li>Initially this was done by creating a vdW surface around the solute and treating each point as a specific charge.<ul>
 <li>The vdW surface could be filled up to represent the Solvent Excluded Surface (SES)</li>
 </ul>
@@ -11375,6 +11397,8 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 <li>Modern implementations use a continuous charge by modelling these points with simple spherical Gaussian functions<ul>
 <li>These use a Lebedev grid rather than a GEPOL surface, and the portion of the surface area represented by the gaussian element is used as an integration weight.</li>
 <li>The SES method does not work here, so instead a scaling factor is used to increase the vdW radii to recover the solvent excluded regions</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -11387,7 +11411,7 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 </ul>
 <h4 id="then-later">Then later:<a class="headerlink" href="#then-later" title="Permanent link">&para;</a></h4>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read the review papers (to start with)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read the review papers (to start with)<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Spectroscopic Approaches<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Solvatochromism: a tool for solvent discretion for UV-Vis spectroscopic studies</li>
 </ul>
@@ -11399,10 +11423,14 @@ E(A^*)-E(A)&amp;=E(A^*\cup B)-E(A\cup B)
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Polarizable continuum model</li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read state of the art papers</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read state of the art papers<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Noncovalently bound excited-state dimers: a perspective on current time-dependent density functional theory approaches applied to aromatic excimer models</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Time-Dependent Complete Active Space Embedded in a Polarizable Force Field</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Photochemistry and transient intermediates in a bacteriophytochrome photocycle revealed by multiscale simulations</li>
+</ul>
+</li>
 </ul>
 
 

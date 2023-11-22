@@ -10770,13 +10770,11 @@
 <h1 id="electron-correlation-and-ci">Electron Correlation and CI<a class="headerlink" href="#electron-correlation-and-ci" title="Permanent link">&para;</a></h1>
 <p><em>Ab Initio</em> calculations are a long series of optimisations built on a hierarchy of calculations.</p>
 <ol>
-<li>
-<p>We start with our linear combination of primitives which have been pre-optimised (<span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(\alpha\)</span>) to form a basis function (here, 1s is used as an example).</p>
-</li>
-<li>
-<p>If they are &ldquo;Decontracted&rdquo;, the <span class="arithmatex">\(a_i\)</span> is allowed to vary in the calculation to be optimised</p>
-</li>
+<li>We start with our linear combination of primitives which have been pre-optimised (<span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(\alpha\)</span>) to form a basis function (here, 1s is used as an example).</li>
 </ol>
+<ul>
+<li>If they are &ldquo;Decontracted&rdquo;, the <span class="arithmatex">\(a_i\)</span> is allowed to vary in the calculation to be optimised</li>
+</ul>
 <div class="arithmatex">\[
 \varphi=\sum\limits_i^Na_i\bigg(\frac{2\alpha_i}{\pi}\bigg)^{3/4}e^{-\alpha_ir^2}
 \]</div>
@@ -10831,7 +10829,7 @@ H_{ij}=\bigg\langle\varphi_i\bigg|-\frac{1}{2}\nabla^2\bigg|\varphi_j\bigg\rangl
 <li>Complete Active Space SCF (CASSCF)</li>
 <li>Restricted Active Space SCF (RASSCF)</li>
 </ul>
-<p><img alt="!multiconfiguration" class="center" src="../multiconfiguration.png" style="width: 40%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="multiconfiguration" href="../multiconfiguration.png"><img alt="multiconfiguration" class="center" src="../multiconfiguration.png" style="width: 40%; " /></a></div></p>
 <h3 id="further-mrscf-calculations">Further MRSCF Calculations<a class="headerlink" href="#further-mrscf-calculations" title="Permanent link">&para;</a></h3>
 <p>You can also perform another step in your MRSCF calculation to allow your optimised orbitals to be further excited, which is known as Multi Reference CI (MRCI)</p>
 

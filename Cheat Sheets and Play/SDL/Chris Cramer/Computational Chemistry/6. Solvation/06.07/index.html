@@ -10854,15 +10854,17 @@ pK_a&amp;=-\log\bigg[\exp{\bigg(\frac{-\Delta G^{\circ\prime}}{RT}\bigg)}\bigg]\
 \end{align}
 \]</div>
 <p>Using the free energy cycle:</p>
-<p><img alt="!image" class="center" sharp_="sharp&quot;" src="../7.1.png" style="width: 35%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../7.1.png"><img alt="image" class="center" sharp_="sharp&quot;" src="../7.1.png" style="width: 35%; " /></a></div></p>
 <h3 id="process">Process:<a class="headerlink" href="#process" title="Permanent link">&para;</a></h3>
 <ol>
 <li>For the anion, I need diffuse functions, a big basis set and a good level of theory</li>
 <li>QM packages won&rsquo;t let you calculate the electronic energy of <span class="arithmatex">\(\ce{H+}\)</span>, since there&rsquo;s no electron to calculate</li>
 <li><span class="arithmatex">\(\Delta G^\circ_{(s)}=-264.0\:kcal\cdot mol^{-1}\)</span> (experimentally derived)</li>
 <li>Standard-state concentration-change free energy must be included</li>
-<li>each non-cancelled error of <span class="arithmatex">\(1.4\:kcal\cdot mol^{-1}\)</span> in any step will lead to an error of 1 <span class="arithmatex">\(pK_a\)</span> unit</li>
+<li>each non-cancelled error of <span class="arithmatex">\(1.4\:kcal\cdot mol^{-1}\)</span> in any step will lead to an error of 1 <span class="arithmatex">\(pK_a\)</span> unit<ul>
 <li>Errors in ionic solvation free energies can be <em>much</em> larger than that</li>
+</ul>
+</li>
 <li>Function-group systematic errors can be corrected for</li>
 </ol>
 <h2 id="the-overall-equation">The overall equation<a class="headerlink" href="#the-overall-equation" title="Permanent link">&para;</a></h2>
@@ -10871,39 +10873,39 @@ pK_a&amp;=-\log\bigg[\exp{\bigg(\frac{-\Delta G^{\circ\prime}}{RT}\bigg)}\bigg]\
 2.303RT\:pK_a=\Delta G_g^\circ(AH)-\Delta G^*_{aq}(AH)+\Delta G^*_{aq}(A^-)+\Delta G_{aq}^*(H^+)
 \]</div>
 <p>Using this free energy cycle:</p>
-<p><img alt="!image" class="center" src="../7.2.png" style="width: 40%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../7.2.png"><img alt="image" class="center" src="../7.2.png" style="width: 40%; " /></a></div></p>
 <h2 id="free-energy-cycles-and-ion-structures">Free energy cycles and ion structures<a class="headerlink" href="#free-energy-cycles-and-ion-structures" title="Permanent link">&para;</a></h2>
 <p>Here we&rsquo;re treating the ion as a cluster, in an attempt to try and reduce the amount error on the cluster:</p>
 <div class="arithmatex">\[
 2.303RT \: pK_a = \Delta G_g^\circ (AH) - \Delta G^*_{aq}(AH) - \Delta G^*_{aq}(\ce{H2O})+\Delta G^*_{aq}(\ce{H2O}\cdot A^-)+\Delta G_{aq}^*(H^+)
 \]</div>
 <p>Utilising this free energy cycle:</p>
-<p><img alt="!image" class="center" src="../7.3.png" style="width: 60%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../7.3.png"><img alt="image" class="center" src="../7.3.png" style="width: 60%; " /></a></div></p>
 <h2 id="comparison-experimental-data-pk_a155">Comparison (Experimental Data <span class="arithmatex">\(pK_a=15.5\)</span>)<a class="headerlink" href="#comparison-experimental-data-pk_a155" title="Permanent link">&para;</a></h2>
 <h3 id="experimental-data">Experimental data<a class="headerlink" href="#experimental-data" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Method 1 <span class="arithmatex">\(\ce{MeOH/MeO-}\)</span></th>
-<th style="text-align: center;">Method 2 <span class="arithmatex">\(\ce{MeOH/H2O.MeO-}\)</span></th>
+<th align="center">Method 1 <span class="arithmatex">\(\ce{MeOH/MeO-}\)</span></th>
+<th align="center">Method 2 <span class="arithmatex">\(\ce{MeOH/H2O.MeO-}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><span class="arithmatex">\(\Delta G^\circ_g=375.0\:kcal\cdot mol^{-1}\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\Delta G^\circ_g=358.0\:kcal\cdot mol^{-1}\)</span></td>
+<td align="center"><span class="arithmatex">\(\Delta G^\circ_g=375.0\:kcal\cdot mol^{-1}\)</span></td>
+<td align="center"><span class="arithmatex">\(\Delta G^\circ_g=358.0\:kcal\cdot mol^{-1}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;"><span class="arithmatex">\(\Delta G_{aq}^*(\ce{H+})=-265.9\:kcal\cdot mol^{-1}\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\Delta G_{aq}^*(\ce{H+})=-265.9\:kcal\cdot mol^{-1}\)</span></td>
+<td align="center"><span class="arithmatex">\(\Delta G_{aq}^*(\ce{H+})=-265.9\:kcal\cdot mol^{-1}\)</span></td>
+<td align="center"><span class="arithmatex">\(\Delta G_{aq}^*(\ce{H+})=-265.9\:kcal\cdot mol^{-1}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;"><span class="arithmatex">\(\Delta G_{aq}^*(\ce{MeOH})=-5.11\:kcal\cdot mol^{-1}\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\Delta G_{aq}^*(\ce{MeOH})=-5.11\:kcal\cdot mol^{-1}\)</span></td>
+<td align="center"><span class="arithmatex">\(\Delta G_{aq}^*(\ce{MeOH})=-5.11\:kcal\cdot mol^{-1}\)</span></td>
+<td align="center"><span class="arithmatex">\(\Delta G_{aq}^*(\ce{MeOH})=-5.11\:kcal\cdot mol^{-1}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="arithmatex">\(\Delta G_{aq}^*(\ce{H2O})=-6.32\:kcal\cdot mol^{-1}\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="arithmatex">\(\Delta G_{aq}^*(\ce{H2O})=-6.32\:kcal\cdot mol^{-1}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -10911,23 +10913,23 @@ pK_a&amp;=-\log\bigg[\exp{\bigg(\frac{-\Delta G^{\circ\prime}}{RT}\bigg)}\bigg]\
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Method 1 <span class="arithmatex">\(\ce{MeOH/MeO-}\)</span></th>
-<th style="text-align: center;">Method 2 <span class="arithmatex">\(\ce{MeOH/H2O.MeO-}\)</span></th>
+<th align="center">Method 1 <span class="arithmatex">\(\ce{MeOH/MeO-}\)</span></th>
+<th align="center">Method 2 <span class="arithmatex">\(\ce{MeOH/H2O.MeO-}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><span class="arithmatex">\(\Delta G^*_{aq}(\ce{MeO-})=-88.3\:kcal\cdot mol^{-1}\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(\Delta G^*_{aq}(\ce{H2O.MeO-})=-81.8\:kcal\cdot mol^{-1}\)</span></td>
+<td align="center"><span class="arithmatex">\(\Delta G^*_{aq}(\ce{MeO-})=-88.3\:kcal\cdot mol^{-1}\)</span></td>
+<td align="center"><span class="arithmatex">\(\Delta G^*_{aq}(\ce{H2O.MeO-})=-81.8\:kcal\cdot mol^{-1}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;"><span class="arithmatex">\(pK_a=20.4\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(pK_a=16.0\)</span></td>
+<td align="center"><span class="arithmatex">\(pK_a=20.4\)</span></td>
+<td align="center"><span class="arithmatex">\(pK_a=16.0\)</span></td>
 </tr>
 </tbody>
 </table>
 <h2 id="adding-more-waters">Adding more waters<a class="headerlink" href="#adding-more-waters" title="Permanent link">&para;</a></h2>
-<p>This is the experimental <span class="arithmatex">\(pK_a\)</span> data<img alt="!image" class="center" src="../7.4.png" style="width: 20%; " /></p>
+<p>This is the experimental <span class="arithmatex">\(pK_a\)</span> data<div class="lightgallery"><a data-sub-html="image" href="../7.4.png"><img alt="image" class="center" src="../7.4.png" style="width: 20%; " /></a></div></p>
 <div class="arithmatex">\[
 \ce{H2CO3 &lt;=&gt;[pK_{a_1}=6.4] HCO3- &lt;=&gt;[pK_{a_2}=10.3] CO3^{2-}}
 \]</div>
@@ -10935,31 +10937,31 @@ pK_a&amp;=-\log\bigg[\exp{\bigg(\frac{-\Delta G^{\circ\prime}}{RT}\bigg)}\bigg]\
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">No. <span class="arithmatex">\(\ce{H2O}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(pK_{a_1}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(pK_{a_2}\)</span></th>
+<th align="center">No. <span class="arithmatex">\(\ce{H2O}\)</span></th>
+<th align="center"><span class="arithmatex">\(pK_{a_1}\)</span></th>
+<th align="center"><span class="arithmatex">\(pK_{a_2}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">-0.6</td>
-<td style="text-align: center;">1.6</td>
+<td align="center">0</td>
+<td align="center">-0.6</td>
+<td align="center">1.6</td>
 </tr>
 <tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1.3</td>
-<td style="text-align: center;">5.0</td>
+<td align="center">1</td>
+<td align="center">1.3</td>
+<td align="center">5.0</td>
 </tr>
 <tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2.3</td>
-<td style="text-align: center;">7.8</td>
+<td align="center">2</td>
+<td align="center">2.3</td>
+<td align="center">7.8</td>
 </tr>
 <tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">4.2</td>
-<td style="text-align: center;">9.0</td>
+<td align="center">3</td>
+<td align="center">4.2</td>
+<td align="center">9.0</td>
 </tr>
 </tbody>
 </table>

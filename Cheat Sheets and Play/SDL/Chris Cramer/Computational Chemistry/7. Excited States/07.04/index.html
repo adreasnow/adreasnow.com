@@ -10769,7 +10769,7 @@
 </center></p>
 </details>
 <p>Configuration Interaction (CI) simply means, to build a wavefunction out of a linear combination of singly/doubly/triply/etc. excited wavefunctions. Typically CI is interested in the ground state, and higher excitations are used to account for correlation.</p>
-<p><img alt="!Screen Shot 2022-04-05 at 1.40.18 pm" class="center" sharp_="sharp&quot;" src="../Screen%20Shot%202022-04-05%20at%201.40.18%20pm.png" style="width: 60%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="Screen Shot 2022-04-05 at 1.40.18 pm" href="../Screen%20Shot%202022-04-05%20at%201.40.18%20pm.png"><img alt="Screen Shot 2022-04-05 at 1.40.18 pm" class="center" sharp_="sharp&quot;" src="../Screen%20Shot%202022-04-05%20at%201.40.18%20pm.png" style="width: 60%; " /></a></div></p>
 <h4 id="ci-singles">CI Singles<a class="headerlink" href="#ci-singles" title="Permanent link">&para;</a></h4>
 <p>Have quality that is only about that of HF, as there are no excitations beyond the singly excited reference state.</p>
 <p>The exited state is made from a combination of excitations, each corresponding to a combination of the <span class="arithmatex">\(\Psi^a_i\)</span> eigenvalues</p>
@@ -10793,7 +10793,7 @@ Excited State 3:
 <p>If we want to consider a bit of correlation, we could incorporate higher excitations (e.g. <span class="arithmatex">\(\Psi^{ab}_{ij}\)</span> and <span class="arithmatex">\(\Psi^{abc}_{ijk}\)</span> to give CISDT) but this gets expensive and only captures the effects of single or double excitations.</p>
 <h4 id="msscf">MSSCF<a class="headerlink" href="#msscf" title="Permanent link">&para;</a></h4>
 <p>Instead, we can look at all possible combinations of excitations (which would be &lsquo;full CI&rsquo;) more cheaply by using a multiconfigurational approach, in which:</p>
-<p><img alt="!test" class="center" sharp_="sharp&quot;" src="../test.svg" style="width: 40%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="test" href="../test.svg"><img alt="test" class="center" sharp_="sharp&quot;" src="../test.svg" style="width: 40%; " /></a></div></p>
 <p>These calculations come under the banner of MCSCF (MultiConfiguration Self Consistent Field), but more specifically, the method described about is CASSCF (Complete Active Space SCF) or RASSCF (Restricted Active Space SCF).</p>
 <p>Since this give us all of our excitations only, it doesn&rsquo;t include any correlation. We can then include correlation perturbatively using an MP2 like formalism in the method called CASPT2 (Complete Active Space Perturbation Theory, second order). This is considered accurate to ~0.2 eV for excitations.</p>
 <p>State averaging: optimising the orbitals for the average energy of all the states preserves the order of them, otherwise, you&rsquo;ll be biasing one state over the over, as no configuration of orbitals will be optimal for all states.</p>

@@ -10919,9 +10919,11 @@
 <p>Can we use some highly correlated levels of theory, such as ADC(2) or EOM-CCSD to get gas phase results to compare our TDDFT results to? <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.5b00619">looks like they could be around the 0.01eV error mark?</a></p>
 <ul>
 <li>There doesn&rsquo;t seem to be much benchmark data about the geometries produced from correlated levels for <strong>fluorescence</strong>. there is plenty for absorbance.</li>
-<li>The optimisation for the ground state is therefore easy for the absorbance situation since any correlated method with analytical gradients will do. For excitation, the methods for excited states I can find include:</li>
+<li>The optimisation for the ground state is therefore easy for the absorbance situation since any correlated method with analytical gradients will do. For excitation, the methods for excited states I can find include:<ul>
 <li>Psi4/Q-Chem - EOM-CCSD</li>
 <li>Pretty much everything - CIS</li>
+</ul>
+</li>
 </ul>
 <h2 id="tuesday-6th-september">Tuesday 6<sup>th</sup> September<a class="headerlink" href="#tuesday-6th-september" title="Permanent link">&para;</a></h2>
 <p>Tomorrow I&rsquo;m going in for surgery so I might not get a huge amount done today. I&rsquo;m going to try and get one lot of marking out though&hellip;
@@ -10931,8 +10933,10 @@
 <li>Memory halves if using the CCMAN2 module</li>
 <li>Memory doubles for EOM-CCSD</li>
 <li><code>MEM_STATIC</code> should not exceed 2000 MB (500 MB is reccomended)</li>
-<li>Set <code>CC_MEMORY</code> instead and <code>MEM_TOTAL</code> (includes <code>CC_MEMORY</code>)</li>
+<li>Set <code>CC_MEMORY</code> instead and <code>MEM_TOTAL</code> (includes <code>CC_MEMORY</code>)<ul>
 <li>Reduce <code>CC_MEMORY</code> if you want to use disk based methods</li>
+</ul>
+</li>
 </ul>
 <div class="arithmatex">\[
 \text{Memory}=\frac{(\text{\#basis funcs})^4}{131072}MB
@@ -10977,8 +10981,10 @@
 <ul>
 <li>It only covers excitations</li>
 <li>All are gas phase</li>
-<li>TDA is employed throughout</li>
+<li>TDA is employed throughout<ul>
 <li>Seems to be better for triplet states, but fails spectacularly for some singlets</li>
+</ul>
+</li>
 <li>aug-cc-pvtz is the chosen basis set, though their benchmarking suggests aug-cc-pvdz for a cost trade-off for valence states and def2-tzvpd for Rydberg states &ldquo;due to fortuitous error cancellation.&rdquo;</li>
 <li>Applied to the QUEST dataset which is predominantly small molecules (not fluorophores)</li>
 <li>Correlation is not needed for energy, but is probably important for geometry.</li>
@@ -10987,55 +10993,69 @@
 <ul>
 <li>Is there a custom combination of PCM components that can be identified with ML to build the optimal model?</li>
 <li>Quantifying non-electrostatic contributions to vertical transitions</li>
-<li>Can we generalise non-electrostatic terms from other models into our own?</li>
+<li>Can we generalise non-electrostatic terms from other models into our own?<ul>
 <li>Perhaps taking the SM dataset and re-parameterising for a different model?</li>
-<li>
-<p>Seems to be valid to do this with isodensity cavities, as according to the Herbet review (in the conclusion) this is seemingly the best way to get electrostatic terms that are separable from the non-electrostatic ones</p>
+<li>Seems to be valid to do this with isodensity cavities, as according to the Herbet review (in the conclusion) this is seemingly the best way to get electrostatic terms that are separable from the non-electrostatic ones</li>
+</ul>
 </li>
-<li>
-<p>Is there a gold standard solvation method that can be used?</p>
-</li>
+</ul>
+<ul>
+<li>Is there a gold standard solvation method that can be used?</li>
 <li>What is the PCM specific error contribution when looking at excited states? EOM-CCSD (gas) &rarr; TDDFT (gas) &rarr; TDDFT (solv)</li>
 </ul>
 <h4 id="issues-with-the-research">Issues with the research<a class="headerlink" href="#issues-with-the-research" title="Permanent link">&para;</a></h4>
 <ul>
-<li>No high level optimised geometry. Everything is compared to TD-DFT or MP2 opt, with benchmark levels of theory for SP only. Due to the cost, everything seems to be either at relatively low levels of correlated theory, or using a dataset of really small molecules.</li>
+<li>No high level optimised geometry. Everything is compared to TD-DFT or MP2 opt, with benchmark levels of theory for SP only. Due to the cost, everything seems to be either at relatively low levels of correlated theory, or using a dataset of really small molecules.<ul>
 <li><a href="https://arxiv.org/abs/1402.3008">https://arxiv.org/abs/1402.3008</a> is a good comparison of correlated methods, <mark>however didn&rsquo;t use augmentation</mark>.</li>
-<li>No correlation between high level gas phase calculations and experiment.</li>
+</ul>
+</li>
+<li>No correlation between high level gas phase calculations and experiment.<ul>
 <li><mark>This is even more difficult since the methods needed to get the fluorophores into the gas phase use ionisation, and thus cannot be directly compared with the solvated species.</mark></li>
-<li>What is the scope of my studies?</li>
-<li>
-<p>Do I only care about fluorescence, neglecting absorbance?</p>
-<ul>
-<li>Only singlet transitions?</li>
 </ul>
 </li>
 <li>
-<p>Do I only focus on top ranked TD-DFT methods and ignore all ab initio ones?</p>
+<p>What is the scope of my studies?</p>
+<ul>
+<li>Do I only care about fluorescence, neglecting absorbance?<ul>
+<li>Only singlet transitions?</li>
+</ul>
 </li>
+</ul>
+<ul>
+<li>Do I only focus on top ranked TD-DFT methods and ignore all ab initio ones?</li>
 <li>Do I only focus on organic fluorophores? Metals transitions? (I guess then I&rsquo;d need multireference methods)</li>
+</ul>
+</li>
 </ul>
 <h3 id="short-term-to-do">Short term to do:<a class="headerlink" href="#short-term-to-do" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Gas phase calculations</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <del>CMIRS SP in GAMESS</del></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <del>CMIRS SP in GAMESS</del><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> This is grossly single threaded. GAMESS will only run the whole calculation as a single thread despite only one part of the calculation being unthreaded, and because CMIRS uses an isodensity cavity, it&rsquo;s non analytical </li>
+</ul>
+</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Can use Lippert-Mataga equation to estimate Stokes shifts? (pg 39 Herbert review)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add Toby&rsquo;s suggestions to my dataset:</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add Toby&rsquo;s suggestions to my dataset:<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Napthalamides - &ldquo;nta-dmnld&rdquo;</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Alexa Fluor 532</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cyanine 5</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Fluorines</li>
 </ul>
+</li>
+</ul>
 <h2 id="important-play-coding">Important (play) coding:<a class="headerlink" href="#important-play-coding" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Write a server-side script for reading files? (should be faster than catting over ssh)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Write a server-side script for reading files? (should be faster than catting over ssh)<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Potentially explore sftp file reads instead of ssh catting</li>
+</ul>
+</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> QM/MM in Q-Chem</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Can the isodensity be used to generate a cavity made of atom-centered spheres for backwards compatibility?</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <del>QM solvation shell + EFP for long range</del></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <del>QM solvation shell + EFP for long range</del><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I&rsquo;ve decided that this is ultimately a bad idea, as it defeats the purpose of the non configuration-specific nature of PCM. Perhaps EFP fragments within a PCM region? that could be kinda cool! LEt&rsquo;s Do that!</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> QM Solute + EFP for local effects + PCM</li>
+</ul>
+</li>
 </ul>
 <h2 id="to-do">To do:<a class="headerlink" href="#to-do" title="Permanent link">&para;</a></h2>
 <p>Apart from all the papers that need reading&hellip;</p>
@@ -11043,29 +11063,31 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Finish the Benedetta Mennucci review</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Finish the non-Benedetta Mennucci review</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read up on domain decomposition solvation (ddPCM/ddCOSMO)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Read up on <a href="https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.56">COSMO-RS</a></li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <del>Should we get a license? Perhaps not, since this would be effectively paywall restricted science&hellip;</del></p>
-<ul>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Read up on <a href="https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.56">COSMO-RS</a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <del>Should we get a license? Perhaps not, since this would be effectively paywall restricted science&hellip;</del><ul>
 <li>Yeah, not worth it. Katya agrees.</li>
 </ul>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Watch Lectures</p>
+</ul>
 </li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Watch Lectures<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://www.youtube.com/watch?v=Y2nNag-70w4">Understanding strongly correlated systems in excited state chemistry</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://www.youtube.com/watch?v=rlicz_ISDbU">Benchmarking multiconfigurational methods for vertical excitation energies</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://winterschool.cc/2016/concepts-of-molecular-excited-states-calculations">Concepts of Molecular Excited State Calculations</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://winterschool.cc/webinars-2022/modelling-photoabsorption-and-photoelectron-vibronic-band-shapes">Modelling Photoabsorption and Photoelectron Vibronic Band Shapes</a></li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://winterschool.cc/2016/intro-to-casscf-calculations">Intro to CASSCF Calculations</a></p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://winterschool.cc/2016/intro-to-casscf-calculations">Intro to CASSCF Calculations</a></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read program&rsquo;s manual&rsquo;s solvation sections and pull out key discussed papers</p>
-</li>
+</ul>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read program&rsquo;s manual&rsquo;s solvation sections and pull out key discussed papers<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ORCA</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Q-Chem</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> PCMSolver (read the paper)</li>
+</ul>
+</li>
 </ul>
 
 

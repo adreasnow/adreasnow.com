@@ -11201,9 +11201,11 @@ fchk(wfn, &#39;output.fchk&#39;)
 <p>While Psi4 v1.6 has significantly improved the performance of this module with parallelisation and integral screening, there are still no analytical gradients, which makes PCM effectively unusable for optimisations or freqs.</p>
 </div>
 <ul>
-<li>Available models are:</li>
+<li>Available models are:<ul>
 <li>CPCM</li>
 <li>IEFPCM</li>
+</ul>
+</li>
 <li>Solvents and keywords are documented in the <a href="https://pcmsolver.readthedocs.io/en/latest/users/input.html#medium-section-keywords">PCMSolver documentation</a></li>
 <li>For viewing the cavities generated, you can use <a href="https://3dviewer.net">https://3dviewer.net</a> to view the <code>cavity.off__####</code> file. This should allow you to tweak the cavity area value to reduce the number of points that PCMSolver has to compute. Just make sure to rename the file extention to be <code>.off</code></li>
 </ul>

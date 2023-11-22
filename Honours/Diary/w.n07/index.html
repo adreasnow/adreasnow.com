@@ -11025,8 +11025,10 @@
 <p>Jobs are starting to get a move on!</p>
 <ul>
 <li>I ended up cancelling the  static bench jobs as they&rsquo;re just producing bad results, so I&rsquo;ve given those resources to the relaxed bench jobs which are turning out awesomely! (now that I now how to go about doing it&hellip;)</li>
-<li>I&rsquo;m still pushing through the derivative efield scans, and I&rsquo;m hopeful that they&rsquo;ll be finished today.</li>
+<li>I&rsquo;m still pushing through the derivative efield scans, and I&rsquo;m hopeful that they&rsquo;ll be finished today.<ul>
 <li>I still need to figure out a nice way to visualise them though, maybe a top down diagram with arrows for each derivative&rsquo;s best separation?</li>
+</ul>
+</li>
 <li>The scanTS job had done a fantastic job, though it&rsquo;s found the configuration that has the ts along the bond I want, but not the LB attached. It&rsquo;s calculating a hessian now, so I should be able to see soon what the vibrational modes look like</li>
 <li>The na1* efield scan jobs are slow and I realised an error in my inputs, where I forgot to change the <code>opt_type</code> from <code>ts</code>, so I&rsquo;ve resubmitted those&hellip;</li>
 </ul>
@@ -11038,16 +11040,16 @@
 <li>I&rsquo;ve started a ZOOM-NEB job so that I can prove that the trajectory between lb2r and lb2t is barrierless</li>
 <li>I tried to plot the optimal R/S separation vectors for the efield scans of the derivatives, but anything that contains an NO2 seems to find the best separation in the same direction</li>
 </ul>
-<p><img alt="!download" class="center" src="../download-9278918.svg" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="download" href="../download-9278918.svg"><img alt="download" class="center" src="../download-9278918.svg" style="width: 50%; " /></a></div></p>
 <ul>
 <li>
 <p>I&rsquo;ve come up with a perturbation cycle that I like for figuring out the interaction energy of the piperidine catalyst, but putitng a single +1 charge 3A away led to a lower energy than the piperidine itself, so I&rsquo;m re-running with CHELPG point charges for each of the piperidine atoms.</p>
-</li>
-<li>
-<p>This specific method ended up with only 16 KJ/mol of stabilisation form the point charge, so I&rsquo;m not so convinced&hellip;</p>
+<ul>
+<li>This specific method ended up with only 16 KJ/mol of stabilisation form the point charge, so I&rsquo;m not so convinced&hellip;</li>
+</ul>
 </li>
 </ul>
-<p><img alt="!Screen Shot 2021-08-18 at 6.40.24 pm" class="center" src="../Screen%20Shot%202021-08-18%20at%206.40.24%20pm.png" style="width: 70%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="Screen Shot 2021-08-18 at 6.40.24 pm" href="../Screen%20Shot%202021-08-18%20at%206.40.24%20pm.png"><img alt="Screen Shot 2021-08-18 at 6.40.24 pm" class="center" src="../Screen%20Shot%202021-08-18%20at%206.40.24%20pm.png" style="width: 70%; " /></a></div></p>
 <ul>
 <li>I started scripting up my notebook to analyse the R/S scans. I think I&rsquo;ve done an alright job, but I won&rsquo;t know until I actually get some scan data of the R isomer</li>
 <li>I really should should start writing things up tomorrow, at the very least, my experimental methodology&hellip; after I get tested of course</li>
@@ -11064,7 +11066,7 @@
 <h3 id="what-i-did-today_3">What I did today:<a class="headerlink" href="#what-i-did-today_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>I&rsquo;m still feeling quite sick, though at least I did get a negative COVID test, so that&rsquo;s good</li>
-<li>I cleaned up a lot of the jobs that were queued</li>
+<li>I cleaned up a lot of the jobs that were queued<ul>
 <li>The MD runs had all crashed due to the filesystem errors, so I&rsquo;ve restarted them</li>
 <li>The rxn traj scans have almost all finished, so I pulled out what&rsquo;s done and restarted what isn&rsquo;t</li>
 <li>The relaxed derivative are almost all done, but s-no-no is still coming along</li>
@@ -11073,30 +11075,32 @@
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 <h2 id="saturday-218">Saturday 21/8<a class="headerlink" href="#saturday-218" title="Permanent link">&para;</a></h2>
 <h3 id="what-i-did-today_4">What I did today:<a class="headerlink" href="#what-i-did-today_4" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p>All of the derivative jobs are completed!! woo!!</p>
-</li>
+<li>All of the derivative jobs are completed!! woo!!</li>
+</ul>
+<ul>
 <li>
 <p>I&rsquo;ve found the three specific points in na1r-s that are causing me grief, so I&rsquo;ve increased the optimsier dynamic level and have queued that job.</p>
-</li>
-<li>
-<p>Looking closer at the data, I&rsquo;m starting to think that these aren&rsquo;t actually an issue and they&rsquo;re just areas that are really sensitive to the field!
-    The same thing is happening mirrored in the na1r-r for the symmetrical field (note the green line)</p>
+<ul>
+<li>Looking closer at the data, I&rsquo;m starting to think that these aren&rsquo;t actually an issue and they&rsquo;re just areas that are really sensitive to the field!
+  The same thing is happening mirrored in the na1r-r for the symmetrical field (note the green line)</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="download" href="../download.png"><img alt="download" class="center" src="../download.png" style="width: 80%; " /></a></div></p>
 </li>
 </ul>
-<p><img alt="!download" class="center" src="../download.png" style="width: 80%; " /></p>
 <ul>
 <li>
 <p>The ωB97X-D ORCA 4 bench jobs for lb2r and lb2p seemed to get stuck as they were processing the basis set, so I&rsquo;ve given them 128GB of memory each and have re-queued them</p>
-</li>
-<li>
-<p>This got me thinking about better methods and what I could do to find lb2t and I though, &ldquo;why not try ωB97M-V?&rdquo;, so I had a look and it performs quite well on a more coarse integration grid and downs&rsquo;t have a particularly large basis set dependence, so I set up an OptTS job running ωB97M-V/def2-TZVP with CPCM water, and RIJCOSX approximations. It&rsquo;s actually surprisingly fast!</p>
 <ul>
+<li>This got me thinking about better methods and what I could do to find lb2t and I though, &ldquo;why not try ωB97M-V?&rdquo;, so I had a look and it performs quite well on a more coarse integration grid and downs&rsquo;t have a particularly large basis set dependence, so I set up an OptTS job running ωB97M-V/def2-TZVP with CPCM water, and RIJCOSX approximations. It&rsquo;s actually surprisingly fast!<ul>
 <li>This makes me wonder if I should try re-doing the bench jobs in a similar fashion, but I won&rsquo;t be able to do analytical freqs, so it might take a while :\</li>
 <li>Since it&rsquo;s pretty low priority, I&rsquo;ve queued these on M3. If they get done, they get done, if not, then as long as I get the ωB97X-D bench jobs through, it&rsquo;s all okay</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -11110,7 +11114,7 @@
 <thead>
 <tr>
 <th>Job</th>
-<th style="text-align: center;">Time (h)</th>
+<th align="center">Time (h)</th>
 <th># SCF cycles</th>
 <th>Energy</th>
 <th>Memory Used (GB)</th>
@@ -11120,7 +11124,7 @@
 <tbody>
 <tr>
 <td>Gaussian (10 IP) - MonARCH</td>
-<td style="text-align: center;">10:05</td>
+<td align="center">10:05</td>
 <td>26</td>
 <td>-14416.1063713</td>
 <td></td>
@@ -11128,7 +11132,7 @@
 </tr>
 <tr>
 <td>Gaussian (10 IP) - Gadi</td>
-<td style="text-align: center;">11:30</td>
+<td align="center">11:30</td>
 <td>27</td>
 <td>-14416.1063713</td>
 <td>14.94</td>
@@ -11136,7 +11140,7 @@
 </tr>
 <tr>
 <td>Gaussian w Ghost ILs (10 IP) - Gadi</td>
-<td style="text-align: center;">6:27</td>
+<td align="center">6:27</td>
 <td>20</td>
 <td>-709.001510682</td>
 <td>17.74</td>
@@ -11144,7 +11148,7 @@
 </tr>
 <tr>
 <td>Gaussian w Ghost ILs &amp; CPCM(Ethanol) (10 IP) - Gadi</td>
-<td style="text-align: center;">6:35</td>
+<td align="center">6:35</td>
 <td>16</td>
 <td>-709.024908436</td>
 <td>30.87</td>
@@ -11152,7 +11156,7 @@
 </tr>
 <tr>
 <td>Gaussian core only</td>
-<td style="text-align: center;">-</td>
+<td align="center">-</td>
 <td></td>
 <td>-708.995468</td>
 <td></td>
@@ -11160,7 +11164,7 @@
 </tr>
 <tr>
 <td>Gaussian w Ghost ILs (10 IP)</td>
-<td style="text-align: center;">6:40</td>
+<td align="center">6:40</td>
 <td>20</td>
 <td>-709.001510</td>
 <td></td>
@@ -11168,7 +11172,7 @@
 </tr>
 <tr>
 <td>Gaussian w Ghost ILs &amp; CPCM(Ethanol) (10 IP)</td>
-<td style="text-align: center;">6:40</td>
+<td align="center">6:40</td>
 <td>16</td>
 <td>-709.024908</td>
 <td></td>
@@ -11182,29 +11186,29 @@
 <thead>
 <tr>
 <th>↓ left | right →</th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{NH2}\)</span>​</th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{NO2}\)</span></th>
-<th style="text-align: center;">-</th>
+<th align="center"><span class="arithmatex">\(\ce{NH2}\)</span>​</th>
+<th align="center"><span class="arithmatex">\(\ce{NO2}\)</span></th>
+<th align="center">-</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="arithmatex">\(\ce{NH2}\)</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\ce{NO2}\)</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td>-</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 </tbody>
 </table>
@@ -11213,29 +11217,29 @@
 <thead>
 <tr>
 <th>↓ left | right →</th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{NH2}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{NO2}\)</span></th>
-<th style="text-align: center;">-</th>
+<th align="center"><span class="arithmatex">\(\ce{NH2}\)</span></th>
+<th align="center"><span class="arithmatex">\(\ce{NO2}\)</span></th>
+<th align="center">-</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="arithmatex">\(\ce{NH2}\)</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\ce{NO2}\)</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td>-</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 </tbody>
 </table>
@@ -11244,23 +11248,23 @@
 <thead>
 <tr>
 <th>Steroisomer</th>
-<th style="text-align: center;">na1r</th>
-<th style="text-align: center;">na1t</th>
-<th style="text-align: center;">na1p</th>
+<th align="center">na1r</th>
+<th align="center">na1t</th>
+<th align="center">na1p</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>R</td>
-<td style="text-align: center;">queued (80)</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center">queued (80)</td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td>S</td>
-<td style="text-align: center;"><span style="color:green;">done (?)</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done (?)</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 </tbody>
 </table>
@@ -11269,47 +11273,47 @@
 <thead>
 <tr>
 <th>solvent</th>
-<th style="text-align: center;">na1r</th>
-<th style="text-align: center;">na1t</th>
-<th style="text-align: center;">na1p</th>
+<th align="center">na1r</th>
+<th align="center">na1t</th>
+<th align="center">na1p</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>gas</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td>hexane</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td>ethanol</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td>dcm</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td>dmso</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td>water</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 </tbody>
 </table>
@@ -11318,96 +11322,96 @@
 <thead>
 <tr>
 <th>IL</th>
-<th style="text-align: center;">na1r-r</th>
-<th style="text-align: center;">na1t-1-r</th>
-<th style="text-align: center;">na1t-2-r</th>
-<th style="text-align: center;">na1t-3-r</th>
-<th style="text-align: center;">na1p-r</th>
-<th style="text-align: center;">na1r-s</th>
-<th style="text-align: center;">na1t-1-s</th>
-<th style="text-align: center;">na1t-2-s</th>
-<th style="text-align: center;">na1t-3-s</th>
-<th style="text-align: center;">na1p-s</th>
+<th align="center">na1r-r</th>
+<th align="center">na1t-1-r</th>
+<th align="center">na1t-2-r</th>
+<th align="center">na1t-3-r</th>
+<th align="center">na1p-r</th>
+<th align="center">na1r-s</th>
+<th align="center">na1t-1-s</th>
+<th align="center">na1t-2-s</th>
+<th align="center">na1t-3-s</th>
+<th align="center">na1p-s</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{OTF} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{MSO4} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{TCM} - \vec F =0.1\:V\cdot\AA^{-1}\)</span>​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center">queued</td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center">queued</td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{OTF} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{MSO4} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;">queued</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><mark>running</mark></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center">queued</td>
+<td align="center">queued</td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><mark>running</mark></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\il{C4mpyr}{TCM} - \vec F =0.0\:V\cdot\AA^{-1}\)</span>​​</td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
-<td style="text-align: center;"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
+<td align="center"><span style="color:green;">done</span></td>
 </tr>
 </tbody>
 </table>

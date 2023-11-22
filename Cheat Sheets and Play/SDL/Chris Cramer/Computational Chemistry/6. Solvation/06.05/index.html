@@ -10892,26 +10892,30 @@
 <ul>
 <li>(worst) You could ignore them completely, though this would only really be valid for systems where electrostatic effects will dominate</li>
 <li>Attempt to compute them separately e.g. one property, one calculation</li>
-<li>(best) Assume proportionality to the solvent-accessible surface area and parameterise microscopic surface tensions</li>
+<li>(best) Assume proportionality to the solvent-accessible surface area and parameterise microscopic surface tensions<ul>
 <li>Continuum solvation is inherently semiempirical, so parameterisation should not be feared.</li>
+</ul>
+</li>
 </ul>
 <h2 id="first-solvation-shell-contributions">First solvation-shell contributions<a class="headerlink" href="#first-solvation-shell-contributions" title="Permanent link">&para;</a></h2>
 <p>One way to approximate the Solvent Accessible Surface Area (SASA) is to &ldquo;roll a ball&rdquo; over the surface of the molecule and the volume it takes up defines the </p>
-<p><img alt="!image" class="center" src="../5.1.png" style="width: 30%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../5.1.png"><img alt="image" class="center" src="../5.1.png" style="width: 30%; " /></a></div></p>
 <p>Where:</p>
 <ul>
 <li><span class="arithmatex">\(\sum\limits_k^{atoms}=\)</span> Adding up the influence of each atom <span class="arithmatex">\(k\)</span></li>
 <li><span class="arithmatex">\(A_k=\)</span> Surface area exposed of the atom <span class="arithmatex">\(k\)</span></li>
 <li><span class="arithmatex">\(\sigma_k=\)</span> A characteristic surface tension, based on atomic number</li>
-<li><span class="arithmatex">\(\sum\limits_{k'}^{atoms}\sigma_{kk'}(R)=\)</span> A modifier for the interaction of functional groups</li>
+<li><span class="arithmatex">\(\sum\limits_{k'}^{atoms}\sigma_{kk'}(R)=\)</span> A modifier for the interaction of functional groups<ul>
 <li><span class="arithmatex">\(\sum\limits_{k'}^{atoms}=\)</span> Adding up the influence of each <em>other</em> atom (<span class="arithmatex">\(k'\)</span>)</li>
 <li><span class="arithmatex">\(\sigma_{kk'}(R)=\)</span> looks at the distance between the two atoms (<span class="arithmatex">\(k\)</span> and <span class="arithmatex">\(k'\)</span>) and modifies the value of <span class="arithmatex">\(\sigma\)</span></li>
+</ul>
+</li>
 </ul>
 <div class="arithmatex">\[
 G_{CDS}=\sum\limits_k^{atoms}A_k\bigg(\sigma_k+\sum\limits_{k'}^{atoms}\sigma_{kk'}(R)\bigg)
 \]</div>
 <p>The value of <span class="arithmatex">\(\sigma_{kk'}\)</span> varies over distance, which will result in a gradual switching behaviour. In the figure below, the short distances might represent a ketone (the switch is on) and the longer distance might represent an ether (the switch is off)</p>
-<p><img alt="!image" class="center" src="../5.2.png" style="width: 30%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="image" href="../5.2.png"><img alt="image" class="center" src="../5.2.png" style="width: 30%; " /></a></div></p>
 <h2 id="microscopic-surface-tensions">Microscopic surface tensions<a class="headerlink" href="#microscopic-surface-tensions" title="Permanent link">&para;</a></h2>
 <p>This simple equation shows the non-electrostatic solvation energy <span class="arithmatex">\(G_{CDS}\)</span> is equal to the sum of the exposed surface area of each atom <span class="arithmatex">\(A_k\)</span> times some proportionality constant <span class="arithmatex">\(\sigma_k\)</span>.</p>
 <div class="arithmatex">\[
@@ -10946,54 +10950,54 @@ G_{CDS}=\sum\limits_kA_k\sigma_k
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{H2O}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{C6H6}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\ce{CH2Cl2}\)</span></th>
+<th align="left"></th>
+<th align="center"><span class="arithmatex">\(\ce{H2O}\)</span></th>
+<th align="center"><span class="arithmatex">\(\ce{C6H6}\)</span></th>
+<th align="center"><span class="arithmatex">\(\ce{CH2Cl2}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Dielectric constant (<span class="arithmatex">\(\varepsilon\)</span>)</td>
-<td style="text-align: center;">78.36</td>
-<td style="text-align: center;">2.27</td>
-<td style="text-align: center;">8.93</td>
+<td align="left">Dielectric constant (<span class="arithmatex">\(\varepsilon\)</span>)</td>
+<td align="center">78.36</td>
+<td align="center">2.27</td>
+<td align="center">8.93</td>
 </tr>
 <tr>
-<td style="text-align: left;">Abraham h-bonding acidity (<span class="arithmatex">\(\alpha\)</span>)</td>
-<td style="text-align: center;">0.82</td>
-<td style="text-align: center;">0.00</td>
-<td style="text-align: center;">0.10</td>
+<td align="left">Abraham h-bonding acidity (<span class="arithmatex">\(\alpha\)</span>)</td>
+<td align="center">0.82</td>
+<td align="center">0.00</td>
+<td align="center">0.10</td>
 </tr>
 <tr>
-<td style="text-align: left;">Abraham h-bonding basicity (<span class="arithmatex">\(\beta\)</span>)</td>
-<td style="text-align: center;">0.38</td>
-<td style="text-align: center;">0.14<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
-<td style="text-align: center;">0.05</td>
+<td align="left">Abraham h-bonding basicity (<span class="arithmatex">\(\beta\)</span>)</td>
+<td align="center">0.38</td>
+<td align="center">0.14<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td align="center">0.05</td>
 </tr>
 <tr>
-<td style="text-align: left;">Refractive index (<span class="arithmatex">\(n\)</span>)</td>
-<td style="text-align: center;">1.33</td>
-<td style="text-align: center;">1.50</td>
-<td style="text-align: center;">1.42</td>
+<td align="left">Refractive index (<span class="arithmatex">\(n\)</span>)</td>
+<td align="center">1.33</td>
+<td align="center">1.50</td>
+<td align="center">1.42</td>
 </tr>
 <tr>
-<td style="text-align: left;">Surface tension (<span class="arithmatex">\(cal\cdot mol^{-1}\cdot\unicode{x212B}^{-2}\)</span>)</td>
-<td style="text-align: center;">104.71</td>
-<td style="text-align: center;">40.62</td>
-<td style="text-align: center;">39.15</td>
+<td align="left">Surface tension (<span class="arithmatex">\(cal\cdot mol^{-1}\cdot\unicode{x212B}^{-2}\)</span>)</td>
+<td align="center">104.71</td>
+<td align="center">40.62</td>
+<td align="center">39.15</td>
 </tr>
 <tr>
-<td style="text-align: left;">Carbon aromaticity</td>
-<td style="text-align: center;">0.00</td>
-<td style="text-align: center;">1.00</td>
-<td style="text-align: center;">0.00</td>
+<td align="left">Carbon aromaticity</td>
+<td align="center">0.00</td>
+<td align="center">1.00</td>
+<td align="center">0.00</td>
 </tr>
 <tr>
-<td style="text-align: left;">Electronegative halogenicity</td>
-<td style="text-align: center;">0.00</td>
-<td style="text-align: center;">0.00</td>
-<td style="text-align: center;">0.67</td>
+<td align="left">Electronegative halogenicity</td>
+<td align="center">0.00</td>
+<td align="center">0.00</td>
+<td align="center">0.67</td>
 </tr>
 </tbody>
 </table>
@@ -11002,51 +11006,51 @@ G_{CDS}=\sum\limits_kA_k\sigma_k
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Solute Class</th>
-<th style="text-align: center;">Data N</th>
-<th style="text-align: center;">SM8</th>
-<th style="text-align: center;">IEFPCM (G03/UA0)</th>
-<th style="text-align: center;">C-PCM GAMESS</th>
-<th style="text-align: center;">PB Jaguar</th>
-<th style="text-align: center;">All Equal to Mean<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></th>
+<th align="left">Solute Class</th>
+<th align="center">Data N</th>
+<th align="center">SM8</th>
+<th align="center">IEFPCM (G03/UA0)</th>
+<th align="center">C-PCM GAMESS</th>
+<th align="center">PB Jaguar</th>
+<th align="center">All Equal to Mean<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Aqueous neutrals</td>
-<td style="text-align: center;">274</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">4.9</td>
-<td style="text-align: center;">1.6</td>
-<td style="text-align: center;">0.9</td>
-<td style="text-align: center;">2.7</td>
+<td align="left">Aqueous neutrals</td>
+<td align="center">274</td>
+<td align="center">0.5</td>
+<td align="center">4.9</td>
+<td align="center">1.6</td>
+<td align="center">0.9</td>
+<td align="center">2.7</td>
 </tr>
 <tr>
-<td style="text-align: left;">Non-aqueous neutrals</td>
-<td style="text-align: center;">666</td>
-<td style="text-align: center;">0.6</td>
-<td style="text-align: center;">6.0</td>
-<td style="text-align: center;">2.8</td>
-<td style="text-align: center;">2.3</td>
-<td style="text-align: center;">1.5</td>
+<td align="left">Non-aqueous neutrals</td>
+<td align="center">666</td>
+<td align="center">0.6</td>
+<td align="center">6.0</td>
+<td align="center">2.8</td>
+<td align="center">2.3</td>
+<td align="center">1.5</td>
 </tr>
 <tr>
-<td style="text-align: left;">Aqueous ions</td>
-<td style="text-align: center;">112</td>
-<td style="text-align: center;">3.2</td>
-<td style="text-align: center;">12.4</td>
-<td style="text-align: center;">8.4</td>
-<td style="text-align: center;">4.0</td>
-<td style="text-align: center;">8.6</td>
+<td align="left">Aqueous ions</td>
+<td align="center">112</td>
+<td align="center">3.2</td>
+<td align="center">12.4</td>
+<td align="center">8.4</td>
+<td align="center">4.0</td>
+<td align="center">8.6</td>
 </tr>
 <tr>
-<td style="text-align: left;">Non-aqueous ions</td>
-<td style="text-align: center;">220</td>
-<td style="text-align: center;">4.9</td>
-<td style="text-align: center;">8.4</td>
-<td style="text-align: center;">8.4</td>
-<td style="text-align: center;">8.1</td>
-<td style="text-align: center;">8.6</td>
+<td align="left">Non-aqueous ions</td>
+<td align="center">220</td>
+<td align="center">4.9</td>
+<td align="center">8.4</td>
+<td align="center">8.4</td>
+<td align="center">8.1</td>
+<td align="center">8.6</td>
 </tr>
 </tbody>
 </table>

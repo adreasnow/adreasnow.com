@@ -10904,41 +10904,45 @@
 <thead>
 <tr>
 <th>IL</th>
-<th style="text-align: center;"><span class="arithmatex">\(0.0\:V\cdot\AA^{-s}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(0.1\:V\cdot\AA^{-s}\)</span></th>
+<th align="center"><span class="arithmatex">\(0.0\:V\cdot\AA^{-s}\)</span></th>
+<th align="center"><span class="arithmatex">\(0.1\:V\cdot\AA^{-s}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="arithmatex">\(\ce{[C4mpyr][MSO4]}\)</span></td>
-<td style="text-align: center;"><img alt="!download" src="../download.svg" /></td>
-<td style="text-align: center;"><img alt="!download-1" src="../download-1.svg" /></td>
+<td align="center"><div class="lightgallery"><a data-sub-html="download" href="../download.svg"><img alt="download" src="../download.svg" /></a></div></td>
+<td align="center"><div class="lightgallery"><a data-sub-html="download-1" href="../download-1.svg"><img alt="download-1" src="../download-1.svg" /></a></div></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\ce{[C4mpyr][OTF]}\)</span></td>
-<td style="text-align: center;"><img alt="!download-2" src="../download-2.svg" /></td>
-<td style="text-align: center;"><img alt="!download-3" src="../download-3.svg" /></td>
+<td align="center"><div class="lightgallery"><a data-sub-html="download-2" href="../download-2.svg"><img alt="download-2" src="../download-2.svg" /></a></div></td>
+<td align="center"><div class="lightgallery"><a data-sub-html="download-3" href="../download-3.svg"><img alt="download-3" src="../download-3.svg" /></a></div></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\ce{[C4mpyr][TCM]}\)</span></td>
-<td style="text-align: center;"><img alt="!download-4" src="../download-4.svg" /></td>
-<td style="text-align: center;"><img alt="!download-5" src="../download-5.svg" /></td>
+<td align="center"><div class="lightgallery"><a data-sub-html="download-4" href="../download-4.svg"><img alt="download-4" src="../download-4.svg" /></a></div></td>
+<td align="center"><div class="lightgallery"><a data-sub-html="download-5" href="../download-5.svg"><img alt="download-5" src="../download-5.svg" /></a></div></td>
 </tr>
 </tbody>
 </table>
 <h4 id="timings">Timings<a class="headerlink" href="#timings" title="Permanent link">&para;</a></h4>
 <p>Note that for the *-co 8 IP jobs, I was running some tests to see if I could use fewer cores and get similar performance. 9 was the most pairs that could run within the 7 day time limit, and adding more cores did not reduce the job runtime.</p>
-<p><img alt="!download-6" class="center" src="../download-6.svg" style="width: 40%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="download-6" href="../download-6.svg"><img alt="download-6" class="center" src="../download-6.svg" style="width: 40%; " /></a></div></p>
 <h2 id="method-testing">Method Testing<a class="headerlink" href="#method-testing" title="Permanent link">&para;</a></h2>
 <p>My new focus is to see what I can gain from different methods so far, they are as follows:</p>
 <ul>
-<li>Single point extraction (Gaussian - fastest for M06-2X/6-31+G*)</li>
+<li>Single point extraction (Gaussian - fastest for M06-2X/6-31+G*)<ul>
 <li><span class="arithmatex">\(\ce{E_{\text{solute}+\text{interaction}} = E_{\text{system}} - E_{\text{solvent}} }\)</span></li>
+</ul>
+</li>
 <li>FMO1 (GAMESS)</li>
 <li>FMO2 (GAMESS)</li>
-<li>Psi4 chargefield (Psi4 + Gaussian for SP + MultiWFN for charges)</li>
+<li>Psi4 chargefield (Psi4 + Gaussian for SP + MultiWFN for charges)<ul>
 <li>Requires calculation of partial charges though, FMO1 may be a better option since it uses the electron density where needed.</li>
 <li>Could be corrected with DFTD&frac34;</li>
+</ul>
+</li>
 </ul>
 <h4 id="update">Update:<a class="headerlink" href="#update" title="Permanent link">&para;</a></h4>
 <p>It looks like there are some convergence issues, so in the FMO jobs I&rsquo;ve switched from DIIS to SOSCF, and I&rsquo;m letting the Gaussian jobs play out, but I&rsquo;m also replicating their runs in ORCA, though with the frozen solvent optimisation, I&rsquo;m also using numerical gradients so that it can only calculate the gradients for the solute.</p>
@@ -10946,64 +10950,68 @@
 <p>I&rsquo;ve kept playing and I&rsquo;ve found some interesting things.</p>
 <ul>
 <li>Gaussian, as expected is still the best option for M06-2X/6-31+G*, ORCA is about the same speed with RI, but it takes massive amounts of memory</li>
-<li>come kind of PCM is needed, as otherwise the system tends to explode. The problem seems to be in trying to stabilise the negative charges on the <span class="arithmatex">\(\ce{OTF-}\)</span> anion, which makes sense. It&rsquo;s going to be so diffuse by nature of its structure.</li>
+<li>come kind of PCM is needed, as otherwise the system tends to explode. The problem seems to be in trying to stabilise the negative charges on the <span class="arithmatex">\(\ce{OTF-}\)</span> anion, which makes sense. It&rsquo;s going to be so diffuse by nature of its structure.<ul>
 <li>This only increases the memory of the ORCA jobs further, so something like 10+ GB/core is required, and the system is too big to do on anything less than 16 cores.</li>
-<li>Psi4 chargefield seems to bring the energy down massively, but the jobs just aren&rsquo;t really converging. I&rsquo;d love to get them to converge even very loosely, to that I could see what the resultant MOs look like.</li>
+</ul>
+</li>
+<li>Psi4 chargefield seems to bring the energy down massively, but the jobs just aren&rsquo;t really converging. I&rsquo;d love to get them to converge even very loosely, to that I could see what the resultant MOs look like.<ul>
 <li>I&rsquo;m currently testing to see if it&rsquo;s an issue with the basis set/functional combination, or just that the optimisers really don&rsquo;t know how to handle the situation. It feels like a job for SOSCF, but Psi4&rsquo;s implementation doesn&rsquo;t seem to work with double hybrids.</li>
 <li>Update: ωB97M-V seems to converge just fine&hellip; I&rsquo;m now checking to see if M06-2X would behave better with a massive grid. The other big issue though is that the energy of the system drops massively, by more than double with the chargefield in place.</li>
+</ul>
+</li>
 <li>FMO has been crashing as well, which after a whole lot of troubleshooting, seems to be an issue with linear dependence when trying to converge scf for the outermost <span class="arithmatex">\(\ce{OTF-}\)</span> anions.</li>
 </ul>
 <p>I also did a check of population analysis schemes and created this lovely little boxplot showing the different schemes and their assigned charge distributions:</p>
-<p><img alt="!download" class="center" src="../download-2050870.svg" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="download" href="../download-2050870.svg"><img alt="download" class="center" src="../download-2050870.svg" style="width: 50%; " /></a></div></p>
 <h4 id="update-same-day-but-later">Update (same day, but later):<a class="headerlink" href="#update-same-day-but-later" title="Permanent link">&para;</a></h4>
 <p>Looks like the trick is to take those point charges and load them into a <code>pointcharges.pc</code> file and optimise in ORCA! </p>
 <h4 id="single-point-results">Single point results:<a class="headerlink" href="#single-point-results" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
+<th align="left"></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}} \:\kjmol\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Single point subtractions</td>
-<td style="text-align: center;">-11482.9600536</td>
-<td style="text-align: center;">-709.014319493</td>
-<td style="text-align: center;">-12192.0101637</td>
-<td style="text-align: center;">-709.0501101</td>
+<td align="left">Single point subtractions</td>
+<td align="center">-11482.9600536</td>
+<td align="center">-709.014319493</td>
+<td align="center">-12192.0101637</td>
+<td align="center">-709.0501101</td>
 <td>-0.035790607</td>
 <td>-93.96824583662</td>
 </tr>
 <tr>
-<td style="text-align: left;">Point charge cloud - ORCA</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-708.972018707435</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-709.124134329562</td>
+<td align="left">Point charge cloud - ORCA</td>
+<td align="center"></td>
+<td align="center">-708.972018707435</td>
+<td align="center"></td>
+<td align="center">-709.124134329562</td>
 <td>-0.1521156221</td>
 <td>-399.37959624667</td>
 </tr>
 <tr>
-<td style="text-align: left;">Point charge cloud - Psi4</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-709.0218867826432643</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left">Point charge cloud - Psi4</td>
+<td align="center"></td>
+<td align="center">-709.0218867826432643</td>
+<td align="center"></td>
+<td align="center"></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align: left;">Point charge cloud: no PCM - Psi4</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-708.9781365080156093</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left">Point charge cloud: no PCM - Psi4</td>
+<td align="center"></td>
+<td align="center">-708.9781365080156093</td>
+<td align="center"></td>
+<td align="center"></td>
 <td></td>
 <td></td>
 </tr>
@@ -11013,40 +11021,40 @@
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
+<th align="left"></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}} \:\kjmol\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Single point Gaussian</td>
-<td style="text-align: center;">-5741.16113486</td>
-<td style="text-align: center;">-708.938060608</td>
-<td style="text-align: center;">-6450.17644472</td>
-<td style="text-align: center;">-709.01530986</td>
+<td align="left">Single point Gaussian</td>
+<td align="center">-5741.16113486</td>
+<td align="center">-708.938060608</td>
+<td align="center">-6450.17644472</td>
+<td align="center">-709.01530986</td>
 <td>-0.077249252</td>
 <td>-202.8179265759</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point FMO1</td>
-<td style="text-align: center;">-5740.4397265670</td>
-<td style="text-align: center;">-708.9305516399</td>
-<td style="text-align: center;">-6449.326034670</td>
-<td style="text-align: center;">-708.886308103</td>
+<td align="left">Single point FMO1</td>
+<td align="center">-5740.4397265670</td>
+<td align="center">-708.9305516399</td>
+<td align="center">-6449.326034670</td>
+<td align="center">-708.886308103</td>
 <td>-0.0442435369</td>
 <td>-116.1614149797</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point FMO2</td>
-<td style="text-align: center;">-5741.1200041578</td>
-<td style="text-align: center;">-708.9305516399</td>
-<td style="text-align: center;">-6450.1260562190</td>
-<td style="text-align: center;">-709.0060520612</td>
+<td align="left">Single point FMO2</td>
+<td align="center">-5741.1200041578</td>
+<td align="center">-708.9305516399</td>
+<td align="center">-6450.1260562190</td>
+<td align="center">-709.0060520612</td>
 <td>-0.0755004213</td>
 <td>-198.22637122323</td>
 </tr>
@@ -11055,7 +11063,7 @@
 <h4 id="update_2">Update:<a class="headerlink" href="#update_2" title="Permanent link">&para;</a></h4>
 <p>I noticed something weird in Psi4&hellip; When you create a molecule object, it actually centres it in space by the centre of mass, which means that it&rsquo;s really no surprise that my calculations have been so broken!</p>
 <p>I wrote a little script that would calculate Mulliken charges for each fragment that I feed into it, and would use that to build a chargefield to perturb the solute molecule. This was cool, the interaction energies I was getting were actually not horrible far from the long painful single point jobs, so then I though, why not push this further and write a simple FMO1 implementation&hellip; which is where I&rsquo;m at now!</p>
-<p><img alt="!Screen Shot 2022-01-22 at 6.04.17 pm" class="center" src="../Screen%20Shot%202022-01-22%20at%206.04.17%20pm.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="Screen Shot 2022-01-22 at 6.04.17 pm" href="../Screen%20Shot%202022-01-22%20at%206.04.17%20pm.png"><img alt="Screen Shot 2022-01-22 at 6.04.17 pm" class="center" src="../Screen%20Shot%202022-01-22%20at%206.04.17%20pm.png" style="width: 50%; " /></a></div></p>
 <h4 id="update_3">Update:<a class="headerlink" href="#update_3" title="Permanent link">&para;</a></h4>
 <p>MiniFMO is pretty cool, but Psi4 isn&rsquo;t the most fully featured, so I might actually try implementing it using ORCA instead, since it&rsquo;s REALLY fully featured, and CRAZY fast, especially if I want to step up to FMO2.</p>
 <p>I do actually want to implement FMO2, but that does mean that I&rsquo;m going to need to break down the FMO paper <img alt="😑" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f611.svg" title=":expressionless:" /></p>
@@ -11065,9 +11073,11 @@
 <ol>
 <li>FMO1 - Calculate initial density</li>
 <li>FMO1 - Use initial density to optimise the charges on fragments through a mean field approach</li>
-<li>FMO2 - Calculate density of fragment pairs in the charges of the FMO1 iterations (not iteratively optimised)</li>
+<li>FMO2 - Calculate density of fragment pairs in the charges of the FMO1 iterations (not iteratively optimised)<ul>
 <li>Near pairs are calculated with QM</li>
 <li>Far pairs with only the charges</li>
+</ul>
+</li>
 </ol>
 <div class="arithmatex">\[
 \begin{align}
@@ -11080,58 +11090,58 @@ E_{FMO2} &amp;= E_{FMO1} + \sum_{I&gt;J}^N(E_{IJ}-E_I-E_J)
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
+<th align="left"></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}} \:\kjmol\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Single point Gaussian</td>
-<td style="text-align: center;">-5740.97624872</td>
-<td style="text-align: center;">-709.03976789</td>
-<td style="text-align: center;">-6450.10014554</td>
-<td style="text-align: center;">-709.12389682</td>
+<td align="left">Single point Gaussian</td>
+<td align="center">-5740.97624872</td>
+<td align="center">-709.03976789</td>
+<td align="center">-6450.10014554</td>
+<td align="center">-709.12389682</td>
 <td>-0.08412893</td>
 <td>-220.880522541</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point FMO1</td>
-<td style="text-align: center;">-5740.46383692</td>
-<td style="text-align: center;">-709.0323620227</td>
-<td style="text-align: center;">-6449.43872093</td>
-<td style="text-align: center;">-708.97488401</td>
+<td align="left">Single point FMO1</td>
+<td align="center">-5740.46383692</td>
+<td align="center">-709.0323620227</td>
+<td align="center">-6449.43872093</td>
+<td align="center">-708.97488401</td>
 <td>0.0574780127</td>
 <td>150.9085338395</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point FMO2</td>
-<td style="text-align: center;">-5740.93614193</td>
-<td style="text-align: center;">-709.0323620227</td>
-<td style="text-align: center;">DNF</td>
-<td style="text-align: center;"></td>
+<td align="left">Single point FMO2</td>
+<td align="center">-5740.93614193</td>
+<td align="center">-709.0323620227</td>
+<td align="center">DNF</td>
+<td align="center"></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point MiniFMO1</td>
-<td style="text-align: center;">-5740.66656255</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6449.70670351</td>
-<td style="text-align: center;">-709.04014096</td>
+<td align="left">Single point MiniFMO1</td>
+<td align="center">-5740.66656255</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6449.70670351</td>
+<td align="center">-709.04014096</td>
 <td>-0.00074573</td>
 <td>-1.95791426415</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point MiniFMO2</td>
-<td style="text-align: center;">-5740.56224483</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6449.64256787</td>
-<td style="text-align: center;">-709.08032304</td>
+<td align="left">Single point MiniFMO2</td>
+<td align="center">-5740.56224483</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6449.64256787</td>
+<td align="center">-709.08032304</td>
 <td>-0.04092781</td>
 <td>-107.455973341</td>
 </tr>
@@ -11142,7 +11152,7 @@ E_{FMO2} &amp;= E_{FMO1} + \sum_{I&gt;J}^N(E_{IJ}-E_I-E_J)
 <h4 id="update_5">Update:<a class="headerlink" href="#update_5" title="Permanent link">&para;</a></h4>
 <p>In a stroke of inspiration while digging through the depreciated Psi4 <code>Diffuse</code> class, I came across the ability to calculate the ESP for a wavefunction on a grid, and have coded up a way to generate a cloud of points within a sphere of each atom, generate the ESP for each point and use that to generate a chargefield of points.</p>
 <p>I&rsquo;m hoping that if I can cobble this together nicely, it will serve as a much better way of being able to embed charges for my MiniFMO implementation.</p>
-<p><img alt="!Screen Shot 2022-01-30 at 1.12.38 pm" class="center" src="../Screen%20Shot%202022-01-30%20at%201.12.38%20pm.png" style="width: 30%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="Screen Shot 2022-01-30 at 1.12.38 pm" href="../Screen%20Shot%202022-01-30%20at%201.12.38%20pm.png"><img alt="Screen Shot 2022-01-30 at 1.12.38 pm" class="center" src="../Screen%20Shot%202022-01-30%20at%201.12.38%20pm.png" style="width: 30%; " /></a></div></p>
 <table>
 <thead>
 <tr>
@@ -11195,63 +11205,63 @@ E_{FMO2} &amp;= E_{FMO1} + \sum_{I&gt;J}^N(E_{IJ}-E_I-E_J)
 </tbody>
 </table>
 <p>WOOO! And with the suggestion that I look at how CHELPG managed it, I have decent looking charges!</p>
-<p><img alt="!Screen Shot 2022-01-30 at 4.26.45 pm" class="center" src="../Screen%20Shot%202022-01-30%20at%204.26.45%20pm-3520487.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="Screen Shot 2022-01-30 at 4.26.45 pm" href="../Screen%20Shot%202022-01-30%20at%204.26.45%20pm-3520487.png"><img alt="Screen Shot 2022-01-30 at 4.26.45 pm" class="center" src="../Screen%20Shot%202022-01-30%20at%204.26.45%20pm-3520487.png" style="width: 50%; " /></a></div></p>
 <h4 id="single-point-results-5ip_2">Single point results 5ip<a class="headerlink" href="#single-point-results-5ip_2" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
+<th align="left"></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}} \:\kjmol\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Single point Gaussian</td>
-<td style="text-align: center;">-5740.97624872</td>
-<td style="text-align: center;">-709.03976789</td>
-<td style="text-align: center;">-6450.10014554</td>
-<td style="text-align: center;">-709.12389682</td>
+<td align="left">Single point Gaussian</td>
+<td align="center">-5740.97624872</td>
+<td align="center">-709.03976789</td>
+<td align="center">-6450.10014554</td>
+<td align="center">-709.12389682</td>
 <td>-0.08412893</td>
 <td>-220.880522541</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point FMO1</td>
-<td style="text-align: center;">-5740.46383692</td>
-<td style="text-align: center;">-709.0323620227</td>
-<td style="text-align: center;">-6449.43872093</td>
-<td style="text-align: center;">-708.97488401</td>
+<td align="left">Single point FMO1</td>
+<td align="center">-5740.46383692</td>
+<td align="center">-709.0323620227</td>
+<td align="center">-6449.43872093</td>
+<td align="center">-708.97488401</td>
 <td>0.0574780127</td>
 <td>150.9085338395</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point FMO2</td>
-<td style="text-align: center;">-5740.93614193</td>
-<td style="text-align: center;">-709.0323620227</td>
-<td style="text-align: center;">-6450.0533060700</td>
-<td style="text-align: center;">-709.11716414</td>
+<td align="left">Single point FMO2</td>
+<td align="center">-5740.93614193</td>
+<td align="center">-709.0323620227</td>
+<td align="center">-6450.0533060700</td>
+<td align="center">-709.11716414</td>
 <td>-0.08480212</td>
 <td>-222.64795897</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO1 - ESP</td>
-<td style="text-align: center;">-5741.25662671</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6450.35204199</td>
-<td style="text-align: center;">-709.09541528</td>
+<td align="left">MiniFMO1 - ESP</td>
+<td align="center">-5741.25662671</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6450.35204199</td>
+<td align="center">-709.09541528</td>
 <td>-0.05602005</td>
 <td>-147.080652479</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO2 - ESP</td>
-<td style="text-align: center;">-5736.23438742</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6444.27692817</td>
-<td style="text-align: center;">-708.04254075</td>
+<td align="left">MiniFMO2 - ESP</td>
+<td align="center">-5736.23438742</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6444.27692817</td>
+<td align="center">-708.04254075</td>
 <td>0.99685448</td>
 <td>2617.2416366</td>
 </tr>
@@ -11259,7 +11269,7 @@ E_{FMO2} &amp;= E_{FMO1} + \sum_{I&gt;J}^N(E_{IJ}-E_I-E_J)
 </table>
 <p>The resultant FMO1 charge cloud looks really cool, but I&rsquo;m getting strange results, as can be seen above (^) and am not sure if it&rsquo;s related to how much of an overlap there is in the point clouds.
 I&rsquo;m re-running the results with a 2.6 Å cutoff radius, 0.3 Å grid density and a higher FMO1 convergence tolerance.</p>
-<p><img alt="!Screen Shot 2022-01-31 at 2.16.18 pm" class="center" src="../Screen%20Shot%202022-01-31%20at%202.16.18%20pm.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="Screen Shot 2022-01-31 at 2.16.18 pm" href="../Screen%20Shot%202022-01-31%20at%202.16.18%20pm.png"><img alt="Screen Shot 2022-01-31 at 2.16.18 pm" class="center" src="../Screen%20Shot%202022-01-31%20at%202.16.18%20pm.png" style="width: 50%; " /></a></div></p>
 <div class="admonition warning">
 <p class="admonition-title">Diffusivity</p>
 <p>Since sulphur is really large compared to the CHELPG defining dataset, and since ILs tend to have really diffuse charges, I tried running the miniFMO jobs with diffuse (3.4 Å @ 0.6 Å grid density) and very diffuse (5 Å @ 0.6 Å grid density), but the results were pretty much the same.</p>
@@ -11267,94 +11277,94 @@ I&rsquo;m re-running the results with a 2.6 Å cutoff radius, 0.3 Å grid densit
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
+<th align="left"></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}} \:\kjmol\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Single point Gaussian</td>
-<td style="text-align: center;">-5740.97624872</td>
-<td style="text-align: center;">-709.03976789</td>
-<td style="text-align: center;">-6450.10014554</td>
-<td style="text-align: center;">-709.12389682</td>
+<td align="left">Single point Gaussian</td>
+<td align="center">-5740.97624872</td>
+<td align="center">-709.03976789</td>
+<td align="center">-6450.10014554</td>
+<td align="center">-709.12389682</td>
 <td>-0.08412893</td>
 <td>-220.880522541</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point FMO1</td>
-<td style="text-align: center;">-5740.46383692</td>
-<td style="text-align: center;">-709.0323620227</td>
-<td style="text-align: center;">-6449.43872093</td>
-<td style="text-align: center;">-708.97488401</td>
+<td align="left">Single point FMO1</td>
+<td align="center">-5740.46383692</td>
+<td align="center">-709.0323620227</td>
+<td align="center">-6449.43872093</td>
+<td align="center">-708.97488401</td>
 <td>0.0574780127</td>
 <td>150.9085338395</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point FMO2</td>
-<td style="text-align: center;">-5740.93614193</td>
-<td style="text-align: center;">-709.0323620227</td>
-<td style="text-align: center;">-6450.0533060700</td>
-<td style="text-align: center;">-709.11716414</td>
+<td align="left">Single point FMO2</td>
+<td align="center">-5740.93614193</td>
+<td align="center">-709.0323620227</td>
+<td align="center">-6450.0533060700</td>
+<td align="center">-709.11716414</td>
 <td>-0.08480212</td>
 <td>-222.64795897</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO1 - ESP</td>
-<td style="text-align: center;">-5741.25662671</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6450.35204199</td>
-<td style="text-align: center;">-709.09541528</td>
+<td align="left">MiniFMO1 - ESP</td>
+<td align="center">-5741.25662671</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6450.35204199</td>
+<td align="center">-709.09541528</td>
 <td>-0.05602005</td>
 <td>-147.080652479</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO2 - ESP</td>
-<td style="text-align: center;">-5736.23438742</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6444.27692817</td>
-<td style="text-align: center;">-708.04254075</td>
+<td align="left">MiniFMO2 - ESP</td>
+<td align="center">-5736.23438742</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6444.27692817</td>
+<td align="center">-708.04254075</td>
 <td>0.99685448</td>
 <td>2617.2416366</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO1 - ESP - Diffuse</td>
-<td style="text-align: center;">-5741.26551748</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6450.36421899</td>
-<td style="text-align: center;">-709.09870151</td>
+<td align="left">MiniFMO1 - ESP - Diffuse</td>
+<td align="center">-5741.26551748</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6450.36421899</td>
+<td align="center">-709.09870151</td>
 <td>-0.05930628</td>
 <td>-155.70863814</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO2 - ESP - Diffuse</td>
-<td style="text-align: center;">-5736.16292494</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6444.16696364</td>
-<td style="text-align: center;">-708.00403870</td>
+<td align="left">MiniFMO2 - ESP - Diffuse</td>
+<td align="center">-5736.16292494</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6444.16696364</td>
+<td align="center">-708.00403870</td>
 <td>1.03535653</td>
 <td>2718.32856952</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO1 - ESP - Very Diffuse</td>
-<td style="text-align: center;">-5741.22477334</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6450.29211977</td>
-<td style="text-align: center;">-709.06734643</td>
+<td align="left">MiniFMO1 - ESP - Very Diffuse</td>
+<td align="center">-5741.22477334</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6450.29211977</td>
+<td align="center">-709.06734643</td>
 <td>-0.02795120</td>
 <td>-73.38587560</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO2 - ESP - Very Diffuse</td>
-<td style="text-align: center;">-5736.48870337</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6444.81567776</td>
-<td style="text-align: center;">-708.32697439</td>
+<td align="left">MiniFMO2 - ESP - Very Diffuse</td>
+<td align="center">-5736.48870337</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6444.81567776</td>
+<td align="center">-708.32697439</td>
 <td>0.71242084</td>
 <td>1870.46091542</td>
 </tr>
@@ -11362,62 +11372,62 @@ I&rsquo;m re-running the results with a 2.6 Å cutoff radius, 0.3 Å grid densit
 </table>
 <p>I&rsquo;ve noticed some pretty big issues in how the charge clouds are being scaled, so I&rsquo;m trying to figure that out. Initially, the charge zero fragments were being nullified, but now I can get them to sum and average to 0, and I can get the ions to average to their charge, but I can&rsquo;t seem to scale them to sum to zero.</p>
 <p>I decided to do some digging, and using the standard method of scaling the charges vector by the fragment charge/sum of charges, I was getting scaling factors of ~0.02 for the cations and ~0.035 for the anions. I thought that I might be able to used a flat scaling value for all the charges, but peter suggested that rather than using the charges fragment, I could use the number of points in that fragment&rsquo;s point cloud! so now I&rsquo;m trying scaling them all by 1/number of points, and it seems to be yielding mych more reasonable results!</p>
-<p><img alt="!Screen Shot 2022-02-01 at 5.34.57 pm" class="center" src="../Screen%20Shot%202022-02-01%20at%205.34.57%20pm.png" style="width: 50%; " /></p>
+<p><div class="lightgallery"><a data-sub-html="Screen Shot 2022-02-01 at 5.34.57 pm" href="../Screen%20Shot%202022-02-01%20at%205.34.57%20pm.png"><img alt="Screen Shot 2022-02-01 at 5.34.57 pm" class="center" src="../Screen%20Shot%202022-02-01%20at%205.34.57%20pm.png" style="width: 50%; " /></a></div></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
+<th align="left"></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}} \:\kjmol\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Single point Gaussian</td>
-<td style="text-align: center;">-5740.97624872</td>
-<td style="text-align: center;">-709.03976789</td>
-<td style="text-align: center;">-6450.10014554</td>
-<td style="text-align: center;">-709.12389682</td>
+<td align="left">Single point Gaussian</td>
+<td align="center">-5740.97624872</td>
+<td align="center">-709.03976789</td>
+<td align="center">-6450.10014554</td>
+<td align="center">-709.12389682</td>
 <td>-0.08412893</td>
 <td>-220.880522541</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point FMO1</td>
-<td style="text-align: center;">-5740.46383692</td>
-<td style="text-align: center;">-709.0323620227</td>
-<td style="text-align: center;">-6449.43872093</td>
-<td style="text-align: center;">-708.97488401</td>
+<td align="left">Single point FMO1</td>
+<td align="center">-5740.46383692</td>
+<td align="center">-709.0323620227</td>
+<td align="center">-6449.43872093</td>
+<td align="center">-708.97488401</td>
 <td>0.0574780127</td>
 <td>150.9085338395</td>
 </tr>
 <tr>
-<td style="text-align: left;">Single point FMO2</td>
-<td style="text-align: center;">-5740.93614193</td>
-<td style="text-align: center;">-709.0323620227</td>
-<td style="text-align: center;">-6450.0533060700</td>
-<td style="text-align: center;">-709.11716414</td>
+<td align="left">Single point FMO2</td>
+<td align="center">-5740.93614193</td>
+<td align="center">-709.0323620227</td>
+<td align="center">-6450.0533060700</td>
+<td align="center">-709.11716414</td>
 <td>-0.08480212</td>
 <td>-222.64795897</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO1 - ESP - Scaled</td>
-<td style="text-align: center;">-5740.64205573</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6449.68977755</td>
-<td style="text-align: center;">-704.17362203</td>
+<td align="left">MiniFMO1 - ESP - Scaled</td>
+<td align="center">-5740.64205573</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6449.68977755</td>
+<td align="center">-704.17362203</td>
 <td>4.86577320</td>
 <td>12775.08753660</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO2 - ESP - Scaled</td>
-<td style="text-align: center;">-5740.41626328</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6449.40962030</td>
-<td style="text-align: center;">-708.99335702</td>
+<td align="left">MiniFMO2 - ESP - Scaled</td>
+<td align="center">-5740.41626328</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6449.40962030</td>
+<td align="center">-708.99335702</td>
 <td>0.04603821</td>
 <td>120.87332035</td>
 </tr>
@@ -11428,31 +11438,31 @@ I&rsquo;m re-running the results with a 2.6 Å cutoff radius, 0.3 Å grid densit
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
+<th align="left"></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}} \:\kjmol\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">MiniFMO1</td>
-<td style="text-align: center;">-5740.64075562</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6449.68567072</td>
-<td style="text-align: center;">-709.04491510</td>
+<td align="left">MiniFMO1</td>
+<td align="center">-5740.64075562</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6449.68567072</td>
+<td align="center">-709.04491510</td>
 <td>-0.00551987</td>
 <td>-14.49241869</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO2</td>
-<td style="text-align: center;">-5740.43180165</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6449.45187685</td>
-<td style="text-align: center;">-709.02007520</td>
+<td align="left">MiniFMO2</td>
+<td align="center">-5740.43180165</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6449.45187685</td>
+<td align="center">-709.02007520</td>
 <td>0.01932003</td>
 <td>50.72473876</td>
 </tr>
@@ -11468,31 +11478,31 @@ I&rsquo;m re-running the results with a 2.6 Å cutoff radius, 0.3 Å grid densit
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
+<th align="left"></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}} \:\kjmol\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">MiniFMO1</td>
-<td style="text-align: center;">-5740.64979372</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6449.69747183</td>
-<td style="text-align: center;">-709.04767811</td>
+<td align="left">MiniFMO1</td>
+<td align="center">-5740.64979372</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6449.69747183</td>
+<td align="center">-709.04767811</td>
 <td>-0.00828288</td>
 <td>-21.74670144</td>
 </tr>
 <tr>
-<td style="text-align: left;">MiniFMO2</td>
-<td style="text-align: center;">-5740.36438386</td>
-<td style="text-align: center;">-709.03939523</td>
-<td style="text-align: center;">-6449.35142193</td>
-<td style="text-align: center;">-708.98703807</td>
+<td align="left">MiniFMO2</td>
+<td align="center">-5740.36438386</td>
+<td align="center">-709.03939523</td>
+<td align="center">-6449.35142193</td>
+<td align="center">-708.98703807</td>
 <td>0.05235716</td>
 <td>137.4637236</td>
 </tr>
@@ -11588,31 +11598,31 @@ h12
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
+<th align="left"></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solvent}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{full}}\)</span></th>
+<th align="center"><span class="arithmatex">\(E_{\text{solute+int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}}\)</span></th>
 <th><span class="arithmatex">\(E_{\text{int}} \:\kjmol\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Single point Gaussian (M06-2X)</td>
-<td style="text-align: center;">-5740.97624872</td>
-<td style="text-align: center;">-709.03976789</td>
-<td style="text-align: center;">-6450.10014554</td>
-<td style="text-align: center;">-709.12389682</td>
+<td align="left">Single point Gaussian (M06-2X)</td>
+<td align="center">-5740.97624872</td>
+<td align="center">-709.03976789</td>
+<td align="center">-6450.10014554</td>
+<td align="center">-709.12389682</td>
 <td>-0.08412893</td>
 <td>-220.880522541</td>
 </tr>
 <tr>
-<td style="text-align: left;">EFP Psi4 (SCF)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-704.84315370</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="left">EFP Psi4 (SCF)</td>
+<td align="center"></td>
+<td align="center">-704.84315370</td>
+<td align="center"></td>
+<td align="center"></td>
 <td></td>
 <td></td>
 </tr>
@@ -11626,12 +11636,12 @@ h12
 <p>So today I decided to work on a different project, to use the point generation method from the MiniFMO routines to be able to generate electric field plots. This required me to borrow some functions from the MiniFMO script, but I noticed that the generation of the field vectors from the wavefunction was bottlenecked to only one core, even when 32 were provided on MonARCH.</p>
 <p>I wrote a little routine that chunks the input matrix and gives each chunk to a different thread, but I don&rsquo;t know how to but the <code>wfn</code> object in shared memory, so it currently has to write the object to file and load it for each thread, which depending on the number of basis functions could be really memory intensive.</p>
 <p>I then wrote a script to plot these fields in PyMOL from a <code>.npy</code> file that the script outputs:
-<img alt="!wert" class="center" src="../wert.png" style="width: 70%; " /></p>
+<div class="lightgallery"><a data-sub-html="wert" href="../wert.png"><img alt="wert" class="center" src="../wert.png" style="width: 70%; " /></a></div></p>
 <p>I am genuinely really impressed at how much faster I am with all of this than I was last year! [^1]</p>
 <details class="info">
 <summary>In my process of writing my PyMOL code&hellip;</summary>
 <p>Do you like my vector field? <img alt="🙂" class="gemoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f642.svg" title=":slightly_smiling_face:" />
-<img alt="!Screen Shot 2022-02-14 at 12.50.12 pm" class="center" src="../Screen%20Shot%202022-02-14%20at%2012.50.12%20pm.png" style="width: 50%; " /></p>
+<div class="lightgallery"><a data-sub-html="Screen Shot 2022-02-14 at 12.50.12 pm" href="../Screen%20Shot%202022-02-14%20at%2012.50.12%20pm.png"><img alt="Screen Shot 2022-02-14 at 12.50.12 pm" class="center" src="../Screen%20Shot%202022-02-14%20at%2012.50.12%20pm.png" style="width: 50%; " /></a></div></p>
 </details>
 
 

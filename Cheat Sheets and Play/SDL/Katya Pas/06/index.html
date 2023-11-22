@@ -10832,26 +10832,26 @@ E_{XC}[\rho]=E_X[\rho]+E_C[\rho]
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Exchange</th>
-<th style="text-align: center;">Correlation</th>
+<th align="center">Exchange</th>
+<th align="center">Correlation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">PBE</td>
+<td align="center">B</td>
+<td align="center">PBE</td>
 </tr>
 <tr>
-<td style="text-align: center;">PBE</td>
-<td style="text-align: center;">PW91</td>
+<td align="center">PBE</td>
+<td align="center">PW91</td>
 </tr>
 <tr>
-<td style="text-align: center;">PW91</td>
-<td style="text-align: center;">VWN</td>
+<td align="center">PW91</td>
+<td align="center">VWN</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">LYP</td>
+<td align="center"></td>
+<td align="center">LYP</td>
 </tr>
 </tbody>
 </table>
@@ -10862,49 +10862,53 @@ E_{XC}[\rho]=E_X[\rho]+E_C[\rho]
 <tr>
 <th>Level</th>
 <th>Type</th>
-<th style="text-align: left;">Components</th>
-<th style="text-align: center;">Examples</th>
+<th align="left">Components</th>
+<th align="center">Examples</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Level 5</td>
 <td>Double Hybrid</td>
-<td style="text-align: left;">Level &#8532; + MP2 Correlation energy</td>
-<td style="text-align: center;">B2LYP<br />ωB97X-2</td>
+<td align="left">Level &#8532; + MP2 Correlation energy</td>
+<td align="center">B2LYP<br />ωB97X-2</td>
 </tr>
 <tr>
 <td>Level 4</td>
 <td>Hybrid GGA<br />Hybrid meta-GGA</td>
-<td style="text-align: left;">Level &#8532;  + Exact HF exchange</td>
-<td style="text-align: center;">M06/M06-2X (meta)<br />M11 ( meta)<br />B3LYP ( non-meta)<br />ωB97X-D/V ( non-meta)</td>
+<td align="left">Level &#8532;  + Exact HF exchange</td>
+<td align="center">M06/M06-2X (meta)<br />M11 ( meta)<br />B3LYP ( non-meta)<br />ωB97X-D/V ( non-meta)</td>
 </tr>
 <tr>
 <td>Level 3</td>
 <td>Meta-GGA</td>
-<td style="text-align: left;">Level 2  + Gradient of electron&rsquo;s kinetic energy <span class="arithmatex">\(\rho(r)''\)</span></td>
-<td style="text-align: center;">TPSS<br />M06-L<br />M11-L</td>
+<td align="left">Level 2  + Gradient of electron&rsquo;s kinetic energy <span class="arithmatex">\(\rho(r)''\)</span></td>
+<td align="center">TPSS<br />M06-L<br />M11-L</td>
 </tr>
 <tr>
 <td>Level 2</td>
 <td>GGA</td>
-<td style="text-align: left;">Level 1  + Gradient of density <span class="arithmatex">\(\rho(r)'\)</span></td>
-<td style="text-align: center;">PBE</td>
+<td align="left">Level 1  + Gradient of density <span class="arithmatex">\(\rho(r)'\)</span></td>
+<td align="center">PBE</td>
 </tr>
 <tr>
 <td>Level 1</td>
 <td>Pure Functionals (LDA)</td>
-<td style="text-align: left;">Electron Density, <span class="arithmatex">\(\rho(r)\)</span></td>
-<td style="text-align: center;">LDA<br />BLYP</td>
+<td align="left">Electron Density, <span class="arithmatex">\(\rho(r)\)</span></td>
+<td align="center">LDA<br />BLYP</td>
 </tr>
 </tbody>
 </table>
 <p>From <a href="https://pubs-rsc-org.ezproxy.lib.monash.edu.au/en/content/articlelanding/2014/cp/c3cp54374a#!divAbstract"><em>Phys.Chem.Chem.Phys.,</em> 2014, 16, 9904</a></p>
 <ul>
-<li>M06-2X has the best overall performance for thermochemistry (3.21 kcal mol−1)</li>
+<li>M06-2X has the best overall performance for thermochemistry (3.21 kcal mol−1)<ul>
 <li>After M06-2X, the next best density functionals for thermochemistry are ωB97X-V and ωB97X-D, with RMSDs of 3.60 and 3.61 kcal mol−1, respectively</li>
-<li>ωB97X-V has the best overall performance for noncovalent interactions (0.32 kcal mol−1)</li>
+</ul>
+</li>
+<li>ωB97X-V has the best overall performance for noncovalent interactions (0.32 kcal mol−1)<ul>
 <li>After ωB97X-V, the next best density functionals for noncovalent interactions are M06-L and B97-D2, with RMSDs of 0.47 and 0.48 kcal mol−1, respectively.</li>
+</ul>
+</li>
 </ul>
 <p>From PhysChem Webinar</p>
 <blockquote>
@@ -10915,39 +10919,43 @@ E_{XC}[\rho]=E_X[\rho]+E_C[\rho]
 <thead>
 <tr>
 <th>Functional</th>
-<th style="text-align: center;">HF Exchange</th>
-<th style="text-align: center;">Function</th>
+<th align="center">HF Exchange</th>
+<th align="center">Function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>M06</td>
-<td style="text-align: center;">27%</td>
-<td style="text-align: center;">Thermodynamics and kinetics</td>
+<td align="center">27%</td>
+<td align="center">Thermodynamics and kinetics</td>
 </tr>
 <tr>
 <td>M06-L</td>
-<td style="text-align: center;">0%</td>
-<td style="text-align: center;">Transition metals and organometallics</td>
+<td align="center">0%</td>
+<td align="center">Transition metals and organometallics</td>
 </tr>
 <tr>
 <td>M06-2X</td>
-<td style="text-align: center;">54%</td>
-<td style="text-align: center;">Non-covalently bound interactions</td>
+<td align="center">54%</td>
+<td align="center">Non-covalently bound interactions</td>
 </tr>
 <tr>
 <td>M06-HF</td>
-<td style="text-align: center;">100%</td>
-<td style="text-align: center;">Charge transfer complexes</td>
+<td align="center">100%</td>
+<td align="center">Charge transfer complexes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="limitations-of-dft">Limitations of DFT<a class="headerlink" href="#limitations-of-dft" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Electron correlation isn&rsquo;t considered explicitly - it&rsquo;s parameterised</li>
+<li>Electron correlation isn&rsquo;t considered explicitly - it&rsquo;s parameterised<ul>
 <li>Solved by Grimme&rsquo;s addition of explicit empirical dispersion corrections (-D)</li>
-<li>Electrons can see parts of themselves though self interaction errors (long range issue, effecting dissociation curves)</li>
+</ul>
+</li>
+<li>Electrons can see parts of themselves though self interaction errors (long range issue, effecting dissociation curves)<ul>
 <li>Solved by including the HF exchange (cannot include 100%, as the performance of the functional will be poor)</li>
+</ul>
+</li>
 </ul>
 <h2 id="b97x">ωB97X<a class="headerlink" href="#b97x" title="Permanent link">&para;</a></h2>
 <p>One approximation for long range corrected functionals, as it accounts for HF exchange at short distances with a different scaling factor (coefficient) to longer distances.</p>

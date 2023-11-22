@@ -10758,16 +10758,20 @@
 <h1 id="mcscf-methods">MCSCF Methods<a class="headerlink" href="#mcscf-methods" title="Permanent link">&para;</a></h1>
 <h2 id="david-sherril"><a href="https://www.youtube.com/watch?v=MlbKoXACAx8&amp;list=WL&amp;index=10">David Sherril</a><a class="headerlink" href="#david-sherril" title="Permanent link">&para;</a></h2>
 <ul>
-<li>If we consider a single determinant for our excited state with one excited electron( <span class="arithmatex">\(\ket{\phi^a_i}\)</span>), it would roughly describe the state, but:</li>
+<li>If we consider a single determinant for our excited state with one excited electron( <span class="arithmatex">\(\ket{\phi^a_i}\)</span>), it would roughly describe the state, but:<ol>
 <li>The orbitals may not be the most appropriate, since they&rsquo;re based on the ground state HF wavefunction</li>
 <li>There is a mirror half of the wavefunction that is neglected, where the spins are flipped, as well as any other determinants that may contribute</li>
-<li>When we solve for the Schrödinger equation, there are many different solutions that we can use, and typically we&rsquo;d only solve it for the lowest state, but we could also solve it for multiple roots.</li>
+</ol>
+</li>
+<li>When we solve for the Schrödinger equation, there are many different solutions that we can use, and typically we&rsquo;d only solve it for the lowest state, but we could also solve it for multiple roots.<ul>
 <li>We can do this using CIS to create a full Hamiltonian of all the determinants of each configuration, and solve for each of our roots to get an exact solution, but at the singles level, this lacks dynamic correlation, which means that it&rsquo;s only an HF quality wavefunction, giving errors of ~1 eV<ul>
 <li>If you wanted to include dynamic correlation of these singly excited determinants, you&rsquo;d need to include double excitations on top them, which would mean explicit triple excitations on top of the ground state which would be unattainably expensive.</li>
 <li>We could improve this by adding in perturbative double excitations as CIS(D) (of Head-Gordon fame), which would give errors of ~0.5 eV</li>
 </ul>
 </li>
-<li>We could also use &lsquo;response theory&rsquo; which uses the &ldquo;sum over states&rdquo; expression to calculate the frequency dependent polarisability:</li>
+</ul>
+</li>
+<li>We could also use &lsquo;response theory&rsquo; which uses the &ldquo;sum over states&rdquo; expression to calculate the frequency dependent polarisability:<ul>
 <li>Where:<ul>
 <li><span class="arithmatex">\(\omega=\)</span> frequency</li>
 <li><span class="arithmatex">\(\Psi_0=\)</span> ground state wavefunction</li>
@@ -10777,45 +10781,51 @@
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 <div class="arithmatex">\[
 \braket{\alpha}_\omega=\sum^{states}_{i\neq0}\frac{|\bra{\Psi_0}\mu\ket{\Psi_i}|^2}{\omega-(E_i-E_0)}
 \]</div>
 <ul>
 <li>The Excitation energies (<span class="arithmatex">\(\Delta E=(E_i-E_0)\)</span>) can be calculated from <span class="arithmatex">\(\braket{\alpha}_\omega\)</span> where <span class="arithmatex">\(\omega=\Delta E\)</span></li>
 <li>TD-DFT uses a linear response method and for valence excited states gives errors of ~0.3 eV. They&rsquo;re generally not appropriate for Rydberg or charge-transfer states, as DFT treats long range interactions improperly, however range separated hybrids (ωB97X-D, ωPBE) that use decent HF exchange or asymptotically corrected functionals (CAM-B3LYP) can be used in these circumstances.</li>
-<li>EOM-CCSD is the excited state equivalent of CCSD. In these you:</li>
+<li>EOM-CCSD is the excited state equivalent of CCSD. In these you:<ol>
 <li>Solve your normal CCSD ground state equations to get your <span class="arithmatex">\(\hat{T}\)</span> amplitdes</li>
 <li>Perform a &ldquo;similarity transformation&rdquo; transformations </li>
-<li>
-<p>Apply the linear excitation operator to get the excited states</p>
-<ul>
+<li>Apply the linear excitation operator to get the excited states<ul>
 <li>Produces errors of ~0.2 eV for single excitations, but doesn&rsquo;t perform as well for doubles.</li>
 </ul>
 </li>
-<li>
-<p>Other approaches</p>
+</ol>
 </li>
+</ul>
+<ul>
+<li>Other approaches<ul>
 <li>There isn&rsquo;t a clear cut approach to doing perturbative triples for EOM-CCSD(T), but there are a few methods floating around</li>
 <li>CC2 and CC3 sit at an intermediate quality between MP2 and CCSD, and there is an EOM-CC2, but not EOM-CC3</li>
-<li>MCSCF for excited states</li>
+</ul>
+</li>
+<li>MCSCF for excited states<ul>
 <li>We can get excited states from MCSCF, by calculating higher roots   of the CI. This can treat the ground and excited states at comparable quality, however lacks dynamic correlations</li>
-<li>
-<p>For that we need apply some post MCSCF treatment, like CASPT2 or multireference CI (MRCI)</p>
+<li>For that we need apply some post MCSCF treatment, like CASPT2 or multireference CI (MRCI)</li>
+</ul>
 </li>
-<li>
-<p>Semiempiricial Methods</p>
+</ul>
+<ul>
+<li>Semiempiricial Methods<ul>
+<li>ZINDO can be used, but TD-DFT is more commonly used, since it&rsquo;s more accurate and reasonably fast these days</li>
+</ul>
 </li>
-<li>
-<p>ZINDO can be used, but TD-DFT is more commonly used, since it&rsquo;s more accurate and reasonably fast these days</p>
-</li>
-<li>
-<p>Adiabatic excitation energies require analytic gradients for the excited state, which are available for CIS, CIS(D), TDDFT, CASSCF, CASPT2 and EOM-CCSD</p>
-</li>
+</ul>
+<ul>
+<li>Adiabatic excitation energies require analytic gradients for the excited state, which are available for CIS, CIS(D), TDDFT, CASSCF, CASPT2 and EOM-CCSD<ul>
 <li>This can be tricky if there are close lying PES though, as the optimiser could surface hop between states.</li>
+</ul>
+</li>
 </ul>
 <h2 id="stephan-sauer"><a href="https://www.youtube.com/watch?v=oGEYIZNUEkg">Stephan Sauer</a><a class="headerlink" href="#stephan-sauer" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Orbitals worth including in your active space:</li>
+<li>Orbitals worth including in your active space:<ul>
 <li>Degenerate or near-degenerate orbitals</li>
 <li>Orbitals that are directly related to the chemistry of the problem<ul>
 <li>Photoinduced bond cleavage ⟹ bonding orbitals</li>
@@ -10825,6 +10835,8 @@
 <li>Contrasting empty orbitals<ul>
 <li>e.g. antibonding orbital for bond breaking</li>
 <li>&ldquo;At least as many empty orbitals&rdquo;</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
