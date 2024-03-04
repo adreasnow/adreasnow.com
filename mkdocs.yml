@@ -4,6 +4,7 @@ site_url: http://adreasnow.com/
 
 theme:
   name: "material"
+  custom_dir: theme
   static_templates:
     - 404.html
   language: en
