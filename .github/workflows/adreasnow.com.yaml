@@ -29,9 +29,12 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-minify-plugin \
+      - run: pip install fontawesome_markdown \
+              mkdocs-minify-plugin \
               lightgallery \
               mkdocs-material-extensions \
               mkdocs \
-              mkdocs-material
+              mkdocs-material \
+              mdx_truly_sane_lists \
+              markdown==3.3.7
       - run: mkdocs gh-deploy --force
