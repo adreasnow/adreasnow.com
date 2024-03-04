@@ -35,4 +35,5 @@ jobs:
               mkdocs-material-extensions \
               mkdocs \
               mkdocs-material
+      - run: pip install git+https://github.com/mkdocs/mkdocs.git@refs/pull/2894/head
       - run: mkdocs gh-deploy --force
