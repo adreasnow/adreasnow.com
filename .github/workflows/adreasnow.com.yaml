@@ -6,9 +6,7 @@ on:
      - main
      
 permissions:
-  id-token: write
   contents: write
-  checks: write
 
 jobs:
   deploy:
@@ -16,19 +14,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Configure Git Credentials
         run: |
           git config user.name adreasnow
           git config user.email adrea.snow@gmail.com
+
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x # (3)!
+          python-version: 3.x
+
       - uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
+
       - run: pip install -r requirements.txt
-      - run: pip list
+      
       - run: mkdocs gh-deploy --force
