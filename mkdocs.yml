@@ -3,7 +3,7 @@ site_author: Adrea Snow
 site_url: http://adreasnow.com/
 
 theme:
-  name: 'material'
+  name: "material"
   custom_dir: theme
   static_templates:
     - 404.html
@@ -28,20 +28,20 @@ theme:
     text: Roboto
     code: Roboto Mono
   icon:
-    favicon: 'favicon.ico'
+    favicon: "favicon.ico"
 
 plugins:
   - search
 
 extra:
   search:
-    language: 'en'
+    language: "en"
   manifest: manifest.webmanifest
   social:
-  - icon: fontawesome/brands/github
-    link: https://github.com/adreasnow
-  - icon: fontawesome/brands/linkedin
-    link: https://www.linkedin.com/in/adreasnow
+    - icon: fontawesome/brands/github
+      link: https://github.com/adreasnow
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/adreasnow
   analytics:
     provider: google
     property: G-WBEK0XMNCH
@@ -80,11 +80,10 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - toc:
       permalink: true
       toc_depth: 3
-  - fontawesome_markdown
   - mdx_truly_sane_lists
   - lightgallery
 

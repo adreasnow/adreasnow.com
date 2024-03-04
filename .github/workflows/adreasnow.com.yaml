@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   deploy:
-    name: Build and Push GoModule
+    name: Deploy adreasnow.com
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,11 +29,9 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install fontawesome_markdown \
-              mkdocs-minify-plugin \
+      - run: pip install mkdocs-minify-plugin \
               lightgallery \
               mkdocs-material-extensions \
               mkdocs \
               mkdocs-material
-      - run: pip install git+https://github.com/mkdocs/mkdocs.git@refs/pull/2894/head
       - run: mkdocs gh-deploy --force
