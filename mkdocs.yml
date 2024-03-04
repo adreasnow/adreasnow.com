@@ -4,26 +4,22 @@ site_url: http://adreasnow.com/
 
 theme:
   name: "material"
-  # custom_dir: theme
   static_templates:
     - 404.html
   language: en
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    # - navigation.instant
     - navigation.tracking
     - navigation.sections
     - navigation.top
     - toc.integrate
     - search.suggest
-    # - search.highlight
     - search.share
 
   palette:
     primary: pink
     accent: pink
-    # scheme: slate
   font:
     text: Roboto
     code: Roboto Mono

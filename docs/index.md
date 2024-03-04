@@ -9,11 +9,7 @@ hide:
 
 <div style="float: right; margin-left: 40px;">
   <center>
-    <div class="lightgallery" lg-uid="lg0">
-      <a data-sub-html="Better" href="Better.jpeg">
-        <img alt="Better" class="center" src="Better.jpeg" style="width:200px; border-radius: 50%; ">
-      </a>
-    </div>
+    <img alt="Adrea's Face :D" class="center" src="Better.jpeg" style="width:200px; border-radius: 50%; ">
     <h2 style="margin: 0em;">Adrea Snow</h2>
     <a href="https://www.linkedin.com/in/adreasnow" style="color: black;"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a><br/>
     <a href="https://github.com/adreasnow" style="color: black;"><i class="fa fa-github" aria-hidden="true"></i> Github</a><br/>
