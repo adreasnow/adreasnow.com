@@ -49,7 +49,6 @@ jobs:
           python-version: 3.x
 
       - uses: actions/cache@v4
-        working-directory: ./mkdocs
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
@@ -63,10 +62,9 @@ jobs:
         working-directory: ./mkdocs
 
       - uses: actions/upload-artifact@v4
-        working-directory: ./mkdocs
         with:
           name: mkdocs
-          path: "site/*"
+          path: "mkdocs/site/*"
           if-no-files-found: error
           retention-days: 1
 
