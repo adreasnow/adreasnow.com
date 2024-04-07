@@ -94,7 +94,7 @@ jobs:
             project:
               - 'hugo/**'
 
-      - name: setup caching
+      - name: Setup caching
         if: steps.changes.outputs.project == 'true'
         uses: actions/cache@v4
         with:
@@ -131,7 +131,8 @@ jobs:
       - build-mkdocs
       - build-hugo
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           ref: gh-pages
 
@@ -146,7 +147,7 @@ jobs:
           if-no-files-found: error
           retention-days: 1
 
-      - name: delete everything
+      - name: Delete everything
         if: needs.build-hugo.outputs.built == 'true'
         run: rm -rf *
 
@@ -170,10 +171,12 @@ jobs:
 
       # MKDOCS
 
-      - if: needs.build-mkdocs.outputs.built == 'true'
+      - name: Delete old mkdocs
+        if: needs.build-mkdocs.outputs.built == 'true'
         run: rm -rf academic
 
-      - if: needs.build-mkdocs.outputs.built == 'true'
+      - name: Put new mkdocs in place
+        if: needs.build-mkdocs.outputs.built == 'true'
         uses: actions/download-artifact@v4
         with:
           name: mkdocs
