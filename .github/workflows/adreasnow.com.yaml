@@ -12,7 +12,7 @@ jobs:
   semver:
     name: Build adreasnow.com mkdocs site
     runs-on: ubuntu-latest
-    output:
+    outputs:
       semver: ${{ steps.semver.outputs.version_tag }}
     steps:
       - id: semver
