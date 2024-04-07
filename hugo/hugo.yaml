@@ -1,7 +1,7 @@
 baseURL: https://adreasnow.com/
 languageCode: en-us
 title: Adrea Snow
-theme: ["papermod"]
+theme: papermod
 paginate: 5
 
 googleAnalytics: G-WBEK0XMNCH
