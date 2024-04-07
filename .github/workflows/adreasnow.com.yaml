@@ -135,9 +135,42 @@ jobs:
         with:
           ref: gh-pages
 
-      # - run: |
-      #     echo '<meta http-equiv="refresh" content="0; url=https://adreasnow.com/academic/" />' > index.html
-      #     echo 'adreasnow.com' > CNAME
+      # HUGO
+
+      - name: Backup academic if hugo, but not mkdocs
+        if: ${{ (needs.build-hugo.outputs.built == 'true') && (needs.build-mkdocs.outputs.built == 'false') }}
+        uses: actions/upload-artifact@v4
+        if: steps.changes.outputs.project == 'true'
+        with:
+          name: academic
+          path: "academic/*"
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: delete everything
+        if: needs.build-hugo.outputs.built == 'true'
+        run: rm -rf *
+
+      - name: Put hugo in place
+        if: needs.build-hugo.outputs.built == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: hugo
+          path: ./
+
+      - name: Restore academic if hugo, but not mkdocs
+        if: ${{ (needs.build-hugo.outputs.built == 'true') && (needs.build-mkdocs.outputs.built == 'false') }}
+        uses: actions/download-artifact@v4
+        with:
+          name: academic
+          path: academic
+
+      - name: Restore CNAME
+        if: needs.build-hugo.outputs.built == 'true'
+        run: echo 'adreasnow.com' > CNAME
+
+
+      # MKDOCS
 
       - if: needs.build-mkdocs.outputs.built == 'true'
         run: rm -rf academic
@@ -147,15 +180,6 @@ jobs:
         with:
           name: mkdocs
           path: academic
-
-      - if: needs.build-hugo.outputs.built == 'true'
-        run: rm -rf tech
-
-      - if: needs.build-hugo.outputs.built == 'true'
-        uses: actions/download-artifact@v4
-        with:
-          name: hugo
-          path: tech
 
       - name: Push the new site
         if: ${{ (needs.build-hugo.outputs.built == 'true') || (needs.build-mkdocs.outputs.built == 'true') }}
