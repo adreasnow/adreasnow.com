@@ -23,7 +23,6 @@ jobs:
         with:
           tag_prefix: "v"
           version_format: "${major}.${minor}.${patch}"
-          bump_each_commit: true
       - uses: actions/github-script@v7
         with:
           retries: 3
@@ -94,6 +93,7 @@ jobs:
 
       - run: |
           echo '<meta http-equiv="refresh" content="0; url=https://adreasnow.com/academic/" />' > index.html
+          echo 'adreasnow.com' > CNAME
 
       - uses: actions/download-artifact@v4
         with:
