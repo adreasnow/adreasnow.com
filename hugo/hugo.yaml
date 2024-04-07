@@ -2,7 +2,8 @@ baseURL: https://adreasnow.com
 languageCode: en-us
 title: Adrea Snow
 theme: hugo-theme-hello-friend-ng
-paginate: 5
+paginate: 10
+rssLimit: -1
 
 services:
   googleAnalytics:
@@ -32,6 +33,11 @@ params:
       url: https://github.com/adreasnow
     - name: linkedin
       url: https://www.linkedin.com/in/adreasnow/
+
+  portrait:
+    path: content/portrait.jpg
+    alt: Photo of Adrea!
+    maxWidth: 50px
 
 menu:
   main:
