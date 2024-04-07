@@ -8,6 +8,9 @@ services:
   googleAnalytics:
     ID: G-WBEK0XMNCH
 
+module:
+  imports:
+    - path: hello-friend-ng
 
 params:
   dateform: Jan 2, 2006
@@ -15,7 +18,7 @@ params:
   dateformNum: 2006-01-02
   dateformNumTime: 2006-01-02 15:04
 
-  enableSharingButtons: true
+  enableSharingButtons: false
 
   homeSubtitle: Infrastructure & DevOps Engineer
 
@@ -26,16 +29,22 @@ params:
   taxonomies:
     tag: tags
     category: blog
-    series: series
-
-  menu:
-    main:
-      - identifier: blog
-        name: Blog
-        url: /posts
+    # series: series
 
   social:
     - name: github
       url: https://github.com/adreasnow
     - name: linkedin
       url: https://www.linkedin.com/in/adreasnow/
+
+menu:
+  main:
+    - identifier: blog
+      name: Blog
+      url: /posts
+    - identifier: code
+      name: Coding Stats
+      url: /coding_stats
+    - identifier: academic
+      name: Academic Site
+      url: https://adreasnow.com/academic
