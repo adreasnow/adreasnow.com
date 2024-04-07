@@ -1,16 +1,12 @@
 baseURL: https://adreasnow.com/
 languageCode: en-us
 title: Adrea Snow
-theme: hello-friend-ng
+theme: hugo-theme-hello-friend-ng
 paginate: 5
 
 services:
   googleAnalytics:
     ID: G-WBEK0XMNCH
-
-module:
-  imports:
-    - path: hello-friend-ng
 
 params:
   dateform: Jan 2, 2006
