@@ -18,8 +18,10 @@ hide:
 !!! error "Burnout..."
     I decided to drop my PhD and have been working in the tech industry as a DevOps engineer since November 2023. <br/>
     The PhD stipend, working hours, and cost of living crisis all became too much for me to be able to justify continuing, so despite loving the work I was doing I've decided that finding the income to focus on my mental and physical health was more important than a sheet of papaer and rather fancy hat.<br/><br/>
-    I'm going to keep this website up for as long as possible, through I may move it from [adreasnow.com](adreasnow.com) at some point to allow me to focus on my tech work instead :slightly_smiling_face:<br/>
+    I'm going to keep this website up for as long as possible, ~~though I may move it from [adreasnow.com](adreasnow.com) at some point to allow me to focus on my tech work instead~~ :slightly_smiling_face:<br/>
     :heart: Adrea
+    <br/>
+    Edit: I've now moved this website to [adreasnow.com/academic](adreasnow.com/academic) to allow a new hugo based tech website to occupy [adreansow.com](adreasnow.com). 
 
 I'm Adrea, a computational chemistry PhD candidate at Monash University. The purpose of this site is mainly to act as a repository of my notes and ramblings, it's  an incoherent collection of random markdown files, cobbled together with [MkDocs](https://www.mkdocs.org) that I wanted to be easily accessible and searchable.
 
