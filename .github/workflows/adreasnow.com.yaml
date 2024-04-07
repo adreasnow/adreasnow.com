@@ -140,7 +140,6 @@ jobs:
       - name: Backup academic if hugo, but not mkdocs
         if: ${{ (needs.build-hugo.outputs.built == 'true') && (needs.build-mkdocs.outputs.built == 'false') }}
         uses: actions/upload-artifact@v4
-        if: steps.changes.outputs.project == 'true'
         with:
           name: academic
           path: "academic/*"
@@ -168,7 +167,6 @@ jobs:
       - name: Restore CNAME
         if: needs.build-hugo.outputs.built == 'true'
         run: echo 'adreasnow.com' > CNAME
-
 
       # MKDOCS
 
