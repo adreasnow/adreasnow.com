@@ -95,6 +95,7 @@ jobs:
               - 'hugo/**'
 
       - name: setup caching
+        if: steps.changes.outputs.project == 'true'
         uses: actions/cache@v4
         with:
           path: /home/runner/.cache/hugo_cache
@@ -102,14 +103,22 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-hugomod-
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: "latest"
+      # - name: Setup Hugo
+      #   if: steps.changes.outputs.project == 'true'
+      #   uses: peaceiris/actions-hugo@v3
+      #   with:
+      #     hugo-version: "latest"
+
+      # - name: Build
+      #   if: steps.changes.outputs.project == 'true'
+      #   run: hugo --minify
+      #   working-directory: ./hugo
 
       - name: Build
-        run: hugo --minify
-        working-directory: ./hugo
+        uses: jakejarvis/hugo-build-action@master
+        if: steps.changes.outputs.project == 'true'
+        with:
+          args: --minify
 
       - name: Upload site
         uses: actions/upload-artifact@v4
