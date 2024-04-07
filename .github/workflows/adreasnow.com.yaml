@@ -85,6 +85,9 @@ jobs:
     steps:
       - name: Checkpout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Check for changes
         uses: dorny/paths-filter@v2
@@ -93,6 +96,33 @@ jobs:
           filters: |
             project:
               - 'hugo/**'
+
+      - name: setup caching
+        uses: actions/cache@v4
+        with:
+          path: /home/runner/.cache/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          # extended: true
+
+      - name: Build
+        run: hugo --minify
+        working-directory: ./hugo
+
+      - name: Upload site
+        uses: actions/upload-artifact@v4
+        if: steps.changes.outputs.project == 'true'
+        with:
+          name: hugo
+          path: "hugo/public/*"
+          if-no-files-found: error
+          retention-days: 1
 
   deploy:
     name: Deploy adreasnow.com
@@ -122,17 +152,11 @@ jobs:
       - if: needs.build-hugo.outputs.built == 'true'
         run: rm -rf tech
 
-      # - if: needs.build-hugo.outputs.built == 'true'
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     name: mkdocs
-      #     path: tech
-
-      # - if: needs.build-hugo.outputs.built == 'true'
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     name: hugo
-      #     path: tech
+      - if: needs.build-hugo.outputs.built == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: hugo
+          path: tech
 
       - name: Push the new site
         if: ${{ (needs.build-hugo.outputs.built == 'true') || (needs.build-mkdocs.outputs.built == 'true') }}
