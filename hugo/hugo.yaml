@@ -5,6 +5,14 @@ theme: hugo-theme-hello-friend-ng
 paginate: 10
 rssLimit: -1
 
+enableEmoji: true
+
+markup:
+  highlight:
+    style: onedark
+
+lastModDisplay: "Modified:"
+
 services:
   googleAnalytics:
     ID: G-WBEK0XMNCH
@@ -33,6 +41,8 @@ params:
       url: https://github.com/adreasnow
     - name: linkedin
       url: https://www.linkedin.com/in/adreasnow/
+    - name: email
+      url: mailto:adrea.snow@gmail.com
 
   portrait:
     path: /portrait.jpg
