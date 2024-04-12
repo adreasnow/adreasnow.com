@@ -35,9 +35,14 @@ params:
       url: https://www.linkedin.com/in/adreasnow/
 
   portrait:
-    path: img/portrait.jpg
+    path: /portrait.jpg
     alt: Photo of Adrea!
-    maxWidth: 50px
+    maxWidth: 200px
+  
+  logo:
+    logoMark: "$"
+    logoText: adreasnow.com
+    logoHomeLink: / 
 
 menu:
   main:
