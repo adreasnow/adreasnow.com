@@ -170,4 +170,4 @@ Zed is still lacking a couple of features that I really miss from VSCode, such a
 - [WakaTime](https://wakatime.com) Integration!
   - I know, its not on the Zed people to do this, but still would be REALLY nice!
 
-That said, I'm going to use it as much as I can and support the Zed team however I can, since we're LONG overdue for a Sublime Text replacement, and I'm not definitley giving that title to [JetBrains Fleet](https://www.jetbrains.com/fleet/)!
+That said, I'm going to use it as much as I can and support the Zed team however I can, since we're LONG overdue for a Sublime Text replacement, and I'm not definitley giving that title to [JetBrains Fleet](https://www.jetbrains.com/fleet/)! (This feels even more valid a statement after testing GoLand)
