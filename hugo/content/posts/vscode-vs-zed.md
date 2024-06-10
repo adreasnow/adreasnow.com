@@ -135,19 +135,13 @@ Once I had the data, I averaged the results for each proc over each of the 15 se
 |       |          |
 | Total | 470.8049 |
 
-
-
 #### Comparison
 
 1216.744 ÷ 470.8049 = 2.58x
 
 VSCode is 2.58x more power hungry than Zed. Even with a minimal setup. I'm honeslty not sure why so much of this comes from the renderer...
 
-
-
 #### Edit: GoLand (added for a friend)
-
-#### Zed
 
 | Proc   | Power   |
 | ------ | ------- |
