@@ -1,5 +1,5 @@
 ---
-title: "VSCode vs Zed for energy consumption"
+title: "VSCode vs Zed (vs GoLand) for energy consumption"
 date: 2024-06-10T16:24:22+10:00
 draft: false
 toc: false
@@ -136,11 +136,27 @@ Once I had the data, I averaged the results for each proc over each of the 15 se
 |       |          |
 | Total | 470.8049 |
 
+
+
 #### Comparison
 
 1216.744 ÷ 470.8049 = 2.58x
 
 VSCode is 2.58x more power hungry than Zed. Even with a minimal setup. I'm honeslty not sure why so much of this comes from the renderer...
+
+
+
+#### Edit: GoLand (added for a friend)
+
+#### Zed
+
+| Proc   | Power   |
+| ------ | ------- |
+| goland | 2907.65 |
+|        |         |
+| Total  | 2907.65 |
+
+2907.65 ÷ 470.8049 = 6.18x :sweat_smile:
 
 ## My Takeaway
 
