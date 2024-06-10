@@ -1,4 +1,162 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Adrea Snow</title><link>https://adreasnow.com/posts/</link><description>Recent content in Posts on Adrea Snow</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2024 14:45:59 +1000</lastBuildDate><atom:link href="https://adreasnow.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>I moved my academic blog</title><link>https://adreasnow.com/posts/moved-academic/</link><pubDate>Sun, 07 Apr 2024 14:45:59 +1000</pubDate><guid>https://adreasnow.com/posts/moved-academic/</guid><description>I&amp;rsquo;ve been working at Xero 5 months now and am absolutley loving working in tech again, so I decided to make my social presence more reflective of this fact. This website is made in HUGO, it&amp;rsquo;s hosted on Github, and is deployed using Github Actions.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Adrea Snow</title><link>https://adreasnow.com/posts/</link><description>Recent content in Posts on Adrea Snow</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 10 Jun 2024 16:24:22 +1000</lastBuildDate><atom:link href="https://adreasnow.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>VSCode vs Zed for energy consumption</title><link>https://adreasnow.com/posts/vscode-vs-zed/</link><pubDate>Mon, 10 Jun 2024 16:24:22 +1000</pubDate><guid>https://adreasnow.com/posts/vscode-vs-zed/</guid><description>Preamble Hey Team! I loved Sublime Text. I really did. I used it for everyhting from remote python dev on supercomputers, to writing academic papers in LaTeX (see my old guide on getting it set up for proof). When VSCode came out with its &amp;ldquo;Remote Explorer&amp;rdquo; functionality I was torn. It was just too useful for the remote work I was doing, but it meant switching to a heavy electron app.</description><content type="html"><![CDATA[<h2 id="preamble">Preamble</h2>
+<p>Hey Team!
+I loved Sublime Text. I really did. I used it for everyhting from remote python dev on supercomputers, to writing academic papers in LaTeX (see <a href="https://adreasnow.com/academic/Cheat%20Sheets%20and%20Play/Cheat%20Sheets/LaTeXSetup/#theme-for-non-latex-files">my old guide on getting it set up</a> for proof). When VSCode came out with its &ldquo;Remote Explorer&rdquo; functionality I was torn. It was just too useful for the remote work I was doing, but it meant switching to a heavy electron app.</p>
+<p>I missed the responsiveness of Sublime Text, but I found a new peace in the added functionality of the VSCode extention ecosystem.</p>
+<h3 id="post-academia">Post Academia</h3>
+<p>I <a href="https://adreasnow.com/academic/">left academia about 9 months ago</a>, and have happily been working at <a href="https://www.xero.com/au/">Xero</a>, a publicly traded accounting software company in a DevOps focused role. I don&rsquo;t get to play too much to with code these days, and if I wanted to, it&rsquo;d unfortunately be .NET (I&rsquo;m a full blown gopher for sure, so this hurts me in my soul).</p>
+<p>The takeaway is that instead of using SSH connections to access remote servers, these days I&rsquo;m focusing on editing all the falvours of yaml (k8s, GHA, dependabot, cloudformation), terraform, json, TeamCity flavoured kotlin, and all the other boring stuff that one edits locally and runs remotely.</p>
+<p>Thankfully, most of these tools have their own language servers, or rely on common syntax, so my need for fancy features has largely disappeared. There are a couple of exceptions of course, but thankfully Xero is nice enough to pay for Intellij Idea for validating TeamCity Kotlin, and Rider for handling all the .NET nonsense.</p>
+<h3 id="moving-away-from-vscode">Moving away from VSCode</h3>
+<p>VSCode has become the default and with it my shiny M2 macbook pro has been reduced to a 3-4 hour battery life. So naturally I turned back to my old love Sublime Text for something a bit native. I&rsquo;m sorry to say it, but it&rsquo;s feeling old&hellip; The plugin system feels outdated, the tree of config files is a mess, and just getting go to work the way I wanted took four different plugins to set up.</p>
+<p>I&rsquo;m not sure if you&rsquo;ve heard yet, but there&rsquo;s a hot new native code editor in town called <a href="https://zed.dev">Zed</a>. It boasts better  performance than Sublime text, a more minimalistic layout, an inbuilt extenstions system, community collaboration tools, (optionsl) AI integration, native shared sessions, extremely parallel processing, etc.</p>
+<p>It&rsquo;s what Sublime Text needs to be in 2024.</p>
+<h2 id="energy-consumption">Energy Consumption</h2>
+<p>I&rsquo;m sure you&rsquo;ve all fallen into the trap before, that you make some changes to your system but you just can&rsquo;t tell how those changes fit in the grand scheme of things since there&rsquo;s so much goping on. I was having this issue with deciding if Zed was really that much better on my battery life, so I decided to do a few little tests.</p>
+<h3 id="the-tests">The tests</h3>
+<p>My testing protocol was simple:</p>
+<ul>
+<li>Start an energy profiler</li>
+<li>Use VSCode in a &ldquo;Real world&rdquo; coding setup for 30 minutes
+<ul>
+<li>This was a minimal set of extensions, with just what was needed to get Go working as desired</li>
+<li>A full setup with all your plugins and tool extensions (Docker, DB connectors, etc.) would likely be even worse&hellip;</li>
+</ul>
+</li>
+<li>Collect the data</li>
+<li>Repeat with Zed</li>
+</ul>
+<p>Power profiling is a really non-trivial concept since you can&rsquo;t directly correlate CPU/GPU/memory usage to power due to complex schedulers running on complex architectures, however I decided to make my life a little easier by using apple&rsquo;s <code>powermetrics</code> tool (<a href="https://www.unix.com/man-page/osx/1/powermetrics/">manpage</a>).</p>
+<p>The tool was simple enough to use. just call the tool as root, tell it to poll every 15 seconds, and spit out the average power usage every time it polls:</p>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo powermetrics -i <span style="color:#d19a66">15000</span> --poweravg <span style="color:#d19a66">1</span>
+</span></span></code></pre></div><p>Then I could grep out the program&rsquo;s process from there and collate the data later (The &ldquo;<code>]</code>&rdquo; is important for getting the process from the right section of the output, the &ldquo;Average cumulatively decayed power score&rdquo;):</p>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo powermetrics -i <span style="color:#d19a66">15000</span> --poweravg <span style="color:#d19a66">1</span> | grep <span style="color:#98c379">&#39;]Zed&#39;</span>
+</span></span></code></pre></div><h3 id="getting-the-process-tree">Getting the Process tree</h3>
+<p>While this would work for Zed (ignoring its child <code>gopls</code> instance, VSCode is an ugly mess, so instead I needed to pull out the processes using <code>pstree</code> (use activity monitor to get the parent pid, call it with <code>pstree &lt;pid&gt;</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>-+<span style="color:#56b6c2">=</span> <span style="color:#d19a66">55060</span> adrea /Applications/Visual Studio Code.app/Contents/MacOS/Electron
+</span></span><span style="display:flex;"><span> |--- <span style="color:#d19a66">55061</span> adrea /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper <span style="color:#56b6c2">(</span>GPU<span style="color:#56b6c2">)</span>.app/Contents/MacOS/Code Helper <span style="color:#56b6c2">(</span>GPU<span style="color:#56b6c2">)</span> --type<span style="color:#56b6c2">=</span>gpu-process --user-data-dir<span style="color:#56b6c2">=</span>/Users/adrea/Library/Application Support/Code
+</span></span><span style="display:flex;"><span> |--- <span style="color:#d19a66">55062</span> adrea /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type<span style="color:#56b6c2">=</span>utility --utility-sub-type<span style="color:#56b6c2">=</span>network.mojom.NetworkService --lang<span style="color:#56b6c2">=</span>en-GB --service-sandbox
+</span></span><span style="display:flex;"><span> |--- <span style="color:#d19a66">55100</span> adrea /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type<span style="color:#56b6c2">=</span>utility --utility-sub-type<span style="color:#56b6c2">=</span>node.mojom.NodeService --lang<span style="color:#56b6c2">=</span>en-GB --service-sandbox-type<span style="color:#56b6c2">=</span>
+</span></span><span style="display:flex;"><span> |-+- <span style="color:#d19a66">55152</span> adrea /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type<span style="color:#56b6c2">=</span>utility --utility-sub-type<span style="color:#56b6c2">=</span>node.mojom.NodeService --lang<span style="color:#56b6c2">=</span>en-GB --service-sandbox-type<span style="color:#56b6c2">=</span>
+</span></span><span style="display:flex;"><span> | <span style="color:#98c379">\-</span>-<span style="color:#56b6c2">=</span> <span style="color:#d19a66">57446</span> adrea /bin/zsh -il
+</span></span><span style="display:flex;"><span> |--- <span style="color:#d19a66">57431</span> adrea /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper <span style="color:#56b6c2">(</span>Renderer<span style="color:#56b6c2">)</span>.app/Contents/MacOS/Code Helper <span style="color:#56b6c2">(</span>Renderer<span style="color:#56b6c2">)</span> --type<span style="color:#56b6c2">=</span>renderer --user-data-dir<span style="color:#56b6c2">=</span>/Users/adrea/Library/Application Suppor
+</span></span><span style="display:flex;"><span> |-+- <span style="color:#d19a66">57433</span> adrea /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper <span style="color:#56b6c2">(</span>Plugin<span style="color:#56b6c2">)</span>.app/Contents/MacOS/Code Helper <span style="color:#56b6c2">(</span>Plugin<span style="color:#56b6c2">)</span> --type<span style="color:#56b6c2">=</span>utility --utility-sub-type<span style="color:#56b6c2">=</span>node.mojom.NodeService --lang<span style="color:#56b6c2">=</span>en-GB --ser
+</span></span><span style="display:flex;"><span> | |--- <span style="color:#d19a66">57441</span> adrea /opt/homebrew/bin/gopls -mode<span style="color:#56b6c2">=</span>stdio
+</span></span><span style="display:flex;"><span> | <span style="color:#98c379">\-</span>-- <span style="color:#d19a66">59872</span> adrea /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper <span style="color:#56b6c2">(</span>Plugin<span style="color:#56b6c2">)</span>.app/Contents/MacOS/Code Helper <span style="color:#56b6c2">(</span>Plugin<span style="color:#56b6c2">)</span> /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/ma
+</span></span><span style="display:flex;"><span> <span style="color:#98c379">\-</span>-- <span style="color:#d19a66">57434</span> adrea /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type<span style="color:#56b6c2">=</span>utility --utility-sub-type<span style="color:#56b6c2">=</span>node.mojom.NodeService --lang<span style="color:#56b6c2">=</span>en-GB --service-sandbox-type<span style="color:#56b6c2">=</span>
+</span></span></code></pre></div><h3 id="running-the-tests">Running the tests</h3>
+<p>Now I had to condense those down into a grep line for the processes (wrapped in square brackets) and we&rsquo;re off the the market:</p>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo powermetrics -i <span style="color:#d19a66">15000</span> -a <span style="color:#d19a66">1</span> | grep <span style="color:#98c379">&#39;\[55060\]\|\[55061\]\|\[55062\]\|\[55100\]\|\[55152\]\|\[57446\]\|\[57431\]\|\[57433\]\|\[57441\]\|\[57434\]|\[59872\]\|15 sec&#39;</span>
+</span></span></code></pre></div><p>The &ldquo;``15 sec`&rdquo; ensures that it prints out the headers of the table each poll, so that I can tell them apart:</p>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>                                      	   <span style="color:#d19a66">15</span> sec    	   <span style="color:#d19a66">1</span> min     	   <span style="color:#d19a66">5</span> min     	   <span style="color:#d19a66">15</span> min    	   <span style="color:#d19a66">1</span> hr
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">[</span>57431<span style="color:#56b6c2">]</span>Code Helper <span style="color:#56b6c2">(</span>Renderer<span style="color:#56b6c2">)</span>          	   395.179	&lt;calculating&gt;
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">[</span>55100<span style="color:#56b6c2">]</span>Code Helper                     	   290.446	&lt;calculating&gt;
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">[</span>55060<span style="color:#56b6c2">]</span>Electron                        	     99.35	&lt;calculating&gt;
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">[</span>57441<span style="color:#56b6c2">]</span>gopls                           	    57.742	&lt;calculating&gt;
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">[</span>55061<span style="color:#56b6c2">]</span>Code Helper <span style="color:#56b6c2">(</span>GPU<span style="color:#56b6c2">)</span>               	   55.3173	&lt;calculating&gt;
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">[</span>57433<span style="color:#56b6c2">]</span>Code Helper <span style="color:#56b6c2">(</span>Plugin<span style="color:#56b6c2">)</span>            	   34.8403	&lt;calculating&gt;
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Perfect! now I just worked on my backlog of <a href="https://adventofcode.com">Advent of Code</a> challenges and wait for the data to come in. 30 minutes later, I would do the same for zed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>                                      	   <span style="color:#d19a66">15</span> sec    	   <span style="color:#d19a66">1</span> min     	   <span style="color:#d19a66">5</span> min     	   <span style="color:#d19a66">15</span> min    	   <span style="color:#d19a66">1</span> hr
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">[</span>38277<span style="color:#56b6c2">]</span>Zed                             	   381.262	&lt;calculating&gt;
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">[</span>57872<span style="color:#56b6c2">]</span>gopls                           	   33.3986	&lt;calculating&gt;
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h3 id="collating-the-results">Collating the results</h3>
+<p>Once I had the data, I averaged the results for each proc over each of the 15 second averages, and these were the results:</p>
+<h4 id="vscode">VSCode</h4>
+<table>
+<thead>
+<tr>
+<th>Proc</th>
+<th>Power</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code Helper (Renderer)</td>
+<td>777.308</td>
+</tr>
+<tr>
+<td>Code Helper</td>
+<td>58.0937</td>
+</tr>
+<tr>
+<td>gopls</td>
+<td>60.7302</td>
+</tr>
+<tr>
+<td>Electron</td>
+<td>152.095</td>
+</tr>
+<tr>
+<td>Code Helper (Plugin)</td>
+<td>37.4791</td>
+</tr>
+<tr>
+<td>Code Helper (GPU)</td>
+<td>131.038</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total</td>
+<td>1216.744</td>
+</tr>
+</tbody>
+</table>
+<h4 id="zed">Zed</h4>
+<table>
+<thead>
+<tr>
+<th>Proc</th>
+<th>Power</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zed</td>
+<td>413.203</td>
+</tr>
+<tr>
+<td>gopls</td>
+<td>57.6019</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total</td>
+<td>470.8049</td>
+</tr>
+</tbody>
+</table>
+<h4 id="comparison">Comparison</h4>
+<p>1216.744 ÷ 470.8049 = 2.58x</p>
+<p>VSCode is 2.58x more power hungry than Zed. Even with a minimal setup. I&rsquo;m honeslty not sure why so much of this comes from the renderer&hellip;</p>
+<h2 id="my-takeaway">My Takeaway</h2>
+<p>Zed is still lacking a couple of features that I really miss from VSCode, such as:</p>
+<ul>
+<li>Source control pane
+<ul>
+<li>That said, I do REALLY like the integrated inline git blame, and it does have git gutters</li>
+</ul>
+</li>
+<li>Inbuilt build configurations (cmd + B to build)
+<ul>
+<li><a href="https://zed.dev/docs/tasks">Tasks</a> are nice, but they lack the cleanliness of build configs, and I&rsquo;ve found that some of the variables like <code>$ZED_DIRNAME</code> and <code>$ZED_FILENAME</code> don&rsquo;t update straight away when you switch files</li>
+</ul>
+</li>
+<li>Debugging support</li>
+<li><a href="https://wakatime.com">WakaTime</a> Integration!
+<ul>
+<li>I know, its not on the Zed people to do this, but still would be REALLY nice!</li>
+</ul>
+</li>
+</ul>
+<p>That said, I&rsquo;m going to use it as much as I can and support the Zed team however I can, since we&rsquo;re LONG overdue for a Sublime Text replacement, and I&rsquo;m not definitley giving that title to <a href="https://www.jetbrains.com/fleet/">JetBrains Fleet</a>!</p>
+]]></content></item><item><title>I moved my academic blog</title><link>https://adreasnow.com/posts/moved-academic/</link><pubDate>Sun, 07 Apr 2024 14:45:59 +1000</pubDate><guid>https://adreasnow.com/posts/moved-academic/</guid><description>I&amp;rsquo;ve been working at Xero 5 months now and am absolutley loving working in tech again, so I decided to make my social presence more reflective of this fact. This website is made in HUGO, it&amp;rsquo;s hosted on Github, and is deployed using Github Actions.
 If you&amp;rsquo;d like to access my old site, it&amp;rsquo;ll still be up under adreasnow.com/acadmeic, so that I can keep adreasnow.com for my techy stuff instead &amp;#x1f642;</description><content type="html"><![CDATA[<p>I&rsquo;ve been working at Xero 5 months now and am absolutley loving working in tech again, so I decided to make my social presence more reflective of this fact. This website is made in <a href="https://gohugo.io/">HUGO</a>, it&rsquo;s hosted on <a href="https://github.com/adreasnow/adreasnow.com/tree/gh-pages">Github</a>, and is deployed using <a href="https://github.com/adreasnow/adreasnow.com/blob/main/.github/workflows/adreasnow.com.yaml">Github Actions</a>.</p>
 <p>If you&rsquo;d like to access my old site, it&rsquo;ll still be up under <a href="https://adreasnow.com/academic">adreasnow.com/acadmeic</a>, so that I can keep <code>adreasnow.com</code> for my techy stuff instead &#x1f642;</p>
 ]]></content></item></channel></rss>
