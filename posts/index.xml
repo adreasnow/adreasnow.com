@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Adrea Snow</title><link>https://adreasnow.com/posts/</link><description>Recent content in Posts on Adrea Snow</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 10 Jun 2024 16:24:22 +1000</lastBuildDate><atom:link href="https://adreasnow.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>VSCode vs Zed for energy consumption</title><link>https://adreasnow.com/posts/vscode-vs-zed/</link><pubDate>Mon, 10 Jun 2024 16:24:22 +1000</pubDate><guid>https://adreasnow.com/posts/vscode-vs-zed/</guid><description>Preamble Hey Team! I loved Sublime Text. I really did. I used it for everyhting from remote python dev on supercomputers, to writing academic papers in LaTeX (see my old guide on getting it set up for proof). When VSCode came out with its &amp;ldquo;Remote Explorer&amp;rdquo; functionality I was torn. It was just too useful for the remote work I was doing, but it meant switching to a heavy electron app.</description><content type="html"><![CDATA[<h2 id="preamble">Preamble</h2>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Adrea Snow</title><link>https://adreasnow.com/posts/</link><description>Recent content in Posts on Adrea Snow</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 10 Jun 2024 16:24:22 +1000</lastBuildDate><atom:link href="https://adreasnow.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>VSCode vs Zed (vs GoLand) for energy consumption</title><link>https://adreasnow.com/posts/vscode-vs-zed/</link><pubDate>Mon, 10 Jun 2024 16:24:22 +1000</pubDate><guid>https://adreasnow.com/posts/vscode-vs-zed/</guid><description>Preamble Hey Team! I loved Sublime Text. I really did. I used it for everyhting from remote python dev on supercomputers, to writing academic papers in LaTeX (see my old guide on getting it set up for proof). When VSCode came out with its &amp;ldquo;Remote Explorer&amp;rdquo; functionality I was torn. It was just too useful for the remote work I was doing, but it meant switching to a heavy electron app.</description><content type="html"><![CDATA[<h2 id="preamble">Preamble</h2>
 <p>Hey Team!
 I loved Sublime Text. I really did. I used it for everyhting from remote python dev on supercomputers, to writing academic papers in LaTeX (see <a href="https://adreasnow.com/academic/Cheat%20Sheets%20and%20Play/Cheat%20Sheets/LaTeXSetup/#theme-for-non-latex-files">my old guide on getting it set up</a> for proof). When VSCode came out with its &ldquo;Remote Explorer&rdquo; functionality I was torn. It was just too useful for the remote work I was doing, but it meant switching to a heavy electron app.</p>
 <p>I missed the responsiveness of Sublime Text, but I found a new peace in the added functionality of the VSCode extention ecosystem.</p>
@@ -135,6 +135,31 @@ I loved Sublime Text. I really did. I used it for everyhting from remote python 
 <h4 id="comparison">Comparison</h4>
 <p>1216.744 ÷ 470.8049 = 2.58x</p>
 <p>VSCode is 2.58x more power hungry than Zed. Even with a minimal setup. I&rsquo;m honeslty not sure why so much of this comes from the renderer&hellip;</p>
+<h4 id="edit-goland-added-for-a-friend">Edit: GoLand (added for a friend)</h4>
+<h4 id="zed-1">Zed</h4>
+<table>
+<thead>
+<tr>
+<th>Proc</th>
+<th>Power</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>goland</td>
+<td>2907.65</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total</td>
+<td>2907.65</td>
+</tr>
+</tbody>
+</table>
+<p>2907.65 ÷ 470.8049 = 6.18x &#x1f605;</p>
 <h2 id="my-takeaway">My Takeaway</h2>
 <p>Zed is still lacking a couple of features that I really miss from VSCode, such as:</p>
 <ul>
