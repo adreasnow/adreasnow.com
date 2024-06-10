@@ -1,5 +1,5 @@
 ---
-title: "VSCode vs Zed (vs GoLand) for energy consumption"
+title: "VSCode vs Zed (vs GoLand) - Comparing Power Consumption"
 date: 2024-06-10T16:24:22+10:00
 draft: false
 toc: false
@@ -10,7 +10,6 @@ tags:
 
 ## Preamble
 
-Hey Team!
 I loved Sublime Text. I really did. I used it for everyhting from remote python dev on supercomputers, to writing academic papers in LaTeX (see [my old guide on getting it set up](https://adreasnow.com/academic/Cheat%20Sheets%20and%20Play/Cheat%20Sheets/LaTeXSetup/#theme-for-non-latex-files) for proof). When VSCode came out with its "Remote Explorer" functionality I was torn. It was just too useful for the remote work I was doing, but it meant switching to a heavy electron app. 
 
 I missed the responsiveness of Sublime Text, but I found a new peace in the added functionality of the VSCode extention ecosystem.
