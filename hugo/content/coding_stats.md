@@ -8,9 +8,6 @@ toc: false
 ## Stats
 These are my coding stats for the past 30 days and the past year as tracked by [WakaTime](https://wakatime.com).
 
-Unfortunately these don't include all the time I spent in Zed, as it doesn't have any integration, but SInce I've switched back to Terraform to regain some extra functionality, you can probably map out the trend of how much I've been doing 🙂
-
-
 ### Past 30 days
 {{< rawhtml >}}
 <embed src="https://wakatime.com/share/@imaprotein/701209a5-b4ab-4cf8-bf4a-62e8e671dfa8.svg"></embed>
