@@ -107,7 +107,7 @@ jobs:
         if: steps.changes.outputs.project == 'true'
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "latest"
+          hugo-version: "0.130.0"
 
       - name: Build
         if: steps.changes.outputs.project == 'true'
