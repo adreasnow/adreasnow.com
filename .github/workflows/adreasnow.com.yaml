@@ -43,7 +43,7 @@ jobs:
               - 'mkdocs/**'
 
       - name: Install python 3.x
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         if: steps.changes.outputs.project == 'true'
         with:
           python-version: 3.x
