@@ -15,7 +15,7 @@ jobs:
     outputs:
       semver: ${{ steps.semver.outputs.version_tag }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - id: semver
@@ -32,7 +32,7 @@ jobs:
       built: ${{ steps.changes.outputs.project }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Check for changes
         uses: dorny/paths-filter@v3
@@ -84,7 +84,7 @@ jobs:
       built: ${{ steps.changes.outputs.project }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Check for changes
         uses: dorny/paths-filter@v3
@@ -132,7 +132,7 @@ jobs:
       - build-hugo
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: gh-pages
 
@@ -202,7 +202,7 @@ jobs:
       - deploy
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Tag the commit
         uses: actions/github-script@v8
         with:
