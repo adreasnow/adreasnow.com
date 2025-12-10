@@ -6,7 +6,7 @@ toc: false
 ---
 
 ## Stats
-These are my coding stats for the past 30 days and the past year as tracked by [WakaTime](https://wakatime.com).
+These are my coding stats for the past 30 days, and the past year as tracked by [WakaTime](https://wakatime.com).
 
 ### Past 30 days
 {{< rawhtml >}}
