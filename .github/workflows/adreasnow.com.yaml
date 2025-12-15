@@ -153,14 +153,14 @@ jobs:
 
       - name: Put hugo in place
         if: needs.build-hugo.outputs.built == 'true'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: hugo
           path: ./
 
       - name: Restore academic if hugo, but not mkdocs
         if: ${{ (needs.build-hugo.outputs.built == 'true') && (needs.build-mkdocs.outputs.built == 'false') }}
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: academic
           path: academic
@@ -177,7 +177,7 @@ jobs:
 
       - name: Put new mkdocs in place
         if: needs.build-mkdocs.outputs.built == 'true'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: mkdocs
           path: academic
