@@ -68,7 +68,7 @@ jobs:
         working-directory: ./mkdocs
 
       - name: Upload site
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         if: steps.changes.outputs.project == 'true'
         with:
           name: mkdocs
@@ -115,7 +115,7 @@ jobs:
         working-directory: ./hugo
 
       - name: Upload site
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         if: steps.changes.outputs.project == 'true'
         with:
           name: hugo
@@ -140,7 +140,7 @@ jobs:
 
       - name: Backup academic if hugo, but not mkdocs
         if: ${{ (needs.build-hugo.outputs.built == 'true') && (needs.build-mkdocs.outputs.built == 'false') }}
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: academic
           path: "academic/*"
