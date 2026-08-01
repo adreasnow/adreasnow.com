@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
       - id: semver
-        uses: paulhatch/semantic-version@v6.0.2
+        uses: paulhatch/semantic-version@v6.0.3
         with:
           tag_prefix: "v"
           version_format: "${major}.${minor}.${patch}"
